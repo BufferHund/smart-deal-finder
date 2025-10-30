@@ -11,11 +11,15 @@ import pandas as pd
 from datetime import datetime
 import io
 
-# Add parent directory to path
-sys.path.append(str(Path(__file__).parent.parent))
+# Add directories to path
+app_dir = Path(__file__).parent
+src_dir = app_dir.parent
+sys.path.insert(0, str(src_dir))
+sys.path.insert(0, str(app_dir))
 
-# Import custom modules
-from app.utils import (
+# Import custom modules (from same directory)
+import utils
+from utils import (
     draw_bounding_boxes,
     extract_entities,
     entities_to_dataframe,
