@@ -360,7 +360,7 @@ with tab1:
                 st.subheader("🎯 Processed Result")
 
                 # Process button
-                if st.button("🔍 Extract Information", type="primary", use_column_width=True):
+                if st.button("🔍 Extract Information", type="primary", use_container_width=True):
                     with st.spinner(f"Processing with {ocr_engine}..."):
                         # Process OCR
                         ocr_results = process_with_ocr(
@@ -485,7 +485,7 @@ with tab2:
                             df_data.append(row)
 
                         df = pd.DataFrame(df_data)
-                        st.dataframe(df, use_column_width=True, hide_index=True)
+                        st.dataframe(df, use_container_width=True, hide_index=True)
 
                         # Download button
                         csv = export_to_csv(df)
@@ -502,7 +502,7 @@ with tab2:
             # All data tab
             with entity_tabs[5]:
                 df = entities_to_dataframe(st.session_state.entities)
-                st.dataframe(df, use_column_width=True, hide_index=True)
+                st.dataframe(df, use_container_width=True, hide_index=True)
 
                 # Export options
                 col1, col2 = st.columns(2)
@@ -610,7 +610,7 @@ with tab4:
 
         # Display history as table
         df_history = pd.DataFrame(st.session_state.history)
-        st.dataframe(df_history, use_column_width=True, hide_index=True)
+        st.dataframe(df_history, use_container_width=True, hide_index=True)
 
         # Clear history button
         if st.button("🗑️ Clear History"):
