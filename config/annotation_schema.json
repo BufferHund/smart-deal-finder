@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Brochure Annotation Schema",
+  "description": "Schema for annotating supermarket brochure entities",
+  "type": "object",
+  "properties": {
+    "image_path": {
+      "type": "string",
+      "description": "Path to the brochure image"
+    },
+    "supermarket": {
+      "type": "string",
+      "description": "Name of the supermarket"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Brochure publication date (YYYY-MM-DD)"
+    },
+    "page_number": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Page number in the brochure"
+    },
+    "entities": {
+      "type": "array",
+      "description": "List of annotated entities",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "Unique identifier for this entity"
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "product_name",
+              "price",
+              "original_price",
+              "discount_percentage",
+              "discount_amount",
+              "unit",
+              "brand",
+              "category",
+              "validity_period",
+              "promotion_text",
+              "other"
+            ],
+            "description": "Type of entity"
+          },
+          "text": {
+            "type": "string",
+            "description": "Extracted text content"
+          },
+          "normalized_value": {
+            "type": "string",
+            "description": "Normalized/cleaned value"
+          },
+          "bounding_box": {
+            "type": "object",
+            "properties": {
+              "x_min": {"type": "number", "minimum": 0},
+              "y_min": {"type": "number", "minimum": 0},
+              "x_max": {"type": "number", "minimum": 0},
+              "y_max": {"type": "number", "minimum": 0}
+            },
+            "required": ["x_min", "y_min", "x_max", "y_max"],
+            "description": "Bounding box coordinates"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence score (for OCR-extracted entities)"
+          },
+          "manually_verified": {
+            "type": "boolean",
+            "description": "Whether this entity has been manually verified"
+          },
+          "related_entities": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "IDs of related entities (e.g., price related to product)"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes or comments"
+          }
+        },
+        "required": ["entity_id", "entity_type", "text", "bounding_box"]
+      }
+    },
+    "deals": {
+      "type": "array",
+      "description": "Structured deal information",
+      "items": {
+        "type": "object",
+        "properties": {
+          "deal_id": {
+            "type": "string",
+            "description": "Unique identifier for this deal"
+          },
+          "product_name": {"type": "string"},
+          "brand": {"type": "string"},
+          "category": {"type": "string"},
+          "price": {
+            "type": "object",
+            "properties": {
+              "value": {"type": "number"},
+              "currency": {"type": "string", "default": "EUR"},
+              "unit": {"type": "string"}
+            }
+          },
+          "original_price": {
+            "type": "object",
+            "properties": {
+              "value": {"type": "number"},
+              "currency": {"type": "string", "default": "EUR"}
+            }
+          },
+          "discount": {
+            "type": "object",
+            "properties": {
+              "percentage": {"type": "number"},
+              "amount": {"type": "number"}
+            }
+          },
+          "validity": {
+            "type": "object",
+            "properties": {
+              "start_date": {"type": "string", "format": "date"},
+              "end_date": {"type": "string", "format": "date"}
+            }
+          },
+          "entity_ids": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "IDs of entities that make up this deal"
+          }
+        },
+        "required": ["deal_id", "product_name", "price"]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "annotator": {"type": "string"},
+        "annotation_date": {"type": "string", "format": "date-time"},
+        "annotation_tool": {"type": "string"},
+        "quality_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "notes": {"type": "string"}
+      }
+    }
+  },
+  "required": ["image_path", "supermarket", "entities"]
+}
