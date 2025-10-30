@@ -249,9 +249,9 @@ with tab1:
     st.header("Upload Brochure")
 
     uploaded_file = st.file_uploader(
-        "Choose a brochure image",
-        type=['png', 'jpg', 'jpeg'],
-        help="Upload a supermarket brochure image"
+        "Choose a brochure image or PDF",
+        type=['png', 'jpg', 'jpeg', 'pdf'],
+        help="Upload a supermarket brochure image or PDF"
     )
 
     if uploaded_file is not None:
@@ -268,24 +268,95 @@ with tab1:
                 st.session_state.processed_image = None
                 st.session_state.entities = None
                 st.session_state.deals = None
+                st.session_state.pdf_page_count = None
+                st.session_state.selected_page = None
                 st.rerun()
 
-        # Load image
-        image = Image.open(uploaded_file)
-        img_array = np.array(image)
+        # Check if PDF
+        is_pdf = uploaded_file.name.lower().endswith('.pdf')
+
+        if is_pdf:
+            # Handle PDF file
+            st.info("📄 PDF file detected")
+
+            # Save PDF temporarily
+            temp_pdf_path = f"/tmp/{uploaded_file.name}"
+            with open(temp_pdf_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+
+            # Get page count
+            if 'pdf_page_count' not in st.session_state or st.session_state.pdf_page_count is None:
+                try:
+                    from preprocessing.pdf_processor import PDFProcessor
+                    pdf_processor = PDFProcessor()
+                    page_count = pdf_processor.get_page_count(temp_pdf_path)
+                    st.session_state.pdf_page_count = page_count
+                except Exception as e:
+                    st.error(f"Error reading PDF: {str(e)}")
+                    st.info("Make sure pypdfium2 is installed: pip install pypdfium2")
+                    page_count = 0
+
+            page_count = st.session_state.pdf_page_count
+
+            if page_count > 0:
+                st.success(f"📊 PDF has {page_count} page(s)")
+
+                # Page selection
+                if page_count > 1:
+                    selected_page = st.slider(
+                        "Select page to process",
+                        min_value=1,
+                        max_value=page_count,
+                        value=1,
+                        help="Choose which page of the PDF to process"
+                    )
+                else:
+                    selected_page = 1
+
+                st.session_state.selected_page = selected_page
+
+                # Convert PDF page to image
+                try:
+                    from preprocessing.pdf_processor import PDFProcessor
+                    pdf_processor = PDFProcessor()
+                    img_array = pdf_processor.get_page_image(temp_pdf_path, selected_page)
+
+                    if img_array is not None:
+                        image = Image.fromarray(img_array)
+                    else:
+                        st.error("Failed to convert PDF page to image")
+                        image = None
+                        img_array = None
+
+                except Exception as e:
+                    st.error(f"Error converting PDF: {str(e)}")
+                    st.info("Try installing: pip install pypdfium2")
+                    image = None
+                    img_array = None
+            else:
+                image = None
+                img_array = None
+
+        else:
+            # Handle image file
+            image = Image.open(uploaded_file)
+            img_array = np.array(image)
 
         # Display images side by side
-        col1, col2 = st.columns(2)
+        if image is not None and img_array is not None:
+            col1, col2 = st.columns(2)
 
-        with col1:
-            st.subheader("📸 Original Image")
-            st.image(image, use_container_width=True)
+            with col1:
+                st.subheader("📸 Original Image")
+                if is_pdf and page_count > 1:
+                    st.caption(f"Page {selected_page} of {page_count}")
+                st.image(image, use_container_width=True)
 
-        with col2:
-            st.subheader("🎯 Processed Result")
+            with col2:
+                st.subheader("🎯 Processed Result")
 
-            # Process button
-            if st.button("🔍 Extract Information", type="primary", use_container_width=True):
+                # Process button
+                if st.button("🔍 Extract Information", type="primary", use_container_width=True):
                 with st.spinner(f"Processing with {ocr_engine}..."):
                     # Process OCR
                     ocr_results = process_with_ocr(
@@ -328,13 +399,15 @@ with tab1:
                     st.success("✓ Processing complete!")
                     st.rerun()
 
-            # Display processed image
-            if st.session_state.processed_image is not None:
-                st.image(st.session_state.processed_image, use_container_width=True)
-            elif st.session_state.ocr_results is not None and not show_bboxes:
-                st.image(image, use_container_width=True)
-            else:
-                st.info("👆 Click 'Extract Information' to start processing")
+                # Display processed image
+                if st.session_state.processed_image is not None:
+                    st.image(st.session_state.processed_image, use_container_width=True)
+                elif st.session_state.ocr_results is not None and not show_bboxes:
+                    st.image(image, use_container_width=True)
+                else:
+                    st.info("👆 Click 'Extract Information' to start processing")
+        else:
+            st.warning("Unable to load image. Please try a different file.")
 
 # Tab 2: Extracted Data
 with tab2:
