@@ -357,47 +357,47 @@ with tab1:
 
                 # Process button
                 if st.button("🔍 Extract Information", type="primary", use_container_width=True):
-                with st.spinner(f"Processing with {ocr_engine}..."):
-                    # Process OCR
-                    ocr_results = process_with_ocr(
-                        img_array,
-                        ocr_engine,
-                        use_preprocessing,
-                        confidence_threshold
-                    )
-
-                    st.session_state.ocr_results = ocr_results
-
-                    # Extract entities
-                    entities = extract_entities(ocr_results['text_boxes'])
-                    st.session_state.entities = entities
-
-                    # Create deals
-                    deals = create_deals_from_entities(entities)
-                    st.session_state.deals = deals
-
-                    # Create processed image
-                    if show_bboxes:
-                        processed = draw_bounding_boxes(
-                            img_array.copy(),
-                            ocr_results['text_boxes'],
-                            confidence_threshold,
-                            show_text,
-                            show_confidence
+                    with st.spinner(f"Processing with {ocr_engine}..."):
+                        # Process OCR
+                        ocr_results = process_with_ocr(
+                            img_array,
+                            ocr_engine,
+                            use_preprocessing,
+                            confidence_threshold
                         )
-                        st.session_state.processed_image = processed
 
-                    # Add to history
-                    st.session_state.history.append({
-                        'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        'filename': uploaded_file.name,
-                        'ocr_engine': ocr_engine,
-                        'num_boxes': ocr_results['num_boxes'],
-                        'num_deals': len(deals)
-                    })
+                        st.session_state.ocr_results = ocr_results
 
-                    st.success("✓ Processing complete!")
-                    st.rerun()
+                        # Extract entities
+                        entities = extract_entities(ocr_results['text_boxes'])
+                        st.session_state.entities = entities
+
+                        # Create deals
+                        deals = create_deals_from_entities(entities)
+                        st.session_state.deals = deals
+
+                        # Create processed image
+                        if show_bboxes:
+                            processed = draw_bounding_boxes(
+                                img_array.copy(),
+                                ocr_results['text_boxes'],
+                                confidence_threshold,
+                                show_text,
+                                show_confidence
+                            )
+                            st.session_state.processed_image = processed
+
+                        # Add to history
+                        st.session_state.history.append({
+                            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            'filename': uploaded_file.name,
+                            'ocr_engine': ocr_engine,
+                            'num_boxes': ocr_results['num_boxes'],
+                            'num_deals': len(deals)
+                        })
+
+                        st.success("✓ Processing complete!")
+                        st.rerun()
 
                 # Display processed image
                 if st.session_state.processed_image is not None:
