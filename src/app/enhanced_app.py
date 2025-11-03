@@ -207,10 +207,11 @@ st.markdown("Upload a supermarket brochure to extract structured deal informatio
 with st.sidebar:
     st.header("⚙️ Settings")
 
-    # OCR Engine selection
+    # OCR Engine selection - only show working engines
+    # Note: PaddleOCR 3.3.1 has dependency issues with langchain
     ocr_engine = st.selectbox(
         "OCR Engine",
-        ["PaddleOCR", "Tesseract", "EasyOCR"],
+        ["Tesseract", "EasyOCR"],
         help="Select the OCR engine to use for text extraction"
     )
 
