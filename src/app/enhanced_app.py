@@ -10,6 +10,11 @@ from PIL import Image
 import pandas as pd
 from datetime import datetime
 import io
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Add directories to path
 app_dir = Path(__file__).parent
@@ -69,25 +74,42 @@ if 'deals' not in st.session_state:
     st.session_state.deals = None
 if 'history' not in st.session_state:
     st.session_state.history = []
+# Cache OCR pipelines to avoid reinitialization
+if 'ocr_pipelines' not in st.session_state:
+    st.session_state.ocr_pipelines = {}
+
+
+def get_ocr_pipeline(ocr_engine):
+    """Get or create cached OCR pipeline instance"""
+    engine_map = {
+        "PaddleOCR": "paddleocr",
+        "Tesseract": "tesseract",
+        "EasyOCR": "easyocr"
+    }
+
+    engine_key = engine_map[ocr_engine]
+
+    # Check if pipeline already exists in cache
+    if engine_key not in st.session_state.ocr_pipelines:
+        try:
+            from preprocessing.ocr_pipeline import OCRPipeline
+            st.session_state.ocr_pipelines[engine_key] = OCRPipeline(
+                ocr_engine=engine_key,
+                output_format='json'
+            )
+            logger.info(f"Created new {ocr_engine} pipeline instance")
+        except Exception as e:
+            logger.error(f"Failed to initialize {ocr_engine}: {str(e)}")
+            raise
+
+    return st.session_state.ocr_pipelines[engine_key]
 
 
 def process_with_ocr(image_array, ocr_engine, use_preprocessing, confidence_threshold):
     """Process image with selected OCR engine"""
     try:
-        # Import OCR pipeline
-        from preprocessing.ocr_pipeline import OCRPipeline
-
-        # Initialize pipeline
-        engine_map = {
-            "PaddleOCR": "paddleocr",
-            "Tesseract": "tesseract",
-            "EasyOCR": "easyocr"
-        }
-
-        pipeline = OCRPipeline(
-            ocr_engine=engine_map[ocr_engine],
-            output_format='json'
-        )
+        # Get cached pipeline instance
+        pipeline = get_ocr_pipeline(ocr_engine)
 
         # Save temp image
         temp_path = "/tmp/temp_brochure.jpg"
@@ -109,10 +131,9 @@ def process_with_ocr(image_array, ocr_engine, use_preprocessing, confidence_thre
 
     except Exception as e:
         st.error(f"OCR processing error: {str(e)}")
-        st.info("Using mock data for demonstration. Install OCR libraries for real processing.")
-
-        # Return mock data
-        return create_mock_ocr_results(image_array.shape)
+        import traceback
+        st.error(f"Details: {traceback.format_exc()}")
+        raise  # Don't use mock data, raise the error so we can see what's wrong
 
 
 def create_mock_ocr_results(image_shape):
