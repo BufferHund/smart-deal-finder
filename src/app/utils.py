@@ -116,41 +116,65 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
         'other': []
     }
 
-    # Patterns for entity extraction
-    price_pattern = r'(\d+[,.]?\d{0,2})\s*€?'
+    # Improved patterns for entity extraction
+    # Price: Must have € symbol OR be a reasonable price format
+    price_pattern = r'(\d+[,.]?\d{0,2})\s*€'  # Require € symbol
+    price_pattern_alt = r'€\s*(\d+[,.]?\d{0,2})'  # € before number
+
     discount_pattern = r'(-?\d+)\s*%'
-    unit_pattern = r'(\d+\.?\d*)\s*(kg|g|l|ml|stk|stück|pack|dose)'
+    unit_pattern = r'(\d+\.?\d*)\s*(kg|g|l|ml|stk|stück|pack|dose|pckg|glas)'
     date_pattern = r'(\d{1,2}[./]\d{1,2}[./]\d{2,4})'
+
+    # Common German stop words to filter out from products
+    stop_words = {
+        'oder', 'und', 'mit', 'von', 'für', 'der', 'die', 'das',
+        'den', 'dem', 'ein', 'eine', 'einen', 'einem', 'zur', 'zum',
+        'versch', 'verschiedene', 'ab', 'bis', 'je', 'pro', 'per',
+        'vol', 'incl', 'inkl', 'zzgl', 'mwst', 'ca', 'bzw'
+    }
 
     for box in text_boxes:
         text = box.get('text', '').strip()
         bbox = box.get('bbox', {})
         confidence = box.get('confidence', 0)
 
-        if not text:
+        if not text or len(text) < 2:
             continue
 
-        # Check for price
+        # Check for price (with € symbol)
         price_match = re.search(price_pattern, text, re.IGNORECASE)
+        if not price_match:
+            price_match = re.search(price_pattern_alt, text, re.IGNORECASE)
+
         if price_match:
-            entities['prices'].append({
-                'text': text,
-                'value': price_match.group(1).replace(',', '.'),
-                'bbox': bbox,
-                'confidence': confidence
-            })
-            continue
+            price_value = price_match.group(1).replace(',', '.')
+            try:
+                # Validate price is reasonable (0.01 to 999.99)
+                price_float = float(price_value)
+                if 0.01 <= price_float <= 999.99:
+                    entities['prices'].append({
+                        'text': text,
+                        'value': price_value,
+                        'bbox': bbox,
+                        'confidence': confidence
+                    })
+                    continue
+            except ValueError:
+                pass
 
         # Check for discount
         discount_match = re.search(discount_pattern, text)
         if discount_match:
-            entities['discounts'].append({
-                'text': text,
-                'value': discount_match.group(1),
-                'bbox': bbox,
-                'confidence': confidence
-            })
-            continue
+            discount_value = int(discount_match.group(1))
+            # Validate discount is reasonable (1% to 99%)
+            if 1 <= abs(discount_value) <= 99:
+                entities['discounts'].append({
+                    'text': text,
+                    'value': str(discount_value),
+                    'bbox': bbox,
+                    'confidence': confidence
+                })
+                continue
 
         # Check for unit
         unit_match = re.search(unit_pattern, text, re.IGNORECASE)
@@ -158,7 +182,7 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
             entities['units'].append({
                 'text': text,
                 'quantity': unit_match.group(1),
-                'unit': unit_match.group(2),
+                'unit': unit_match.group(2).lower(),
                 'bbox': bbox,
                 'confidence': confidence
             })
@@ -175,13 +199,33 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
             })
             continue
 
-        # Check if it looks like a product name (mostly letters, reasonable length)
-        if len(text) > 3 and re.search(r'[a-zA-ZäöüÄÖÜß]{3,}', text):
-            entities['products'].append({
-                'text': text,
-                'bbox': bbox,
-                'confidence': confidence
-            })
+        # Check if it looks like a product name
+        # Requirements:
+        # 1. At least 4 characters long
+        # 2. Contains at least 4 consecutive letters
+        # 3. Not a common stop word
+        # 4. Doesn't end with punctuation like comma
+        text_lower = text.lower().rstrip('.,;:')
+
+        if (len(text) >= 4 and
+            re.search(r'[a-zA-ZäöüÄÖÜß]{4,}', text) and
+            text_lower not in stop_words and
+            not text_lower.endswith(('tiefgefroren', 'gekühlt', 'frisch'))):
+
+            # Prefer capitalized words (brand names)
+            if text[0].isupper():
+                entities['products'].append({
+                    'text': text.rstrip('.,;:'),
+                    'bbox': bbox,
+                    'confidence': confidence
+                })
+            # Also accept longer lowercase words
+            elif len(text) >= 6:
+                entities['products'].append({
+                    'text': text.rstrip('.,;:'),
+                    'bbox': bbox,
+                    'confidence': confidence
+                })
         else:
             entities['other'].append({
                 'text': text,
@@ -239,46 +283,73 @@ def create_deals_from_entities(entities: Dict[str, List[Dict]]) -> List[Dict]:
     """
     deals = []
 
-    # Simple heuristic: group entities that are close together
+    # Get all entity types
     products = entities.get('products', [])
     prices = entities.get('prices', [])
     discounts = entities.get('discounts', [])
     units = entities.get('units', [])
 
-    for product in products:
+    # Track which prices have been used
+    used_prices = set()
+
+    # Sort products by vertical position (top to bottom, left to right)
+    products_sorted = sorted(products, key=lambda p: (p['bbox']['y_min'], p['bbox']['x_min']))
+
+    for product in products_sorted:
+        # Find closest price that hasn't been used yet
+        min_distance = float('inf')
+        closest_price = None
+        closest_price_idx = None
+
+        for idx, price in enumerate(prices):
+            if idx in used_prices:
+                continue
+
+            # Calculate both horizontal and vertical distance
+            h_distance = abs(product['bbox']['x_min'] - price['bbox']['x_min'])
+            v_distance = abs(product['bbox']['y_min'] - price['bbox']['y_min'])
+
+            # Price should be relatively close vertically (same product block)
+            # and not too far horizontally
+            if v_distance < 150 and h_distance < 400:
+                # Weighted distance: vertical proximity is more important
+                distance = v_distance * 2 + h_distance
+                if distance < min_distance:
+                    min_distance = distance
+                    closest_price = price
+                    closest_price_idx = idx
+
+        # Only create deal if we found a reasonable price
+        if closest_price is None:
+            continue
+
+        # Mark this price as used
+        used_prices.add(closest_price_idx)
+
         deal = {
             'product_name': product['text'],
             'product_bbox': product['bbox'],
-            'price': None,
+            'price': closest_price['value'],
+            'price_bbox': closest_price['bbox'],
             'discount': None,
             'unit': None
         }
 
-        # Find closest price
-        min_distance = float('inf')
-        closest_price = None
-
-        for price in prices:
-            distance = calculate_bbox_distance(product['bbox'], price['bbox'])
-            if distance < min_distance:
-                min_distance = distance
-                closest_price = price
-
-        if closest_price and min_distance < 200:  # Threshold for proximity
-            deal['price'] = closest_price['value']
-            deal['price_bbox'] = closest_price['bbox']
-
-        # Find closest discount
+        # Find closest discount (within same product block)
         min_distance = float('inf')
         closest_discount = None
 
         for discount in discounts:
-            distance = calculate_bbox_distance(product['bbox'], discount['bbox'])
-            if distance < min_distance:
-                min_distance = distance
-                closest_discount = discount
+            v_distance = abs(product['bbox']['y_min'] - discount['bbox']['y_min'])
+            h_distance = abs(product['bbox']['x_min'] - discount['bbox']['x_min'])
 
-        if closest_discount and min_distance < 200:
+            if v_distance < 150 and h_distance < 400:
+                distance = v_distance * 2 + h_distance
+                if distance < min_distance:
+                    min_distance = distance
+                    closest_discount = discount
+
+        if closest_discount:
             deal['discount'] = closest_discount['value']
             deal['discount_bbox'] = closest_discount['bbox']
 
@@ -287,18 +358,20 @@ def create_deals_from_entities(entities: Dict[str, List[Dict]]) -> List[Dict]:
         closest_unit = None
 
         for unit in units:
-            distance = calculate_bbox_distance(product['bbox'], unit['bbox'])
-            if distance < min_distance:
-                min_distance = distance
-                closest_unit = unit
+            v_distance = abs(product['bbox']['y_min'] - unit['bbox']['y_min'])
+            h_distance = abs(product['bbox']['x_min'] - unit['bbox']['x_min'])
 
-        if closest_unit and min_distance < 150:
+            if v_distance < 100 and h_distance < 300:
+                distance = v_distance * 2 + h_distance
+                if distance < min_distance:
+                    min_distance = distance
+                    closest_unit = unit
+
+        if closest_unit:
             deal['unit'] = f"{closest_unit.get('quantity', '')} {closest_unit.get('unit', '')}"
             deal['unit_bbox'] = closest_unit['bbox']
 
-        # Only add deal if we found at least a price
-        if deal['price'] is not None:
-            deals.append(deal)
+        deals.append(deal)
 
     return deals
 
