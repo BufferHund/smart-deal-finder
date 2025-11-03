@@ -239,6 +239,8 @@ with st.sidebar:
     show_bboxes = st.checkbox("Show Bounding Boxes", value=True)
     show_text = st.checkbox("Show Text Labels", value=True)
     show_confidence = st.checkbox("Show Confidence Scores", value=False)
+    show_debug = st.checkbox("Show Debug Info", value=False,
+                             help="Show all OCR text to debug entity extraction")
 
     st.markdown("---")
     st.markdown("### 📊 Statistics")
@@ -466,6 +468,33 @@ with tab2:
             if st.session_state.entities:
                 num_discounts = len(st.session_state.entities.get('discounts', []))
                 st.metric("Discounts", num_discounts)
+
+        st.markdown("---")
+
+        # Debug information
+        if show_debug and st.session_state.ocr_results:
+            with st.expander("🔍 Debug: All OCR Text (Raw Output)", expanded=False):
+                st.markdown("**All text boxes detected by OCR:**")
+                debug_data = []
+                for i, box in enumerate(st.session_state.ocr_results.get('text_boxes', [])[:50], 1):
+                    debug_data.append({
+                        '#': i,
+                        'Text': box['text'],
+                        'Confidence': f"{box['confidence']:.2f}",
+                        'Length': len(box['text']),
+                        'Has €': '€' in box['text'],
+                        'Has %': '%' in box['text'],
+                        'Has digits': any(c.isdigit() for c in box['text'])
+                    })
+
+                df_debug = pd.DataFrame(debug_data)
+                st.dataframe(df_debug, use_column_width=True, hide_index=True)
+
+                st.markdown("**Tip:** Look for price-like text that has € symbol or decimals")
+                st.markdown("**If prices are missing:**")
+                st.markdown("- Check if € symbol is recognized correctly")
+                st.markdown("- Look for decimal numbers (e.g., 1.99, 2,50)")
+                st.markdown("- Price patterns may need adjustment")
 
         st.markdown("---")
 

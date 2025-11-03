@@ -117,11 +117,21 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
     }
 
     # Improved patterns for entity extraction
-    # Price: Must have € symbol OR be a reasonable price format
-    price_pattern = r'(\d+[,.]?\d{0,2})\s*€'  # Require € symbol
-    price_pattern_alt = r'€\s*(\d+[,.]?\d{0,2})'  # € before number
+    # Price: Multiple patterns to handle different OCR outputs
+    # Pattern 1: Standard with €
+    price_pattern_standard = r'(\d+[,.]?\d{0,2})\s*€'
+    # Pattern 2: € before number
+    price_pattern_euro_first = r'€\s*(\d+[,.]?\d{0,2})'
+    # Pattern 3: Just numbers that look like prices (2 decimals)
+    price_pattern_decimal = r'\b(\d+[,.]\d{2})\b'
+    # Pattern 4: EUR or Euro text
+    price_pattern_eur = r'(\d+[,.]?\d{0,2})\s*(?:EUR|Euro|euro)'
 
     discount_pattern = r'(-?\d+)\s*%'
+    # Enhanced discount patterns for common formats
+    discount_pattern_alt = r'%\s*(-?\d+)'
+    discount_pattern_minus = r'-\s*(\d+)\s*%'
+
     unit_pattern = r'(\d+\.?\d*)\s*(kg|g|l|ml|stk|stück|pack|dose|pckg|glas)'
     date_pattern = r'(\d{1,2}[./]\d{1,2}[./]\d{2,4})'
 
@@ -141,13 +151,36 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
         if not text or len(text) < 2:
             continue
 
-        # Check for price (with € symbol)
-        price_match = re.search(price_pattern, text, re.IGNORECASE)
-        if not price_match:
-            price_match = re.search(price_pattern_alt, text, re.IGNORECASE)
+        # Check for price - try multiple patterns
+        price_match = None
+        price_value = None
 
+        # Try pattern 1: number + €
+        price_match = re.search(price_pattern_standard, text, re.IGNORECASE)
         if price_match:
-            price_value = price_match.group(1).replace(',', '.')
+            price_value = price_match.group(1)
+
+        # Try pattern 2: € + number
+        if not price_match:
+            price_match = re.search(price_pattern_euro_first, text, re.IGNORECASE)
+            if price_match:
+                price_value = price_match.group(1)
+
+        # Try pattern 3: EUR/Euro
+        if not price_match:
+            price_match = re.search(price_pattern_eur, text, re.IGNORECASE)
+            if price_match:
+                price_value = price_match.group(1)
+
+        # Try pattern 4: Just decimal numbers (as fallback)
+        # Only if text is short and looks like a standalone price
+        if not price_match and len(text) <= 10:
+            price_match = re.search(price_pattern_decimal, text)
+            if price_match:
+                price_value = price_match.group(1)
+
+        if price_match and price_value:
+            price_value = price_value.replace(',', '.')
             try:
                 # Validate price is reasonable (0.01 to 999.99)
                 price_float = float(price_value)
@@ -162,19 +195,36 @@ def extract_entities(text_boxes: List[Dict]) -> Dict[str, List[Dict]]:
             except ValueError:
                 pass
 
-        # Check for discount
+        # Check for discount - try multiple patterns
         discount_match = re.search(discount_pattern, text)
+        discount_value = None
+
         if discount_match:
-            discount_value = int(discount_match.group(1))
-            # Validate discount is reasonable (1% to 99%)
-            if 1 <= abs(discount_value) <= 99:
-                entities['discounts'].append({
-                    'text': text,
-                    'value': str(discount_value),
-                    'bbox': bbox,
-                    'confidence': confidence
-                })
-                continue
+            discount_value = discount_match.group(1)
+        else:
+            # Try alternative patterns
+            discount_match = re.search(discount_pattern_alt, text)
+            if discount_match:
+                discount_value = discount_match.group(1)
+            else:
+                discount_match = re.search(discount_pattern_minus, text)
+                if discount_match:
+                    discount_value = '-' + discount_match.group(1)
+
+        if discount_match and discount_value:
+            try:
+                discount_int = int(discount_value)
+                # Validate discount is reasonable (1% to 99%)
+                if 1 <= abs(discount_int) <= 99:
+                    entities['discounts'].append({
+                        'text': text,
+                        'value': str(discount_int),
+                        'bbox': bbox,
+                        'confidence': confidence
+                    })
+                    continue
+            except ValueError:
+                pass
 
         # Check for unit
         unit_match = re.search(unit_pattern, text, re.IGNORECASE)
