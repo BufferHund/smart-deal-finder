@@ -41,6 +41,14 @@ except ImportError:
     REGION_CLUSTERING_AVAILABLE = False
     logger.warning("Region clustering not available (sklearn not installed)")
 
+# Try to import Gemini extractor
+try:
+    from gemini_extractor import extract_with_gemini, test_gemini_connection, get_available_models
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+    logger.warning("Gemini integration not available (google-generativeai not installed)")
+
 # Configure page
 st.set_page_config(
     page_title="SmartDeal - Brochure Analyzer",
@@ -215,13 +223,71 @@ st.markdown("Upload a supermarket brochure to extract structured deal informatio
 with st.sidebar:
     st.header("⚙️ Settings")
 
-    # OCR Engine selection - only show working engines
-    # Note: PaddleOCR 3.3.1 has dependency issues with langchain
-    ocr_engine = st.selectbox(
-        "OCR Engine",
-        ["Tesseract", "EasyOCR"],
-        help="Select the OCR engine to use for text extraction"
+    # Extraction Method Selection
+    st.subheader("Extraction Method")
+
+    extraction_methods = ["OCR + Pattern Matching"]
+    if GEMINI_AVAILABLE:
+        extraction_methods.insert(0, "🤖 Gemini AI (Recommended)")
+
+    extraction_method = st.radio(
+        "Choose method",
+        extraction_methods,
+        help="Gemini AI: Uses Google's AI model for intelligent extraction\n"
+             "OCR: Traditional OCR + pattern matching"
     )
+
+    use_gemini = extraction_method.startswith("🤖")
+
+    # Gemini Configuration
+    if use_gemini:
+        st.markdown("---")
+        st.subheader("🔑 Gemini API Configuration")
+
+        gemini_api_key = st.text_input(
+            "Google AI Studio API Key",
+            type="password",
+            help="Get your free API key from https://aistudio.google.com/apikey"
+        )
+
+        if gemini_api_key:
+            # Test connection
+            if st.button("🧪 Test Connection"):
+                with st.spinner("Testing API key..."):
+                    if test_gemini_connection(gemini_api_key):
+                        st.success("✓ API key is valid!")
+                    else:
+                        st.error("✗ Invalid API key or connection failed")
+
+            # Model selection
+            gemini_model = st.selectbox(
+                "Gemini Model",
+                ["gemini-2.0-flash-exp", "gemini-1.5-pro", "gemini-1.5-flash"],
+                help="gemini-2.0-flash-exp: Latest and fastest\n"
+                     "gemini-1.5-pro: Most capable\n"
+                     "gemini-1.5-flash: Fast and efficient"
+            )
+        else:
+            st.warning("⚠️ Please enter your API key above")
+            st.info("Get a free API key at: https://aistudio.google.com/apikey")
+
+    elif not GEMINI_AVAILABLE:
+        st.info("💡 Install Gemini support:\npip install google-generativeai")
+
+    # OCR Settings (only if not using Gemini)
+    if not use_gemini:
+        st.markdown("---")
+        st.subheader("OCR Settings")
+
+        # OCR Engine selection - only show working engines
+        # Note: PaddleOCR 3.3.1 has dependency issues with langchain
+        ocr_engine = st.selectbox(
+            "OCR Engine",
+            ["Tesseract", "EasyOCR"],
+            help="Select the OCR engine to use for text extraction"
+        )
+    else:
+        ocr_engine = None  # Not needed for Gemini
 
     # Preprocessing option
     use_preprocessing = st.checkbox(
@@ -409,35 +475,76 @@ with tab1:
                 st.subheader("🎯 Processed Result")
 
                 # Process button
-                if st.button("🔍 Extract Information", type="primary", use_container_width=True):
-                    with st.spinner(f"Processing with {ocr_engine}..."):
-                        # Process OCR
-                        ocr_results = process_with_ocr(
-                            img_array,
-                            ocr_engine,
-                            use_preprocessing,
-                            confidence_threshold
-                        )
+                button_label = "🤖 Extract with Gemini AI" if use_gemini else "🔍 Extract Information"
+                button_disabled = use_gemini and not gemini_api_key
 
-                        st.session_state.ocr_results = ocr_results
+                if st.button(button_label, type="primary", use_container_width=True, disabled=button_disabled):
+                    if use_gemini:
+                        # Gemini AI extraction
+                        with st.spinner(f"🤖 Processing with {gemini_model}..."):
+                            try:
+                                result = extract_with_gemini(
+                                    img_array,
+                                    api_key=gemini_api_key,
+                                    model=gemini_model,
+                                    language="German"
+                                )
 
-                        # Extract entities
-                        entities = extract_entities(ocr_results['text_boxes'])
-                        st.session_state.entities = entities
+                                # Store results
+                                deals = result['deals']
+                                st.session_state.deals = deals
+                                st.session_state.ocr_results = {
+                                    'num_boxes': 0,
+                                    'text_boxes': [],
+                                    'source': 'gemini'
+                                }
+                                st.session_state.entities = {
+                                    'products': [],
+                                    'prices': [],
+                                    'discounts': [],
+                                    'units': [],
+                                    'dates': [],
+                                    'other': []
+                                }
+                                st.session_state.processed_image = None
 
-                        # Create deals using selected method
-                        if use_region_clustering and REGION_CLUSTERING_AVAILABLE:
-                            # New method: Region-based clustering
-                            deals = create_deals_from_regions(
-                                ocr_results['text_boxes'],
-                                eps=120,  # Distance threshold for clustering
-                                min_samples=2  # Minimum boxes per region
+                                st.success(f"✓ Gemini extracted {len(deals)} deals!")
+
+                            except Exception as e:
+                                st.error(f"Gemini extraction failed: {str(e)}")
+                                import traceback
+                                st.error(f"Details: {traceback.format_exc()}")
+
+                    else:
+                        # Traditional OCR extraction
+                        with st.spinner(f"Processing with {ocr_engine}..."):
+                            # Process OCR
+                            ocr_results = process_with_ocr(
+                                img_array,
+                                ocr_engine,
+                                use_preprocessing,
+                                confidence_threshold
                             )
-                        else:
-                            # Old method: Distance-based matching
-                            deals = create_deals_from_entities(entities)
 
-                        st.session_state.deals = deals
+                            st.session_state.ocr_results = ocr_results
+
+                            # Extract entities
+                            entities = extract_entities(ocr_results['text_boxes'])
+                            st.session_state.entities = entities
+
+                            # Create deals using selected method
+                            if use_region_clustering and REGION_CLUSTERING_AVAILABLE:
+                                # New method: Region-based clustering
+                                deals = create_deals_from_regions(
+                                    ocr_results['text_boxes'],
+                                    eps=120,  # Distance threshold for clustering
+                                    min_samples=2  # Minimum boxes per region
+                                )
+                            else:
+                                # Old method: Distance-based matching
+                                deals = create_deals_from_entities(entities)
+
+                            st.session_state.deals = deals
 
                         # Create processed image
                         if show_bboxes:
