@@ -33,6 +33,14 @@ from utils import (
     export_to_csv
 )
 
+# Try to import region-based clustering (requires sklearn)
+try:
+    from region_clustering import create_deals_from_regions
+    REGION_CLUSTERING_AVAILABLE = True
+except ImportError:
+    REGION_CLUSTERING_AVAILABLE = False
+    logger.warning("Region clustering not available (sklearn not installed)")
+
 # Configure page
 st.set_page_config(
     page_title="SmartDeal - Brochure Analyzer",
@@ -232,6 +240,23 @@ with st.sidebar:
         help="Minimum confidence for text detection"
     )
 
+    # Deal extraction method
+    st.markdown("---")
+    st.subheader("Deal Extraction")
+
+    if REGION_CLUSTERING_AVAILABLE:
+        extraction_method = st.radio(
+            "Method",
+            ["Region-based (Recommended)", "Distance-based (Old)"],
+            help="Region-based: Groups text by spatial regions (product cards)\n"
+                 "Distance-based: Matches by proximity (may cross products)"
+        )
+        use_region_clustering = extraction_method.startswith("Region")
+    else:
+        st.warning("⚠️ Region-based clustering unavailable (sklearn not installed)")
+        st.info("Run: pip install scikit-learn")
+        use_region_clustering = False
+
     # Display options
     st.markdown("---")
     st.subheader("Display Options")
@@ -400,8 +425,18 @@ with tab1:
                         entities = extract_entities(ocr_results['text_boxes'])
                         st.session_state.entities = entities
 
-                        # Create deals
-                        deals = create_deals_from_entities(entities)
+                        # Create deals using selected method
+                        if use_region_clustering and REGION_CLUSTERING_AVAILABLE:
+                            # New method: Region-based clustering
+                            deals = create_deals_from_regions(
+                                ocr_results['text_boxes'],
+                                eps=120,  # Distance threshold for clustering
+                                min_samples=2  # Minimum boxes per region
+                            )
+                        else:
+                            # Old method: Distance-based matching
+                            deals = create_deals_from_entities(entities)
+
                         st.session_state.deals = deals
 
                         # Create processed image
