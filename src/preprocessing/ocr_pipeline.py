@@ -32,16 +32,29 @@ class OCRPipeline:
         Args:
             ocr_engine: OCR engine to use ('paddleocr', 'tesseract', 'easyocr')
             output_format: Output format ('json', 'txt', 'xml')
-            languages: List of languages for OCR (default: ['de', 'en'])
+            languages: List of languages for OCR (default: engine-specific)
         """
         self.ocr_engine = ocr_engine.lower()
         self.output_format = output_format
-        self.languages = languages or ['de', 'en']
+
+        # Set default languages based on OCR engine
+        if languages is None:
+            if self.ocr_engine == 'tesseract':
+                # Tesseract uses 'eng', 'deu', etc.
+                self.languages = ['eng', 'deu']
+            elif self.ocr_engine == 'easyocr':
+                # EasyOCR uses 'en', 'de', etc.
+                self.languages = ['en', 'de']
+            else:
+                # PaddleOCR and others
+                self.languages = ['en', 'de']
+        else:
+            self.languages = languages
 
         # Initialize OCR engine
         self.ocr = self._initialize_ocr()
 
-        logger.info(f"Initialized OCR pipeline with {self.ocr_engine}")
+        logger.info(f"Initialized OCR pipeline with {self.ocr_engine} using languages: {self.languages}")
 
     def _initialize_ocr(self):
         """Initialize the specified OCR engine"""
