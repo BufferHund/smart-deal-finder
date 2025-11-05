@@ -22,7 +22,8 @@ services:
     networks:
       - smartdeal-network
 
-  # Optional: Ollama service for local VLM
+  # Optional: Ollama service for local VLM (CPU mode)
+  # For GPU support, uncomment the deploy section below
   ollama:
     image: ollama/ollama:latest
     container_name: smartdeal-ollama
@@ -33,13 +34,14 @@ services:
     restart: unless-stopped
     networks:
       - smartdeal-network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    # Uncomment below for NVIDIA GPU support
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
 
 networks:
   smartdeal-network:
