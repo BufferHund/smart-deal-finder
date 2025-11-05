@@ -9,11 +9,12 @@ RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     tesseract-ocr-deu \
     tesseract-ocr-eng \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
-    libxrender-dev \
+    libxrender1 \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching
