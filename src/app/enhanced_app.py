@@ -41,6 +41,15 @@ except ImportError:
     REGION_CLUSTERING_AVAILABLE = False
     logger.warning("Region clustering not available (sklearn not installed)")
 
+# Try to import advanced region clustering (requires sklearn + scipy)
+try:
+    from advanced_region_clustering import create_deals_advanced
+    ADVANCED_CLUSTERING_AVAILABLE = True
+except ImportError:
+    ADVANCED_CLUSTERING_AVAILABLE = False
+    if REGION_CLUSTERING_AVAILABLE:
+        logger.warning("Advanced clustering not available (scipy not installed)")
+
 # Try to import Gemini extractor
 try:
     from gemini_extractor import extract_with_gemini, test_gemini_connection, get_available_models
@@ -48,6 +57,53 @@ try:
 except ImportError:
     GEMINI_AVAILABLE = False
     logger.warning("Gemini integration not available (google-generativeai not installed)")
+
+# Try to import open-source VLM extractor
+try:
+    from opensource_vlm_extractor import (
+        extract_with_opensource_vlm,
+        test_model_availability,
+        get_available_models as get_vlm_models
+    )
+    VLM_AVAILABLE = True
+except ImportError:
+    VLM_AVAILABLE = False
+    logger.warning("Open-source VLM not available (transformers/torch not installed)")
+
+# Try to import VLM model manager
+try:
+    from vlm_model_manager import (
+        get_available_vlm_models,
+        check_model_downloaded,
+        download_model,
+        delete_model,
+        get_model_info,
+        get_all_cached_models,
+        clean_all_models
+    )
+    VLM_MANAGER_AVAILABLE = True
+except ImportError:
+    VLM_MANAGER_AVAILABLE = False
+    logger.warning("VLM model manager not available")
+
+# Try to import Ollama extractor
+try:
+    from ollama_extractor import (
+        extract_with_ollama,
+        check_ollama_available,
+        get_available_ollama_models,
+        check_model_downloaded as check_ollama_model_downloaded,
+        pull_model as pull_ollama_model,
+        delete_model as delete_ollama_model
+    )
+    OLLAMA_AVAILABLE = check_ollama_available()
+    logger.info(f"Ollama integration loaded. Available: {OLLAMA_AVAILABLE}")
+except ImportError as e:
+    OLLAMA_AVAILABLE = False
+    logger.warning(f"Ollama integration not available (import error): {e}")
+except Exception as e:
+    OLLAMA_AVAILABLE = False
+    logger.warning(f"Ollama integration not available (error): {e}")
 
 # Configure page
 st.set_page_config(
@@ -216,161 +272,165 @@ def create_mock_ocr_results(image_shape):
 
 
 # Header
-st.title("🛒 SmartDeal: Supermarket Brochure Analyzer")
-st.markdown("Upload a supermarket brochure to extract structured deal information automatically")
+st.title("SmartDeal")
+st.markdown("Automatic extraction of product deals from supermarket brochures")
 
 # Sidebar
 with st.sidebar:
-    st.header("⚙️ Settings")
+    st.header("Settings")
 
     # Extraction Method Selection
-    st.subheader("Extraction Method")
+    st.subheader("Method")
 
-    extraction_methods = ["OCR + Pattern Matching"]
+    extraction_methods = []
+    # Order: Gemini -> OCR -> Ollama
     if GEMINI_AVAILABLE:
-        extraction_methods.insert(0, "🤖 Gemini AI (Recommended)")
+        extraction_methods.append("Gemini AI")
+    extraction_methods.append("OCR")
+    if OLLAMA_AVAILABLE:
+        extraction_methods.append("Ollama VLM")
 
-    extraction_method = st.radio(
-        "Choose method",
-        extraction_methods,
-        help="Gemini AI: Uses Google's AI model for intelligent extraction\n"
-             "OCR: Traditional OCR + pattern matching"
-    )
+    extraction_method = st.radio("Choose extraction method", extraction_methods, index=0)
 
-    use_gemini = extraction_method.startswith("🤖")
+    use_gemini = extraction_method == "Gemini AI"
+    use_ollama = extraction_method == "Ollama VLM"
 
     # Gemini Configuration
     if use_gemini:
         st.markdown("---")
-        st.subheader("🔑 Gemini API Configuration")
+        st.subheader("Gemini Configuration")
 
-        gemini_api_key = st.text_input(
-            "Google AI Studio API Key",
-            type="password",
-            help="Get your free API key from https://aistudio.google.com/apikey"
-        )
+        gemini_api_key = st.text_input("API Key", type="password", placeholder="Enter your Gemini API key")
 
         if gemini_api_key:
             # Test connection
-            if st.button("🧪 Test Connection"):
-                with st.spinner("Testing API key..."):
+            if st.button("Test Connection"):
+                with st.spinner("Testing..."):
                     if test_gemini_connection(gemini_api_key):
-                        st.success("✓ API key is valid!")
+                        st.success("API key is valid")
                     else:
-                        st.error("✗ Invalid API key or connection failed")
+                        st.error("Invalid API key")
 
             # Model selection
             gemini_model = st.selectbox(
-                "Gemini Model",
-                ["gemini-2.0-flash-exp", "gemini-1.5-pro", "gemini-1.5-flash"],
-                help="gemini-2.0-flash-exp: Latest and fastest\n"
-                     "gemini-1.5-pro: Most capable\n"
-                     "gemini-1.5-flash: Fast and efficient"
+                "Model",
+                [
+                    "gemini-2.5-pro",
+                    "gemini-2.5-flash",
+                    "gemini-2.5-flash-lite",
+                    "gemini-2.0-flash-exp",
+                    "gemini-1.5-pro",
+                    "gemini-1.5-flash"
+                ]
             )
         else:
-            st.warning("⚠️ Please enter your API key above")
-            st.info("Get a free API key at: https://aistudio.google.com/apikey")
+            st.warning("Please enter your API key")
+            st.caption("Get a free API key at: https://aistudio.google.com/apikey")
 
     elif not GEMINI_AVAILABLE:
-        st.info("💡 Install Gemini support:\npip install google-generativeai")
+        st.info("Install: pip install google-generativeai")
 
-    # OCR Settings (only if not using Gemini)
-    if not use_gemini:
+
+    # Ollama VLM Configuration
+    if use_ollama:
+        st.markdown("---")
+        st.subheader("Ollama Configuration")
+
+        if OLLAMA_AVAILABLE:
+            # Get available models
+            ollama_models = get_available_ollama_models()
+
+            # Model selection
+            model_options = [f"{m['name']} - {m['description']}" for m in ollama_models]
+
+            selected_ollama_idx = st.selectbox(
+                "Model",
+                range(len(model_options)),
+                format_func=lambda i: model_options[i]
+            )
+
+            selected_ollama_model = ollama_models[selected_ollama_idx]
+            ollama_model_id = selected_ollama_model['model_id']
+
+            # Check if model is downloaded
+            if selected_ollama_model['downloaded']:
+                st.success("Model ready")
+            else:
+                st.info(f"Will download on first use ({selected_ollama_model['size']})")
+
+        else:
+            st.error("Ollama not available")
+            st.code("brew install ollama && pip install ollama")
+    elif not OLLAMA_AVAILABLE:
+        if use_ollama:
+            st.info("Install: brew install ollama && pip install ollama")
+
+    # OCR Settings (only if not using Gemini or Ollama)
+    if not use_gemini and not use_ollama:
         st.markdown("---")
         st.subheader("OCR Settings")
-
-        # OCR Engine selection - only show working engines
-        # Note: PaddleOCR 3.3.1 has dependency issues with langchain
-        ocr_engine = st.selectbox(
-            "OCR Engine",
-            ["Tesseract", "EasyOCR"],
-            help="Select the OCR engine to use for text extraction"
-        )
+        ocr_engine = st.selectbox("Engine", ["Tesseract", "EasyOCR"])
     else:
-        ocr_engine = None  # Not needed for Gemini
+        ocr_engine = None
 
     # Preprocessing option
-    use_preprocessing = st.checkbox(
-        "Enable Image Preprocessing",
-        value=True,
-        help="Apply image enhancement for better OCR results"
-    )
+    use_preprocessing = st.checkbox("Image Preprocessing", value=True)
 
     # Confidence threshold
-    confidence_threshold = st.slider(
-        "Confidence Threshold",
-        min_value=0.0,
-        max_value=1.0,
-        value=0.5,
-        step=0.05,
-        help="Minimum confidence for text detection"
-    )
+    confidence_threshold = st.slider("Confidence", 0.0, 1.0, 0.5, 0.05)
 
-    # Deal extraction method
-    st.markdown("---")
-    st.subheader("Deal Extraction")
+    # Deal extraction method (hidden for Gemini/Ollama)
+    if not use_gemini and not use_ollama:
+        st.markdown("---")
+        st.subheader("Deal Extraction")
 
-    if REGION_CLUSTERING_AVAILABLE:
-        extraction_method = st.radio(
-            "Method",
-            ["Region-based (Recommended)", "Distance-based (Old)"],
-            help="Region-based: Groups text by spatial regions (product cards)\n"
-                 "Distance-based: Matches by proximity (may cross products)"
-        )
-        use_region_clustering = extraction_method.startswith("Region")
+        if ADVANCED_CLUSTERING_AVAILABLE:
+            extraction_method = st.radio("Method", ["Advanced", "Region-based", "Distance-based"])
+            use_advanced_clustering = extraction_method == "Advanced"
+            use_region_clustering = extraction_method == "Region-based"
+        elif REGION_CLUSTERING_AVAILABLE:
+            extraction_method = st.radio("Method", ["Region-based", "Distance-based"])
+            use_advanced_clustering = False
+            use_region_clustering = extraction_method == "Region-based"
+        else:
+            use_advanced_clustering = False
+            use_region_clustering = False
     else:
-        st.warning("⚠️ Region-based clustering unavailable (sklearn not installed)")
-        st.info("Run: pip install scikit-learn")
+        use_advanced_clustering = False
         use_region_clustering = False
 
     # Display options
     st.markdown("---")
-    st.subheader("Display Options")
+    st.subheader("Display")
 
-    show_bboxes = st.checkbox("Show Bounding Boxes", value=True)
-    show_text = st.checkbox("Show Text Labels", value=True)
-    show_confidence = st.checkbox("Show Confidence Scores", value=False)
-    show_debug = st.checkbox("Show Debug Info", value=False,
-                             help="Show all OCR text to debug entity extraction")
+    show_bboxes = st.checkbox("Bounding Boxes", value=True)
+    show_text = st.checkbox("Text Labels", value=True)
+    show_confidence = st.checkbox("Confidence", value=False)
+    show_debug = st.checkbox("Debug Info", value=False)
 
     st.markdown("---")
-    st.markdown("### 📊 Statistics")
+    st.markdown("### Statistics")
 
     if st.session_state.ocr_results:
         st.metric("Text Boxes", st.session_state.ocr_results['num_boxes'])
 
         if st.session_state.entities:
             total_entities = sum(len(v) for v in st.session_state.entities.values())
-            st.metric("Entities Found", total_entities)
+            st.metric("Entities", total_entities)
 
         if st.session_state.deals:
-            st.metric("Deals Identified", len(st.session_state.deals))
-
-    st.markdown("---")
-    st.markdown("### About")
-    st.info("""
-**SmartDeal** - Intelligent brochure analysis
-
-**Team:** Liyang, Zhaokun
-**Project:** 8-week Seminar
-    """)
+            st.metric("Deals", len(st.session_state.deals))
 
 # Main content
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📤 Upload & Process",
-    "🔍 Extracted Data",
-    "📊 Deals Analysis",
-    "📚 History"
-])
+tab1, tab2, tab3, tab4 = st.tabs(["Upload", "Data", "Analysis", "History"])
 
 # Tab 1: Upload & Process
 with tab1:
-    st.header("Upload Brochure")
+    st.subheader("Upload Brochure")
 
     uploaded_file = st.file_uploader(
         "Choose a brochure image or PDF",
-        type=['png', 'jpg', 'jpeg', 'pdf'],
-        help="Upload a supermarket brochure image or PDF"
+        type=['png', 'jpg', 'jpeg', 'pdf']
     )
 
     if uploaded_file is not None:
@@ -378,11 +438,11 @@ with tab1:
         col1, col2, col3 = st.columns([2, 2, 1])
 
         with col1:
-            st.success(f"✓ File: {uploaded_file.name}")
+            st.success(f"File: {uploaded_file.name}")
         with col2:
-            st.info(f"📦 Size: {uploaded_file.size / 1024:.1f} KB")
+            st.info(f"Size: {uploaded_file.size / 1024:.1f} KB")
         with col3:
-            if st.button("🔄 Reset"):
+            if st.button("Reset"):
                 st.session_state.ocr_results = None
                 st.session_state.processed_image = None
                 st.session_state.entities = None
@@ -396,7 +456,7 @@ with tab1:
 
         if is_pdf:
             # Handle PDF file
-            st.info("📄 PDF file detected")
+            st.info("PDF file detected")
 
             # Save PDF temporarily
             temp_pdf_path = f"/tmp/{uploaded_file.name}"
@@ -418,7 +478,7 @@ with tab1:
             page_count = st.session_state.pdf_page_count
 
             if page_count > 0:
-                st.success(f"📊 PDF has {page_count} page(s)")
+                st.success(f"PDF has {page_count} page(s)")
 
                 # Page selection
                 if page_count > 1:
@@ -472,16 +532,23 @@ with tab1:
                 st.image(image, use_column_width=True)
 
             with col2:
-                st.subheader("🎯 Processed Result")
+                st.subheader("Processed Result")
 
                 # Process button
-                button_label = "🤖 Extract with Gemini AI" if use_gemini else "🔍 Extract Information"
-                button_disabled = use_gemini and not gemini_api_key
+                if use_gemini:
+                    button_label = "Extract with Gemini AI"
+                    button_disabled = not gemini_api_key
+                elif use_ollama:
+                    button_label = f"Extract with {selected_ollama_model['name']}"
+                    button_disabled = not OLLAMA_AVAILABLE
+                else:
+                    button_label = "Extract Information"
+                    button_disabled = False
 
                 if st.button(button_label, type="primary", use_container_width=True, disabled=button_disabled):
                     if use_gemini:
                         # Gemini AI extraction
-                        with st.spinner(f"🤖 Processing with {gemini_model}..."):
+                        with st.spinner(f"Processing with {gemini_model}..."):
                             try:
                                 result = extract_with_gemini(
                                     img_array,
@@ -508,10 +575,53 @@ with tab1:
                                 }
                                 st.session_state.processed_image = None
 
-                                st.success(f"✓ Gemini extracted {len(deals)} deals!")
+                                st.success(f"Gemini extracted {len(deals)} deals!")
 
                             except Exception as e:
                                 st.error(f"Gemini extraction failed: {str(e)}")
+                                import traceback
+                                st.error(f"Details: {traceback.format_exc()}")
+
+                    elif use_ollama:
+                        # Ollama VLM extraction
+                        spinner_text = f"🦙 Processing with {selected_ollama_model['name']}..."
+                        if not selected_ollama_model['downloaded']:
+                            spinner_text += " (First use: downloading model...)"
+
+                        with st.spinner(spinner_text):
+                            try:
+                                result = extract_with_ollama(
+                                    img_array,
+                                    model_id=ollama_model_id,
+                                    language="German"
+                                )
+
+                                # Store results
+                                deals = result['deals']
+                                st.session_state.deals = deals
+                                st.session_state.ocr_results = {
+                                    'num_boxes': 0,
+                                    'text_boxes': [],
+                                    'source': 'ollama'
+                                }
+                                st.session_state.entities = {
+                                    'products': [],
+                                    'prices': [],
+                                    'discounts': [],
+                                    'units': [],
+                                    'dates': [],
+                                    'other': []
+                                }
+                                st.session_state.processed_image = None
+
+                                # Success message
+                                st.success(f"{selected_ollama_model['name']} successfully extracted {len(deals)} products!")
+                                if len(deals) > 0:
+                                    st.info(f"Estimated accuracy: ~90% | Method: Ollama VLM (Local AI)")
+
+                            except Exception as e:
+                                st.error(f"Ollama extraction failed: {str(e)}")
+                                st.warning("Suggestion: Try switching to another model, or use Gemini AI / Advanced OCR")
                                 import traceback
                                 st.error(f"Details: {traceback.format_exc()}")
 
@@ -533,8 +643,11 @@ with tab1:
                             st.session_state.entities = entities
 
                             # Create deals using selected method
-                            if use_region_clustering and REGION_CLUSTERING_AVAILABLE:
-                                # New method: Region-based clustering
+                            if use_advanced_clustering and ADVANCED_CLUSTERING_AVAILABLE:
+                                # Best method: Advanced region-based with smart heuristics
+                                deals = create_deals_advanced(ocr_results['text_boxes'])
+                            elif use_region_clustering and REGION_CLUSTERING_AVAILABLE:
+                                # Good method: Region-based clustering
                                 deals = create_deals_from_regions(
                                     ocr_results['text_boxes'],
                                     eps=120,  # Distance threshold for clustering
@@ -566,7 +679,7 @@ with tab1:
                             'num_deals': len(deals)
                         })
 
-                        st.success("✓ Processing complete!")
+                        st.success("Processing complete!")
                         st.rerun()
 
                 # Display processed image
@@ -575,16 +688,16 @@ with tab1:
                 elif st.session_state.ocr_results is not None and not show_bboxes:
                     st.image(image, use_column_width=True)
                 else:
-                    st.info("👆 Click 'Extract Information' to start processing")
+                    st.info("Click 'Extract Information' to start")
         else:
             st.warning("Unable to load image. Please try a different file.")
 
 # Tab 2: Extracted Data
 with tab2:
-    st.header("Extracted Data")
+    st.subheader("Extracted Data")
 
     if st.session_state.ocr_results is None:
-        st.info("📝 Upload and process an image first to see extracted data")
+        st.info("Upload and process an image first")
     else:
         # Summary metrics
         col1, col2, col3, col4 = st.columns(4)
@@ -615,7 +728,7 @@ with tab2:
 
         # Debug information
         if show_debug and st.session_state.ocr_results:
-            with st.expander("🔍 Debug: All OCR Text (Raw Output)", expanded=False):
+            with st.expander("Debug: All OCR Text (Raw Output)", expanded=False):
                 st.markdown("**All text boxes detected by OCR:**")
                 debug_data = []
                 for i, box in enumerate(st.session_state.ocr_results.get('text_boxes', [])[:50], 1):
@@ -642,16 +755,16 @@ with tab2:
 
         # Entity breakdown
         if st.session_state.entities:
-            st.subheader("📋 Entities by Type")
+            st.subheader("Entities by Type")
 
             # Create tabs for each entity type
             entity_tabs = st.tabs([
-                "🏷️ Products",
-                "💰 Prices",
-                "📉 Discounts",
-                "📏 Units",
-                "📅 Dates",
-                "📄 All Data"
+                "Products",
+                "Prices",
+                "Discounts",
+                "Units",
+                "Dates",
+                "All Data"
             ])
 
             entity_types = ['products', 'prices', 'discounts', 'units', 'dates']
@@ -720,10 +833,10 @@ with tab2:
 
 # Tab 3: Deals Analysis
 with tab3:
-    st.header("Identified Deals")
+    st.subheader("Identified Deals")
 
     if st.session_state.deals is None:
-        st.info("🎯 Process an image first to see identified deals")
+        st.info("Process an image first")
     else:
         if len(st.session_state.deals) == 0:
             st.warning("No deals could be automatically identified. Try adjusting the confidence threshold.")
@@ -741,20 +854,20 @@ with tab3:
 
                     with col2:
                         st.markdown("**Price**")
-                        if deal['price']:
+                        if deal.get('price'):
                             st.markdown(f"**€{deal['price']}**")
                         else:
                             st.markdown("_Not detected_")
 
                     with col3:
                         st.markdown("**Discount**")
-                        if deal['discount']:
-                            st.markdown(f"**{deal['discount']}%**")
+                        if deal.get('discount'):
+                            st.markdown(f"**{deal['discount']}**")
                         else:
                             st.markdown("_No discount_")
 
                     if deal.get('unit'):
-                        st.markdown(f"📦 Unit: {deal['unit']}")
+                        st.markdown(f"Unit: {deal['unit']}")
 
             # Export deals
             st.markdown("---")
