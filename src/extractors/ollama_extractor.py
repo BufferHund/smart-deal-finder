@@ -253,16 +253,21 @@ def extract_with_ollama(
         # Extract response text
         response_text = response['response']
 
+        # Log the raw response for debugging
+        print(f"[DEBUG] Ollama raw response (first 500 chars): {response_text[:500]}")
+
         # Try to parse JSON from response
         deals = parse_json_from_response(response_text)
 
         if not deals:
+            print(f"[DEBUG] Failed to parse JSON. Full response: {response_text}")
             return {
                 "deals": [],
                 "total_products": 0,
                 "extraction_method": f"Ollama {model_id}",
                 "status": "error",
-                "error": "No valid products extracted"
+                "error": "No valid products extracted",
+                "raw_response": response_text[:1000]  # Include first 1000 chars for debugging
             }
 
         # Calculate confidence based on completeness
