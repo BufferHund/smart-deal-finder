@@ -2,17 +2,36 @@
 
 import json
 import base64
+import os
 from io import BytesIO
 from typing import Dict, List, Optional
 import numpy as np
 from PIL import Image
 
 
+def get_ollama_client():
+    """Get Ollama client with proper host configuration"""
+    try:
+        import ollama
+
+        # Check if custom host is set (for Docker deployment)
+        ollama_host = os.getenv('OLLAMA_HOST')
+        if ollama_host:
+            return ollama.Client(host=ollama_host)
+        else:
+            return ollama.Client()
+    except Exception as e:
+        print(f"Failed to create Ollama client: {e}")
+        return None
+
+
 def check_ollama_available() -> bool:
     """Check if Ollama service is running"""
     try:
-        import ollama
-        ollama.list()
+        client = get_ollama_client()
+        if client is None:
+            return False
+        client.list()
         return True
     except Exception:
         return False
@@ -84,17 +103,18 @@ def get_available_ollama_models() -> List[Dict]:
 
     # Check which models are downloaded
     try:
-        import ollama
-        downloaded_models = ollama.list()
-        downloaded_names = {m['name'] for m in downloaded_models.get('models', [])}
+        client = get_ollama_client()
+        if client:
+            downloaded_models = client.list()
+            downloaded_names = {m['name'] for m in downloaded_models.get('models', [])}
 
-        for model in models:
-            # Check if model is downloaded (with or without tag)
-            model_base = model['model_id'].split(':')[0]
-            model['downloaded'] = any(
-                model['model_id'] in name or model_base in name
-                for name in downloaded_names
-            )
+            for model in models:
+                # Check if model is downloaded (with or without tag)
+                model_base = model['model_id'].split(':')[0]
+                model['downloaded'] = any(
+                    model['model_id'] in name or model_base in name
+                    for name in downloaded_names
+                )
     except Exception:
         pass
 
@@ -112,8 +132,10 @@ def check_model_downloaded(model_id: str) -> bool:
         True if model is downloaded
     """
     try:
-        import ollama
-        downloaded_models = ollama.list()
+        client = get_ollama_client()
+        if not client:
+            return False
+        downloaded_models = client.list()
         downloaded_names = {m['name'] for m in downloaded_models.get('models', [])}
 
         model_base = model_id.split(':')[0]
@@ -189,9 +211,8 @@ def extract_with_ollama(
     Returns:
         Dictionary with extracted deals and metadata
     """
-    try:
-        import ollama
-    except ImportError:
+    client = get_ollama_client()
+    if not client:
         raise ImportError(
             "Ollama Python package not installed. "
             "Install with: pip install ollama"
@@ -218,7 +239,7 @@ def extract_with_ollama(
 
     try:
         # Call Ollama API
-        response = ollama.generate(
+        response = client.generate(
             model=model_id,
             prompt=prompt,
             images=[img_base64],
@@ -364,13 +385,17 @@ def pull_model(model_id: str, progress_callback=None) -> bool:
         True if successful
     """
     try:
-        import ollama
+        client = get_ollama_client()
+        if not client:
+            if progress_callback:
+                progress_callback("✗ Ollama client not available")
+            return False
 
         if progress_callback:
             progress_callback(f"Downloading {model_id}...")
 
         # Pull the model
-        ollama.pull(model_id)
+        client.pull(model_id)
 
         if progress_callback:
             progress_callback(f"✓ {model_id} downloaded successfully!")
@@ -394,8 +419,10 @@ def delete_model(model_id: str) -> bool:
         True if successful
     """
     try:
-        import ollama
-        ollama.delete(model_id)
+        client = get_ollama_client()
+        if not client:
+            return False
+        client.delete(model_id)
         return True
     except Exception:
         return False
