@@ -19,12 +19,29 @@ SmartDeal automatically extracts structured deal information (products, prices, 
 
 ## Quick Start
 
-### Installation
+### Option 1: Docker (Recommended)
+
+No installation required - just run:
 
 ```bash
 # Clone repository
-git clone <repo-url>
-cd smartdeal
+git clone https://github.com/BufferHund/smart-deal-finder.git
+cd smart-deal-finder
+
+# Start with Docker Compose
+docker-compose up -d
+```
+
+Visit http://localhost:8501
+
+See [DOCKER_GUIDE.md](DOCKER_GUIDE.md) for detailed instructions.
+
+### Option 2: Local Installation
+
+```bash
+# Clone repository
+git clone https://github.com/BufferHund/smart-deal-finder.git
+cd smart-deal-finder
 
 # Create virtual environment
 python -m venv venv
@@ -32,16 +49,9 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-```
 
-### Run Application
-
-```bash
-# Launch application
+# Run application
 streamlit run src/app/enhanced_app.py
-
-# Or use the launcher script
-./run_app.sh
 ```
 
 Visit http://localhost:8501
