@@ -364,4 +364,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# ignore raw data and images
+data/raw/
+data/images/
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,pycharm,visualstudiocode,python
