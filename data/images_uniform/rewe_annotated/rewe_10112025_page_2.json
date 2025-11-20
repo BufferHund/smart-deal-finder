@@ -1,7 +1,7 @@
 [
   {
     "product_name": "Milka extra",
-    "price": "2.00 REWE Bonus",
+    "price": "2,00 REWE Bonus",
     "discount": null,
     "unit": "je 190-g-Tafel",
     "original_price": null,
@@ -27,7 +27,7 @@
   },
   {
     "product_name": "Bertolli Olivenöl",
-    "price": "2.00 REWE Bonus",
+    "price": "2,00 REWE Bonus",
     "discount": null,
     "unit": "je 500-ml-Fl.",
     "original_price": null,
