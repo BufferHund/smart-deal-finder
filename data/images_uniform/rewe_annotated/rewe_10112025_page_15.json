@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Pantene Pro-V Spülung Repair & Care, oder Shampoo Repair & Care",
+    "price": "3.29",
+    "discount": null,
+    "unit": "je 200-ml-Fl. oder je 300-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.11823332235416732,
+      0.25414863954748484,
+      0.3658058315802981,
+      0.48299999999999166
+    ]
+  },
+  {
+    "product_name": "REWE Bio Peru/Argentinien: Bio Heidelbeeren",
+    "price": "2.69",
+    "discount": null,
+    "unit": "je 175-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.3747100693264121,
+      0.31344591864246607,
+      0.6225618984880923,
+      0.5297987209714383
+    ]
+  },
+  {
+    "product_name": "Ehrmann Almighurt",
+    "price": "0.39",
+    "discount": null,
+    "unit": "je 150-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.634233322354167,
+      0.31533510237095735,
+      0.8777303294173558,
+      0.5303366740581377
+    ]
+  },
+  {
+    "product_name": "Lenor Weichspüler",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 756-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.12268569546428894,
+      0.4848513604525045,
+      0.3533750923229979,
+      0.7328614073990134
+    ]
+  },
+  {
+    "product_name": "Rügenwalder Vegane Mühlen Salami oder Veganer Schinken Spicker Mortadella",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 80-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.36144182055432805,
+      0.5424059703586267,
+      0.619313429114398,
+      0.7489208962551992
+    ]
+  },
+  {
+    "product_name": "Zentis Erd-Bärchen Konfitüre Erdbeere oder Triple Zero Konfitüre Erdbeere",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 250-g-Glas oder je 185-g-Glas",
+    "original_price": null,
+    "bbox": [
+      0.6324523731101166,
+      0.5366720360505338,
+      0.8802719779480643,
+      0.7537624740354939
+    ]
+  },
+  {
+    "product_name": "Maggi 5 Minuten Terrine Kartoffelbrei mit Röstzwiebeln & Croutons oder 5 Minuten Terrine Nudeln in Rahmsauce",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 56-g-Becher oder je 61-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.12268569546428805,
+      0.7374752666590999,
+      0.3585702119942592,
+      0.9753710602605041
+    ]
+  },
+  {
+    "product_name": "Amecke Sanfte Säfte oder Plus Säfte",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 1-l-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.36144182055432916,
+      0.7566833950627848,
+      0.6200741284010607,
+      0.9750957357921246
+    ]
+  },
+  {
+    "product_name": "Maggi Guten Appetit Suppe",
+    "price": "0.69",
+    "discount": null,
+    "unit": " je Btl.",
+    "original_price": null,
+    "bbox": [
+      0.6311169255477028,
+      0.7623382503981716,
+      0.8810506299602477,
+      0.9751875106149234
+    ]
+  }
+]

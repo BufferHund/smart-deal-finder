@@ -1,0 +1,145 @@
+[
+  {
+    "product_name": "REWE Beste Wahl Wurzelsalat >>Salattrio<<",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.11767383142764301,
+      0.0,
+      0.8926145334642732,
+      0.2590923552676392
+    ]
+  },
+  {
+    "product_name": "REWE Bio Baby Spinat",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 100-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12103143183570504,
+      0.2703667466981527,
+      0.6240426811242731,
+      0.4388516740041055
+    ]
+  },
+  {
+    "product_name": "REWE Bio Bio Basilikum",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.6210370564799896,
+      0.2659999999999965,
+      0.8969745236700071,
+      0.6179559823901437
+    ]
+  },
+  {
+    "product_name": "REWE Bio Bio Salatgurke",
+    "price": "0.77",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.10502481460713547,
+      0.4438516740041056,
+      0.37200297775285646,
+      0.6198736828090322
+    ]
+  },
+  {
+    "product_name": "REWE Bio Bio Snack Möhren",
+    "price": "1.11",
+    "discount": null,
+    "unit": "je 200-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.37700165430714294,
+      0.44951100440246344,
+      0.6209758471157212,
+      0.6170440176098533
+    ]
+  },
+  {
+    "product_name": "REWE Bio Braune Bio Champignons",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 250-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.11702878494427715,
+      0.6216291850102644,
+      0.3740036394757133,
+      0.7971401894127275
+    ]
+  },
+  {
+    "product_name": "REWE Bio Bio Cherry Tomaten",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 250-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.3760013234457141,
+      0.6265810991088292,
+      0.6309794865914347,
+      0.797847605712522
+    ]
+  },
+  {
+    "product_name": "REWE Bio Bio Staudensellerie",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.6339775014228647,
+      0.6216291850102627,
+      0.8839705533328659,
+      0.7964327731129327
+    ]
+  },
+  {
+    "product_name": "Winter-arrangement¹",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.11402812322142025,
+      0.8059999999999996,
+      0.3559973531085717,
+      0.9735851674004102
+    ]
+  },
+  {
+    "product_name": "REWE Beste Wahl Weihnachtsstern¹",
+    "price": "1.77",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.3629973531085724,
+      0.8059999999999995,
+      0.6359808100371486,
+      0.9721703348008206
+    ]
+  },
+  {
+    "product_name": "Topfrose¹",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.6439804791757213,
+      0.8010480859014367,
+      0.8649642669657248,
+      0.9721703348008205
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Löwensenf extra scharf",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 250-ml-Glas",
+    "original_price": null,
+    "bbox": [
+      0.12143380041949121,
+      0.5385571173047788,
+      0.3641432444755174,
+      0.7523300536599522
+    ]
+  },
+  {
+    "product_name": "Frankreich: Grand Sud Vin de France",
+    "price": "3.29",
+    "discount": null,
+    "unit": "je 1-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.38121554454543305,
+      0.5610295170603986,
+      0.619568910909133,
+      0.7514414771209104
+    ]
+  },
+  {
+    "product_name": "Frisches Hähnchen-Brustfilet",
+    "price": "11.10",
+    "discount": null,
+    "unit": "je 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.6228540441958562,
+      0.5564513161410424,
+      0.8990668774126622,
+      0.7517743419294745
+    ]
+  },
+  {
+    "product_name": "Coca-Cola, Fanta oder Sprite",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 1,5-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.1151473114684554,
+      0.7618871709647359,
+      0.3633574333566377,
+      0.9762158190503889
+    ]
+  },
+  {
+    "product_name": "Franziskaner Weißbier",
+    "price": "4.29",
+    "discount": null,
+    "unit": "je 6 x 0,33-l-Fl.-Sixpack",
+    "original_price": null,
+    "bbox": [
+      0.37728648895103484,
+      0.7624428826952149,
+      0.6219263442657708,
+      0.9767715307808665
+    ]
+  },
+  {
+    "product_name": "Heinz Tomato Ketchup oder Mayonnaise",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 400-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.6354270220979239,
+      0.7635543061561648,
+      0.878635788321794,
+      0.9767715307808624
+    ]
+  }
+]

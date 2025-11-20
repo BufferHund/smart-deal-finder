@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Kerrygold extra",
+    "price": "3.29",
+    "discount": null,
+    "unit": "je 400-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.45731142187131957,
+      0.0069999999999999386,
+      0.8909500853499439,
+      0.291999999999999
+    ]
+  },
+  {
+    "product_name": "Weihenstephan Cremig & Quarkig",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 500-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.11811705736279601,
+      0.3982467554705204,
+      0.3609006062981129,
+      0.529539511758762
+    ]
+  },
+  {
+    "product_name": "Weihenstephan Haltbare Milch",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 1-l-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.37767391709999154,
+      0.3200000000000014,
+      0.60790666927923,
+      0.524041315333863
+    ]
+  },
+  {
+    "product_name": "Rama zum Streichen, Backen & Kochen",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 400-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.6355108756499876,
+      0.3129586846661386,
+      0.8788593187732103,
+      0.5294165261335453
+    ]
+  },
+  {
+    "product_name": "Wagner Die Backfrische Mozzarella oder Big City Pizza Budapest",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 350-g-Pckg. oder je 400-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12263168953314527,
+      0.5462201628510336,
+      0.3562573160851764,
+      0.7471652613354478
+    ]
+  },
+  {
+    "product_name": "Garden Gourmet Falafel Klassik oder Vegetarische Gemüsebällchen",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 190-g-Pckg. oder je 200-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.376195655071424,
+      0.5433338954658262,
+      0.6083586965214337,
+      0.7505404721351372
+    ]
+  },
+  {
+    "product_name": "Arla Skyr",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 450-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.6366304411571316,
+      0.5381669477329116,
+      0.876520169869034,
+      0.7517487352019078
+    ]
+  },
+  {
+    "product_name": "Iglo Rahm-Spinat oder Würz-Spinat",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 750-g-Pckg. oder je 500-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12348484641966807,
+      0.7606532443735509,
+      0.35960692007116046,
+      0.9752780335738699
+    ]
+  },
+  {
+    "product_name": "Homann Nudel- oder Pellkartoffelsalat",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 400-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.37871937977721826,
+      0.7620440501858377,
+      0.6218389452843605,
+      0.9770440501858388
+    ]
+  },
+  {
+    "product_name": "Ehrmann High Protein Mousse Schoko oder High Protein Creatine White Choc",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 200-g-Becher oder je 230-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.6354549578909597,
+      0.7602716034935557,
+      0.876520169869028,
+      0.976622593790328
+    ]
+  }
+]
