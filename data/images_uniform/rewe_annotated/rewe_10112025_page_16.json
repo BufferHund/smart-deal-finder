@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "REWE to go Wrap Hummus Spinat, vegan",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 175-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.11799999999999956,
+      0.31647149206138236,
+      0.3623938780743074,
+      0.5309866978201832
+    ]
+  },
+  {
+    "product_name": "REWE to go Ice Tea",
+    "price": "1.11",
+    "discount": null,
+    "unit": "je 500-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.3761946067298955,
+      0.3099377648015738,
+      0.6217066482264962,
+      0.5284855101255554
+    ]
+  },
+  {
+    "product_name": "REWE to go Frühstücksmüsli",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 285-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.6371241543750066,
+      0.3144399026519016,
+      0.8805574202567454,
+      0.5284855101255554
+    ]
+  },
+  {
+    "product_name": "REWE to go Onigiri",
+    "price": "2.19",
+    "discount": null,
+    "unit": "je 130-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.11799999999999997,
+      0.5385434630881589,
+      0.36897681147727635,
+      0.7545216160421987
+    ]
+  },
+  {
+    "product_name": "REWE to go Granatapfelkerne",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 80-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.3776093410196681,
+      0.5375429880103089,
+      0.6220819947088381,
+      0.752459387378934
+    ]
+  },
+  {
+    "product_name": "REWE to go Oriental Mix",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 150-g-Becher",
+    "original_price": null,
+    "bbox": [
+      0.6367921337124599,
+      0.5397787373085846,
+      0.8823041752090609,
+      0.7534598624567859
+    ]
+  },
+  {
+    "product_name": "REWE to go Salatschale und Shot",
+    "price": "3.33",
+    "discount": null,
+    "unit": "je 310-g-Schale und je 60-ml-Fl.",
+    "original_price": "4.48",
+    "bbox": [
+      0.36471092470866273,
+      0.762794889955503,
+      0.8795273463108285,
+      0.9763440433116313
+    ]
+  }
+]

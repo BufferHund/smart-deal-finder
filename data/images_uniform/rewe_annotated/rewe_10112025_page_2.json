@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Milka extra",
+    "price": "2.00 REWE Bonus",
+    "discount": null,
+    "unit": "je 190-g-Tafel",
+    "original_price": null,
+    "bbox": [
+      0.1289060800770485,
+      0.24194570013713312,
+      0.42751379141442825,
+      0.5855308073231078
+    ]
+  },
+  {
+    "product_name": "Appel Zarte Filets vom Hering",
+    "price": "0,90 REWE Bonus",
+    "discount": null,
+    "unit": "je 200-g-Dose",
+    "original_price": null,
+    "bbox": [
+      0.5157154720693424,
+      0.2850518616017546,
+      0.8732347998073772,
+      0.6119481383982484
+    ]
+  },
+  {
+    "product_name": "Bertolli Olivenöl",
+    "price": "2.00 REWE Bonus",
+    "discount": null,
+    "unit": "je 500-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.13000875192316091,
+      0.6350769808755274,
+      0.41696790961507724,
+      0.9586615847004221
+    ]
+  },
+  {
+    "product_name": "Purina One Katzennahrung",
+    "price": "1,00 REWE Bonus",
+    "discount": null,
+    "unit": "je 750-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.4600000000000011,
+      0.6336615847004224,
+      0.8889824961536792,
+      0.9530000000000006
+    ]
+  }
+]

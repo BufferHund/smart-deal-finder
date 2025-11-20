@@ -1,0 +1,158 @@
+[
+  {
+    "product_name": "REWE Beste Wahl Spanien: Clementinen",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 1-kg-Netz",
+    "original_price": null,
+    "bbox": [
+      0.3714667929476719,
+      0.04772840091263969,
+      0.6215996211569839,
+      0.24123728021773022
+    ]
+  },
+  {
+    "product_name": "Spanien: Orangen",
+    "price": "2.79",
+    "discount": null,
+    "unit": "je 2-kg-Netz",
+    "original_price": null,
+    "bbox": [
+      0.6387988634709523,
+      0.13131819935952369,
+      0.8809999999999993,
+      0.285240617996921
+    ]
+  },
+  {
+    "product_name": "Spanien: Grapefruit",
+    "price": "0.49",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.37683301763081967,
+      0.2443215371387141,
+      0.6215996211569841,
+      0.42992241863739766
+    ]
+  },
+  {
+    "product_name": "Italien/Spanien: REWE Bio Zitronen",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 500-g-Netz",
+    "original_price": null,
+    "bbox": [
+      0.6387988634709527,
+      0.2862406179969196,
+      0.8794667929476736,
+      0.42684483727479605
+    ]
+  },
+  {
+    "product_name": "Italien: Zespri SunGold Kiwi",
+    "price": "0.55",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.12133207052328036,
+      0.4380255038827892,
+      0.3660000000000002,
+      0.6186042192778731
+    ]
+  },
+  {
+    "product_name": "China/Thailand/Brasilien: Bio Ingwer",
+    "price": "0.59",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.37813282820931166,
+      0.44762972316066607,
+      0.6231328282093115,
+      0.6196042192778745
+    ]
+  },
+  {
+    "product_name": "Brasilien: Mini Wassermelone",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.635965845840132,
+      0.43788583170280676,
+      0.8710341541598676,
+      0.6183547862941148
+    ]
+  },
+  {
+    "product_name": "Hokkaido geschnitten",
+    "price": "2.39",
+    "discount": null,
+    "unit": "je 600-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.1197988634709522,
+      0.6185565492914831,
+      0.3644667929476716,
+      0.7970365869345917
+    ]
+  },
+  {
+    "product_name": "Rotkohl geschnitten",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 300-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.37736622468314784,
+      0.6277727331198427,
+      0.6223662246831477,
+      0.7964944584741
+    ]
+  },
+  {
+    "product_name": "Spanien/Italien: Kaki >>Rojo Brillante<<",
+    "price": "0.49",
+    "discount": null,
+    "unit": "je St.",
+    "original_price": null,
+    "bbox": [
+      0.6321328282093117,
+      0.6270654285965759,
+      0.8794667929476716,
+      0.7976552270434581
+    ]
+  },
+  {
+    "product_name": "Florette Rucola oder Salat Fit & Vital",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 80-g-Pckg. oder je 100-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.11949905289246027,
+      0.8056629723160669,
+      0.6205996211569837,
+      0.9752416877111495
+    ]
+  },
+  {
+    "product_name": "REWE Bio Sprossen",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 100-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6338994317354762,
+      0.8072416877111496,
+      0.8787001894215085,
+      0.9752416877111496
+    ]
+  }
+]
