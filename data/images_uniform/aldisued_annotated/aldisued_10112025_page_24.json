@@ -1,0 +1,171 @@
+[
+  {
+    "product_name": "HARIBO Fruchtgummi",
+    "price": "0.89",
+    "discount": null,
+    "unit": "je 175-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.13710579672478068,
+      0.03754301351953524,
+      0.47818709916603597,
+      0.25373080213086335
+    ]
+  },
+  {
+    "product_name": "FLIRTEA Chai-Eistee",
+    "price": "0.49",
+    "discount": null,
+    "unit": "je 1-l-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5773148248369814,
+      0.01942089963282576,
+      0.8690193636088008,
+      0.20146160426172774
+    ]
+  },
+  {
+    "product_name": "Milka Snowballs",
+    "price": "3.49",
+    "discount": "30",
+    "unit": "112-g-Packung",
+    "original_price": "4.99",
+    "bbox": [
+      0.13789676861257863,
+      0.27979185907421805,
+      0.28958322644427664,
+      0.43321737648830994
+    ]
+  },
+  {
+    "product_name": "Milka",
+    "price": "2.29",
+    "discount": "30",
+    "unit": "86-g- bzw. 90-g-Packung",
+    "original_price": "3.29",
+    "bbox": [
+      0.2968748396664144,
+      0.278583718148438,
+      0.4822503206671702,
+      0.38371506759767754
+    ]
+  },
+  {
+    "product_name": "TEEKANNE Wintertee",
+    "price": "1.89",
+    "discount": null,
+    "unit": "je 40-, 40,5- bzw. 50-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5106877405003742,
+      0.20708602703906837,
+      0.8715819437755928,
+      0.36644586972853954
+    ]
+  },
+  {
+    "product_name": "Milka Schüttel mich",
+    "price": "2.29",
+    "discount": "30",
+    "unit": "61-g-Packung",
+    "original_price": "3.29",
+    "bbox": [
+      0.18266339956217353,
+      0.39792752924569624,
+      0.3270134640175131,
+      0.5549604453081269
+    ]
+  },
+  {
+    "product_name": "MESSMER Früchte- oder Kräutertee",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 43,75-, 50- bzw. 75-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5115419338893025,
+      0.3706540106543208,
+      0.8673109768309364,
+      0.5271766718594045
+    ]
+  },
+  {
+    "product_name": "MILKA Weihnachtsschokolade",
+    "price": "z.B. 1.19",
+    "discount": "37",
+    "unit": "z. B. Weihnachtsmann, 45-g-Packung",
+    "original_price": "z.B. 1.89",
+    "bbox": [
+      0.13183482978012565,
+      0.5152211388670951,
+      0.48160387272175653,
+      0.6154662220429857
+    ]
+  },
+  {
+    "product_name": "DALLMAYR Gold",
+    "price": "7.49",
+    "discount": "31",
+    "unit": "200-g-Glas",
+    "original_price": "10.99",
+    "bbox": [
+      0.5713354711144637,
+      0.5350092355625219,
+      0.8707277503866581,
+      0.6975069266718908
+    ]
+  },
+  {
+    "product_name": "MILKA Schokolade „Sweet Winter“",
+    "price": "1.29",
+    "discount": "35",
+    "unit": "100-g-Packung",
+    "original_price": "1.99",
+    "bbox": [
+      0.1396051553904409,
+      0.6261313494492367,
+      0.48074967933282986,
+      0.7507308021308646
+    ]
+  },
+  {
+    "product_name": "JACOBS Kaffeespezialität Xmas-Edition",
+    "price": "1.99",
+    "discount": null,
+    "unit": "z. B.: 3-in-1-Kaffeesticks, Typ Spekulatius, 112-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5132503206671691,
+      0.7136854797206937,
+      0.8681651702198729,
+      0.9421628185156126
+    ]
+  },
+  {
+    "product_name": "NUTRIPUR Fruchtsnacks",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 25-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12941805622440317,
+      0.767979647685546,
+      0.4816038727217606,
+      0.9436401573105289
+    ]
+  },
+  {
+    "product_name": "MILKA Weinachtsmann",
+    "price": "1.19",
+    "discount": "37",
+    "unit": "45-kg-Packung",
+    "original_price": "1.89",
+    "bbox": [
+      0.3307222184421456,
+      0.3739593093691555,
+      0.480166215545682,
+      0.5221672630823492
+    ]
+  }
+]

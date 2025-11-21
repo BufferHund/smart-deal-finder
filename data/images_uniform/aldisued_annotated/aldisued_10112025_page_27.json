@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "NIPPON Puffreis mit Schokolade",
+    "price": "1.79",
+    "discount": "33",
+    "unit": "200 g + 25 g gratis = 225-g-Packung",
+    "original_price": "2.69",
+    "bbox": [
+      0.5025502692361912,
+      0.12686390334472597,
+      0.8717001794907935,
+      0.28317754648439164
+    ]
+  },
+  {
+    "product_name": "FERRERO kinder-Pingui",
+    "price": "0.99",
+    "discount": "32",
+    "unit": "3 + 1 gratis, 4 x 30 g = 120-g-Packung",
+    "original_price": "1.46",
+    "bbox": [
+      0.5738349578602179,
+      0.2982248698974706,
+      0.8619145934127916,
+      0.47011836432292786
+    ]
+  },
+  {
+    "product_name": "PERSIL Discs, Pulver oder Gel",
+    "price": "16.99",
+    "discount": "39",
+    "unit": "je 76/90/100 Waschladungen",
+    "original_price": "27.99",
+    "bbox": [
+      0.11671833869959869,
+      0.2800000000000004,
+      0.4949999999999997,
+      0.5628682759080335
+    ]
+  },
+  {
+    "product_name": "ALL SEASONS Himbeeren",
+    "price": "7.99",
+    "discount": null,
+    "unit": "1-kg-Packung",
+    "original_price": null,
+    "bbox": [
+      0.13696396519500786,
+      0.5756804832763724,
+      0.47806450366739556,
+      0.7498757620931107
+    ]
+  },
+  {
+    "product_name": "DANONE Fruchtzwerge",
+    "price": "2.88",
+    "discount": null,
+    "unit": "12 x 50 g = 600-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5229999999999989,
+      0.5061834200683526,
+      0.8619145934127914,
+      0.6937573977701821
+    ]
+  },
+  {
+    "product_name": "SWEET VALLEY Ananas in Scheiben",
+    "price": "2.39",
+    "discount": null,
+    "unit": "850-ml-Dose, Abtropfgewicht 490 g",
+    "original_price": null,
+    "bbox": [
+      0.13344973076380648,
+      0.7648165799316444,
+      0.47606450366739483,
+      0.9036508921956388
+    ]
+  },
+  {
+    "product_name": "MEINE KUCHEN WELT Frischei-Waffeln",
+    "price": "1.59",
+    "discount": null,
+    "unit": "335-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.523,
+      0.7063491078043613,
+      0.8601574761971922,
+      0.9048934944254603
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "GRÜNLÄNDER Käsescheiben",
+    "price": "2.99",
+    "discount": "30",
+    "unit": "je 210- bzw. 240-g-Packung",
+    "original_price": "4.29",
+    "bbox": [
+      0.1308221076088079,
+      0.09328531241430965,
+      0.4904455135610652,
+      0.3001384365574209
+    ]
+  },
+  {
+    "product_name": "IGLO Filegro-Ofen-Backfisch, Backfisch-Stäbchen oder Fischstäbchen",
+    "price": "3.99",
+    "discount": null,
+    "unit": "4 Stück, 480-g-Packung, 26 Stück, 728-g-Packung, bzw. 28 Stück, 840-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5242179457557304,
+      0.09489573855846359,
+      0.8845641084885257,
+      0.2854498143321158
+    ]
+  },
+  {
+    "product_name": "GUT DREI EICHEN Koch-Hinterschinken",
+    "price": "1.59",
+    "discount": null,
+    "unit": "250-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12882210760880863,
+      0.3083592888457252,
+      0.4801979190734601,
+      0.5109957803502646
+    ]
+  },
+  {
+    "product_name": "ALMARE Thunfischfilets",
+    "price": "4.99",
+    "discount": null,
+    "unit": "4 x 195 g = 780-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5263324600221501,
+      0.3017125683689971,
+      0.869786134905294,
+      0.5144251555216406
+    ]
+  },
+  {
+    "product_name": "ALMARE Gelbflossen-Thunfisch",
+    "price": "5.99",
+    "discount": null,
+    "unit": "7 x 80 g = 560-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5251938384124116,
+      0.5168407947378716,
+      0.8698005993112883,
+      0.6478364965462219
+    ]
+  },
+  {
+    "product_name": "BARISSIMO Ganze Bohnen",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je 1,2-kg-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12768348599907547,
+      0.5219999999999991,
+      0.4846137839026604,
+      0.7348696731980797
+    ]
+  },
+  {
+    "product_name": "BAD REICHENHALLER Alpensalz",
+    "price": "0.99",
+    "discount": "28",
+    "unit": "1-kg-Packung",
+    "original_price": "1.39",
+    "bbox": [
+      0.16184213429108116,
+      0.7471165908467625,
+      0.4824751622929253,
+      0.9095582954233733
+    ]
+  },
+  {
+    "product_name": "ALMARE Bratheringsfilets",
+    "price": "1.99",
+    "discount": null,
+    "unit": "500-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5195248377070636,
+      0.7510383947656181,
+      0.8775937572203882,
+      0.902506164702616
+    ]
+  }
+]

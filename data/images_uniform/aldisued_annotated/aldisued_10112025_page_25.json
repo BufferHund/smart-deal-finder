@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "MEINE METZGEREI Schweinefilet",
+    "price": "4.99",
+    "discount": null,
+    "unit": "Vakuumiert, versch. Gewichte, z. B. 555 g",
+    "original_price": null,
+    "bbox": [
+      0.12568712569904833,
+      0.06272157355637553,
+      0.4906897455107432,
+      0.3343947464337474
+    ]
+  },
+  {
+    "product_name": "Käfer Single Cut Ribs",
+    "price": "4.99",
+    "discount": null,
+    "unit": "600-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.1256871256990495,
+      0.3408454031295275,
+      0.4906897455107408,
+      0.5461831144347329
+    ]
+  },
+  {
+    "product_name": "MEINE METZGEREI Simmentaler Steak",
+    "price": "8.99",
+    "discount": null,
+    "unit": "Vom Rind, versch. Sorten und Gewichte, z. B. 333 g",
+    "original_price": null,
+    "bbox": [
+      0.12684225294367524,
+      0.5478311443473908,
+      0.48953461826612027,
+      0.7456765474769246
+    ]
+  },
+  {
+    "product_name": "MEINE METZGEREI Puten-Rouladen",
+    "price": "4.99",
+    "discount": null,
+    "unit": "500-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12222174396517184,
+      0.7531272041727058,
+      0.49299999999999644,
+      0.9442675422610392
+    ]
+  },
+  {
+    "product_name": "RAMAZZOTTI Amaro",
+    "price": "9.99",
+    "discount": "28",
+    "unit": "0,7-l-Flasche",
+    "original_price": "13.99",
+    "bbox": [
+      0.6162103294084224,
+      0.7092686671275535,
+      0.8455565120696471,
+      0.9459013133915508
+    ]
+  },
+  {
+    "product_name": "GIN GOLD",
+    "price": "24.99",
+    "discount": "28",
+    "unit": "0,7-l-Flasche",
+    "original_price": "34.99",
+    "bbox": [
+      0.5363960438575829,
+      0.2550426906602333,
+      0.7265193675634962,
+      0.4065897967047182
+    ]
+  },
+  {
+    "product_name": "KOSKENKORVA",
+    "price": "11.99",
+    "discount": "20",
+    "unit": "0,7-l-Flasche",
+    "original_price": "14.99",
+    "bbox": [
+      0.5181023907174953,
+      0.3897061923111268,
+      0.6826368512774345,
+      0.5950996115405474
+    ]
+  },
+  {
+    "product_name": "LINIE",
+    "price": "12.99",
+    "discount": "35",
+    "unit": "0,7-l-Flasche",
+    "original_price": "19.99",
+    "bbox": [
+      0.6771212522619661,
+      0.25903922227312687,
+      0.8515862968832508,
+      0.49574747710891587
+    ]
+  },
+  {
+    "product_name": "UNDERBERG",
+    "price": "1.99",
+    "discount": "33",
+    "unit": "3 x 0,02-l-Flasche",
+    "original_price": "2.99",
+    "bbox": [
+      0.6968571170381297,
+      0.485698541762114,
+      0.8563229044295311,
+      0.5856296210442028
+    ]
+  },
+  {
+    "product_name": "UNDERBERG/KOSKENKORVA®/TÚNEL/ THE STANDARD 1894/STROH/LINIE/ GIN GOLD/AMARULA/UNICUM Spirituose",
+    "price": "ab 1.99",
+    "discount": "33",
+    "unit": null,
+    "original_price": "ab 2.99",
+    "bbox": [
+      0.5162902225444358,
+      0.590654088717604,
+      0.8604837042407261,
+      0.6900268938137615
+    ]
+  }
+]

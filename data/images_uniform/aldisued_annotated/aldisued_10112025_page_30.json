@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "MOSER ROTH Edelbitter-Schokolade",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 125-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5197779621758389,
+      0.10468333351363736,
+      0.8566097742251394,
+      0.3064937499323855
+    ]
+  },
+  {
+    "product_name": "MOSER ROTH Premium-Trüffel",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 200-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5015377105288886,
+      0.3197292175570703,
+      0.8670335368852713,
+      0.48710660866640554
+    ]
+  },
+  {
+    "product_name": "MOSER ROTH Helle Schokolade",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 125-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.1259343420667278,
+      0.424270782442939,
+      0.4822905052693276,
+      0.6098443477773425
+    ]
+  },
+  {
+    "product_name": "MOSER ROTH Chocolat Création oder Chocolat Délice",
+    "price": "2.69",
+    "discount": null,
+    "unit": "je 125- bzw. 150-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5257416157786956,
+      0.532294261337613,
+      0.8634637053083898,
+      0.7276801740008225
+    ]
+  },
+  {
+    "product_name": "MOSER ROTH Schokolade ,,Mousse au Chocolat“",
+    "price": "2.69",
+    "discount": null,
+    "unit": "je 150-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11957959470138978,
+      0.7435245217781434,
+      0.4706885526444267,
+      0.9500810440048122
+    ]
+  },
+  {
+    "product_name": "MOSER ROTH Délice",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 140-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5310963631440269,
+      0.7416226088906761,
+      0.8598938737314844,
+      0.9320490435562753
+    ]
+  }
+]

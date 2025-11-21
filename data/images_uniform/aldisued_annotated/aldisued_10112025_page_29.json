@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "NUR DIE Komfort-BH",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.10408728088417452,
+      0.060551342476760105,
+      0.48398690786737286,
+      0.4515330191208471
+    ]
+  },
+  {
+    "product_name": "NUR DIE Strumpfhose",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5151091011052185,
+      0.15518704655112756,
+      0.8748210741874418,
+      0.41644013134394897
+    ]
+  },
+  {
+    "product_name": "NUR DIE Midi-Slips mit Spitze",
+    "price": "4.99",
+    "discount": null,
+    "unit": "2er-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11783426857585143,
+      0.457068111455107,
+      0.4869999999999998,
+      0.6109999999999982
+    ]
+  }
+]

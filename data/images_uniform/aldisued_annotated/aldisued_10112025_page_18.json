@@ -1,0 +1,210 @@
+[
+  {
+    "product_name": "Dekorierter Türkranz",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.18173680647099139,
+      0.08953835621762864,
+      0.4920000000000003,
+      0.31180650744831945
+    ]
+  },
+  {
+    "product_name": "GARDENLINE Weihnachtspflanze",
+    "price": "ab 3.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.7393745753229879,
+      0.17191475159736597,
+      0.8851825485619754,
+      0.31594225405458365
+    ]
+  },
+  {
+    "product_name": "GARDENLINE Weihnachtliche Dekoration",
+    "price": "ab 2.49",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.12992190961227232,
+      0.44920547927457255,
+      0.48715328853887285,
+      0.5352815071244148
+    ]
+  },
+  {
+    "product_name": "GARDENLINE Premium-Türstrauß, -Adventskranz oder -gesteck",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.521127902969623,
+      0.6349789789485139,
+      0.8790057772214724,
+      0.7144703780307996
+    ]
+  },
+  {
+    "product_name": "Wintertulpen",
+    "price": "2.79",
+    "discount": null,
+    "unit": "je Bund",
+    "original_price": null,
+    "bbox": [
+      0.14136048515192984,
+      0.5630809305373287,
+      0.4833139227670459,
+      0.7727196510485026
+    ]
+  },
+  {
+    "product_name": "Amaryllis-Bouquet",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Strauß",
+    "original_price": null,
+    "bbox": [
+      0.13219768911141572,
+      0.7661401744757534,
+      0.47758717524172395,
+      0.9279906106651276
+    ]
+  },
+  {
+    "product_name": "Zündhölzer",
+    "price": "1.79",
+    "discount": null,
+    "unit": "3x 50 Stück = 150 Stück, je ca. 10 cm lang, oder 1x 45 Stück, je ca. 20 cm lang",
+    "original_price": null,
+    "bbox": [
+      0.5215290584139096,
+      0.7263302035550464,
+      0.8845871752417241,
+      0.9458598255242581
+    ]
+  },
+  {
+    "product_name": "Alpenveilchen in Keramik",
+    "price": "4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.1465748412223709,
+      0.3441068471497794,
+      0.2532653719080423,
+      0.4400054766833247
+    ]
+  },
+  {
+    "product_name": "Kranz umdekoriert",
+    "price": "4.99",
+    "discount": null,
+    "unit": "Ø ca. 30 cm",
+    "original_price": null,
+    "bbox": [
+      0.2532653719080421,
+      0.33917088827672903,
+      0.3798980578620631,
+      0.440710613665189
+    ]
+  },
+  {
+    "product_name": "Handbund",
+    "price": "2.49",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.383886488915733,
+      0.34622225809537205,
+      0.4816030497306468,
+      0.43930033970146054
+    ]
+  },
+  {
+    "product_name": "Amaryllis im Pappbecher",
+    "price": "3.49",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.544041014905555,
+      0.017009389334877955,
+      0.7376050812614253,
+      0.20411267201853558
+    ]
+  },
+  {
+    "product_name": "Weihnachtsstern",
+    "price": "3.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5176979762890753,
+      0.1960129628114504,
+      0.720424838685461,
+      0.31345874631417936
+    ]
+  },
+  {
+    "product_name": "Premium-Adventskranz",
+    "price": "24.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5348782188650409,
+      0.3644869143188147,
+      0.8670295753337045,
+      0.5321508949054683
+    ]
+  },
+  {
+    "product_name": "Premium-Adventsgesteck",
+    "price": "24.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5234247238144016,
+      0.5443004587160938,
+      0.6585759654119931,
+      0.630157376311193
+    ]
+  },
+  {
+    "product_name": "Türstrauß",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6620120139271795,
+      0.5443004587160936,
+      0.7547853238373896,
+      0.6317773181526086
+    ]
+  },
+  {
+    "product_name": "Adventsgesteck",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.7639481198779046,
+      0.5540201097645953,
+      0.8613028278083721,
+      0.6309673472319003
+    ]
+  }
+]

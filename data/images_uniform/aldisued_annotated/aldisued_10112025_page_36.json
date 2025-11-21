@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Österreich - Tirol Winterspaß am Wilden Kaiser",
+    "price": "219",
+    "discount": null,
+    "unit": "pro Person ab im Doppelzimmer",
+    "original_price": null,
+    "bbox": [
+      0.13725746047272863,
+      0.39718619658061194,
+      0.8628211308068099,
+      0.5749999999999964
+    ]
+  },
+  {
+    "product_name": "Österreich - Zillertal An der Bergbahn Spieljochbahn",
+    "price": "499",
+    "discount": null,
+    "unit": "pro Person ab im Doppelzimmer",
+    "original_price": null,
+    "bbox": [
+      0.13617886919318276,
+      0.5889999999999975,
+      0.4870569046454507,
+      0.8798648461548944
+    ]
+  },
+  {
+    "product_name": "Österreich - Tirol Ski Juwel Alpbachtal Wildschönau",
+    "price": "629",
+    "discount": null,
+    "unit": "pro Person ab im Doppelzimmer",
+    "original_price": null,
+    "bbox": [
+      0.5079999999999981,
+      0.5889999999999993,
+      0.862821130806814,
+      0.8783393247871413
+    ]
+  }
+]
