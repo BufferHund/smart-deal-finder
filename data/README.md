@@ -68,7 +68,7 @@ Annotation Workflow
 6. Convert the JSON exported from Label Studio into a required structure like [rewe_annotated/example](images_uniform/rewe_annotated/rewe_10112025_page_1.json).
 
 Here are the same brochure page before and after annotation:
-```html
+
 <table>
   <tr>
     <td align="center"><b>Gemini Annotation</b></td>
@@ -79,7 +79,7 @@ Here are the same brochure page before and after annotation:
     <td><img src="README_pics/annotation_after.png" width=726></td>
   </tr>
 </table>
-```
+
 
 ## Exported and Normalized Annotation Format
 Label Studio exports each annotated page as a dictionary inside a JSON list.
