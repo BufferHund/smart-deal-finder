@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "HOME CREATION Makramee-Garn",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 150- bzw. 200-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11118279115706516,
+      0.06275250445873802,
+      0.4846601590582809,
+      0.28557902697330095
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Nähzubehör",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.52148358644847,
+      0.057413261257281564,
+      0.8720656542061213,
+      0.29723592788713565
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Garn",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 200- bzw. 300-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11345075934540885,
+      0.2893022341735432,
+      0.4694445407981548,
+      0.4992397837718441
+    ]
+  },
+  {
+    "product_name": "SINGER Freiarm-Nähmaschine",
+    "price": "149.99",
+    "discount": "51",
+    "unit": "je Stück",
+    "original_price": "309.00",
+    "bbox": [
+      0.5136078091300634,
+      0.3158966846856795,
+      0.9012289225380292,
+      0.7548966846856795
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Filzwolle",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 2 x 100 g = 200-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.14711091840368962,
+      0.5106198918859224,
+      0.48339219086993707,
+      0.6974464144004856
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Sockenwolle oder -garn",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 2 x 75 g = 150- bzw. 2 x 100 g = 200-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.131276962270266,
+      0.7143106724406778,
+      0.4909999999999968,
+      0.9480679826779308
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Regenbogen- oder Ombre-Garn",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 100-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5049999999999979,
+      0.7606893275593101,
+      0.887834890211309,
+      0.9429999999999952
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "HOME CREATION Künstler set",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.09657673871708074,
+      0.08726108918352997,
+      0.48155452302723256,
+      0.45441184729863665
+    ]
+  },
+  {
+    "product_name": "UHU Klebemix",
+    "price": "2.99",
+    "discount": "21",
+    "unit": "6 x 10 g = 60-g-Packung",
+    "original_price": "3.83",
+    "bbox": [
+      0.5036987077065026,
+      0.09340510945752323,
+      0.8687374765113673,
+      0.35366086487677867
+    ]
+  },
+  {
+    "product_name": "DECO Fenstermalfarben",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je 10 Farben à 25 ml, je Set",
+    "original_price": null,
+    "bbox": [
+      0.11611833880936015,
+      0.46432032567671816,
+      0.4711090460544678,
+      0.7053660864876778
+    ]
+  },
+  {
+    "product_name": "Bastel- oder Gestaltungs-buch",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Stück oder 2er-Set",
+    "original_price": null,
+    "bbox": [
+      0.4963012922934944,
+      0.3627523864986982,
+      0.8542439379788468,
+      0.6649999999999999
+    ]
+  },
+  {
+    "product_name": "Foto- und Bastelkalender 2026",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Stück oder 2er-Set",
+    "original_price": null,
+    "bbox": [
+      0.11517210471056073,
+      0.7132553326482116,
+      0.4761043647047467,
+      0.9413794438735154
+    ]
+  },
+  {
+    "product_name": "HOME CREATION Weihnachts-Häkelset",
+    "price": "3.49",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.5052967494849931,
+      0.6731214729929954,
+      0.8718455072100775,
+      0.941005643211199
+    ]
+  }
+]

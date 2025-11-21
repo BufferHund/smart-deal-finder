@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "ROUGETTE Ofenkäse",
+    "price": "3.99",
+    "discount": "33",
+    "unit": "je 320-g-Packung",
+    "original_price": "5.99",
+    "bbox": [
+      0.16557748512570883,
+      0.06198199657625599,
+      0.4768093009282188,
+      0.24648499714687783
+    ]
+  },
+  {
+    "product_name": "YOUCOOK Fertiggericht",
+    "price": "3.49",
+    "discount": "30",
+    "unit": "je 420-g-Packung",
+    "original_price": "4.99",
+    "bbox": [
+      0.4978188119011193,
+      0.06922588261881785,
+      0.8711184161365881,
+      0.2690101941286671
+    ]
+  },
+  {
+    "product_name": "NISSIN Soba Bag oder Demae Ramen",
+    "price": "0.69",
+    "discount": null,
+    "unit": "100-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12704534624363611,
+      0.25749490293566557,
+      0.4958013861824629,
+      0.6312917697575423
+    ]
+  },
+  {
+    "product_name": "ASIA GREEN GARDEN Instantnudeln",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 5 x 60 g = 300-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5317364353272612,
+      0.2982257845481972,
+      0.8622210898225572,
+      0.4971396072227566
+    ]
+  },
+  {
+    "product_name": "ORYZA Himalaya-Basmatireis",
+    "price": "3.49",
+    "discount": "30",
+    "unit": "1100-g-Packung",
+    "original_price": "4.99",
+    "bbox": [
+      0.5511758902412018,
+      0.5047741173811826,
+      0.8577017169486119,
+      0.7084222304114682
+    ]
+  },
+  {
+    "product_name": "LEIFHEIT Superduster Classic",
+    "price": "5.99",
+    "discount": "20",
+    "unit": "Staubwedel oder 2x Staubbezug",
+    "original_price": "7.49",
+    "bbox": [
+      0.13485748839009293,
+      0.6517801857585149,
+      0.4842994388544891,
+      0.9369318885448927
+    ]
+  },
+  {
+    "product_name": "WC FRISCH Kraft Aktiv",
+    "price": "4.66",
+    "discount": "32",
+    "unit": "je 4 x 50 g = 200-g-Packung",
+    "original_price": "6.89",
+    "bbox": [
+      0.5348413200557725,
+      0.7246776478564582,
+      0.8588669150255641,
+      0.9395584288910335
+    ]
+  }
+]

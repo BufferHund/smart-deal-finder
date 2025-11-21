@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "MEINE METZGEREI Grobe Bratwurst",
+    "price": "2.19",
+    "discount": "24",
+    "unit": "400-g-Packung",
+    "original_price": "2.89",
+    "bbox": [
+      0.5092951303908654,
+      0.06311232082923955,
+      0.8582339719221123,
+      0.2546755176044192
+    ]
+  },
+  {
+    "product_name": "BIO Bio-Hackfleisch, gemischt",
+    "price": "4.69",
+    "discount": "24",
+    "unit": "400-g-Packung",
+    "original_price": "6.19",
+    "bbox": [
+      0.1221757672961567,
+      0.24004992036855108,
+      0.48113657973942237,
+      0.4104633560380774
+    ]
+  },
+  {
+    "product_name": "MEINE METZGEREI Hähnchen-Innenfilets",
+    "price": "6.99",
+    "discount": "22",
+    "unit": "800-g-Packung",
+    "original_price": "8.99",
+    "bbox": [
+      0.5068634202605767,
+      0.26470047778869427,
+      0.8648242327038433,
+      0.47870047778869435
+    ]
+  },
+  {
+    "product_name": "FAIR & GUT Puten-Minifilets",
+    "price": "3.79",
+    "discount": "20",
+    "unit": "350-g-Packung",
+    "original_price": "4.79",
+    "bbox": [
+      0.1264708976870222,
+      0.41140095557738887,
+      0.483431710130288,
+      0.5822886347481493
+    ]
+  },
+  {
+    "product_name": "MEINE METZGEREI Maispoularde, goldgelb",
+    "price": "5.99",
+    "discount": "23",
+    "unit": "1,4-kg-Packung",
+    "original_price": "7.79",
+    "bbox": [
+      0.5011365797394235,
+      0.4928127986179341,
+      0.8706876529644205,
+      0.7288127986179339
+    ]
+  },
+  {
+    "product_name": "FAIR & GUT Filetsteak",
+    "price": "7.99",
+    "discount": "16",
+    "unit": "z. B. 217 g",
+    "original_price": "9.55",
+    "bbox": [
+      0.12360747742644528,
+      0.5822012741031857,
+      0.475409739218269,
+      0.7520390329053944
+    ]
+  },
+  {
+    "product_name": "GOLDEN SEAFOOD Lachsforellenfilet",
+    "price": "2.99",
+    "discount": "25",
+    "unit": "180-g-Packung",
+    "original_price": "3.99",
+    "bbox": [
+      0.12360747742644537,
+      0.7681763139189092,
+      0.48113657973942303,
+      0.9398876791707602
+    ]
+  },
+  {
+    "product_name": "MEINE METZGEREI Hähnchen-Ofenschale",
+    "price": "4.49",
+    "discount": "18",
+    "unit": "je 450-g-Packung",
+    "original_price": "5.49",
+    "bbox": [
+      0.508295130390866,
+      0.7418876791707604,
+      0.8602339719221122,
+      0.9459750398157241
+    ]
+  }
+]

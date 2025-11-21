@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "AMBIANO Glühweinautomat",
+    "price": "24.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.1024942380141982,
+      0.14168471656802478,
+      0.48500000000000143,
+      0.48900000000000027
+    ]
+  },
+  {
+    "product_name": "CROFTON Hybrid-Pfanne",
+    "price": "19.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5102209417809327,
+      0.0806494755167852,
+      0.8912848202048689,
+      0.2879999999999999
+    ]
+  },
+  {
+    "product_name": "AMBIANO Espressomaschine",
+    "price": "49.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5010000000000002,
+      0.29299999999999976,
+      0.8671676760280302,
+      0.6047889582773247
+    ]
+  },
+  {
+    "product_name": "SPEISE ZEIT Wellenschnitt-pommes",
+    "price": "1.49",
+    "discount": null,
+    "unit": "1-kg-Packung",
+    "original_price": null,
+    "bbox": [
+      0.1193759197392578,
+      0.5128831961395777,
+      0.4785100605616819,
+      0.7183575787676763
+    ]
+  },
+  {
+    "product_name": "AMBIANO Heißluftfritteuse",
+    "price": "49.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5010000000000011,
+      0.6204313795096498,
+      0.8686643225074702,
+      0.9462920096510555
+    ]
+  },
+  {
+    "product_name": "JACK'S FARM Crunchy-Chicken-Burger-Patties",
+    "price": "3.49",
+    "discount": null,
+    "unit": "4 x 100 g = 400-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11787927325981816,
+      0.7212991768374646,
+      0.4829999999999991,
+      0.9420000000000003
+    ]
+  }
+]

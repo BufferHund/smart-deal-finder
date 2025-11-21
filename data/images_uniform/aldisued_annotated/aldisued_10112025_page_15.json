@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "WORKZONE Verlängerungskabel",
+    "price": "8.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.130343768828283,
+      0.1264288788063245,
+      0.4919999999999931,
+      0.33437866041219266
+    ]
+  },
+  {
+    "product_name": "Abreiß- oder Postkartenkalender 2026",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5157515194486947,
+      0.07100000000000005,
+      0.8948767726901437,
+      0.5381618327853566
+    ]
+  },
+  {
+    "product_name": "POWER FORCE Duft-Müllbeutel",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.115,
+      0.3509999999999999,
+      0.494,
+      0.5309999999999999
+    ]
+  },
+  {
+    "product_name": "POWER FORCE Einmalhandschuhe",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.1318787986217385,
+      0.544655130421152,
+      0.49400000000000005,
+      0.74333146485044
+    ]
+  },
+  {
+    "product_name": "OPTI HOME Backpapier",
+    "price": "1.99",
+    "discount": null,
+    "unit": "30-m-Rolle",
+    "original_price": null,
+    "bbox": [
+      0.12962829213883995,
+      0.7567399464536945,
+      0.4894989870342029,
+      0.937021204008136
+    ]
+  },
+  {
+    "product_name": "GARDENLINE Orchidee oder Amaryllis in Wachs",
+    "price": "ab 4.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.7400526742214373,
+      0.7720256448264581,
+      0.8757474675855064,
+      0.9440000000000057
+    ]
+  },
+  {
+    "product_name": "Orchidee",
+    "price": "6.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5243680105153352,
+      0.5575578857046586,
+      0.8416894246040152,
+      0.7708213508686029
+    ]
+  },
+  {
+    "product_name": "Amaryllis in Wachs",
+    "price": "4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.525493263756785,
+      0.7787789428523262,
+      0.7336651134248904,
+      0.9427053377171493
+    ]
+  }
+]

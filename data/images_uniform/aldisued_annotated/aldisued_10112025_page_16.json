@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "CRANE Fitness-Socken",
+    "price": "3.99",
+    "discount": null,
+    "unit": "3 Paar",
+    "original_price": null,
+    "bbox": [
+      0.49323188309649735,
+      0.04657089605883414,
+      0.8664512033707846,
+      0.32083768654278033
+    ]
+  },
+  {
+    "product_name": "ADVENTURIDGE Outdoor-Fleecejacke",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12470338536021294,
+      0.4683768654278025,
+      0.4768154588731003,
+      0.675
+    ]
+  },
+  {
+    "product_name": "ADVENTURIDGE Softshell-Outdoorhose",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.1531323724058182,
+      0.6839999999999994,
+      0.48273816450760143,
+      0.9509999999999988
+    ]
+  },
+  {
+    "product_name": "ADVENTURIDGE Outdoorschuhe",
+    "price": "19.99",
+    "discount": null,
+    "unit": "je Paar",
+    "original_price": null,
+    "bbox": [
+      0.5099999999999999,
+      0.7304141674489675,
+      0.8700048267514847,
+      0.9504869403716614
+    ]
+  }
+]

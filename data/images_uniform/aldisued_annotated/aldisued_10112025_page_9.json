@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "GOURMET FINEST CUISINE Rösti-Sterne",
+    "price": "1.69",
+    "discount": "26",
+    "unit": "600-g-Packung",
+    "original_price": "2.29",
+    "bbox": [
+      0.13085039427547385,
+      0.05614379762335427,
+      0.4953678289803229,
+      0.23915696435031436
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Salami",
+    "price": "2.59",
+    "discount": "35",
+    "unit": "je 200-g-Packung",
+    "original_price": "3.99",
+    "bbox": [
+      0.5627394077519322,
+      0.04772557148025156,
+      0.8792530926654958,
+      0.28931392870062883
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Rehmedaillons oder Rehedelgulasch",
+    "price": "6.39",
+    "discount": "28",
+    "unit": "Je 300- bzw. 400-g-Packung",
+    "original_price": "8.99",
+    "bbox": [
+      0.13163967060224852,
+      0.2575817738568969,
+      0.5052643420393536,
+      0.4836992380263312
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Gegrillte Thunfischfilets",
+    "price": "2.29",
+    "discount": "23",
+    "unit": "120-g-Dose",
+    "original_price": "2.99",
+    "bbox": [
+      0.5270536183661277,
+      0.2938825358305657,
+      0.8782530926654957,
+      0.4370526669078404
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Doradenfilets",
+    "price": "4.79",
+    "discount": "29",
+    "unit": "380-g-Packung",
+    "original_price": "6.79",
+    "bbox": [
+      0.5202605922480682,
+      0.48400658336348007,
+      0.8792530926654952,
+      0.7202744285197478
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Hirsch-Edelgulasch",
+    "price": "6.59",
+    "discount": "26",
+    "unit": "500-g-Packung",
+    "original_price": "8.99",
+    "bbox": [
+      0.1911072367322557,
+      0.718568607129935,
+      0.4792069738819398,
+      0.9418035354688052
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Fond",
+    "price": "0.89",
+    "discount": "35",
+    "unit": "je 400-ml-Glas",
+    "original_price": "1.39",
+    "bbox": [
+      0.5173678289803234,
+      0.732424809506583,
+      0.8794638163387227,
+      0.9489604998191181
+    ]
+  }
+]

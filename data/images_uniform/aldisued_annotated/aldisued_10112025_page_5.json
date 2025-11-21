@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Champignons braun",
+    "price": "1.49",
+    "discount": "21",
+    "unit": "400-g-Schale",
+    "original_price": "1.89",
+    "bbox": [
+      0.11828861835564766,
+      0.04869572829865891,
+      0.4641991868604187,
+      0.32667349435737625
+    ]
+  },
+  {
+    "product_name": "Äpfel Krumme Dinger",
+    "price": "1.59",
+    "discount": null,
+    "unit": "2-kg-Tasche",
+    "original_price": "1.79",
+    "bbox": [
+      0.48311382106309664,
+      0.2713452378455981,
+      0.8792825198087885,
+      0.6123389937779415
+    ]
+  },
+  {
+    "product_name": "Mango",
+    "price": "1.25",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.11828861835564758,
+      0.486949288049776,
+      0.4820284552657743,
+      0.9494421685475423
+    ]
+  }
+]
