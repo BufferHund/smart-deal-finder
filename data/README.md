@@ -67,6 +67,14 @@ Annotation Workflow
 5. Save the annotation, then export all labeled tasks as JSON.
 6. Convert the JSON exported from Label Studio into a required structure like [rewe_annotated/example](images_uniform/rewe_annotated/rewe_10112025_page_1.json).
 
+Here are the same brochure page before and after annotation:
+
+Before:
+![before](README_pics/annotation_before.png)
+
+After:
+![after](README_pics/annotation_after.png)
+
 ## Exported and Normalized Annotation Format
 Label Studio exports each annotated page as a dictionary inside a JSON list.
 ```json
@@ -112,6 +120,10 @@ For downstream processing and benchmarking, each page is converted into a clean 
     "bbox": [0.63, 0.75, 0.88, 0.97]
   }
 ]
+```
+Data without deal information are annotated as:
+```json
+null
 ```
 
 ## License and Usage
