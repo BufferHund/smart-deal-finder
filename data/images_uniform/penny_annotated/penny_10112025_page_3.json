@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Deutscher bunter Möhren-Mix",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 750-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.15294360888035538,
+      0.062,
+      0.8278880093477424,
+      0.2781119575382195
+    ]
+  },
+  {
+    "product_name": "Marktliebe Zwiebeln",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 3-kg-Netz",
+    "original_price": null,
+    "bbox": [
+      0.12766481963025947,
+      0.29159096549980307,
+      0.8688347845762247,
+      0.4870683792493108
+    ]
+  },
+  {
+    "product_name": "BEST MOMENTS Speisekartoffeln Drillinge",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 1-kg-Schale",
+    "original_price": null,
+    "bbox": [
+      0.12300000000000033,
+      0.4525178036142632,
+      0.8572779976630647,
+      0.6787884854037626
+    ]
+  },
+  {
+    "product_name": "Mini-Weihnachtsstern",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.13088880093477456,
+      0.6859004429419865,
+      0.395054807945581,
+      0.9396065544041584
+    ]
+  },
+  {
+    "product_name": "Amaryllis",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.39549802103242115,
+      0.6854214349804006,
+      0.618832409815131,
+      0.9408460583849495
+    ]
+  },
+  {
+    "product_name": "Topfrose",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5994980210324222,
+      0.6849144376342613,
+      0.8694996042064851,
+      0.9408460583849501
+    ]
+  }
+]

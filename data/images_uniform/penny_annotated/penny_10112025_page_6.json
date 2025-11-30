@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "LÄTTA Halbfett-margarine",
+    "price": "1.25",
+    "discount": "42",
+    "unit": "je 450 g",
+    "original_price": "2.19",
+    "bbox": [
+      0.12847371191253296,
+      0.21727596237577632,
+      0.5469999999999988,
+      0.49717211287266694
+    ]
+  },
+  {
+    "product_name": "LINDENHOF Backcamembert",
+    "price": "2.59",
+    "discount": "13",
+    "unit": "je 350 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.5644084332415134,
+      0.271379811878884,
+      0.8723368033224499,
+      0.49299999999999733
+    ]
+  },
+  {
+    "product_name": "BERIDA XXL Räucherlachs",
+    "price": "4.79",
+    "discount": null,
+    "unit": "je 220 g",
+    "original_price": null,
+    "bbox": [
+      0.12515366980548207,
+      0.5070341316847772,
+      0.364277875899476,
+      0.7199317366304383
+    ]
+  },
+  {
+    "product_name": "BERIDA Knusper-Fisch",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 300 g",
+    "original_price": null,
+    "bbox": [
+      0.3815621030469955,
+      0.5061721128726664,
+      0.6215326393355081,
+      0.7190106604731916
+    ]
+  },
+  {
+    "product_name": "ANDERSSON'S Köttbullar",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.633503175624013,
+      0.5035860564363284,
+      0.8730589274229676,
+      0.7181338773247926
+    ]
+  },
+  {
+    "product_name": "GUSTAVO GUSTO Pizza Salami",
+    "price": "3.49",
+    "discount": "25",
+    "unit": "je 460 g",
+    "original_price": "4.69",
+    "bbox": [
+      0.141,
+      0.7340000000000001,
+      0.521,
+      0.9410000000000001
+    ]
+  },
+  {
+    "product_name": "GUSTAVO GUSTO Pizza Margherita",
+    "price": "3.49",
+    "discount": "25",
+    "unit": "je 410 g",
+    "original_price": "4.69",
+    "bbox": [
+      0.141,
+      0.7340000000000001,
+      0.521,
+      0.9410000000000001
+    ]
+  },
+  {
+    "product_name": "MCCAIN Golden Longs Extra knusprig",
+    "price": "1.59",
+    "discount": "46",
+    "unit": "je 600 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.521,
+      0.7340000000000001,
+      0.895,
+      0.9410000000000001
+    ]
+  },
+  {
+    "product_name": "MCCAIN Chef Frites",
+    "price": "1.59",
+    "discount": "46",
+    "unit": "je 750 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.521,
+      0.7340000000000001,
+      0.895,
+      0.9410000000000001
+    ]
+  },
+  {
+    "product_name": "ALMETTE Frischkäsezubereitung oder GERVAIS Hüttenkäse",
+    "price": "1.11",
+    "discount": "44",
+    "unit": "je 150 g oder je 200 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.532680484231082,
+      0.044824978229794823,
+      0.8727671091749513,
+      0.26377775650610014
+    ]
+  }
+]

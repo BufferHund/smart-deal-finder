@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "OETTINGER Pils",
+    "price": "12.80",
+    "discount": "31",
+    "unit": "je 2 x 20 x 0,5 l",
+    "original_price": "18.58",
+    "bbox": [
+      0.12112511215667603,
+      0.03681450691430503,
+      0.3887232222969034,
+      0.2553196413922196
+    ]
+  },
+  {
+    "product_name": "MM Extra Sekt",
+    "price": "2.99",
+    "discount": "37",
+    "unit": "je 0,75 l",
+    "original_price": "4.79",
+    "bbox": [
+      0.4036387165240364,
+      0.04599999999999992,
+      0.6195179679488346,
+      0.2629999999999999
+    ]
+  },
+  {
+    "product_name": "JIM BEAM Whiskey",
+    "price": "10.99",
+    "discount": null,
+    "unit": "je 0,7 l",
+    "original_price": null,
+    "bbox": [
+      0.638000000000001,
+      0.04400000000000008,
+      0.8723603212263201,
+      0.26300000000000057
+    ]
+  },
+  {
+    "product_name": "ALPECIN Coffein Shampoo + Liquid",
+    "price": "6.45",
+    "discount": null,
+    "unit": "je 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.13369440532286125,
+      0.26808924280145197,
+      0.3738995993900889,
+      0.49264538369988975
+    ]
+  },
+  {
+    "product_name": "PAMPERS Windeln Big Pack",
+    "price": "33.90",
+    "discount": "33",
+    "unit": "je 3 Packungen",
+    "original_price": "50.85",
+    "bbox": [
+      0.38295399916830336,
+      0.26879230900015794,
+      0.872468794011781,
+      0.49616615279987397
+    ]
+  },
+  {
+    "product_name": "BULLRICH Heilerde Tuchmaske oder Heilerde Paste",
+    "price": "ab 1.79",
+    "discount": null,
+    "unit": "je Stück oder je 200 ml",
+    "original_price": null,
+    "bbox": [
+      0.12743080537830911,
+      0.4996261562002849,
+      0.49131799972276813,
+      0.7196230729995272
+    ]
+  },
+  {
+    "product_name": "PALMOLIVE Duschgel oder Flüssigseife",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 2 x 250 ml oder je 2 x 300 ml",
+    "original_price": null,
+    "bbox": [
+      0.5072092001663405,
+      0.5012300017002048,
+      0.8724687940117808,
+      0.7191023038995431
+    ]
+  },
+  {
+    "product_name": "WHISKAS Knuspertaschen oder DREAMIES",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 180 g",
+    "original_price": null,
+    "bbox": [
+      0.12669440532286155,
+      0.7291023038995512,
+      0.34095399916830293,
+      0.9477253768990753
+    ]
+  },
+  {
+    "product_name": "WHISKAS Tasty Mix oder SHEBA Delikatesse in Gelee",
+    "price": "15.99",
+    "discount": null,
+    "unit": "je 60 x 85 g oder je 40 x 85 g",
+    "original_price": "36.49",
+    "bbox": [
+      0.3568451996118749,
+      0.7327476875994363,
+      0.645133996395979,
+      0.9482876841990271
+    ]
+  },
+  {
+    "product_name": "FELIX So gut wie es aussieht in Gelee",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 12 x 85 g",
+    "original_price": null,
+    "bbox": [
+      0.6592343970058911,
+      0.730185380299485,
+      0.8746779941781202,
+      0.9492876841990235
+    ]
+  }
+]

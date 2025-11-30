@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "MILKANA Tolle Rolle oder Sahne",
+    "price": "1.99",
+    "discount": "31",
+    "unit": "je 100 g oder je 190 g",
+    "original_price": "2.89",
+    "bbox": [
+      0.12679211545570093,
+      0.045656032717112695,
+      0.41583759019976707,
+      0.26354137695615026
+    ]
+  },
+  {
+    "product_name": "ZENTIS Erdnussbutter oder Nusspli White Haselnuss",
+    "price": "1.99",
+    "discount": "33",
+    "unit": "je 350 g oder je 300 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.4308051082397208,
+      0.04524626220980435,
+      0.6700064963920095,
+      0.2642462622098045
+    ]
+  },
+  {
+    "product_name": "BÄRENMARKE Frischer Kakao",
+    "price": "1.59",
+    "discount": "27",
+    "unit": "je 1 l",
+    "original_price": "2.19",
+    "bbox": [
+      0.685974014431963,
+      0.04413160644884193,
+      0.8712111327403039,
+      0.26113160644884204
+    ]
+  },
+  {
+    "product_name": "DR. OETKER The taste of Christmas Backmischung",
+    "price": "2.99",
+    "discount": null,
+    "unit": "Vanillekipferl, je 360 g oder Kokosmakronen, je 375 g",
+    "original_price": null,
+    "bbox": [
+      0.1267986118477106,
+      0.2754755737317294,
+      0.500980510823972,
+      0.48147557373172933
+    ]
+  },
+  {
+    "product_name": "COPPENRATH & WIESE Lust auf Kuchen",
+    "price": "3.79",
+    "discount": "24",
+    "unit": "Salted-Caramel Cheesecake, je 490 g oder Erdbeer Cheesecake, je 550 g",
+    "original_price": "4.99",
+    "bbox": [
+      0.5089870072159843,
+      0.27395114746345983,
+      0.8702143809363105,
+      0.49040977050730916
+    ]
+  },
+  {
+    "product_name": "TONY'S Schokolade",
+    "price": "2.49",
+    "discount": "37",
+    "unit": "je 180 g",
+    "original_price": "3.99",
+    "bbox": [
+      0.1258018600437153,
+      0.5018195410146167,
+      0.34408120490011684,
+      0.7128195410146166
+    ]
+  },
+  {
+    "product_name": "FUNNY-FRISCH Chipsfrisch oder Intense",
+    "price": "1.19",
+    "discount": "40",
+    "unit": "Chipsfrisch, je 150 g oder Intense, je 110 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.36202598556803883,
+      0.5027048852536544,
+      0.6181754025842533,
+      0.712409770507309
+    ]
+  },
+  {
+    "product_name": "THOMY Les Sauces",
+    "price": "0.99",
+    "discount": "41",
+    "unit": "je 250 ml",
+    "original_price": "1.69",
+    "bbox": [
+      0.6331429206242084,
+      0.5024097705073104,
+      0.871214380936309,
+      0.7156390820292335
+    ]
+  },
+  {
+    "product_name": "SENSODYNE Zahncreme",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 3 x 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.12381160463172919,
+      0.7293928198194305,
+      0.4471494170162152,
+      0.9487537377901974
+    ]
+  },
+  {
+    "product_name": "LENOR Waschmittel",
+    "price": "17.99",
+    "discount": "14",
+    "unit": "Aprilfrisch, je 4,95 kg oder All in 1 Color Pods Blütentraum, je 1.490 g",
+    "original_price": "20.99",
+    "bbox": [
+      0.46512667964418397,
+      0.7315074755803931,
+      0.871214380936309,
+      0.9498683935511585
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "NESCAFÉ Farmers Origins Kaffeekapseln",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "je 44 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.5072206235974399,
+      0.07841038971592022,
+      0.8734987976869164,
+      0.26155671087131255
+    ]
+  },
+  {
+    "product_name": "JACOBS Ganze Bohnen",
+    "price": "12.99",
+    "discount": "38",
+    "unit": "je 1.000 g",
+    "original_price": "20.99",
+    "bbox": [
+      0.1264412471948869,
+      0.21613679657197263,
+      0.4980431628690213,
+      0.7254528137121031
+    ]
+  },
+  {
+    "product_name": "LAVAZZA Kaffeepads",
+    "price": "2.22",
+    "discount": "39",
+    "unit": "je 125 g",
+    "original_price": "3.69",
+    "bbox": [
+      0.5057793764025543,
+      0.27473593143946945,
+      0.8711750561022544,
+      0.4941463211553919
+    ]
+  },
+  {
+    "product_name": "MÖVENPICK Kaffee",
+    "price": "6.99",
+    "discount": "34",
+    "unit": "je 500 g",
+    "original_price": "10.69",
+    "bbox": [
+      0.5057793764025534,
+      0.5012831177273647,
+      0.8716163032971403,
+      0.7213774903031525
+    ]
+  },
+  {
+    "product_name": "NESTLÉ Nesquik",
+    "price": "1.99",
+    "discount": "39",
+    "unit": "je 350 g",
+    "original_price": "3.29",
+    "bbox": [
+      0.12522062359744282,
+      0.7320000000000018,
+      0.49092565725879433,
+      0.9484008651325019
+    ]
+  },
+  {
+    "product_name": "MEẞMER Früchtetee",
+    "price": "1.59",
+    "discount": "27",
+    "unit": "je 55 g",
+    "original_price": "2.19",
+    "bbox": [
+      0.5052493988434543,
+      0.731231169147764,
+      0.8733956796996931,
+      0.9492640685605288
+    ]
+  }
+]

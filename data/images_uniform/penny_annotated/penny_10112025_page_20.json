@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "DRESDNER STOLLEN Original",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je 1.000 g",
+    "original_price": null,
+    "bbox": [
+      0.5044361047827022,
+      0.0600716258698182,
+      0.8697310250446215,
+      0.26236917805885634
+    ]
+  },
+  {
+    "product_name": "LAY'S Stax Sour Cream & Onion",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "je 170 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.6691939179996182,
+      0.27122592631922404,
+      0.8736693621750091,
+      0.48836641588141594
+    ]
+  },
+  {
+    "product_name": "RED BULL Energy-Drink",
+    "price": "3.49",
+    "discount": "37",
+    "unit": "je 4 x 250 ml",
+    "original_price": "5.56",
+    "bbox": [
+      0.12189006834691904,
+      0.45549861891127996,
+      0.5854316400873107,
+      0.7192231641417822
+    ]
+  },
+  {
+    "product_name": "HOHES C Saft",
+    "price": "1.79",
+    "discount": "38",
+    "unit": "je 1 l",
+    "original_price": "2.89",
+    "bbox": [
+      0.5996827562611595,
+      0.5000688636923775,
+      0.8716693621750065,
+      0.7208677969701359
+    ]
+  },
+  {
+    "product_name": "COCA-COLA Friendspack",
+    "price": "5.99",
+    "discount": "25",
+    "unit": "je 10 x 0,33 l",
+    "original_price": "7.99",
+    "bbox": [
+      0.12376674260768768,
+      0.7316501571832429,
+      0.6380044646953844,
+      0.9495702447810981
+    ]
+  },
+  {
+    "product_name": "CORONA Extra",
+    "price": "0.88",
+    "discount": "22",
+    "unit": "je 0,33 l",
+    "original_price": "1.14",
+    "bbox": [
+      0.6599428018257713,
+      0.747005524354887,
+      0.8700438040880842,
+      0.9467851223905499
+    ]
+  }
+]

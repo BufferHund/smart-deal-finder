@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "KÄRCHER Fenstersauger KWI 1 PLUS",
+    "price": "39.99",
+    "discount": "33",
+    "unit": "je Stück",
+    "original_price": "59.99",
+    "bbox": [
+      0.13283490272441542,
+      0.06716100927655493,
+      0.8728386442957756,
+      0.4633495794681014
+    ]
+  },
+  {
+    "product_name": "Swiffer Staubmagnet-Starter-Set",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.1358877371975652,
+      0.6223106279039133,
+      0.2814533015237331,
+      0.647168309822741
+    ]
+  },
+  {
+    "product_name": "Swiffer Feuchte Bodenwischtücher",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Box",
+    "original_price": null,
+    "bbox": [
+      0.13506297302068862,
+      0.6488352752450595,
+      0.2937219342993912,
+      0.6686732392909724
+    ]
+  },
+  {
+    "product_name": "Swiffer Feuchte Bodenwischtücher MORNING FRESH",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Box",
+    "original_price": null,
+    "bbox": [
+      0.13671250137444135,
+      0.6699234633577091,
+      0.289897170122515,
+      0.7007596348697205
+    ]
+  },
+  {
+    "product_name": "Swiffer Trockene Bodenwischtücher",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.29994858506125727,
+      0.6535013444004261,
+      0.46645330152373254,
+      0.680088188112649
+    ]
+  },
+  {
+    "product_name": "Swiffer Staubmagnet-Ersatztücher",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.300299056707505,
+      0.6790890843795989,
+      0.46727806570060876,
+      0.6992600830031959
+    ]
+  },
+  {
+    "product_name": "Swiffer Bodenwischer-Starter-Set 3D CLEAN",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.6829790089931055,
+      0.4745013444004287,
+      0.8670702807886421,
+      0.6430098589364586
+    ]
+  },
+  {
+    "product_name": "Dirt Devil Bodenflachwischer-Komplett-Set",
+    "price": "12.99",
+    "discount": "74",
+    "unit": "je Set",
+    "original_price": "49.99",
+    "bbox": [
+      0.12771250137444135,
+      0.7040810179770449,
+      0.49167782712860275,
+      0.9380837067778993
+    ]
+  },
+  {
+    "product_name": "HEDURA 3-stufiger Klapptritt",
+    "price": "24.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5038016480129842,
+      0.7099145006881978,
+      0.8626474031967573,
+      0.9380837067778937
+    ]
+  },
+  {
+    "product_name": "Swiffer",
+    "price": "ab 3.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.13304764047056708,
+      0.4715150895354836,
+      0.6723268868988512,
+      0.7012484315215977
+    ]
+  }
+]
