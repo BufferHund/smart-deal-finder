@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "BAILEYS Irish Cream Liqueur Original oder Schokolade Haselnuss",
+    "price": "9.99",
+    "discount": "28",
+    "unit": "je 0,7 l oder je 0,5 l",
+    "original_price": "13.99",
+    "bbox": [
+      0.12082411584377434,
+      0.045069536786809444,
+      0.43029382996343096,
+      0.5461390735736196
+    ]
+  },
+  {
+    "product_name": "FREIXENET Mederaño Glühwein Versch. Sorten",
+    "price": "2.99",
+    "discount": "33",
+    "unit": "je 0,75 l",
+    "original_price": "4.49",
+    "bbox": [
+      0.4528822422936244,
+      0.26005983397934657,
+      0.6690420268427062,
+      0.4883745527623779
+    ]
+  },
+  {
+    "product_name": "CHRISTKINDL Glühwein",
+    "price": "1.79",
+    "discount": "21",
+    "unit": "je 1 l",
+    "original_price": "2.29",
+    "bbox": [
+      0.6871597845490716,
+      0.2592935159377231,
+      0.8760545780239406,
+      0.49082470416225776
+    ]
+  },
+  {
+    "product_name": "LIGHT LIVE Glühpunsch Versch. Sorten, 0,0% vol",
+    "price": "2.49",
+    "discount": "37",
+    "unit": "je 0,75 l",
+    "original_price": "3.99",
+    "bbox": [
+      0.41089479347486013,
+      0.5001288215226386,
+      0.6683994613727059,
+      0.7192217701528352
+    ]
+  },
+  {
+    "product_name": "NATURGUT Bio Tempranillo Glühwein",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "je 0,75 l",
+    "original_price": "2.49",
+    "bbox": [
+      0.6969999999999947,
+      0.5018247041622603,
+      0.8731025133886638,
+      0.717917652792453
+    ]
+  },
+  {
+    "product_name": "GORBATSCHOW Wodka 37,5% vol.",
+    "price": "5.99",
+    "discount": "38",
+    "unit": "je 0,7 l",
+    "original_price": "9.79",
+    "bbox": [
+      0.1218655297015138,
+      0.6464023667018975,
+      0.36253393167119086,
+      0.9493452909641438
+    ]
+  },
+  {
+    "product_name": "ROTKÄPPCHEN Sekt Versch. Sorten",
+    "price": "2.99",
+    "discount": "40",
+    "unit": "je 0,75 l",
+    "original_price": "4.99",
+    "bbox": [
+      0.3981184918435753,
+      0.7306135354320784,
+      0.6693994613727031,
+      0.9492164694415045
+    ]
+  },
+  {
+    "product_name": "ROBBY BUBBLE Kinderpunsch",
+    "price": "2.49",
+    "discount": "28",
+    "unit": "je 0,75 l",
+    "original_price": "3.49",
+    "bbox": [
+      0.6901278276392631,
+      0.7274382395943408,
+      0.8701504487533926,
+      0.9496082347207504
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Adventskerzen RUSTIK",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.13242372383357995,
+      0.6056562407808678,
+      0.36742372383357963,
+      0.7896565357930625
+    ]
+  },
+  {
+    "product_name": "Adventskerzen 1, 2, 3, 4",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.3759999999999996,
+      0.6049999999999998,
+      0.5255381748105579,
+      0.6344688698487033
+    ]
+  },
+  {
+    "product_name": "Tiere aus Filz",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.6211991369799363,
+      0.5144375921913106,
+      0.8699364487704321,
+      0.6364375921913108
+    ]
+  },
+  {
+    "product_name": "Adventskerzen",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.1348474476671599,
+      0.7955314251634863,
+      0.36146614028975543,
+      0.934531425163486
+    ]
+  },
+  {
+    "product_name": "LED-Türschleife",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.3737118619167894,
+      0.6464688698487021,
+      0.6049449320616677,
+      0.9384688698487013
+    ]
+  },
+  {
+    "product_name": "Haushaltskerzen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.6232966213744431,
+      0.6452499262469522,
+      0.8632966213744426,
+      0.9378126290678344
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Fensterbild XXL",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Stück/Packung",
+    "original_price": null,
+    "bbox": [
+      0.7426858671628938,
+      0.046607835216502407,
+      0.8683129969504244,
+      0.34860783521650235
+    ]
+  },
+  {
+    "product_name": "LED-Deko-Tannen-Set",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.12308323867610989,
+      0.522339930006812,
+      0.29579815068648696,
+      0.5661764943504899
+    ]
+  },
+  {
+    "product_name": "LED-Deko-Häuser-Set",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.3187879277063331,
+      0.48729085891407914,
+      0.6427291903309724,
+      0.566176494350491
+    ]
+  },
+  {
+    "product_name": "Geschirrtücher",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.2628723022691257,
+      0.5762188341169551,
+      0.4420433231680808,
+      0.7663395260484398
+    ]
+  },
+  {
+    "product_name": "Stuhlhusse",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.13833295470444,
+      0.6967158724121972,
+      0.45475141985835943,
+      0.9317712708728325
+    ]
+  },
+  {
+    "product_name": "Weihnachtliche Jacquad-Deko-Serie",
+    "price": "ab 4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.45494986151181643,
+      0.5722215938425268,
+      0.8654213846076733,
+      0.938888799120361
+    ]
+  }
+]

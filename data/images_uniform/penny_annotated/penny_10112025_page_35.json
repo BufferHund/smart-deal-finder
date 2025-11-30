@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "MILPRIMA High Protein Pudding",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 200 g",
+    "original_price": null,
+    "bbox": [
+      0.1257920392916846,
+      0.0442095754295478,
+      0.4917806233070151,
+      0.2077951219586735
+    ]
+  },
+  {
+    "product_name": "DANONE Actimel Drink",
+    "price": "3.33",
+    "discount": "44",
+    "unit": "je 1.200 g",
+    "original_price": "5.98",
+    "bbox": [
+      0.3900000000000008,
+      0.21245329719931638,
+      0.8714111901571465,
+      0.4949999999999999
+    ]
+  },
+  {
+    "product_name": "MITAKOS Hirtenkäse",
+    "price": "1.69",
+    "discount": "10",
+    "unit": "je 250 g",
+    "original_price": "1.89",
+    "bbox": [
+      0.1263855803940229,
+      0.2348952122852266,
+      0.38104175700728027,
+      0.4905467028006839
+    ]
+  },
+  {
+    "product_name": "ARLA Finello Reibekäse",
+    "price": "1.59",
+    "discount": "33",
+    "unit": "je 150 g",
+    "original_price": "2.39",
+    "bbox": [
+      0.4622402551966262,
+      0.5027790424570459,
+      0.8726144196059777,
+      0.7206628726288642
+    ]
+  },
+  {
+    "product_name": "PRÉSIDENT Camembert",
+    "price": "2.59",
+    "discount": "35",
+    "unit": "je 250 g",
+    "original_price": "3.99",
+    "bbox": [
+      0.12497912149636037,
+      0.5030000000000013,
+      0.44342733740130247,
+      0.7173257452577284
+    ]
+  },
+  {
+    "product_name": "KERRYGOLD Irisches Butterschmalz",
+    "price": "3.49",
+    "discount": "28",
+    "unit": "je 250 g",
+    "original_price": "4.89",
+    "bbox": [
+      0.5403532859057141,
+      0.7536036133677232,
+      0.8704111901571467,
+      0.9480113821134137
+    ]
+  },
+  {
+    "product_name": "BECEL Margarine",
+    "price": "1.29",
+    "discount": "35",
+    "unit": "je 225 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.1272839656696069,
+      0.7312323396563642,
+      0.5314549006301283,
+      0.948569467027499
+    ]
+  }
+]

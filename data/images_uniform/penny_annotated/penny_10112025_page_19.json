@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "3 GLOCKEN Genuss pur Teigware",
+    "price": "1.99",
+    "discount": "50",
+    "unit": "je 1.000 g",
+    "original_price": "3.98",
+    "bbox": [
+      0.12748787258559963,
+      0.0438989470282269,
+      0.39093974971595297,
+      0.26119724607382433
+    ]
+  },
+  {
+    "product_name": "ORO DI PARMA Tomaten Stückig oder Kirschtomaten",
+    "price": "1.29",
+    "discount": "35",
+    "unit": "je 400 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.4048694577178979,
+      0.05289975700651397,
+      0.6199297080019444,
+      0.2632974890673106
+    ]
+  },
+  {
+    "product_name": "MONDAMIN Soßenbinder",
+    "price": "1.29",
+    "discount": "27",
+    "unit": "je 275 g",
+    "original_price": "1.79",
+    "bbox": [
+      0.12550795601361409,
+      0.2729975700651392,
+      0.3612108759941648,
+      0.4883985420390835
+    ]
+  },
+  {
+    "product_name": "MAGGI 5 Minuten Terrine",
+    "price": "0.89",
+    "discount": "40",
+    "unit": "je 46 g oder je 55 g",
+    "original_price": "1.49",
+    "bbox": [
+      0.37148754410581186,
+      0.27270699566014395,
+      0.6276920774068513,
+      0.4900425336993506
+    ]
+  },
+  {
+    "product_name": "HARIBO Fruchtgummi",
+    "price": "3.49",
+    "discount": "30",
+    "unit": "je 650 g",
+    "original_price": "4.99",
+    "bbox": [
+      0.1266913289791301,
+      0.5047315695686297,
+      0.36448754410581374,
+      0.7189328923921524
+    ]
+  },
+  {
+    "product_name": "MILKA Peanut & Caramel Riegel oder Nussini Riegel",
+    "price": "1.99",
+    "discount": "37",
+    "unit": "je 5 x 37 g oder je 5 x 31,5 g",
+    "original_price": "3.19",
+    "bbox": [
+      0.3812052817287629,
+      0.505109641307193,
+      0.6188460387034264,
+      0.7203109641307178
+    ]
+  },
+  {
+    "product_name": "FERRERO Rocher",
+    "price": "5.55",
+    "discount": "26",
+    "unit": "je 375 g",
+    "original_price": "7.59",
+    "bbox": [
+      0.632769058055139,
+      0.5044206054379142,
+      0.8715909333979179,
+      0.7189328923921581
+    ]
+  },
+  {
+    "product_name": "FERRERO Kinder Bueno White oder Kinder Bueno",
+    "price": "1.99",
+    "discount": "33",
+    "unit": "je 6 x 19,5 g oder je 6 x 21,5 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.12571698919522498,
+      0.7308232510849656,
+      0.36446188388971634,
+      0.9344206054379145
+    ]
+  },
+  {
+    "product_name": "FERRERO Yogurette oder Kinder Schokolade",
+    "price": "4.75",
+    "discount": null,
+    "unit": "je 4 x 100 g",
+    "original_price": null,
+    "bbox": [
+      0.38023094194485835,
+      0.7315122869542453,
+      0.6149743397839045,
+      0.9323534978300723
+    ]
+  },
+  {
+    "product_name": "FERRERO Kinder Schoko-Bons White",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 200 g",
+    "original_price": null,
+    "bbox": [
+      0.6337177376229455,
+      0.729067107607841,
+      0.8696935742623016,
+      0.9282192826143888
+    ]
+  }
+]

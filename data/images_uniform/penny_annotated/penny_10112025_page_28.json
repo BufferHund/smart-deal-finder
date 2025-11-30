@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Weihnachts-Deko",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je Stück/Packung",
+    "original_price": null,
+    "bbox": [
+      0.1224279613674521,
+      0.4814746371686694,
+      0.3975784442742993,
+      0.5667480084393194
+    ]
+  },
+  {
+    "product_name": "LED-Stern-Lichterkette",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5005949839031038,
+      0.28630230803518464,
+      0.8692652092596337,
+      0.5712440253179616
+    ]
+  },
+  {
+    "product_name": "Tafelkerzen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.13461792917366275,
+      0.5752953178612464,
+      0.3016451448720542,
+      0.7817559746820397
+    ]
+  },
+  {
+    "product_name": "LED-Echt-wachskerzen",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.3157161158976435,
+      0.5745039831213596,
+      0.494050160968949,
+      0.779799300982605
+    ]
+  },
+  {
+    "product_name": "LED-Deko-Bäume-Set",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.5072401287751598,
+      0.5776693220809065,
+      0.6848601931627388,
+      0.779216631502833
+    ]
+  },
+  {
+    "product_name": "Mini-Wichtel",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.6949311641883275,
+      0.5750866526011331,
+      0.8693842060402546,
+      0.7801185175720123
+    ]
+  },
+  {
+    "product_name": "Steckdosenleisten und Zubehör",
+    "price": "ab 2.49",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.1254279613674521,
+      0.7833819704623796,
+      0.8659082189177691,
+      0.9383306779190939
+    ]
+  }
+]

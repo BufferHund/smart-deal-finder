@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "tiptoi Buch",
+    "price": "ab 9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5120069189639537,
+      0.02280491313355867,
+      0.8657094035139697,
+      0.20134981660666357
+    ]
+  },
+  {
+    "product_name": "Ravensburger Puzzle für Erwachsene oder Kinder-Spiel oder -Puzzle",
+    "price": "ab 4.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5100345948197658,
+      0.21533434363264095,
+      0.8696886466221105,
+      0.45899999999999974
+    ]
+  },
+  {
+    "product_name": "Kinder-Spiel",
+    "price": "ab 9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12429751544998327,
+      0.21554793437102837,
+      0.4990415137837185,
+      0.46042415057885044
+    ]
+  },
+  {
+    "product_name": "MATTEL MONSTER HIGH Spielpuppe",
+    "price": "14.99",
+    "discount": "25",
+    "unit": "je Stück",
+    "original_price": "19.99",
+    "bbox": [
+      0.13132519130579587,
+      0.4731671718163206,
+      0.36529751544998335,
+      0.7332569787625305
+    ]
+  },
+  {
+    "product_name": "Simba Spiel-Set Einhorn mit Steffi",
+    "price": "19.99",
+    "discount": "55",
+    "unit": "je Set",
+    "original_price": "44.99",
+    "bbox": [
+      0.3803113533778898,
+      0.4755913223951714,
+      0.5910484327476717,
+      0.7325449034731044
+    ]
+  },
+  {
+    "product_name": "Simba Puppenbuggy oder Baby-Set mit Wiege",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5990899465313914,
+      0.48242415057885096,
+      0.8636402138744386,
+      0.7339690540519557
+    ]
+  },
+  {
+    "product_name": "camprèlla Kinder-Hausschuhe",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je Paar",
+    "original_price": null,
+    "bbox": [
+      0.13434594819765522,
+      0.7433932046308093,
+      0.5589861620720938,
+      0.942393204630809
+    ]
+  },
+  {
+    "product_name": "siku Spielfahrzeuge-Geschenk-Set",
+    "price": "7.99",
+    "discount": "20",
+    "unit": "je Set",
+    "original_price": "9.99",
+    "bbox": [
+      0.5770622706755769,
+      0.743665656367359,
+      0.8646471328383916,
+      0.944665656367359
+    ]
+  }
+]

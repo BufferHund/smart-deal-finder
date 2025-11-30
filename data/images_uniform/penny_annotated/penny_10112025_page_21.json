@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "BESPOKE Men EdP Duft oder Body Spray",
+    "price": "ab 2.99",
+    "discount": null,
+    "unit": "je 100 ml oder 150 ml",
+    "original_price": null,
+    "bbox": [
+      0.12538453384943984,
+      0.2741201395187418,
+      0.3628507960847127,
+      0.49091802092781234
+    ]
+  },
+  {
+    "product_name": "KNEIPP Cremedusche oder Badekissen",
+    "price": "ab 0.99",
+    "discount": null,
+    "unit": "je 200 ml oder 40 g",
+    "original_price": null,
+    "bbox": [
+      0.3776456407011921,
+      0.2741201395187417,
+      0.6176829416800138,
+      0.4909180209278129
+    ]
+  },
+  {
+    "product_name": "LISTERINE Mundspülung Duo",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 500 ml + 600 ml",
+    "original_price": null,
+    "bbox": [
+      0.6285896892329615,
+      0.2727321534706143,
+      0.8718019710446709,
+      0.49022402790374825
+    ]
+  },
+  {
+    "product_name": "CORAL Color",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je 3 l",
+    "original_price": null,
+    "bbox": [
+      0.12517937846591953,
+      0.5027321534706126,
+      0.36379484461647954,
+      0.7226558325775111
+    ]
+  },
+  {
+    "product_name": "VANISH Oxi Action Fleckenentferner",
+    "price": "7.99",
+    "discount": "11",
+    "unit": "je 1.125 g",
+    "original_price": "8.99",
+    "bbox": [
+      0.37862699021178187,
+      0.5023441674224886,
+      0.615720242658836,
+      0.7217378116497007
+    ]
+  },
+  {
+    "product_name": "LENOR Weichspüler",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "für 36 WL, je 756 ml",
+    "original_price": "2.49",
+    "bbox": [
+      0.6384031843388529,
+      0.5009561813743619,
+      0.8708579225129027,
+      0.7212021185909286
+    ]
+  },
+  {
+    "product_name": "SAGROTAN Wäsche-Hygienespüler",
+    "price": "5.99",
+    "discount": "14",
+    "unit": "Für 40 WL, je 3 l",
+    "original_price": "6.99",
+    "bbox": [
+      0.13597422308239948,
+      0.729896111614992,
+      0.367757543637658,
+      0.918693993024063
+    ]
+  },
+  {
+    "product_name": "SAGROTAN Allzweck- & Bodenreiniger oder WC-Reiniger",
+    "price": "2.79",
+    "discount": "15",
+    "unit": "je 1,5 l oder je 750 ml",
+    "original_price": "3.29",
+    "bbox": [
+      0.38057103874354886,
+      0.7292021185909282,
+      0.6196456407011923,
+      0.9179999999999989
+    ]
+  },
+  {
+    "product_name": "TEMPO Trio-Box",
+    "price": "4.49",
+    "discount": null,
+    "unit": "je 3 x 100 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.6306269902117815,
+      0.7736176721309611,
+      0.8738019710446696,
+      0.9450657279384587
+    ]
+  }
+]

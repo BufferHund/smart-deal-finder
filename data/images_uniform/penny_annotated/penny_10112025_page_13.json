@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "DOUCEUR Baumkuchenspitzen Versch. Sorten",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 150 g",
+    "original_price": null,
+    "bbox": [
+      0.11760109683957175,
+      0.2810107204169347,
+      0.6016010968395717,
+      0.4920107204169347
+    ]
+  },
+  {
+    "product_name": "DOUCEUR Marzipan Kartoffeln",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 125 g",
+    "original_price": null,
+    "bbox": [
+      0.12519670948128486,
+      0.5079999999999991,
+      0.5918087747165744,
+      0.7209999999999989
+    ]
+  },
+  {
+    "product_name": "DOUCEUR Gewürzspekulatius",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 600 g",
+    "original_price": null,
+    "bbox": [
+      0.6223934189625696,
+      0.35692495708145683,
+      0.873005484197859,
+      0.722
+    ]
+  },
+  {
+    "product_name": "DOUCEUR Weihnachtsfiguren Versch. Sorten",
+    "price": "2.39",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.12519670948128464,
+      0.7309249570814564,
+      0.589808774716574,
+      0.9487105487427618
+    ]
+  }
+]

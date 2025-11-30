@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "MÜHLHÄUSER Thüringer Pflaumenmus",
+    "price": "1.69",
+    "discount": "26",
+    "unit": "je 450 g",
+    "original_price": "2.29",
+    "bbox": [
+      0.1257878474216938,
+      0.045374629960110824,
+      0.49192837750711876,
+      0.2592922705752686
+    ]
+  },
+  {
+    "product_name": "KÖLLN Hafer-Porridge",
+    "price": "2.49",
+    "discount": "28",
+    "unit": "je 375 g",
+    "original_price": "3.49",
+    "bbox": [
+      0.5072148674786456,
+      0.04464212255931289,
+      0.872495927649494,
+      0.2614897927776619
+    ]
+  },
+  {
+    "product_name": "RAPSO Rapsöl",
+    "price": "3.79",
+    "discount": "24",
+    "unit": "je 750 ml",
+    "original_price": "4.99",
+    "bbox": [
+      0.1568621848149125,
+      0.2722798815872356,
+      0.36389256626067873,
+      0.4922798815872357
+    ]
+  },
+  {
+    "product_name": "BARILLA Proteinpasta",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 400 g",
+    "original_price": null,
+    "bbox": [
+      0.38232230121796684,
+      0.26568731498005593,
+      0.8745675501423753,
+      0.4981399407936178
+    ]
+  },
+  {
+    "product_name": "DU DARFST Fertiggericht Puten-Geschnetzeltes oder Spaghetti Bolognese",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 400 g oder je 375 g",
+    "original_price": null,
+    "bbox": [
+      0.12471622492881242,
+      0.5028724481944165,
+      0.4888567550142379,
+      0.7165349851984046
+    ]
+  },
+  {
+    "product_name": "BONDUELLE Lunch Bowl",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "je 250 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.506143244985764,
+      0.5014074333928201,
+      0.8735317388959355,
+      0.7187325074007975
+    ]
+  },
+  {
+    "product_name": "LEIMER Semmelbrösel",
+    "price": "0.79",
+    "discount": "38",
+    "unit": "je 400 g",
+    "original_price": "1.29",
+    "bbox": [
+      0.1247162249288128,
+      0.7317900888095743,
+      0.32971079512813767,
+      0.9449052516271267
+    ]
+  },
+  {
+    "product_name": "KOCH'S Sauce Sahne Meerrettich oder Graved Lachs",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 135 g oder je 140 ml",
+    "original_price": null,
+    "bbox": [
+      0.3419256626067828,
+      0.7317900888095753,
+      0.5759587589528846,
+      0.9485677886311141
+    ]
+  },
+  {
+    "product_name": "HENGSTENBERG Mildessa Kraut Genießer Rotkohl oder Sauerkraut",
+    "price": "1.59",
+    "discount": "20",
+    "unit": "je 400 g, Abtropfgewicht = 350 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.594316871417292,
+      0.7303250740079806,
+      0.8766391726352567,
+      0.9456377590279228
+    ]
+  }
+]

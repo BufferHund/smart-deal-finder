@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "SNACK IT Kabanos*",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 120 g",
+    "original_price": null,
+    "bbox": [
+      0.12421362961824503,
+      0.04765188729016992,
+      0.35518355959586534,
+      0.4916518872901674
+    ]
+  },
+  {
+    "product_name": "MEISTERKLASSE Hähnchenwiener*",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 600 g",
+    "original_price": null,
+    "bbox": [
+      0.3660152312275356,
+      0.045999999999999236,
+      0.8722901781886361,
+      0.4974334928057611
+    ]
+  },
+  {
+    "product_name": "BERGER Gourmet Aufschnitt*",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 200 g",
+    "original_price": null,
+    "bbox": [
+      0.1261374734805496,
+      0.5006518872901689,
+      0.4894961921931144,
+      0.7187405635491465
+    ]
+  },
+  {
+    "product_name": "CHARLY'S CHICKEN Hähnchenbrust*",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 75 g",
+    "original_price": null,
+    "bbox": [
+      0.5063434874850232,
+      0.5019999999999957,
+      0.8711222422530074,
+      0.7195665071942285
+    ]
+  },
+  {
+    "product_name": "EIFELER Fleischgericht*",
+    "price": "3.33",
+    "discount": null,
+    "unit": "je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.12880921722306213,
+      0.7313481127098211,
+      0.48832825625748677,
+      0.9487339712230661
+    ]
+  },
+  {
+    "product_name": "JACK LINK'S Beef Jerky*",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 60 g",
+    "original_price": null,
+    "bbox": [
+      0.5075114234206517,
+      0.7283481127098203,
+      0.8722901781886391,
+      0.949082083932896
+    ]
+  }
+]

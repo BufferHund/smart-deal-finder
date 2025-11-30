@@ -1,0 +1,145 @@
+[
+  {
+    "product_name": "ADELHOLZENER Active O2",
+    "price": "0.99",
+    "discount": "16",
+    "unit": "je 0,75 l",
+    "original_price": "1.19",
+    "bbox": [
+      0.4902748292284899,
+      0.04307846793601684,
+      0.6709999999999973,
+      0.2621159609222251
+    ]
+  },
+  {
+    "product_name": "LIPTON Ice Tea",
+    "price": "1.29",
+    "discount": "23",
+    "unit": "je 1,25 l",
+    "original_price": "1.69",
+    "bbox": [
+      0.6840366438971293,
+      0.0379590250501925,
+      0.8708534244114688,
+      0.2613958216436814
+    ]
+  },
+  {
+    "product_name": "MERCI Finest Selection Winter Chocolate",
+    "price": "3.79",
+    "discount": "15",
+    "unit": "je 250 g",
+    "original_price": "4.49",
+    "bbox": [
+      0.12948698544015144,
+      0.21555972144291097,
+      0.47094503415430156,
+      0.49660069639271825
+    ]
+  },
+  {
+    "product_name": "MERCI Weihnachtsmann",
+    "price": "2.39",
+    "discount": "25",
+    "unit": "je 120 g",
+    "original_price": "3.19",
+    "bbox": [
+      0.4787618146686415,
+      0.2733583286574725,
+      0.6669267122057356,
+      0.4892798607214554
+    ]
+  },
+  {
+    "product_name": "PERTZBORN Lebkuchen Nussknacker",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 240 g",
+    "original_price": null,
+    "bbox": [
+      0.6789083902571672,
+      0.2739965180364016,
+      0.8698167805143399,
+      0.49172013927854386
+    ]
+  },
+  {
+    "product_name": "OREO Crunchies oder MILKA Mini Cookies",
+    "price": "1.59",
+    "discount": "20",
+    "unit": "je 110 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.12535873180018894,
+      0.503559721442912,
+      0.36409451734913395,
+      0.7150409749498067
+    ]
+  },
+  {
+    "product_name": "DE BEUKELAER Prinzen Rolle Minis oder Cremys",
+    "price": "1.59",
+    "discount": "20",
+    "unit": "je 6 x 37,5 g oder je 200 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.3750945173491324,
+      0.5032798607214563,
+      0.6292488001087932,
+      0.7154812535068942
+    ]
+  },
+  {
+    "product_name": "STORCK Toffifee",
+    "price": "3.49",
+    "discount": "22",
+    "unit": "je 375 g",
+    "original_price": "4.49",
+    "bbox": [
+      0.6656702049258101,
+      0.5033208356712625,
+      0.8718534244114717,
+      0.7222423677352466
+    ]
+  },
+  {
+    "product_name": "STORCK Mamba Beach",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 160 g",
+    "original_price": null,
+    "bbox": [
+      0.12532208790305685,
+      0.7320819498996164,
+      0.3620578734520026,
+      0.9455257104203009
+    ]
+  },
+  {
+    "product_name": "TILLY Chinois oder Kaffeekuchen",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 350 g oder je 400 g",
+    "original_price": null,
+    "bbox": [
+      0.3791494831948297,
+      0.7300409749498067,
+      0.6190655806231331,
+      0.9462458496988444
+    ]
+  },
+  {
+    "product_name": "KABA Waffelriegel oder Knusperriegel",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "je 4 x 40 g oder je 5 x 30 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.6330839025716971,
+      0.7330819498996151,
+      0.8728167805143399,
+      0.9455257104203009
+    ]
+  }
+]
