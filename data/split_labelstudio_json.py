@@ -1,3 +1,8 @@
+# smart-deal-finder/data/split_labelstudio_json.py
+"""
+Split a Label Studio exported JSON file containing multiple images' annotations
+into separate JSON files per image, with normalized bounding boxes.
+"""
 import json
 import os
 import re
@@ -12,9 +17,15 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def convert_bbox_ls_to_norm(bbox):
     """
-    将 Label Studio 的百分比 bbox
-    (x, y, width, height) 转回标准化 0–1 bbox:
-    [x_min, y_min, x_max, y_max]
+    Convert Label Studio bounding box to normalized [x_min, y_min, x_max, y_max].
+    Label Studio bbox format:
+    {
+        "x": float (percentage, 0-100),
+        "y": float (percentage, 0-100),
+        "width": float (percentage, 0-100),
+        "height": float (percentage, 0-100)
+    }  
+    Returns normalized bbox: [x_min, y_min, x_max, y_max] (0.0 to 1.0)
     """
     x = bbox["x"] / 100.0
     y = bbox["y"] / 100.0
@@ -31,8 +42,8 @@ def convert_bbox_ls_to_norm(bbox):
 
 def process_one_task(task_dict):
     """
-    输入：Label Studio 导出的一个 dict（你截图里的那种）
-    输出：该图片的所有商品的整理后 JSON list
+    Input: one task dict from Label Studio export JSON.
+    Output: list of deal dicts with normalized bboxes.
     """
     try:
         deals = task_dict["deal"]
@@ -75,7 +86,7 @@ def process_one_task(task_dict):
 
 def main():
     with open(INPUT_JSON, "r", encoding="utf-8") as f:
-        data = json.load(f)  # 这是一个 list，每个元素是一个 dict
+        data = json.load(f) # list of tasks
 
     for task in data:
         task_name = re.search(r"[a-z]*_\d{8}_page_\d+", task["image"]).group()
@@ -86,7 +97,7 @@ def main():
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(per_image_list, f, indent=2, ensure_ascii=False)
 
-        print(f"生成文件: {out_path}")
+        print(f"Generated file: {out_path}")
 
 
 if __name__ == "__main__":

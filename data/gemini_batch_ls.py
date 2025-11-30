@@ -1,3 +1,8 @@
+# smart-deal-finder/data/gemini_batch_ls.py
+"""
+Process supermarket brochure images in bulk using Google Gemini
+to extract product deals and format them for Label Studio annotations.
+"""
 import os
 import json
 import uuid
@@ -5,25 +10,24 @@ import pathlib
 from google import genai
 
 
-# ================== 配置区域 ==================
-
+# Configurations
+# Your Gemini API Key
 GEMINI_API_KEY = "AIzaSyDnbd9a608PJBT5HBhb7GFSTRyHe9bfl3s"
 
-# 你之前从 Label Studio 导出的 JSON 路径
+# JSON exported from Label Studio
 LS_EXPORT_PATH = "project-2-at-2025-11-15-22-54-bb446493.json"
 
-# 生成的 annotations 输出文件
+# Output annotations path
 OUTPUT_ANN_PATH = "ls_annotations_gemini.json"
 
-# 本地存放 brochure 图片的目录
+# Base directory where brochure images are stored locally
 BASE_IMAGE_DIR = "rewe"
 
 
-# ================== Gemini 客户端 & Prompt ==================
-
+# Gemini Client
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-PROMPT_rewe = f"""You are analyzing a supermarket brochure page in German.
+PROMPT = f"""You are analyzing a supermarket brochure page in German.
 
 Extract ALL product deals from this image. For each product, identify:
 
@@ -83,10 +87,10 @@ Example output:
 Return ONLY the JSON array, no other text or explanation."""
 
 
-# ================== 小工具函数 ==================
+# Tools for processing
 
 def strip_markdown_fences(text: str) -> str:
-    """去掉 ```json ... ``` 之类的包裹，保留里面的内容。"""
+    """Remove markdown code fences from the text."""
     text = text.strip()
     if text.startswith("```"):
         first_newline = text.find("\n")
@@ -97,14 +101,10 @@ def strip_markdown_fences(text: str) -> str:
     return text.strip()
 
 
-def call_gemini_for_brochure(image_path: str, market_name: str = "rewe"):
-    """读取本地图片，调用 Gemini，返回 list[dict] (deals)."""
+def call_gemini_for_brochure(image_path: str):
+    """Read image and call Gemini to extract deals."""
     image_bytes = pathlib.Path(image_path).read_bytes()
-
-    if market_name == "rewe":
-        prompt = PROMPT_rewe
-    else:
-        prompt = PROMPT_rewe
+    prompt = PROMPT
 
     response = client.models.generate_content(
         model="gemini-2.5-pro",
@@ -130,13 +130,13 @@ def call_gemini_for_brochure(image_path: str, market_name: str = "rewe"):
     try:
         deals = json.loads(clean_text)
     except json.JSONDecodeError as e:
-        print(f"⚠️ JSON 解析失败: {e}")
+        print(f"JSON extraction failed {e}")
         print("Raw output was:")
         print(raw_text)
         return []
 
     if not isinstance(deals, list):
-        print("⚠️ 模型输出不是 JSON 数组，返回空列表")
+        print("Model output is not a list as expected.")
         return []
 
     return deals
@@ -144,8 +144,8 @@ def call_gemini_for_brochure(image_path: str, market_name: str = "rewe"):
 
 def convert_bbox_to_ls(bbox):
     """
-    Gemini: [x_min, y_min, x_max, y_max] (0–1)
-    Label Studio: x, y, width, height (0–100)
+    Gemini: [x_min, y_min, x_max, y_max] (0 to 1)
+    Label Studio: x, y, width, height (0 to 100)
     """
     x_min, y_min, x_max, y_max = bbox
     return {
@@ -159,21 +159,18 @@ def convert_bbox_to_ls(bbox):
 
 def build_ls_annotation_for_one_image(image_path_in_ls: str, deals: list, task_id: int | None = None):
     """
-    image_path_in_ls: 在 Label Studio 中 data.image 的值（你导出JSON里的 "image" 字段）
-    deals: Gemini 返回的 list[dict]
-    task_id: 可选，对齐原来的 task id。
+    Build Label Studio annotation object for one image.
     """
     results = []
 
     for deal in deals:
-        # 防御：确保 bbox 存在且合法
         bbox = deal.get("bbox")
         if not bbox or len(bbox) != 4:
             continue
 
         region_id = f"region-{uuid.uuid4().hex[:8]}"
 
-        # 矩形框
+        # bounding box
         ls_box = convert_bbox_to_ls(bbox)
         results.append({
             "id": region_id,
@@ -186,7 +183,7 @@ def build_ls_annotation_for_one_image(image_path_in_ls: str, deals: list, task_i
             }
         })
 
-        # 绑定字段
+        # fields
         for field in ["product_name", "price", "discount", "unit", "original_price"]:
             value = deal.get(field)
             text_value = "" if value is None else str(value)
@@ -219,50 +216,43 @@ def build_ls_annotation_for_one_image(image_path_in_ls: str, deals: list, task_i
 
 def map_ls_image_to_local_path(ls_image_path: str) -> str:
     """
-    把 Label Studio 导出的 image 字段，映射到本地真实路径。
-    例如: "/data/upload/2/5e3xxx-rewe_10112025_page_1.png"
-    映射为: BASE_IMAGE_DIR + "/5e3xxx-rewe_10112025_page_1.png"
-
-    如果你本地文件名不带那段hash前缀，需要在这里做自定义处理。
+    Map Label Studio image path to local file system path.
     """
     filename = os.path.basename(ls_image_path)
 
-    # 如果你本地文件名和这个 filename 一模一样，这行就够了：
     local_path = os.path.join(BASE_IMAGE_DIR, filename)
 
-    # TODO：如果你本地文件名其实是 "rewe_10112025_page_1.png"
-    # 而不是 "5e3xxx-rewe_10112025_page_1.png"，可以改成类似：
-    real_name = filename.split("-", 1)[-1]   # 去掉第一个 "-" 前面的hash
+    real_name = filename.split("-", 1)[-1]
     local_path = os.path.join(BASE_IMAGE_DIR, real_name)
 
     return local_path
 
 
-# ================== 主逻辑：批量处理 ==================
+# Main processing function
 
 def main():
-    # 1. 读取 Label Studio 导出的 JSON
+    # Read tasks from Label Studio export
     with open(LS_EXPORT_PATH, "r", encoding="utf-8") as f:
         tasks = json.load(f)
 
     all_annotations = []
 
     for i, task in enumerate(tasks, start=1):
-        ls_image_path = task["image"]     # 你发给我的JSON里，字段名就是 "image"
+        ls_image_path = task["image"]
         task_id = task.get("id")
 
         local_image_path = map_ls_image_to_local_path(ls_image_path)
 
         if not os.path.exists(local_image_path):
-            print(f"⚠️ 找不到本地图片: {local_image_path} (跳过)")
+            print(f"!!! Cannot find picture from: {local_image_path}, skipping.")
             continue
 
-        print(f"[{i}/{len(tasks)}] 处理: {local_image_path}")
+        print(f"[{i}/{len(tasks)}] processing: {local_image_path}")
 
         deals = call_gemini_for_brochure(local_image_path)
 
         if not deals:
-            print("  ↳ 没有得到任何 deal，跳过。")
+            print("!!! No deals extracted, skipping.")
             continue
 
         ann = build_ls_annotation_for_one_image(
@@ -273,13 +263,13 @@ def main():
 
         all_annotations.append(ann)
 
-    # 3. 保存所有 annotations
+    # save all annotations to output file
     if all_annotations:
         with open(OUTPUT_ANN_PATH, "w", encoding="utf-8") as f:
             json.dump(all_annotations, f, indent=2, ensure_ascii=False)
-        print(f"✅ 已保存 {len(all_annotations)} 条 annotations 到 {OUTPUT_ANN_PATH}")
+        print(f"saved {len(all_annotations)} annotations to {OUTPUT_ANN_PATH}")
     else:
-        print("⚠️ 没有生成任何 annotation，检查一下上面的日志。")
+        print("No annotations to save.")
 
 
 if __name__ == "__main__":
