@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "SALAKIS Schafskäse oder Feta",
+    "price": "1.88",
+    "discount": null,
+    "unit": "je 150 - 180-g-Packg.",
+    "original_price": null,
+    "bbox": [
+      0.25242837707467297,
+      0.017591944430425294,
+      0.9009181452281978,
+      0.26359194443042533
+    ]
+  },
+  {
+    "product_name": "K-CLASSIC Rapsöl",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 1-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.09359208661827617,
+      0.13047606483116833,
+      0.42657026244803775,
+      0.6178639814768083
+    ]
+  },
+  {
+    "product_name": "COPPENRATH & WIESE Cafeteria fein & sahnig",
+    "price": "3.33",
+    "discount": null,
+    "unit": "je 435 - 700-g-Packg.",
+    "original_price": null,
+    "bbox": [
+      0.4475306955394227,
+      0.27706800926159375,
+      0.8963874496887717,
+      0.6166599536920209
+    ]
+  }
+]
