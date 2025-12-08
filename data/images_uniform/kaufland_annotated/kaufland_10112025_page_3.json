@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "PRÉSIDENT Meersalz-Butter mit echten Meersalzkörnern",
+    "price": "2.79",
+    "discount": "37",
+    "unit": "je 250-g-Becher",
+    "original_price": "4.49",
+    "bbox": [
+      0.10431349784336313,
+      0.0010786366047546188,
+      0.910009685139263,
+      0.32574181432392635
+    ]
+  },
+  {
+    "product_name": "K-CLASSIC Räucherlachs in Scheiben traditionell kaltgeräuchert, gesalzen",
+    "price": "3.79",
+    "discount": "20",
+    "unit": "je 200-g-Packg.",
+    "original_price": "4.79",
+    "bbox": [
+      0.4685965446345987,
+      0.32292136339524513,
+      0.9191916936348536,
+      0.6195504562332821
+    ]
+  },
+  {
+    "product_name": "MUTTI Polpa fein gehackte ital. Tomaten",
+    "price": "0.99",
+    "discount": "44",
+    "unit": "je 400-g-Dose",
+    "original_price": "1.79",
+    "bbox": [
+      0.09430311488692995,
+      0.3340000000000002,
+      0.45537300431327365,
+      0.6153145464190186
+    ]
+  }
+]

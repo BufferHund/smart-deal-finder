@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "MÜLLER Müllermilch Milchmischgetränk",
+    "price": "0.69",
+    "discount": null,
+    "unit": "je 400-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.08099999999999909,
+      0.21833357886313942,
+      0.48499999999999616,
+      0.9066110701894747
+    ]
+  },
+  {
+    "product_name": "MAYBACH Qualitätswein",
+    "price": "2.88",
+    "discount": "42",
+    "unit": "je 0,75-l-Fl.",
+    "original_price": "4.99",
+    "bbox": [
+      0.48832232908965134,
+      0.204465041488909,
+      0.9138887215077847,
+      0.9068970770069681
+    ]
+  }
+]
