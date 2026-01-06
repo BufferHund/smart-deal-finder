@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "elektrische Zahnbürsten und Aufsteckzahnbürsten",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.08792995522116044,
+      0.13321584826860255,
+      0.4917971044752798,
+      0.2893977359616279
+    ]
+  },
+  {
+    "product_name": "Nahrungsergänzung",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5084685970164783,
+      0.1332158482686025,
+      0.9088043432870777,
+      0.2893977359616279
+    ]
+  },
+  {
+    "product_name": "alle Produkte von eco Freude domol",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.08679710447528034,
+      0.30021018817267286,
+      0.4917971044752797,
+      0.4525852837505827
+    ]
+  },
+  {
+    "product_name": "Seifen und Handpflege",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.08792995522116037,
+      0.4639999999999997,
+      0.4906642537294006,
+      0.623187547788955
+    ]
+  },
+  {
+    "product_name": "Bio-Lebensmittel",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5096014477623594,
+      0.46400000000000025,
+      0.9088043432870787,
+      0.6199830197122114
+    ]
+  },
+  {
+    "product_name": "Baby- und Kleinkindnahrung",
+    "price": null,
+    "discount": "20",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4607691589083196,
+      0.7072988786096811,
+      0.8523037399574998,
+      0.8866311555420835
+    ]
+  },
+  {
+    "product_name": "essence das vierte Produkt gratis",
+    "price": null,
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5096014477623594,
+      0.2986079241343013,
+      0.9088043432870789,
+      0.45578981182732703
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "ESCADA Especially Eau de Parfum",
+    "price": "36.99",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.11389852283099444,
+      0.042642963344176055,
+      0.362720402492384,
+      0.33671407331166014
+    ]
+  },
+  {
+    "product_name": "Laura Biagiotti ROMA Donna Eau de Toilette",
+    "price": "31.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.3986696639078694,
+      0.03911901221860856,
+      0.6307880539383817,
+      0.33759506109304316
+    ]
+  },
+  {
+    "product_name": "Chopard CAŠMIR Eau de Parfum",
+    "price": "16.99",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.6533134232306361,
+      0.04264296334417606,
+      0.9021860414765214,
+      0.3367140733116511
+    ]
+  },
+  {
+    "product_name": "AVIATOR Wingspeed Eau de Parfum",
+    "price": "14.99",
+    "discount": null,
+    "unit": "100 ml",
+    "original_price": null,
+    "bbox": [
+      0.10045771784624591,
+      0.35211901221860875,
+      0.3609830871384984,
+      0.6421190122186093
+    ]
+  },
+  {
+    "product_name": "AVIATOR Energy Eau de Parfum",
+    "price": "14.99",
+    "discount": null,
+    "unit": "100 ml",
+    "original_price": null,
+    "bbox": [
+      0.3717711410768771,
+      0.3521190122186081,
+      0.6357711410768772,
+      0.6421190122186081
+    ]
+  },
+  {
+    "product_name": "Giorgio Beverly Hills Eau de Toilette",
+    "price": "10.99",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.6802288589231267,
+      0.3538809877813938,
+      0.9079064439688912,
+      0.6438809877813956
+    ]
+  },
+  {
+    "product_name": "JAGUAR Classic Black Duschgel",
+    "price": "5.99",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.09496617427699725,
+      0.6602859266883576,
+      0.3565084564307509,
+      0.9577387678464475
+    ]
+  },
+  {
+    "product_name": "JAGUAR For Men Duschgel",
+    "price": "5.99",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.37126268464612866,
+      0.6611669144697442,
+      0.6275422821537557,
+      0.9550958045022789
+    ]
+  },
+  {
+    "product_name": "JAGUAR Era Reloaded Duschgel",
+    "price": "5.99",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.6458387925228906,
+      0.6576429633441856,
+      0.9011860414765209,
+      0.9577387678464617
+    ]
+  }
+]

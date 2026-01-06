@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Jean & Len Hand & Body Balm",
+    "price": "7.99",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.26451833141200193,
+      0.31154934411111346,
+      0.5514600271088156,
+      0.5048293346013085
+    ]
+  },
+  {
+    "product_name": "Jean & Len Shower Gel to Mousse",
+    "price": "5.99",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.589254858691934,
+      0.31178347719085203,
+      0.8564405923410856,
+      0.5060634676810525
+    ]
+  },
+  {
+    "product_name": "Jean & Len Bodybutter",
+    "price": "7.99",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.2817840108435258,
+      0.5464901311777793,
+      0.5549503097249502,
+      0.721406925852286
+    ]
+  },
+  {
+    "product_name": "Jean & Len Kerze",
+    "price": "7.99",
+    "discount": null,
+    "unit": "195 g",
+    "original_price": null,
+    "bbox": [
+      0.5892742934596642,
+      0.5717877319385636,
+      0.9079222609290839,
+      0.6978511996196077
+    ]
+  },
+  {
+    "product_name": "Jean & Len Hand & Body Cleanser",
+    "price": "7.99",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.11299558657709184,
+      0.7221685380248372,
+      0.4415161247005478,
+      0.8979365323189541
+    ]
+  },
+  {
+    "product_name": "Jean & Len Raumspray",
+    "price": "12.99",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.4837126790892964,
+      0.7493194657790899,
+      0.8753822880378986,
+      0.9727503840235261
+    ]
+  }
+]

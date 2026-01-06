@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Ariel Waschmittel Flüssig 50 WL oder Pods 38 WL oder Pulver 45 WL",
+    "price": "9.99",
+    "discount": null,
+    "unit": "1 WL = 0.20/0.26/0.22",
+    "original_price": null,
+    "bbox": [
+      0.08599999999999997,
+      0.45661051285353993,
+      0.2929999999999999,
+      0.6017789742929196
+    ]
+  },
+  {
+    "product_name": "Oral-B Elektrische Zahnbürste Pro Vitality oder Pro Kids 3+",
+    "price": "22.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5055209017040149,
+      0.45823646144837404,
+      0.7061906324663187,
+      0.6011453078274396
+    ]
+  },
+  {
+    "product_name": "Oral-B Essentialfloss Zahnseide",
+    "price": "1.79",
+    "discount": null,
+    "unit": "50 m",
+    "original_price": null,
+    "bbox": [
+      0.7166697307623028,
+      0.45758190376732744,
+      0.906744145291448,
+      0.5991816347842995
+    ]
+  },
+  {
+    "product_name": "Head & Shoulders Shampoo",
+    "price": "3.79",
+    "discount": null,
+    "unit": "300/250 ml",
+    "original_price": null,
+    "bbox": [
+      0.0915535128251307,
+      0.6071816347842995,
+      0.29300000000000015,
+      0.74814530782744
+    ]
+  },
+  {
+    "product_name": "Always Discreet Einlagen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "12 Stück + 4 Stück gratis",
+    "original_price": null,
+    "bbox": [
+      0.3001488290582898,
+      0.6058725194222061,
+      0.49759531623315917,
+      0.747490750146393
+    ]
+  },
+  {
+    "product_name": "Always Slipeinlagen",
+    "price": "2.55",
+    "discount": null,
+    "unit": "40 - 56 Stück",
+    "original_price": null,
+    "bbox": [
+      0.5045953162331587,
+      0.606527077103253,
+      0.702488290582898,
+      0.7474907501463929
+    ]
+  },
+  {
+    "product_name": "Swiffer Staubmagnet oder Bodentücher",
+    "price": "4.99",
+    "discount": null,
+    "unit": "5/7/9 Stück oder 24/36 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7136263980292913,
+      0.6054658549682057,
+      0.9098505178505747,
+      0.7475048717553412
+    ]
+  },
+  {
+    "product_name": "Old Spice Deospray oder Deostick",
+    "price": "3.29",
+    "discount": null,
+    "unit": "150 ml oder 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.08978179067294584,
+      0.7533958908847618,
+      0.28970825237764997,
+      0.9085260612928318
+    ]
+  },
+  {
+    "product_name": "Oral-B Aufsteckzahnbürste Pro Precision Clean",
+    "price": "12.99",
+    "discount": null,
+    "unit": "5 Stück + 1 Stück gratis",
+    "original_price": null,
+    "bbox": [
+      0.29944725458402,
+      0.45781401713805336,
+      0.4964908486134009,
+      0.6005754700084063
+    ]
+  },
+  {
+    "product_name": " Pampers Feuchttücher Aqua oder Sensitive",
+    "price": "4.99",
+    "discount": null,
+    "unit": "3 x 48 Stück oder 5 x 52 Stück",
+    "original_price": null,
+    "bbox": [
+      0.29526176520278063,
+      0.7520867755226683,
+      0.4951882269074847,
+      0.9091806189738785
+    ]
+  }
+]

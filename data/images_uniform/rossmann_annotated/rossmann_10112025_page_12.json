@@ -1,0 +1,249 @@
+[
+  {
+    "product_name": "Meridol Mundspülung Zahnfleischschutz",
+    "price": "5.79",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.12136376677727317,
+      0.08670179358276651,
+      0.284,
+      0.23477875190276087
+    ]
+  },
+  {
+    "product_name": "Meridol Mundspülung Parodont Expert",
+    "price": "7.49",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.09742177875593454,
+      0.2548189788295312,
+      0.28804041853080814,
+      0.38178706086768055
+    ]
+  },
+  {
+    "product_name": "Prokudent Zahnbürste Ultra Sensitiv 5960",
+    "price": "1.79",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.3297627204502524,
+      0.03497988653661462,
+      0.4812196861018938,
+      0.18459291730092042
+    ]
+  },
+  {
+    "product_name": "Meridol Zahnbürste Mittel oder Sanft",
+    "price": "3.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5192425111848481,
+      0.03765325769107634,
+      0.6805606277962122,
+      0.1872662884553822
+    ]
+  },
+  {
+    "product_name": "Oral-B Elektrische Zahnbürste iO Series 2",
+    "price": "40.99",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.706202092654041,
+      0.03765325769107639,
+      0.8872372795497472,
+      0.18725448395691624
+    ]
+  },
+  {
+    "product_name": "Prokudent Aufsteckzahnbürste Cross Clean",
+    "price": "4.99",
+    "discount": null,
+    "unit": "3 Stück",
+    "original_price": null,
+    "bbox": [
+      0.3030404185308077,
+      0.18824617499199603,
+      0.48369947683648995,
+      0.34334324677537686
+    ]
+  },
+  {
+    "product_name": "Lacalut Zahncreme Sanftes Weiß",
+    "price": "4.25",
+    "discount": null,
+    "unit": "75 ml",
+    "original_price": null,
+    "bbox": [
+      0.309340941694318,
+      0.3472343704935307,
+      0.4816994768364897,
+      0.4950284224283047
+    ]
+  },
+  {
+    "product_name": "Oral-B Aufsteckzahnbürste Pro Precision Clean",
+    "price": "12.99",
+    "discount": null,
+    "unit": "5 Stück + 1 Stück gratis",
+    "original_price": null,
+    "bbox": [
+      0.5113005231635098,
+      0.2798023608996931,
+      0.6956994768364898,
+      0.49010887628184563
+    ]
+  },
+  {
+    "product_name": "Oral-B Elektrische Zahnbürste Pro Vitality oder Pro Kids 3+",
+    "price": "22.90",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.6717170702843425,
+      0.255742020509537,
+      0.8897574888151514,
+      0.4927822474363078
+    ]
+  },
+  {
+    "product_name": "Colgate Zahncreme Sensation White oder Max White Sparkle Diamonds oder Max Fresh Cooling Crystals",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.5059999999999998,
+      0.5008911237181541,
+      0.6924393722037877,
+      0.6513065153821531
+    ]
+  },
+  {
+    "product_name": "Colgate Zahncreme Komplett 8in1",
+    "price": "1.49",
+    "discount": null,
+    "unit": "75 ml",
+    "original_price": null,
+    "bbox": [
+      0.7006994768364886,
+      0.5009999999999996,
+      0.8897574888151512,
+      0.6521976391003066
+    ]
+  },
+  {
+    "product_name": "Aronal & Elmex Zahncreme Doppel-Schutz Zahnfleisch und Zähne",
+    "price": "5.99",
+    "discount": null,
+    "unit": "2 x 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.313121255592424,
+      0.5024840410190736,
+      0.491520209265404,
+      0.6514153916639991
+    ]
+  },
+  {
+    "product_name": "Oral-B Essentialfloss Zahnseide",
+    "price": "1.79",
+    "discount": null,
+    "unit": "50 m",
+    "original_price": null,
+    "bbox": [
+      0.11202282508295475,
+      0.5006130307643057,
+      0.28047979073459584,
+      0.6513065153821531
+    ]
+  },
+  {
+    "product_name": "Prokudent Super-Haftcreme Neutral oder Minze",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 40 g",
+    "original_price": null,
+    "bbox": [
+      0.1029419880213384,
+      0.6544153916639983,
+      0.2792196861018938,
+      0.8061775256369212
+    ]
+  },
+  {
+    "product_name": "Odol-med 3 Zahncreme Original oder Minzfrisch",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.49917926757108516,
+      0.6611976391003067,
+      0.6931792675710852,
+      0.8069597730732286
+    ]
+  },
+  {
+    "product_name": "Dr. Best Zahnbürste Hoch-Tief Stück oder Odol-med 3 Zahncreme Plus",
+    "price": "1.79",
+    "discount": null,
+    "unit": "Stück oder 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.7206010463270195,
+      0.661306515382152,
+      0.8900175934478531,
+      0.8089597730732291
+    ]
+  },
+  {
+    "product_name": "Blend-a-dent Complete Haftcreme",
+    "price": "4.79",
+    "discount": null,
+    "unit": "47 g",
+    "original_price": null,
+    "bbox": [
+      0.10772230191944451,
+      0.8100686493550754,
+      0.27961340813977154,
+      0.9624070826990794
+    ]
+  },
+  {
+    "product_name": "Odol-med 3 Zahncreme White & Shine oder All in One Rundumschutz 40 Plus",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 75 ml",
+    "original_price": null,
+    "bbox": [
+      0.502219686101893,
+      0.8117420205095327,
+      0.683358535142171,
+      0.9588425878264629
+    ]
+  },
+  {
+    "product_name": "Odol Mundwasser",
+    "price": "3.45",
+    "discount": null,
+    "unit": "125 ml",
+    "original_price": null,
+    "bbox": [
+      0.7243813602251258,
+      0.8119597730732263,
+      0.883196861018939,
+      0.9590603403901558
+    ]
+  }
+]

@@ -1,0 +1,379 @@
+[
+  {
+    "product_name": "Tierarzt-Koffer",
+    "price": "12.99",
+    "discount": null,
+    "unit": "14-teiliges Set",
+    "original_price": null,
+    "bbox": [
+      0.10332690545767025,
+      0.048368912582771706,
+      0.29416345272883543,
+      0.1934752056133416
+    ]
+  },
+  {
+    "product_name": "Keyboardmatte",
+    "price": "19.99",
+    "discount": null,
+    "unit": "Ca. 131 x 48 cm",
+    "original_price": null,
+    "bbox": [
+      0.2984423018192226,
+      0.046395263481541014,
+      0.568675466820656,
+      0.16452835212862638
+    ]
+  },
+  {
+    "product_name": "Meine erste Gitarre",
+    "price": "8.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5755360422754607,
+      0.04771102954902817,
+      0.7460456840889558,
+      0.18426484314093214
+    ]
+  },
+  {
+    "product_name": "Rahmenpuzzle",
+    "price": "2.29",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.7473942454519377,
+      0.05626350898769392,
+      0.9001851086341497,
+      0.18163331100595811
+    ]
+  },
+  {
+    "product_name": "3D-Vier-Gewinnt",
+    "price": "9.99",
+    "discount": null,
+    "unit": "1 Spielbrett und 98 Kugeln",
+    "original_price": null,
+    "bbox": [
+      0.10067546682065612,
+      0.20042250381580232,
+      0.2653245331793438,
+      0.3363184343739629
+    ]
+  },
+  {
+    "product_name": "3in1-Gedulds- und Strategiespiel",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.2926514386370128,
+      0.2010803868495453,
+      0.4505793540860906,
+      0.33302901920524536
+    ]
+  },
+  {
+    "product_name": "Lernwecker",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4733245331793421,
+      0.19252790741087972,
+      0.5575312977188076,
+      0.31526617729417017
+    ]
+  },
+  {
+    "product_name": "Winkefigur",
+    "price": "7.99",
+    "discount": null,
+    "unit": "Höhe ca. 17 cm",
+    "original_price": null,
+    "bbox": [
+      0.5847187786312821,
+      0.18989637527590575,
+      0.6759495713543899,
+      0.3303974870702713
+    ]
+  },
+  {
+    "product_name": "Weihnachts-baumkugel",
+    "price": "2.99",
+    "discount": null,
+    "unit": "Ø ca. 8 cm",
+    "original_price": null,
+    "bbox": [
+      0.6902524486284167,
+      0.19252790741088,
+      0.785694750447643,
+      0.3475024459476029
+    ]
+  },
+  {
+    "product_name": "Deko-Tanne",
+    "price": "2.99",
+    "discount": null,
+    "unit": "15 x Ø ca. 7 cm",
+    "original_price": null,
+    "bbox": [
+      0.8017187786312823,
+      0.19318579044462314,
+      0.9029759718163586,
+      0.34816032898134647
+    ]
+  },
+  {
+    "product_name": "Edding Lackmarker",
+    "price": "2.49",
+    "discount": null,
+    "unit": "Strichstärke 1-2 mm",
+    "original_price": null,
+    "bbox": [
+      0.10246633000286481,
+      0.34329208347519274,
+      0.18537258954662653,
+      0.5282393816776547
+    ]
+  },
+  {
+    "product_name": "Terminplaner 2026",
+    "price": "4.99",
+    "discount": null,
+    "unit": "Hardcover DIN A5 oder DIN B6",
+    "original_price": null,
+    "bbox": [
+      0.19402402818364092,
+      0.3432920834751926,
+      0.2876514386370148,
+      0.5032398263954009
+    ]
+  },
+  {
+    "product_name": "LED-Keramik-Laterne",
+    "price": "8.99",
+    "discount": null,
+    "unit": "Ca. 13,5 x 15,6 cm",
+    "original_price": null,
+    "bbox": [
+      0.30095431591104366,
+      0.34394996650893694,
+      0.40979086318220886,
+      0.533502445947603
+    ]
+  },
+  {
+    "product_name": "Metall-kerzenhalter",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4789807163730093,
+      0.3373711361714991,
+      0.7085096418134933,
+      0.46660784954268064
+    ]
+  },
+  {
+    "product_name": "Weihnachtlicher Diffuser",
+    "price": "4.99",
+    "discount": null,
+    "unit": "Inhalt 100 ml",
+    "original_price": null,
+    "bbox": [
+      0.7349062595437608,
+      0.35644974415006414,
+      0.8947428068149264,
+      0.44666188549345726
+    ]
+  },
+  {
+    "product_name": "LED-Stabkerzen",
+    "price": "9.99",
+    "discount": null,
+    "unit": "2er-Set",
+    "original_price": null,
+    "bbox": [
+      0.4101394245451925,
+      0.39987224796586757,
+      0.5670720845509242,
+      0.5348199908860741
+    ]
+  },
+  {
+    "product_name": "Akku-Heißklebepistole",
+    "price": "8.99",
+    "discount": "10",
+    "unit": null,
+    "original_price": "9.99",
+    "bbox": [
+      0.09774517909325266,
+      0.510869134941641,
+      0.30725719318507383,
+      0.6318177672973438
+    ]
+  },
+  {
+    "product_name": "Akku-Wandleuchte",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3065360422754616,
+      0.541184901009131,
+      0.5102619377417278,
+      0.6245810539261653
+    ]
+  },
+  {
+    "product_name": "Herpotherm neo Elektronischer Lippenstift gegen Herpes",
+    "price": "25.99",
+    "discount": "10",
+    "unit": null,
+    "original_price": "28.99",
+    "bbox": [
+      0.09402402818364097,
+      0.6397387146010339,
+      0.27655769818077625,
+      0.77181821201509
+    ]
+  },
+  {
+    "product_name": "Sanitas Oberarmblutdruckmessgerät SBM 41",
+    "price": "19.99",
+    "discount": null,
+    "unit": "Inkl. Batterien",
+    "original_price": null,
+    "bbox": [
+      0.28979086318220815,
+      0.6272389369599077,
+      0.42041352907892804,
+      0.7712661772941701
+    ]
+  },
+  {
+    "product_name": "Lammwoll-Nierenwärmer",
+    "price": "6.99",
+    "discount": null,
+    "unit": "Größe S/M - L/XL",
+    "original_price": null,
+    "bbox": [
+      0.6294182736355785,
+      0.5145002223588694,
+      0.7279976277216728,
+      0.657184456291386
+    ]
+  },
+  {
+    "product_name": "Sport-Funktionstight",
+    "price": "14.99",
+    "discount": null,
+    "unit": "Größe S-L",
+    "original_price": null,
+    "bbox": [
+      0.44022842044477334,
+      0.6325274626931303,
+      0.5856947504476386,
+      0.7706082942604253
+    ]
+  },
+  {
+    "product_name": "Lammwoll-Shirt",
+    "price": "14.99",
+    "discount": null,
+    "unit": "Größe S/M - L/XL",
+    "original_price": null,
+    "bbox": [
+      0.7179038872654302,
+      0.5662371580889223,
+      0.8983245331793416,
+      0.6621071824660618
+    ]
+  },
+  {
+    "product_name": "Lammwoll-Socken",
+    "price": "9.99",
+    "discount": null,
+    "unit": "2er-Set Größe 35/38-43/46",
+    "original_price": null,
+    "bbox": [
+      0.5912764768120582,
+      0.6588950411226695,
+      0.7345096418134935,
+      0.7687909716808288
+    ]
+  },
+  {
+    "product_name": "Lammwoll-Hose",
+    "price": "14.99",
+    "discount": null,
+    "unit": "Größe S/M - L/XL",
+    "original_price": null,
+    "bbox": [
+      0.7448822313601194,
+      0.654923170892421,
+      0.8955336699971348,
+      0.7633715808892481
+    ]
+  },
+  {
+    "product_name": "LED-Weihnachtsstern-Vorhang",
+    "price": "14.99",
+    "discount": null,
+    "unit": "Ca. 1 m, 9 Lichter",
+    "original_price": null,
+    "bbox": [
+      0.09588460363844716,
+      0.781131754493847,
+      0.2894423018192236,
+      0.957447075843588
+    ]
+  },
+  {
+    "product_name": "LED-Stern",
+    "price": "8.99",
+    "discount": null,
+    "unit": "Ca. 30 x 25 cm, 25 Lichter",
+    "original_price": null,
+    "bbox": [
+      0.29816345272883366,
+      0.777842339325128,
+      0.49572115090961166,
+      0.9600786079785623
+    ]
+  },
+  {
+    "product_name": "LED-Polarstern-Vorhang",
+    "price": "9.99",
+    "discount": null,
+    "unit": "Ca. 135 x 109 cm, 93 Lichter",
+    "original_price": null,
+    "bbox": [
+      0.5043028772740291,
+      0.7778423393251284,
+      0.7001394245451938,
+      0.9554734267423577
+    ]
+  },
+  {
+    "product_name": "LED-Glitzerschlauch",
+    "price": "7.99",
+    "discount": null,
+    "unit": "Ca. 5 m, 50 Lichter",
+    "original_price": null,
+    "bbox": [
+      0.7097211509096075,
+      0.7771844562913854,
+      0.9057668349985671,
+      0.9587628419110751
+    ]
+  }
+]

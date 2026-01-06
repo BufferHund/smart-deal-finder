@@ -1,0 +1,288 @@
+[
+  {
+    "product_name": "Celebrations",
+    "price": "2.79",
+    "discount": null,
+    "unit": "186 g",
+    "original_price": null,
+    "bbox": [
+      0.11022250416698175,
+      0.0350000000000001,
+      0.28769857380970393,
+      0.1870000000000005
+    ]
+  },
+  {
+    "product_name": "Mars Mixed Minis",
+    "price": "3.99",
+    "discount": "24",
+    "unit": "400 g",
+    "original_price": "5.29",
+    "bbox": [
+      0.30844500833396427,
+      0.03500000000000024,
+      0.4969210779766874,
+      0.18700000000000133
+    ]
+  },
+  {
+    "product_name": "Das Exquisite Balena oder Coco Fleur",
+    "price": "1.19",
+    "discount": "20",
+    "unit": "je 125 g",
+    "original_price": "1.49",
+    "bbox": [
+      0.5133182255960956,
+      0.03500000000000016,
+      0.6972703648815377,
+      0.18700000000000122
+    ]
+  },
+  {
+    "product_name": "Marabou Schokolade",
+    "price": "3.49",
+    "discount": "30",
+    "unit": "220 g",
+    "original_price": "4.99",
+    "bbox": [
+      0.7133182255960929,
+      0.035000000000000114,
+      0.9008253565475768,
+      0.18700000000000072
+    ]
+  },
+  {
+    "product_name": "Cheez-It",
+    "price": "1.79",
+    "discount": "35",
+    "unit": "120 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.11287321726213104,
+      0.2695396937643258,
+      0.3030789220233149,
+      0.49230687082378577
+    ]
+  },
+  {
+    "product_name": "Pom-Bär Crizzlies",
+    "price": "1.99",
+    "discount": "28",
+    "unit": "155 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.3312225041669825,
+      0.27950793875286534,
+      0.49400000000000016,
+      0.493137557906164
+    ]
+  },
+  {
+    "product_name": "Treets Peanuts Vegan oder Smarties Riesenrolle",
+    "price": "1.49",
+    "discount": null,
+    "unit": "185 g oder 130 g",
+    "original_price": null,
+    "bbox": [
+      0.5148732172621309,
+      0.1904021358581582,
+      0.6938732172621296,
+      0.3423703808467003
+    ]
+  },
+  {
+    "product_name": "Nippon",
+    "price": "1.79",
+    "discount": "33",
+    "unit": "200 g",
+    "original_price": "2.69",
+    "bbox": [
+      0.7109210779766871,
+      0.19289419710529387,
+      0.902174643452426,
+      0.3415396937643218
+    ]
+  },
+  {
+    "product_name": "Knoppers 8er-Pack",
+    "price": "1.79",
+    "discount": "28",
+    "unit": "200 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.527794295238816,
+      0.3465396937643238,
+      0.6985717910718336,
+      0.49500000000000005
+    ]
+  },
+  {
+    "product_name": "Maison Ninon Blanc oder Rosé oder Rouge",
+    "price": "3.79",
+    "discount": null,
+    "unit": "je 0,75 Liter",
+    "original_price": null,
+    "bbox": [
+      0.7109210779766894,
+      0.3448783195995663,
+      0.8974760696427228,
+      0.49583068708237865
+    ]
+  },
+  {
+    "product_name": "Leibniz Butterkeks oder Kuchenmeister Koala Kakao",
+    "price": "1.19",
+    "discount": null,
+    "unit": "200 g oder 75 g",
+    "original_price": null,
+    "bbox": [
+      0.103,
+      0.503,
+      0.293,
+      0.655
+    ]
+  },
+  {
+    "product_name": "Tic Tac",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "110 Stück/54 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.301,
+      0.503,
+      0.49,
+      0.655
+    ]
+  },
+  {
+    "product_name": "Knoppers Goodies",
+    "price": "2.29",
+    "discount": null,
+    "unit": "180 g",
+    "original_price": null,
+    "bbox": [
+      0.5144450083339653,
+      0.5029999999999999,
+      0.691523930357279,
+      0.6541693129176213
+    ]
+  },
+  {
+    "product_name": "Schloss Böckfliess Adele I oder Adele II oder Lisbeth",
+    "price": "4.59",
+    "discount": null,
+    "unit": "je 0,75 Liter",
+    "original_price": null,
+    "bbox": [
+      0.7157942952388151,
+      0.5030000000000002,
+      0.8930000000000021,
+      0.6508465645881077
+    ]
+  },
+  {
+    "product_name": "Wellmix Proteinriegel",
+    "price": "0.89",
+    "discount": "10",
+    "unit": "40 – 50 g",
+    "original_price": "0.99",
+    "bbox": [
+      0.10887321726213015,
+      0.6580158775057308,
+      0.2953492869048519,
+      0.8050317550114572
+    ]
+  },
+  {
+    "product_name": "Genuss Plus Mango-Streifen oder Nuss-Frucht-Mischung",
+    "price": "1.99",
+    "discount": null,
+    "unit": "100 g oder 150 – 175 g",
+    "original_price": null,
+    "bbox": [
+      0.3056985738097043,
+      0.6563545033409727,
+      0.49000000000000027,
+      0.8050317550114575
+    ]
+  },
+  {
+    "product_name": "Katjes",
+    "price": "0.69",
+    "discount": "42",
+    "unit": "175 g",
+    "original_price": "1.19",
+    "bbox": [
+      0.5250167994057973,
+      0.6563545033409731,
+      0.6962225041669813,
+      0.8083545033409715
+    ]
+  },
+  {
+    "product_name": "Kiechlinsberger Vulkanfelsen Grau- oder Weiß- oder Spätburgunder oder Rosé oder Blanc de Noir",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 0,75 Liter",
+    "original_price": null,
+    "bbox": [
+      0.713445008333964,
+      0.6555238162585937,
+      0.8988732172621299,
+      0.8087090066819431
+    ]
+  },
+  {
+    "product_name": "Laudatio Kaffeepads",
+    "price": "1.79",
+    "discount": null,
+    "unit": "16 Stück/112 g",
+    "original_price": null,
+    "bbox": [
+      0.10534928690485204,
+      0.8093703808467015,
+      0.29300000000000004,
+      0.9625238162585933
+    ]
+  },
+  {
+    "product_name": "King's Crown Früchte- oder Kräutertee",
+    "price": "2.29",
+    "discount": "17",
+    "unit": "je 75 – 250 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.30922250416698166,
+      0.8118624420938364,
+      0.49469857380970383,
+      0.9608624420938361
+    ]
+  },
+  {
+    "product_name": "King's Crown Beuteltee",
+    "price": "0.99",
+    "discount": "16",
+    "unit": "20 Beutel/30 – 60 g",
+    "original_price": "1.19",
+    "bbox": [
+      0.5167942952388155,
+      0.8102010679290795,
+      0.6985717910718335,
+      0.9592010679290792
+    ]
+  },
+  {
+    "product_name": "Red Bull Energydrink",
+    "price": "0.99",
+    "discount": null,
+    "unit": "250 ml",
+    "original_price": null,
+    "bbox": [
+      0.721667512500948,
+      0.8102010679290808,
+      0.9000478607145578,
+      0.9608624420938371
+    ]
+  }
+]

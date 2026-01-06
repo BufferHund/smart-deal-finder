@@ -1,0 +1,275 @@
+[
+  {
+    "product_name": "Toni Gard Eau de Parfum",
+    "price": "22.99",
+    "discount": "42",
+    "unit": "40 ml",
+    "original_price": "39.95",
+    "bbox": [
+      0.11021135298925598,
+      0.037289186492759925,
+      0.2920905798525404,
+      0.18602500879178172
+    ]
+  },
+  {
+    "product_name": "JOOP! WOW! Eau de Toilette",
+    "price": "26.99",
+    "discount": null,
+    "unit": "40 ml",
+    "original_price": null,
+    "bbox": [
+      0.3120905798525432,
+      0.038289186492760266,
+      0.5031962563471655,
+      0.1874607255894325
+    ]
+  },
+  {
+    "product_name": "Wacken Thunder Eau de Parfum",
+    "price": "29.99",
+    "discount": "24",
+    "unit": "100 ml",
+    "original_price": "39.95",
+    "bbox": [
+      0.5161207731367218,
+      0.04016062008806315,
+      0.6970000000000063,
+      0.18646072558943305
+    ]
+  },
+  {
+    "product_name": "JOOP! Homme Eau de Toilette",
+    "price": "39.99",
+    "discount": null,
+    "unit": "125 ml",
+    "original_price": null,
+    "bbox": [
+      0.7190000000000021,
+      0.036289186492759945,
+      0.906000000000003,
+      0.18574286719060668
+    ]
+  },
+  {
+    "product_name": "Police To Be Woman Eau de Parfum oder Man Eau de Toilette",
+    "price": "10.99",
+    "discount": null,
+    "unit": "je 40 ml",
+    "original_price": null,
+    "bbox": [
+      0.10530193284179382,
+      0.19315357519647883,
+      0.5011509664209017,
+      0.4967428671906099
+    ]
+  },
+  {
+    "product_name": "cacharel Amor Amor oder Noa oder Anais Anais Eau de Toilette oder Lou Lou Eau de Parfum",
+    "price": "21.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.5222415462734366,
+      0.1924357167976529,
+      0.6959547100737309,
+      0.34022860157181983
+    ]
+  },
+  {
+    "product_name": "Azzaro Sport Eau de Toilette",
+    "price": "22.99",
+    "discount": "23",
+    "unit": "100 ml",
+    "original_price": "29.95",
+    "bbox": [
+      0.7301811597050816,
+      0.19156428320234956,
+      0.9059698067158211,
+      0.3428178935659491
+    ]
+  },
+  {
+    "product_name": "JOOP! Jump Eau de Toilette",
+    "price": "19.99",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.5252717395576166,
+      0.3463071503929569,
+      0.7010301932841795,
+      0.49522860157182
+    ]
+  },
+  {
+    "product_name": "Harry Potter Magical Essence Woman Eau de Parfum oder Man Eau de Parfum",
+    "price": "19.99",
+    "discount": "33",
+    "unit": "30 ml oder 50 ml",
+    "original_price": "29.95",
+    "bbox": [
+      0.7240754832104541,
+      0.34902500879178416,
+      0.9019094201474672,
+      0.49646072558943644
+    ]
+  },
+  {
+    "product_name": "CR7 Cristiano Ronaldo Play It Cool oder Game On Eau de Toilette",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.12046799590478001,
+      0.502564283202356,
+      0.2901358697788073,
+      0.649435716797661
+    ]
+  },
+  {
+    "product_name": "Etienne Aigner X Limited Eau de Toilette",
+    "price": "14.99",
+    "discount": null,
+    "unit": "125 ml",
+    "original_price": null,
+    "bbox": [
+      0.32028683619970527,
+      0.503128566404701,
+      0.5032113529892549,
+      0.6482821416011745
+    ]
+  },
+  {
+    "product_name": "Aigner Private Number For Men Eau de Toilette",
+    "price": "17.99",
+    "discount": "69",
+    "unit": "100 ml",
+    "original_price": "59.95",
+    "bbox": [
+      0.5141207731367172,
+      0.5050000000000001,
+      0.7061207731367172,
+      0.6490000000000001
+    ]
+  },
+  {
+    "product_name": "bruno banani Man oder Woman Eau de Toilette",
+    "price": "18.99",
+    "discount": null,
+    "unit": "je 100 ml",
+    "original_price": null,
+    "bbox": [
+      0.7129094201474637,
+      0.5035642832023525,
+      0.9080000000000048,
+      0.6488999648328799
+    ]
+  },
+  {
+    "product_name": "Vanderbilt Red Eau de Parfum",
+    "price": "9.99",
+    "discount": "68",
+    "unit": "100 ml",
+    "original_price": "31.95",
+    "bbox": [
+      0.1113019328417929,
+      0.661410708005871,
+      0.30230193284179285,
+      0.805410708005871
+    ]
+  },
+  {
+    "product_name": "Hollister California For Him Eau de Toilette oder For Her Eau de Parfum",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.32739251269433195,
+      0.6585392744105721,
+      0.49916606306298705,
+      0.8065642832023525
+    ]
+  },
+  {
+    "product_name": "Tabac Original After Shave oder After Shave Extrastrong",
+    "price": "10.49",
+    "discount": null,
+    "unit": "je 150 ml",
+    "original_price": null,
+    "bbox": [
+      0.513120773136718,
+      0.6578214160117433,
+      0.705090579852538,
+      0.8054107080058712
+    ]
+  },
+  {
+    "product_name": "Glow by JLo Eau de Toilette",
+    "price": "12.99",
+    "discount": "34",
+    "unit": "30 ml",
+    "original_price": "19.95",
+    "bbox": [
+      0.7342264496313463,
+      0.6583606904223116,
+      0.9069849033579107,
+      0.806360690422312
+    ]
+  },
+  {
+    "product_name": "bruno banani oder Mexx Body Splash",
+    "price": "5.49",
+    "discount": null,
+    "unit": "je 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.10422644963134546,
+      0.8136678408152688,
+      0.30230193284179413,
+      0.9598964423870868
+    ]
+  },
+  {
+    "product_name": "Jovan Eau de Parfum",
+    "price": "5.55",
+    "discount": null,
+    "unit": "59 ml",
+    "original_price": null,
+    "bbox": [
+      0.3415585757573186,
+      0.8116678408152677,
+      0.5022264496313448,
+      0.9603321591847365
+    ]
+  },
+  {
+    "product_name": "Esprit Red Essence oder Essential oder Feel Good oder Rise & Shine Woman Eau de Parfum",
+    "price": "7.49",
+    "discount": null,
+    "unit": "je 20 ml",
+    "original_price": null,
+    "bbox": [
+      0.5151509664208983,
+      0.8135392744105693,
+      0.7101509664208988,
+      0.96061430078591
+    ]
+  },
+  {
+    "product_name": "Laura Biagiotti Roma Donna Shower Gel",
+    "price": "7.99",
+    "discount": "27",
+    "unit": "150 ml",
+    "original_price": "10.95",
+    "bbox": [
+      0.7210452899262724,
+      0.8132321240176182,
+      0.9069698067158212,
+      0.9598964423870848
+    ]
+  }
+]
