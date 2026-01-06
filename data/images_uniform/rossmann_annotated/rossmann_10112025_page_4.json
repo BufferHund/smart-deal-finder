@@ -1,0 +1,288 @@
+[
+  {
+    "product_name": "BURBERRY LONDON Woman Eau de Parfum",
+    "price": "34.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.10946433573406406,
+      0.037068868800100435,
+      0.28842261071098946,
+      0.18530780046831472
+    ]
+  },
+  {
+    "product_name": "DONNA KARAN DKNY WOMEN Eau de Parfum",
+    "price": "29.99",
+    "discount": "39",
+    "unit": "50 ml",
+    "original_price": "49.95",
+    "bbox": [
+      0.32977389289011116,
+      0.04023120187325932,
+      0.49310565267774753,
+      0.18530780046831472
+    ]
+  },
+  {
+    "product_name": "Engelsrufer Love Eau de Parfum",
+    "price": "24.99",
+    "discount": "37",
+    "unit": "100 ml",
+    "original_price": "39.95",
+    "bbox": [
+      0.7123660839335219,
+      0.040863668487890935,
+      0.8959017481994527,
+      0.18973506677073665
+    ]
+  },
+  {
+    "product_name": "BE DELICIOUS DKNY Woman oder Fresh Blossom oder Be 100% Delicious oder Orchard Street Eau de Parfum",
+    "price": "21.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.10052086251153708,
+      0.19224806755126134,
+      0.29110565267774735,
+      0.3402220659902123
+    ]
+  },
+  {
+    "product_name": "CK EVERYONE Eau de Parfum",
+    "price": "21.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.3049434732225282,
+      0.19477793400978935,
+      0.48942261071098936,
+      0.34148699921947556
+    ]
+  },
+  {
+    "product_name": "AIGNER N°2 After Shave",
+    "price": "10.99",
+    "discount": "59",
+    "unit": "125 ml",
+    "original_price": "26.95",
+    "bbox": [
+      0.49942261071099137,
+      0.1937779340097886,
+      0.6940565267774736,
+      0.4946921995316854
+    ]
+  },
+  {
+    "product_name": "AIGNER N°2 Duschgel",
+    "price": "5.99",
+    "discount": "78",
+    "unit": "500 ml",
+    "original_price": "27.95",
+    "bbox": [
+      0.6969508740997321,
+      0.19377793400978877,
+      0.8870639276546738,
+      0.4940597329170537
+    ]
+  },
+  {
+    "product_name": "EMILY IN PARIS MICHEL GERMAIN Eau de Parfum",
+    "price": "19.99",
+    "discount": "33",
+    "unit": "30 ml",
+    "original_price": "29.95",
+    "bbox": [
+      0.10052086251153745,
+      0.3483246661463192,
+      0.2875282633887381,
+      0.4949142655218997
+    ]
+  },
+  {
+    "product_name": "JETTE Eau de Parfum",
+    "price": "18.99",
+    "discount": "23",
+    "unit": "30 ml",
+    "original_price": "24.95",
+    "bbox": [
+      0.3051547785780212,
+      0.3483246661463186,
+      0.4875282633887399,
+      0.49491426552189766
+    ]
+  },
+  {
+    "product_name": "Elizabeth Arden Green Tea Honey Drops Body Cream",
+    "price": "16.99",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.09783782054477945,
+      0.5009571327609512,
+      0.2902113053554947,
+      0.6492480675512612
+    ]
+  },
+  {
+    "product_name": "AIGNER N°1 POUR HOMME Eau de Toilette",
+    "price": "16.99",
+    "discount": "71",
+    "unit": "100 ml",
+    "original_price": "59.95",
+    "bbox": [
+      0.3015773892890119,
+      0.5028545326048454,
+      0.4982604312557686,
+      0.6498805341658929
+    ]
+  },
+  {
+    "product_name": "NIVEA oder Nivea Sun Eau de Toilette",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.5068943473222548,
+      0.5008973998438968,
+      0.6931621794552212,
+      0.651777934009788
+    ]
+  },
+  {
+    "product_name": "bruno banani Woman oder Man Eau de Toilette",
+    "price": "13.49",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.7087886946445106,
+      0.5028973998438986,
+      0.8994791374884633,
+      0.6530428672390515
+    ]
+  },
+  {
+    "product_name": "Sunflowers ELIZABETH ARDEN Eau de Toilette",
+    "price": "9.99",
+    "discount": "49",
+    "unit": "50 ml",
+    "original_price": "19.95",
+    "bbox": [
+      0.11751346163433798,
+      0.659248067551266,
+      0.2937886946445054,
+      0.8061623330731588
+    ]
+  },
+  {
+    "product_name": "AIGNER EXPLOSIVE Eau de Toilette",
+    "price": "9.99",
+    "discount": "78",
+    "unit": "50 ml",
+    "original_price": "45.95",
+    "bbox": [
+      0.30257738928901384,
+      0.6573506677073708,
+      0.497366083933516,
+      0.8067947996877906
+    ]
+  },
+  {
+    "product_name": "JORGE GONZÁLEZ Edicion Oro oder Felicidad Eau de Parfum",
+    "price": "8.99",
+    "discount": "39",
+    "unit": "je 50 ml",
+    "original_price": "14.95",
+    "bbox": [
+      0.5033169580332443,
+      0.6573506677073706,
+      0.6949508740997263,
+      0.8048973998438955
+    ]
+  },
+  {
+    "product_name": "Just cavalli Woman Eau de Toilette",
+    "price": "12.99",
+    "discount": "56",
+    "unit": "30 ml",
+    "original_price": "29.95",
+    "bbox": [
+      0.7186265151892901,
+      0.6605130007805264,
+      0.8923243589104426,
+      0.8061623330731587
+    ]
+  },
+  {
+    "product_name": "BETTY BARCLAY FRAGRANCES Woman Eau de Toilette",
+    "price": "7.99",
+    "discount": null,
+    "unit": "20 ml",
+    "original_price": null,
+    "bbox": [
+      0.32067564108955965,
+      0.8120000000000018,
+      0.49457738928901085,
+      0.9600000000000026
+    ]
+  },
+  {
+    "product_name": "MEXX Woman Eau de Toilette oder Man Eau de Toilette",
+    "price": "8.49",
+    "discount": null,
+    "unit": "15/20 ml oder 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.09569516348103266,
+      0.8108221999578423,
+      0.2915572270543612,
+      0.9607167876255561
+    ]
+  },
+  {
+    "product_name": "Rammstein Dynamit oder Explosiv Eau de Parfum",
+    "price": "29.99",
+    "discount": null,
+    "unit": "je 100 ml",
+    "original_price": null,
+    "bbox": [
+      0.498626436116311,
+      0.03816667934640288,
+      0.6956147950710607,
+      0.18591619351303246
+    ]
+  },
+  {
+    "product_name": " CÂLINE PARFUMS Man Eau de Toilette oder Woman Eau de Parfum",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 60 ml",
+    "original_price": null,
+    "bbox": [
+      0.706649370214572,
+      0.8159391537446931,
+      0.8968156214998929,
+      0.9618794901868334
+    ]
+  },
+  {
+    "product_name": "Christina Aguilera Eau de Parfum",
+    "price": "7.49",
+    "discount": null,
+    "unit": "15 ml",
+    "original_price": null,
+    "bbox": [
+      0.501986140131715,
+      0.8153360945031966,
+      0.6947106817930718,
+      0.958864193979351
+    ]
+  }
+]

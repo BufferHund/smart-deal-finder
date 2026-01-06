@@ -1,0 +1,275 @@
+[
+  {
+    "product_name": "Burti Feinwaschmittel Flüssig",
+    "price": "2.99",
+    "discount": null,
+    "unit": "29 WL",
+    "original_price": null,
+    "bbox": [
+      0.1170551206327784,
+      0.03490830876137675,
+      0.29008540317427334,
+      0.18721107834850237
+    ]
+  },
+  {
+    "product_name": "Frosch Waschmittel Pulver 52 WL",
+    "price": "9.99",
+    "discount": null,
+    "unit": "52 WL",
+    "original_price": null,
+    "bbox": [
+      0.3133416126970938,
+      0.034807385565668224,
+      0.4949145968257264,
+      0.18641292473991944
+    ]
+  },
+  {
+    "product_name": "Vileda Glitzi Geschirrschwamm Sparpack",
+    "price": "1.49",
+    "discount": "21",
+    "unit": "6 Stück",
+    "original_price": "1.89",
+    "bbox": [
+      0.5115427015871363,
+      0.03660553917425122,
+      0.7016583873029055,
+      0.18751384793562806
+    ]
+  },
+  {
+    "product_name": "Sheba Katzennahrung",
+    "price": "0.49",
+    "discount": null,
+    "unit": "85 g",
+    "original_price": null,
+    "bbox": [
+      0.7190151412707472,
+      0.0366055391742512,
+      0.9074173190508323,
+      0.18651384793562797
+    ]
+  },
+  {
+    "product_name": "Fredman Back-Bögen",
+    "price": "2.22",
+    "discount": null,
+    "unit": "24 Stück",
+    "original_price": null,
+    "bbox": [
+      0.5128140523807032,
+      0.19024800617684345,
+      0.7016583873029058,
+      0.3416055391742512
+    ]
+  },
+  {
+    "product_name": "Sheba Katze Filets oder Felix Katze Knabbermix oder Frolic Hund Unterwegs",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 60 g oder 180 g",
+    "original_price": null,
+    "bbox": [
+      0.7164724396836096,
+      0.19201846391417046,
+      0.8972465127022851,
+      0.34178031802664244
+    ]
+  },
+  {
+    "product_name": "Ariel Waschmittel Flüssig 50 WL oder Pods 38 WL oder Pulver 45 WL",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.10434161269709435,
+      0.19191754071846204,
+      0.49237189523858976,
+      0.4963944608257488
+    ]
+  },
+  {
+    "product_name": "Rubin Wasserfilter-Kartuschen Multi Plus",
+    "price": "6.99",
+    "discount": null,
+    "unit": "3 Stück",
+    "original_price": null,
+    "bbox": [
+      0.5155872053977973,
+      0.3462351940544805,
+      0.6922828578560742,
+      0.494826439284728
+    ]
+  },
+  {
+    "product_name": "Kitekat Katze Nassfutter oder Whiskas Katze Snacks oder Dreamies Katze",
+    "price": "2.99",
+    "discount": null,
+    "unit": "12 x 85 g oder je 180 g",
+    "original_price": null,
+    "bbox": [
+      0.7143617205170852,
+      0.3459732814471986,
+      0.9080745163573525,
+      0.496603051795385
+    ]
+  },
+  {
+    "product_name": "Rubin Batterien Mignon AA oder Micro AAA",
+    "price": "3.29",
+    "discount": "17",
+    "unit": "je 20 Stück",
+    "original_price": "3.99",
+    "bbox": [
+      0.1086276342890055,
+      0.49900000000000005,
+      0.2966489246768204,
+      0.6509999999999999
+    ]
+  },
+  {
+    "product_name": "Rubin Duft- oder Geruchstopp Müllbeutel",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je Packung",
+    "original_price": null,
+    "bbox": [
+      0.31163827948291317,
+      0.4989999999999996,
+      0.49301064519390714,
+      0.6509999999999996
+    ]
+  },
+  {
+    "product_name": "Rubin Licht Dauerbrenner Rot oder Weiß",
+    "price": "0.80",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5169893548060921,
+      0.4989999999999999,
+      0.7001968280494046,
+      0.651
+    ]
+  },
+  {
+    "product_name": "Winston Katze Feine Pastete oder Pastete & Häppchen",
+    "price": "0.25",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.7131968280494039,
+      0.5011673024573716,
+      0.9045798389543066,
+      0.6499866407235988
+    ]
+  },
+  {
+    "product_name": "Tempo Feuchte Toilettentücher",
+    "price": "1.29",
+    "discount": "26",
+    "unit": "42 Stück",
+    "original_price": "1.75",
+    "bbox": [
+      0.12360634390119034,
+      0.6569999999999987,
+      0.2908244623384103,
+      0.8029955469078655
+    ]
+  },
+  {
+    "product_name": "Alouette Feuchtes Toilettenpapier Deluxe Sparpack",
+    "price": "2.99",
+    "discount": null,
+    "unit": "3 x 50 Stück",
+    "original_price": null,
+    "bbox": [
+      0.31047338701523086,
+      0.6569999999999991,
+      0.488351075323179,
+      0.806290712341309
+    ]
+  },
+  {
+    "product_name": "Alouette Küchentücher XXL-Rolle 3-lagig",
+    "price": "3.45",
+    "discount": null,
+    "unit": "3 x 100 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.5099999999999996,
+      0.6569999999999995,
+      0.6932074732433121,
+      0.8062907123413097
+    ]
+  },
+  {
+    "product_name": "Winston Katze Feine Häppchen",
+    "price": "2.59",
+    "discount": null,
+    "unit": "12 x 100 g",
+    "original_price": null,
+    "bbox": [
+      0.7190212903878138,
+      0.6535152666485157,
+      0.9104043012927168,
+      0.8039821876314652
+    ]
+  },
+  {
+    "product_name": "Regina Toilettenpapier 3-lagig",
+    "price": "4.99",
+    "discount": null,
+    "unit": "16 x 150 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.11661698909509793,
+      0.8124669209829485,
+      0.2896595698707282,
+      0.9609338419658974
+    ]
+  },
+  {
+    "product_name": "Danke Toilettenpapier 3-lagig oder Zewa Toilettenpapier Bewährt Lufterfrischer 3-lagig",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 8 x 150 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.3116382794829131,
+      0.8116431296245875,
+      0.49417553766158906,
+      0.9609338419658974
+    ]
+  },
+  {
+    "product_name": "Alouette Toilettenpapier Balsam 4-lagig",
+    "price": "3.69",
+    "discount": null,
+    "unit": "8 x 150 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.5146595698707287,
+      0.8116431296245875,
+      0.6897127958402662,
+      0.959286259249176
+    ]
+  },
+  {
+    "product_name": "Winston Hund Saftige Salami oder Mini Softies",
+    "price": "0.89",
+    "discount": "10",
+    "unit": "60 g oder 48 g",
+    "original_price": "0.99",
+    "bbox": [
+      0.7143617205170849,
+      0.810982187631465,
+      0.9010851615512603,
+      0.9617576333242583
+    ]
+  }
+]

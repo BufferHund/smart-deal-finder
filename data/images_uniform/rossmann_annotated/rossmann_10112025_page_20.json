@@ -1,0 +1,145 @@
+[
+  {
+    "product_name": "Fenjal Ölbad",
+    "price": "4.99",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.1136073818242264,
+      0.2908963095772901,
+      0.3794381610234174,
+      0.4726559214391798
+    ]
+  },
+  {
+    "product_name": "Tesori d'Oriente Bad",
+    "price": "3.49",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.41856183897658233,
+      0.34476854370441923,
+      0.6412559896328416,
+      0.5287122325718002
+    ]
+  },
+  {
+    "product_name": "Dove Bad",
+    "price": "3.99",
+    "discount": null,
+    "unit": "750 ml",
+    "original_price": null,
+    "bbox": [
+      0.690425210433651,
+      0.2865906784640281,
+      0.9050412259843884,
+      0.4965075718038137
+    ]
+  },
+  {
+    "product_name": "Kneipp Schaumbad",
+    "price": "3.29",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.12121476364845307,
+      0.5057685437044201,
+      0.3007852363515468,
+      0.6758695140496968
+    ]
+  },
+  {
+    "product_name": "Kneipp Bad Muskel Entspannung oder Rücken und Schulter",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 100 ml",
+    "original_price": null,
+    "bbox": [
+      0.28573969350390266,
+      0.5679079614972536,
+      0.49339261817577346,
+      0.7562108725330834
+    ]
+  },
+  {
+    "product_name": "Tetesept Gesundheitsbad",
+    "price": "4.49",
+    "discount": null,
+    "unit": "125/150 ml",
+    "original_price": null,
+    "bbox": [
+      0.5218221454726766,
+      0.5312877674281958,
+      0.8025575221133265,
+      0.7043056311132605
+    ]
+  },
+  {
+    "product_name": "Tetesept Pflege-Schaumbad",
+    "price": "2.79",
+    "discount": null,
+    "unit": "420 ml",
+    "original_price": null,
+    "bbox": [
+      0.6444012519022838,
+      0.5331662133204258,
+      0.9072147636484531,
+      0.7077390280993932
+    ]
+  },
+  {
+    "product_name": "Palmolive Cremebad",
+    "price": "2.49",
+    "discount": null,
+    "unit": "650 ml",
+    "original_price": null,
+    "bbox": [
+      0.10056615583983723,
+      0.6691572814778992,
+      0.20927757394911906,
+      0.9849168933397864
+    ]
+  },
+  {
+    "product_name": "Nivea Bad",
+    "price": "2.99",
+    "discount": null,
+    "unit": "650 ml",
+    "original_price": null,
+    "bbox": [
+      0.2685747895663487,
+      0.7856854370442068,
+      0.489963090878867,
+      0.9884629125911606
+    ]
+  },
+  {
+    "product_name": "Litamin Duftöl-Pflegeschaumbad",
+    "price": "1.99",
+    "discount": null,
+    "unit": "750 ml",
+    "original_price": null,
+    "bbox": [
+      0.5459089143047114,
+      0.7369642726298761,
+      0.7911649039375539,
+      0.9559168933397858
+    ]
+  },
+  {
+    "product_name": "CD Feuchtigkeitsbad",
+    "price": "2.49",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.7093058493437396,
+      0.7985013600387173,
+      0.8943513921913843,
+      0.9850000000000005
+    ]
+  }
+]
