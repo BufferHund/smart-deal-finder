@@ -1,0 +1,7 @@
+google-genai
+numpy
+opencv-python
+pillow
+# paddleocr  # Optional, needs paddlepaddle
+# dashscope  # For Qwen
+# openai     # For DeepSeek if using OpenAI-compatible API
