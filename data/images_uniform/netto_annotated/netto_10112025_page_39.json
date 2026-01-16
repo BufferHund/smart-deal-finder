@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Trauben hell",
+    "price": "1.69",
+    "discount": "10",
+    "unit": "500 g Schale",
+    "original_price": "1.89",
+    "bbox": [
+      0.03193070284102003,
+      0.22871683985933575,
+      0.33321982738665235,
+      0.4430000000000004
+    ]
+  },
+  {
+    "product_name": "Henglein frische Eierspätzle",
+    "price": "2.49",
+    "discount": "44",
+    "unit": "1 kg",
+    "original_price": "4.49",
+    "bbox": [
+      0.3410059679548562,
+      0.22400000000000017,
+      0.6464970160225708,
+      0.4402742206329898
+    ]
+  },
+  {
+    "product_name": "Tchibo Feine Milde Kaffee gemahlen",
+    "price": "15.98",
+    "discount": null,
+    "unit": "4 x 250 g",
+    "original_price": null,
+    "bbox": [
+      0.024647546250244064,
+      0.45155738077365365,
+      0.33414456227281636,
+      0.6724158007033215
+    ]
+  },
+  {
+    "product_name": "Hirschquelle natürliches Heilwasser",
+    "price": "4.49",
+    "discount": "25",
+    "unit": "12 x 0,75 Liter Kiste",
+    "original_price": "5.99",
+    "bbox": [
+      0.024647546250244082,
+      0.6815573807736531,
+      0.3592078914769408,
+      0.9042742206329891
+    ]
+  },
+  {
+    "product_name": "XXL Thermobecher",
+    "price": "7.99",
+    "discount": null,
+    "unit": "ca. 1,2 Liter",
+    "original_price": null,
+    "bbox": [
+      0.354219827386653,
+      0.45528316014066467,
+      0.6499247348861639,
+      0.903628896835055
+    ]
+  }
+]

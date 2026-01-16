@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "JUSKYS Schreibtischstuhl Baltimore",
+    "price": "49.99",
+    "discount": "58",
+    "unit": null,
+    "original_price": "119.99",
+    "bbox": [
+      0.037258842066764004,
+      0.15799999999999978,
+      0.5196647893004388,
+      0.5138678315369002
+    ]
+  },
+  {
+    "product_name": "JUSKYS Höhenverstellbarer Schreibtisch Office",
+    "price": "99.99",
+    "discount": "60",
+    "unit": null,
+    "original_price": "249.99",
+    "bbox": [
+      0.5275176841335285,
+      0.3523045954947282,
+      0.9624823158664637,
+      0.5230862135158114
+    ]
+  },
+  {
+    "product_name": "JUSKYS Kinderbett Yari, 90 x 200 cm",
+    "price": "199.99",
+    "discount": "42",
+    "unit": null,
+    "original_price": "349.99",
+    "bbox": [
+      0.03399999999999999,
+      0.5345431067579075,
+      0.641329578600877,
+      0.7127816180210857
+    ]
+  },
+  {
+    "product_name": "JUSKYS Klettergerüst Mini oder Maxi",
+    "price": "149.99",
+    "discount": "40",
+    "unit": null,
+    "original_price": "249.99",
+    "bbox": [
+      0.6649646317329431,
+      0.5323908090105436,
+      0.9624823158664708,
+      0.9083908090105428
+    ]
+  },
+  {
+    "product_name": "JUSKYS Kinderbett Naya",
+    "price": "79.99",
+    "discount": "52",
+    "unit": "all",
+    "original_price": "169.99",
+    "bbox": [
+      0.03011173689985342,
+      0.7243908090105381,
+      0.6494766837677857,
+      0.9060862135158062
+    ]
+  }
+]

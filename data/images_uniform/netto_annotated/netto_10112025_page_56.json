@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "ProLife Magnesium Sticks",
+    "price": "0.89",
+    "discount": null,
+    "unit": "30 g",
+    "original_price": null,
+    "bbox": [
+      0.6735090093484263,
+      0.06994937492211524,
+      0.9693636328153703,
+      0.26785770166355866
+    ]
+  },
+  {
+    "product_name": "ProLife Heiße Zitrone oder Holunder",
+    "price": "1.79",
+    "discount": null,
+    "unit": "100 - 108 g",
+    "original_price": null,
+    "bbox": [
+      0.040387378687385886,
+      0.06906830280893485,
+      0.6517800878356577,
+      0.9050698844942943
+    ]
+  },
+  {
+    "product_name": "ProLife Omega 3 Kapseln",
+    "price": "4.99",
+    "discount": null,
+    "unit": "59,5 g",
+    "original_price": null,
+    "bbox": [
+      0.6752511987073988,
+      0.283649860561787,
+      0.9699871778256487,
+      0.6936939999999991
+    ]
+  },
+  {
+    "product_name": "ProLife Melatonin Kapseln",
+    "price": "3.99",
+    "discount": null,
+    "unit": "13,65 g",
+    "original_price": null,
+    "bbox": [
+      0.6675122656613103,
+      0.7036151394382127,
+      0.9663435334769539,
+      0.9079733267414388
+    ]
+  }
+]

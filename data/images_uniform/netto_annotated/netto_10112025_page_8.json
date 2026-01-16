@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Weihnachtsstern Busch",
+    "price": "4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.0016478597198570479,
+      0.036887675524582275,
+      0.6529999999999999,
+      0.4819999999999996
+    ]
+  },
+  {
+    "product_name": "Amaryllis",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Glas",
+    "original_price": null,
+    "bbox": [
+      0.6640000000000001,
+      0.06400000000000002,
+      0.9665593383913367,
+      0.48200000000000004
+    ]
+  },
+  {
+    "product_name": "Edelrosen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 10er Bund",
+    "original_price": null,
+    "bbox": [
+      0.041116731748734786,
+      0.490977535104916,
+      0.34138229573429557,
+      0.6960898595803334
+    ]
+  },
+  {
+    "product_name": "Alpenveilchen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Keramiktopf",
+    "original_price": null,
+    "bbox": [
+      0.3515291829371835,
+      0.4900000000000002,
+      0.6539999999999999,
+      0.6941347893705013
+    ]
+  },
+  {
+    "product_name": "Orchidee",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.6629999999999996,
+      0.4909999999999999,
+      0.9683239298599284,
+      0.9049101404196658
+    ]
+  },
+  {
+    "product_name": "Tannenhandbund",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je Keramiktopf",
+    "original_price": null,
+    "bbox": [
+      0.036969844545847064,
+      0.7060000000000008,
+      0.3356517497877344,
+      0.9058876755245827
+    ]
+  },
+  {
+    "product_name": "Guzmania",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je Topf",
+    "original_price": null,
+    "bbox": [
+      0.353327819927806,
+      0.7050224648950841,
+      0.6498531127971122,
+      0.9029550702098329
+    ]
+  }
+]

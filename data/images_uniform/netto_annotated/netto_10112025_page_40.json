@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Spanferkel-Rollbraten",
+    "price": "8.99",
+    "discount": null,
+    "unit": "ca. 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.006554573098061559,
+      0.10713633853124949,
+      0.6520280972671796,
+      0.5041363385312494
+    ]
+  },
+  {
+    "product_name": "Bugbraten vom Jungbullen",
+    "price": "1.29",
+    "discount": null,
+    "unit": "pro 100 g",
+    "original_price": null,
+    "bbox": [
+      0.6649478337956551,
+      0.12399999999999999,
+      0.9680995186212578,
+      0.30871211284374994
+    ]
+  },
+  {
+    "product_name": "Ganzes Hähnchen",
+    "price": "4.49",
+    "discount": null,
+    "unit": "pro kg",
+    "original_price": null,
+    "bbox": [
+      0.6695971117275402,
+      0.31671211284374984,
+      0.9650000000000003,
+      0.5057121128437498
+    ]
+  },
+  {
+    "product_name": "Gut Ponholz Schweine-Minutensteaks",
+    "price": "2.99",
+    "discount": "14",
+    "unit": "400 g",
+    "original_price": "3.49",
+    "bbox": [
+      0.037549759310628324,
+      0.5211919247708338,
+      0.6517487965531411,
+      0.7052878871562505
+    ]
+  },
+  {
+    "product_name": "Gut Ponholz Puten-Schnitzel",
+    "price": "4.49",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.6695971117275402,
+      0.5177121128437498,
+      0.9650000000000006,
+      0.7052878871562508
+    ]
+  },
+  {
+    "product_name": "Hintereisbein / Hinterhaxe",
+    "price": "3.49",
+    "discount": null,
+    "unit": "pro kg",
+    "original_price": null,
+    "bbox": [
+      0.040649277931885025,
+      0.7134798119270837,
+      0.33780096275748683,
+      0.9052878871562511
+    ]
+  },
+  {
+    "product_name": "Schweine-Schulterbraten",
+    "price": "4.79",
+    "discount": null,
+    "unit": "pro kg",
+    "original_price": null,
+    "bbox": [
+      0.35554975931062827,
+      0.7145757743125006,
+      0.6548483151743987,
+      0.9052878871562506
+    ]
+  },
+  {
+    "product_name": "Knusperbackfisch Alaska Seelachs Portionsfilet",
+    "price": "2.99",
+    "discount": null,
+    "unit": "280 g",
+    "original_price": null,
+    "bbox": [
+      0.6649478337956551,
+      0.7134798119270837,
+      0.9680995186212576,
+      0.9041919247708352
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "BioBio Dinkelbrot",
+    "price": "1.99",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.0,
+      0.13693152666548356,
+      0.6541661793779652,
+      0.48300402784320606
+    ]
+  },
+  {
+    "product_name": "Bio Landbrötchen",
+    "price": "1.39",
+    "discount": null,
+    "unit": "250 - 280 g",
+    "original_price": null,
+    "bbox": [
+      0.6658338206220349,
+      0.06600201392160344,
+      0.9703352824881383,
+      0.48201812529443044
+    ]
+  },
+  {
+    "product_name": "Korn Mühle Tortilla Wraps Weizen oder Vollkorn",
+    "price": "1.29",
+    "discount": null,
+    "unit": "370 g",
+    "original_price": null,
+    "bbox": [
+      0.04100000000000001,
+      0.4880000000000002,
+      0.653498538133896,
+      0.6939899303919829
+    ]
+  },
+  {
+    "product_name": "Lieblings Herzwaffeln",
+    "price": "1.79",
+    "discount": null,
+    "unit": "165 g",
+    "original_price": null,
+    "bbox": [
+      0.6659999999999994,
+      0.4869999999999998,
+      0.967250730933052,
+      0.6919798607839658
+    ]
+  },
+  {
+    "product_name": "Cakeaway Mini-Waffeln",
+    "price": "2.49",
+    "discount": null,
+    "unit": "160 g",
+    "original_price": null,
+    "bbox": [
+      0.33999999999999986,
+      0.7040000000000002,
+      0.6555830896889827,
+      0.9049859025487761
+    ]
+  },
+  {
+    "product_name": "Herzwaffeln Kakao",
+    "price": "1.79",
+    "discount": null,
+    "unit": "165 g",
+    "original_price": null,
+    "bbox": [
+      0.6640000000000005,
+      0.7030000000000007,
+      0.9690845515550872,
+      0.9049859025487761
+    ]
+  },
+  {
+    "product_name": "Balconi Rollino",
+    "price": "1.49",
+    "discount": null,
+    "unit": "222 g",
+    "original_price": null,
+    "bbox": [
+      0.0354227577754335,
+      0.7044157868872063,
+      0.33580774371110966,
+      0.9048185712078908
+    ]
+  }
+]

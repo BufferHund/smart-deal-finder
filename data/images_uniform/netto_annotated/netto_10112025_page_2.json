@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "iglo Fischstäbchen oder Backfischstäbchen",
+    "price": "2.79",
+    "discount": "37",
+    "unit": "tiefgekühlt, 364 - 450 g",
+    "original_price": "4.49",
+    "bbox": [
+      0.0382230565113341,
+      0.066,
+      0.6508327076164993,
+      0.26657441003326393
+    ]
+  },
+  {
+    "product_name": "Chiquita Bananen",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.6375284572881869,
+      0.06900000000000002,
+      0.9693685638192137,
+      0.47930904893619364
+    ]
+  },
+  {
+    "product_name": "Actimel",
+    "price": "3.33",
+    "discount": "44",
+    "unit": "12 x 100 g",
+    "original_price": "5.98",
+    "bbox": [
+      0.034000000000000044,
+      0.4900000000000004,
+      0.6578319688359154,
+      0.6909239402321236
+    ]
+  },
+  {
+    "product_name": "Melitta Auslese, Harmonie oder Barista",
+    "price": "6.99",
+    "discount": "24",
+    "unit": "500 g",
+    "original_price": "9.29",
+    "bbox": [
+      0.6678319688359156,
+      0.48884627717601775,
+      0.9664661175817401,
+      0.694770217408141
+    ]
+  },
+  {
+    "product_name": "Regina Toilettenpapier Kamille",
+    "price": "4.99",
+    "discount": "26",
+    "unit": "16 Rollen",
+    "original_price": "6.79",
+    "bbox": [
+      0.03136856381921255,
+      0.70323138588009,
+      0.6550027125650368,
+      0.9030000000000005
+    ]
+  },
+  {
+    "product_name": "Knorr Fix",
+    "price": "0.49",
+    "discount": "58",
+    "unit": "28 - 100 g",
+    "original_price": "1.19",
+    "bbox": [
+      0.6767913296497619,
+      0.7073851087040708,
+      0.967737127638425,
+      0.903385108704071
+    ]
+  }
+]

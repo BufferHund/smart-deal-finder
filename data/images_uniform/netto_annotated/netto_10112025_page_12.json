@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Salakis",
+    "price": "1.99",
+    "discount": "47",
+    "unit": "150 - 180 g",
+    "original_price": "3.79",
+    "bbox": [
+      0.02333288313590262,
+      0.22226391256113767,
+      0.38746305050135066,
+      0.6984721748777221
+    ]
+  },
+  {
+    "product_name": "Ehrmann High Protein Pudding",
+    "price": "0.99",
+    "discount": null,
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.35831457721061516,
+      0.19787970853712566,
+      0.6541850851413069,
+      0.694692102012
+    ]
+  },
+  {
+    "product_name": "Weihenstephan Frische Milch",
+    "price": "1.29",
+    "discount": "27",
+    "unit": "1 Liter",
+    "original_price": "1.79",
+    "bbox": [
+      0.6711667792160234,
+      0.1751669507336522,
+      0.9658149148586812,
+      0.6959120291462824
+    ]
+  },
+  {
+    "product_name": "Wagner Flammkuchen oder Steinofen Pizza",
+    "price": "1.79",
+    "discount": "47",
+    "unit": "300 - 360 g",
+    "original_price": "3.39",
+    "bbox": [
+      0.038555255423935085,
+      0.7113402185971555,
+      0.6503701702826201,
+      0.9046921020120049
+    ]
+  },
+  {
+    "product_name": "Botato Pommes Frites",
+    "price": "1.29",
+    "discount": "13",
+    "unit": "1 kg",
+    "original_price": "1.49",
+    "bbox": [
+      0.6674257633546309,
+      0.7093518834148498,
+      0.968166779216022,
+      0.9045601457314362
+    ]
+  }
+]

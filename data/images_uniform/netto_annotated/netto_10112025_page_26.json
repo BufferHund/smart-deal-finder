@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Softlan Weichspüler",
+    "price": "1.29",
+    "discount": "31",
+    "unit": "650 ml – 1 Liter",
+    "original_price": "1.89",
+    "bbox": [
+      0.2529577205664408,
+      0.39617993079947444,
+      0.6540000000000064,
+      0.4807197231979006
+    ]
+  },
+  {
+    "product_name": "Palmolive Duschgel oder Flüssigseife",
+    "price": "0.99",
+    "discount": "28",
+    "unit": "versch. Sorten 250 – 300 ml",
+    "original_price": "1.39",
+    "bbox": [
+      0.6642990916980659,
+      0.0911799307994743,
+      0.9677522707548406,
+      0.48180968859763634
+    ]
+  },
+  {
+    "product_name": "Nivea Deospray",
+    "price": "3.29",
+    "discount": null,
+    "unit": "250 ml",
+    "original_price": null,
+    "bbox": [
+      0.04193117268664446,
+      0.4861039021707799,
+      0.33673410471615084,
+      0.692999999999999
+    ]
+  },
+  {
+    "product_name": "Zewa Wisch & Weg Küchentücher",
+    "price": "2.49",
+    "discount": "21",
+    "unit": "4 x 45 Blatt – 74 Blatt",
+    "original_price": "3.19",
+    "bbox": [
+      0.35180293202950713,
+      0.4908831217366236,
+      0.6537156022598047,
+      0.693955843913168
+    ]
+  },
+  {
+    "product_name": "Always Slipeinlagen",
+    "price": "3.29",
+    "discount": "14",
+    "unit": "54 – 76 Stück",
+    "original_price": "3.85",
+    "bbox": [
+      0.6698802095609931,
+      0.4908831217366237,
+      0.9667581151673255,
+      0.6920441560868303
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Einhell Akkuschrauber 3,6 V",
+    "price": "19.99",
+    "discount": "39",
+    "unit": "54 teiliges Set",
+    "original_price": "32.95",
+    "bbox": [
+      0.03347533397622296,
+      0.12216450803155621,
+      0.6473898705399506,
+      0.3068484437790969
+    ]
+  },
+  {
+    "product_name": "Metallbock klappbar",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6596028715042855,
+      0.11944300535437076,
+      0.9642418743972829,
+      0.3122702922831502
+    ]
+  },
+  {
+    "product_name": "Spontex Winter Arbeits-handschuhe",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.030909750723251018,
+      0.3200846274012725,
+      0.33358604186756974,
+      0.5107426595275043
+    ]
+  },
+  {
+    "product_name": "Packband oder Malerkrepp, 3er Pack",
+    "price": "2.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3474344167470261,
+      0.32008462740127386,
+      0.6474344167470251,
+      0.5071139892912534
+    ]
+  },
+  {
+    "product_name": "Spirit Arbeitssocken, 3er Pack",
+    "price": "3.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03604091722919536,
+      0.5202784973228138,
+      0.3348688334940543,
+      0.7071856648818734
+    ]
+  },
+  {
+    "product_name": "Trento workwear Herren Fleece-jacke",
+    "price": "12.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3487172083735139,
+      0.5202784973228143,
+      0.648717208373514,
+      0.7062784973228142
+    ]
+  },
+  {
+    "product_name": "Trento workwear Herren Arbeitsjacke",
+    "price": "24.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6618483748794536,
+      0.5193713297637496,
+      0.961676291144318,
+      0.9048143351181236
+    ]
+  },
+  {
+    "product_name": "Sicherheitsschuhe oder -Stiefel S3",
+    "price": "19.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.036040917229195404,
+      0.7199788431496814,
+      0.6499999999999936,
+      0.9029999999999949
+    ]
+  },
+  {
+    "product_name": "Brüder Mannesmann Vielzweckseile",
+    "price": "3.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6605655832529718,
+      0.31827029228315,
+      0.9655246660237722,
+      0.5071139892912542
+    ]
+  }
+]

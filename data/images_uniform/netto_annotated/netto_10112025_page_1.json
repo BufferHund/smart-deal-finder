@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Schweine-Nacken",
+    "price": "5.39",
+    "discount": null,
+    "unit": "pro kg",
+    "original_price": null,
+    "bbox": [
+      0.03645720200241715,
+      0.2907050162098832,
+      0.39465761601933785,
+      0.45539346527920105
+    ]
+  },
+  {
+    "product_name": "Gurken",
+    "price": "0.69",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.6147150250302154,
+      0.32272112267330155,
+      0.9609999999999974,
+      0.4599999999999981
+    ]
+  },
+  {
+    "product_name": "Milram Käsescheiben Müritzer Original",
+    "price": "1.49",
+    "discount": "44",
+    "unit": "150 g",
+    "original_price": "2.69",
+    "bbox": [
+      0.03499999999999998,
+      0.46299999999999997,
+      0.3305135759709931,
+      0.6388688449069322
+    ]
+  },
+  {
+    "product_name": "Südzucker Feiner Rübenzucker",
+    "price": "0.69",
+    "discount": "22",
+    "unit": "1 - 1,1 kg",
+    "original_price": "0.89",
+    "bbox": [
+      0.35571398998791365,
+      0.4649999999999998,
+      0.5969144040048339,
+      0.636868844906932
+    ]
+  },
+  {
+    "product_name": "Berliner",
+    "price": "0.33",
+    "discount": "26",
+    "unit": null,
+    "original_price": "0.45",
+    "bbox": [
+      0.613971813015712,
+      0.46400000000000013,
+      0.9609999999999984,
+      0.638
+    ]
+  },
+  {
+    "product_name": "Mövenpick Kaffee Caffè Crema",
+    "price": "13.99",
+    "discount": "17",
+    "unit": "1 kg",
+    "original_price": "16.99",
+    "bbox": [
+      0.03108559599516552,
+      0.6410984814890868,
+      0.3349707779734104,
+      0.839262310186135
+    ]
+  },
+  {
+    "product_name": "Mon Chéri",
+    "price": "2.79",
+    "discount": "30",
+    "unit": "157 g",
+    "original_price": "3.99",
+    "bbox": [
+      0.35134238398066214,
+      0.6497869305584075,
+      0.5969144040048342,
+      0.8392623101861353
+    ]
+  },
+  {
+    "product_name": "Warsteiner Premium Pilsener oder Alkoholfrei",
+    "price": "9.99",
+    "discount": "41",
+    "unit": "20 x 0,5 Liter Kiste",
+    "original_price": "16.99",
+    "bbox": [
+      0.6198862170205465,
+      0.6479180856514755,
+      0.961999999999999,
+      0.841
+    ]
+  }
+]

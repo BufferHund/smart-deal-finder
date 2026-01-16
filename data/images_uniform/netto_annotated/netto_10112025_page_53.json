@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "Korn Mühle Tortilla Wraps High Protein",
+    "price": "1.69",
+    "discount": null,
+    "unit": "320 g",
+    "original_price": null,
+    "bbox": [
+      0.03313971688806183,
+      0.7014371062891054,
+      0.9583799056293556,
+      0.9059800853254215
+    ]
+  },
+  {
+    "product_name": "Korn Mühle Brote",
+    "price": "0.79",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.35971364659264293,
+      0.48849736991520304,
+      0.9660051960915329,
+      0.6946707948736666
+    ]
+  }
+]

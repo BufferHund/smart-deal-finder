@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Birds' Garden Geschälte Sonnenblumenkerne",
+    "price": "2.39",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.03300000000000003,
+      0.4910000000000005,
+      0.3336307313851577,
+      0.6940050182200966
+    ]
+  },
+  {
+    "product_name": "Birds' Garden Fettfutter",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.03300000000000003,
+      0.7010000000000004,
+      0.33505188996201296,
+      0.9079698906794209
+    ]
+  },
+  {
+    "product_name": "Birds' Garden Kokosnuss-hälfte",
+    "price": "1.49",
+    "discount": null,
+    "unit": "180 g",
+    "original_price": null,
+    "bbox": [
+      0.3507365242694357,
+      0.4559197084784558,
+      0.6449460970777371,
+      0.6920250911004879
+    ]
+  },
+  {
+    "product_name": "Birds' Garden Vogelfutter Set",
+    "price": "2.39",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.6581576828462914,
+      0.4678594898372977,
+      0.9645788414231478,
+      0.6930301093205827
+    ]
+  },
+  {
+    "product_name": "Birds' Garden Streufutter Eimer",
+    "price": "4.99",
+    "discount": null,
+    "unit": "3 kg",
+    "original_price": null,
+    "bbox": [
+      0.3464730485388683,
+      0.6990100364401945,
+      0.9617365242694336,
+      0.9059598542392324
+    ]
+  },
+  {
+    "product_name": "Bird's Best Vogelfutter",
+    "price": "1.99",
+    "discount": null,
+    "unit": "800 g",
+    "original_price": null,
+    "bbox": [
+      0.03268664726767147,
+      0.06684591333149718,
+      0.3368145827147022,
+      0.4819184382313739
+    ]
+  }
+]
