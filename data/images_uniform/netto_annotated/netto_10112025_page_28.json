@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "ARTSAUNA Fasssauna Spitzbergen",
+    "price": "1399.00",
+    "discount": "50",
+    "unit": null,
+    "original_price": "2799.00",
+    "bbox": [
+      0.35609876335240354,
+      0.17785535157699292,
+      0.9609202761026644,
+      0.5236200178957963
+    ]
+  },
+  {
+    "product_name": "ARTSAUNA Saunakabine Vantaa",
+    "price": "1199.00",
+    "discount": "40",
+    "unit": null,
+    "original_price": "1999.00",
+    "bbox": [
+      0.0326135174017764,
+      0.30571383789424833,
+      0.3329393155577327,
+      0.7134292431586307
+    ]
+  },
+  {
+    "product_name": "ARTSAUNA Infrarotkabine Kiruna Premium",
+    "price": "999.00",
+    "discount": "33",
+    "unit": null,
+    "original_price": "1499.00",
+    "bbox": [
+      0.3449791775064004,
+      0.5323338557900438,
+      0.9663067587008884,
+      0.7142861621057517
+    ]
+  },
+  {
+    "product_name": "ARTSAUNA Outdoor Whirlpool Oasis",
+    "price": "2899.00",
+    "discount": "47",
+    "unit": null,
+    "original_price": "5499.00",
+    "bbox": [
+      0.029920276102664557,
+      0.7250476936842919,
+      0.9619202761026646,
+      0.9050476936842919
+    ]
+  }
+]

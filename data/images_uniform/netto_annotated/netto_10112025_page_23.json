@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Michel Schneider Dornfelder oder Grauer Burgunder Qualitätswein",
+    "price": "3.49",
+    "discount": null,
+    "unit": "0,75 Liter",
+    "original_price": null,
+    "bbox": [
+      0.7410000000000045,
+      0.49400000000000277,
+      0.9607634445638653,
+      0.6930000000000043
+    ]
+  },
+  {
+    "product_name": "CineStar Kinopass",
+    "price": "10.00",
+    "discount": "35",
+    "unit": "1 Ticket",
+    "original_price": null,
+    "bbox": [
+      0.04485483315420224,
+      0.731060419984512,
+      0.7258776803017903,
+      0.9070067133316185
+    ]
+  },
+  {
+    "product_name": "Lillet Blanc oder Rose Aperitif",
+    "price": "11.99",
+    "discount": "27",
+    "unit": "0,75 Liter",
+    "original_price": "16.49",
+    "bbox": [
+      0.03230509687888756,
+      0.06853678011874488,
+      0.2556316361720668,
+      0.48075074749960167
+    ]
+  },
+  {
+    "product_name": "Moskovskaya Vodka",
+    "price": "6.99",
+    "discount": null,
+    "unit": "0,5 Liter",
+    "original_price": null,
+    "bbox": [
+      0.2682727610377184,
+      0.06754349345035728,
+      0.4901947309013809,
+      0.47876417416282646
+    ]
+  },
+  {
+    "product_name": "Ouzo Plomari",
+    "price": "8.99",
+    "discount": null,
+    "unit": "0,7 Liter",
+    "original_price": null,
+    "bbox": [
+      0.5056449946260662,
+      0.04072475340389188,
+      0.7261623950602115,
+      0.4797574608312141
+    ]
+  },
+  {
+    "product_name": "Pircher Marillen",
+    "price": "16.99",
+    "discount": null,
+    "unit": "0,7 Liter",
+    "original_price": null,
+    "bbox": [
+      0.7359943810668297,
+      0.04966433341938034,
+      0.9621300592190426,
+      0.4817440341679893
+    ]
+  },
+  {
+    "product_name": "Hohes C",
+    "price": "1.79",
+    "discount": null,
+    "unit": "1 Liter",
+    "original_price": null,
+    "bbox": [
+      0.03370966630840441,
+      0.4886970408467026,
+      0.2542270667425499,
+      0.6933140945345495
+    ]
+  },
+  {
+    "product_name": "Multi 12 Säfte",
+    "price": "1.39",
+    "discount": null,
+    "unit": "1,5 Liter",
+    "original_price": null,
+    "bbox": [
+      0.2696773304672353,
+      0.49167690085186544,
+      0.48879016147186394,
+      0.6933140945345497
+    ]
+  },
+  {
+    "product_name": "Schwip Schwap",
+    "price": "0.77",
+    "discount": null,
+    "unit": "1,25 Liter",
+    "original_price": null,
+    "bbox": [
+      0.5056449946260662,
+      0.49167690085186544,
+      0.7261623950602115,
+      0.692320807866162
+    ]
+  }
+]

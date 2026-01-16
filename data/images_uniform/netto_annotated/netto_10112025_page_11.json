@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Marken-Metzger Salami Sortiment",
+    "price": "1.49",
+    "discount": "16",
+    "unit": "100 g",
+    "original_price": "1.79",
+    "bbox": [
+      0.03522388786359254,
+      0.06936371441088934,
+      0.33022388786359086,
+      0.2666790755198022
+    ]
+  },
+  {
+    "product_name": "Ferdi Fuchs Kinder-sortiment",
+    "price": "1.19",
+    "discount": "29",
+    "unit": "5 x 26 g / 5 x 20 g / 2 x 24 g",
+    "original_price": "1.69",
+    "bbox": [
+      0.03377957154540736,
+      0.2766790755198034,
+      0.33500115313633144,
+      0.47942789930692586
+    ]
+  },
+  {
+    "product_name": "Schwarzwälder Schinken",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "2 x 100 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.03333525522722213,
+      0.492106974826732,
+      0.33644546945451687,
+      0.6917860503465321
+    ]
+  },
+  {
+    "product_name": "Münchner Weißwurst",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "300 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.03666820418177774,
+      0.705914420138614,
+      0.33211252049996254,
+      0.9050427899306905
+    ]
+  },
+  {
+    "product_name": "Salami Geschenkkarton mit 4 original italienischen Salami-Spezialitäten",
+    "price": "9.99",
+    "discount": null,
+    "unit": "4 x 160 g",
+    "original_price": null,
+    "bbox": [
+      0.3466682041817774,
+      0.49399999999999994,
+      0.9642215815909208,
+      0.9071497647574192
+    ]
+  }
+]

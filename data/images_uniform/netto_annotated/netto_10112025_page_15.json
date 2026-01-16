@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Schnittbrötchen",
+    "price": "1.00",
+    "discount": "12",
+    "unit": "6 Stück",
+    "original_price": "1.14",
+    "bbox": [
+      0.364,
+      0.052000000000000005,
+      0.959,
+      0.482
+    ]
+  },
+  {
+    "product_name": "Döner Stick",
+    "price": "0.99",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.034329345381477305,
+      0.06723192912793438,
+      0.33464151994641667,
+      0.2688840354360329
+    ]
+  },
+  {
+    "product_name": "Käse-Schinken-Croissant",
+    "price": "0.69",
+    "discount": "12",
+    "unit": "Stück",
+    "original_price": "0.79",
+    "bbox": [
+      0.037485432663946994,
+      0.27776807087206556,
+      0.331485432663947,
+      0.4827680708720655
+    ]
+  },
+  {
+    "product_name": "BioBio Vitalrusti",
+    "price": "0.39",
+    "discount": "20",
+    "unit": "Stück",
+    "original_price": "0.49",
+    "bbox": [
+      0.3505541159300984,
+      0.4861159645639658,
+      0.9643121745649392,
+      0.6981159645639657
+    ]
+  },
+  {
+    "product_name": "Quarktasche",
+    "price": "0.79",
+    "discount": "11",
+    "unit": "Stück",
+    "original_price": "0.89",
+    "bbox": [
+      0.037485432663946994,
+      0.48999999999999994,
+      0.331485432663947,
+      0.6969999999999998
+    ]
+  },
+  {
+    "product_name": "Roggenmischbrot",
+    "price": "1.39",
+    "discount": "10",
+    "unit": "1000 g",
+    "original_price": "1.55",
+    "bbox": [
+      0.665890218206174,
+      0.7017680708720653,
+      0.9658902182061742,
+      0.9075361417441312
+    ]
+  },
+  {
+    "product_name": "Peperoni Baguette",
+    "price": "1.19",
+    "discount": null,
+    "unit": "310 g",
+    "original_price": null,
+    "bbox": [
+      0.35126586907629503,
+      0.7039999999999996,
+      0.6484219563587652,
+      0.9053042126161968
+    ]
+  },
+  {
+    "product_name": "Apfeltasche",
+    "price": "0.59",
+    "discount": "14",
+    "unit": "Stück",
+    "original_price": "0.69",
+    "bbox": [
+      0.03590738902271216,
+      0.7059999999999996,
+      0.33779760722888635,
+      0.908536141744131
+    ]
+  }
+]

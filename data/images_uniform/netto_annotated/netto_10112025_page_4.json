@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Heimat Speisekartoffeln + Zwiebeln",
+    "price": "5.99",
+    "discount": null,
+    "unit": "10 kg Sack + 5 kg Sack",
+    "original_price": null,
+    "bbox": [
+      0.04069322811972312,
+      0.2410849883856622,
+      0.4994850430544896,
+      0.9049803872956095
+    ]
+  },
+  {
+    "product_name": "Heimat Möhren",
+    "price": "1.11",
+    "discount": null,
+    "unit": "2 kg Beutel",
+    "original_price": null,
+    "bbox": [
+      0.5138466140598615,
+      0.1940784508175347,
+      0.970116535149646,
+      0.48096731215935784
+    ]
+  },
+  {
+    "product_name": "Lauch",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1 kg Bund",
+    "original_price": null,
+    "bbox": [
+      0.5149631492095158,
+      0.49303268784063936,
+      0.9719631492095144,
+      0.71193462431872
+    ]
+  },
+  {
+    "product_name": "Tomaten",
+    "price": "1.69",
+    "discount": null,
+    "unit": "750 g Schale",
+    "original_price": null,
+    "bbox": [
+      0.516116535149654,
+      0.7280261502725112,
+      0.9654233070299278,
+      0.9070849883856607
+    ]
+  }
+]

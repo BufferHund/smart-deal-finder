@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Güde Abricht- und Dickenhobel GADH 254",
+    "price": "333.33",
+    "discount": "30",
+    "unit": null,
+    "original_price": "479",
+    "bbox": [
+      0.029999999999999968,
+      0.13999999999999996,
+      0.9617517158192374,
+      0.5199999999999998
+    ]
+  },
+  {
+    "product_name": "Güde Absauganlage GAA 65.1",
+    "price": "139.99",
+    "discount": "29",
+    "unit": null,
+    "original_price": "199.99",
+    "bbox": [
+      0.029999999999999985,
+      0.5271019453185847,
+      0.34061474148519555,
+      0.9071019453185838
+    ]
+  },
+  {
+    "product_name": "BAMATO Abbruchhammer STH-195",
+    "price": "164.99",
+    "discount": "33",
+    "unit": null,
+    "original_price": "249",
+    "bbox": [
+      0.3488108023810729,
+      0.5319320364542769,
+      0.9644837361178638,
+      0.9051699088643077
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Coca Cola Orange Cream Soda",
+    "price": "36.99",
+    "discount": "17",
+    "unit": "24 x 0,36 Liter",
+    "original_price": "44.99",
+    "bbox": [
+      0.48199999999999976,
+      0.14299999999999996,
+      0.7178761487746358,
+      0.30954184266064466
+    ]
+  },
+  {
+    "product_name": "Pepsi Strawberry Vanilla",
+    "price": "29.99",
+    "discount": "21",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "37.99",
+    "bbox": [
+      0.48200000000000015,
+      0.3150000000000001,
+      0.7147522975492715,
+      0.5083106520632308
+    ]
+  },
+  {
+    "product_name": "Fanta Pineapple Grapefruit",
+    "price": "31.99",
+    "discount": "20",
+    "unit": "24 x 0,5 Liter",
+    "original_price": "39.99",
+    "bbox": [
+      0.48096903719365863,
+      0.5210595960993626,
+      0.7178451859682946,
+      0.7069120908232385
+    ]
+  },
+  {
+    "product_name": "Effect Habibi Berry",
+    "price": "19.99",
+    "discount": "23",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "26.15",
+    "bbox": [
+      0.48200000000000004,
+      0.717931956189692,
+      0.7178761487746343,
+      0.9063503827961393
+    ]
+  },
+  {
+    "product_name": "Mogu Mogu Lyche",
+    "price": "29.99",
+    "discount": "16",
+    "unit": "24 x 0,32 Liter",
+    "original_price": "35.75",
+    "bbox": [
+      0.7393405908697516,
+      0.15539433738452052,
+      0.9636594091302484,
+      0.5083106520632308
+    ]
+  },
+  {
+    "product_name": "Vitamin Well Zero Raspberry",
+    "price": "16.99",
+    "discount": "16",
+    "unit": "12 x 0,5 Liter",
+    "original_price": "20.25",
+    "bbox": [
+      0.7403715536760926,
+      0.5183305174296851,
+      0.9646903719365905,
+      0.9070794614658169
+    ]
+  }
+]

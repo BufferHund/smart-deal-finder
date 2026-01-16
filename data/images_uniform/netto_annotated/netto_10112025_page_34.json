@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "LED Silberschneeflocke",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.040317640532715776,
+      0.06500000000000002,
+      0.33896684373322117,
+      0.4810000000000002
+    ]
+  },
+  {
+    "product_name": "LED Lichterkette mit 100 LEDs",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.04486737493288417,
+      0.4899275027564981,
+      0.3404834218666107,
+      0.6927100110259933
+    ]
+  },
+  {
+    "product_name": "Galaxielichterkette mit 200 LEDs",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03728448426593678,
+      0.7018550055129963,
+      0.33896684373322145,
+      0.905492519295487
+    ]
+  },
+  {
+    "product_name": "LED Weihnachtsbaum",
+    "price": "19.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.371,
+      0.403,
+      0.965,
+      0.485
+    ]
+  },
+  {
+    "product_name": "Weihnachtsmann mit Leiter",
+    "price": "17.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.34496684373322084,
+      0.49207249724350194,
+      0.651,
+      0.9044200220519851
+    ]
+  },
+  {
+    "product_name": "Selbstaufblasende LED Weihnachtsfigur",
+    "price": "19.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6625497344001685,
+      0.4931449944870039,
+      0.9685497344001684,
+      0.9054925192954865
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Damen oder Herren Pyjama",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.04335690859428827,
+      0.3004954349172793,
+      0.47582154570285523,
+      0.4790091301654409
+    ]
+  },
+  {
+    "product_name": "Damen oder Kinder Kuschelhoodie",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4930000000000001,
+      0.30034767122471984,
+      0.9692356908594286,
+      0.4800091301654408
+    ]
+  },
+  {
+    "product_name": "Damen oder Herren Weihnachtssocken 2er Pack oder Kinder Weihnachtssocken 3er Pack",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.03447138171885764,
+      0.4888829888947617,
+      0.6522861828114235,
+      0.693378423812041
+    ]
+  },
+  {
+    "product_name": "Damen oder Herren Sweater",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6698602484825773,
+      0.4900003088557163,
+      0.9679999999999997,
+      0.693000185313431
+    ]
+  },
+  {
+    "product_name": "Damen oder Kinder Hausballerinas",
+    "price": "4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03948385091045237,
+      0.7020001235422874,
+      0.6529624224203832,
+      0.9049991969751289
+    ]
+  },
+  {
+    "product_name": "Herren Retroshorts, 2er Pack",
+    "price": "4.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6746881987860633,
+      0.7039999999999997,
+      0.969413975151739,
+      0.9059991352039855
+    ]
+  }
+]

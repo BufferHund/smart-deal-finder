@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "BOSCH Hochdruckreiniger AQT 42-13",
+    "price": "139.99",
+    "discount": "44",
+    "unit": null,
+    "original_price": "249.99",
+    "bbox": [
+      0.012959099581410565,
+      0.16112790253219386,
+      0.3423706049300529,
+      0.5238720974678058
+    ]
+  },
+  {
+    "product_name": "Hoover Nass-/ Trockensauger TWDH 1400",
+    "price": "69.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3612095044184436,
+      0.15807308716125365,
+      0.9716419008836874,
+      0.5238720974678053
+    ]
+  },
+  {
+    "product_name": "STANLEY Bohr- und Schlagschrauber-Set 18 V SFMCK465D2T-QW",
+    "price": "199.99",
+    "discount": "49",
+    "unit": null,
+    "original_price": "399.00",
+    "bbox": [
+      0.0,
+      0.5329999999999996,
+      0.9658823010697286,
+      0.9047990103065524
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Weihnachtsfiguren",
+    "price": "2.99",
+    "discount": null,
+    "unit": "75 g",
+    "original_price": null,
+    "bbox": [
+      0.0285109771964097,
+      0.06910736732758871,
+      0.333644210093717,
+      0.48068971584217673
+    ]
+  },
+  {
+    "product_name": "Adventskalender zum Selbstbefüllen",
+    "price": "7.99",
+    "discount": null,
+    "unit": "24 Taschen mit Zahlen",
+    "original_price": null,
+    "bbox": [
+      0.3566888721495512,
+      0.05105368366379432,
+      0.9606888721495512,
+      0.4810536836637943
+    ]
+  },
+  {
+    "product_name": "Prinzen Rolle Cremys",
+    "price": "1.69",
+    "discount": "15",
+    "unit": "172 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.031133232897307263,
+      0.49290809653514756,
+      0.3349553379441657,
+      0.9059808900994708
+    ]
+  },
+  {
+    "product_name": "Ritter Sport Bunter Mix",
+    "price": "3.99",
+    "discount": "11",
+    "unit": "195 g",
+    "original_price": "4.49",
+    "bbox": [
+      0.3481998493459601,
+      0.4919808900994711,
+      0.6477554885982049,
+      0.694582348514588
+    ]
+  },
+  {
+    "product_name": "kinder Bueno Eggs",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "80 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.6609999999999969,
+      0.48934485792108795,
+      0.9619999999999955,
+      0.6927279356432348
+    ]
+  },
+  {
+    "product_name": "kinder Country",
+    "price": "2.99",
+    "discount": null,
+    "unit": "211,5 - 235 g",
+    "original_price": null,
+    "bbox": [
+      0.34819984934596027,
+      0.7045095549502645,
+      0.6503777442991021,
+      0.904126477228118
+    ]
+  },
+  {
+    "product_name": "kinder Überraschungs Ei",
+    "price": "0.88",
+    "discount": "26",
+    "unit": "20 g",
+    "original_price": "1.19",
+    "bbox": [
+      0.6609999999999989,
+      0.7072911742572933,
+      0.9580666164486528,
+      0.9031992707924414
+    ]
+  }
+]

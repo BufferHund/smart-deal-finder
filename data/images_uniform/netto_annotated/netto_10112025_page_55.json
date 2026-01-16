@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "PURE & BASIC men Deospray",
+    "price": "0.85",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.03339815015815206,
+      0.05866719022773105,
+      0.33390637891348773,
+      0.268667190227729
+    ]
+  },
+  {
+    "product_name": "BLÜTE-ZEIT Duschgel Men",
+    "price": "1.99",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.3562006166139471,
+      0.06296703315941173,
+      0.49771605367072436,
+      0.2679505497391162
+    ]
+  },
+  {
+    "product_name": "PURE & BASIC men Deodorant Roll-on X-Dry",
+    "price": "0.60",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.03441152459908204,
+      0.27666719022773095,
+      0.33187963003163007,
+      0.4795007853415955
+    ]
+  },
+  {
+    "product_name": "PURE & BASIC men Duschgel Men 3in1",
+    "price": "0.73",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.3572139910548765,
+      0.28670015706831925,
+      0.4946759303479345,
+      0.48165070680743305
+    ]
+  },
+  {
+    "product_name": "HAIRWELL Matt Paste",
+    "price": "1.79",
+    "discount": null,
+    "unit": "100 ml",
+    "original_price": null,
+    "bbox": [
+      0.03137140127629217,
+      0.4900675043643697,
+      0.3339063789134896,
+      0.6920839877846621
+    ]
+  },
+  {
+    "product_name": "HAIRWELL Haarlack Power",
+    "price": "1.15",
+    "discount": null,
+    "unit": "300 ml",
+    "original_price": null,
+    "bbox": [
+      0.03238477571722187,
+      0.699367347296045,
+      0.3328930044725603,
+      0.9042339092505041
+    ]
+  },
+  {
+    "product_name": "HAIRWELL Anti-Schuppen Shampoo",
+    "price": "1.35",
+    "discount": null,
+    "unit": "300 ml",
+    "original_price": null,
+    "bbox": [
+      0.3562006166139473,
+      0.6750015706831928,
+      0.49366255590700436,
+      0.9056671902277245
+    ]
+  }
+]

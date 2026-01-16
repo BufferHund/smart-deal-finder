@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "XOX Brezeln & Stixx",
+    "price": null,
+    "discount": null,
+    "unit": "300 g",
+    "original_price": null,
+    "bbox": [
+      0.5050000000000012,
+      0.0647870268914645,
+      0.9532234825237457,
+      0.26715639663739654
+    ]
+  },
+  {
+    "product_name": "Hitschies Schnüre",
+    "price": null,
+    "discount": null,
+    "unit": "125 g",
+    "original_price": null,
+    "bbox": [
+      0.03242427962006854,
+      0.2779434235288609,
+      0.2564242796200686,
+      0.478943423528861
+    ]
+  },
+  {
+    "product_name": "Antalya Dürümbrot",
+    "price": null,
+    "discount": null,
+    "unit": "800 g",
+    "original_price": null,
+    "bbox": [
+      0.27343562233378,
+      0.49013477478983725,
+      0.48843562233378,
+      0.6921347747898372
+    ]
+  },
+  {
+    "product_name": "Katjes Fruchtgummi",
+    "price": "null",
+    "discount": null,
+    "unit": "175 g",
+    "original_price": null,
+    "bbox": [
+      0.03286791458318202,
+      0.06405793937550767,
+      0.4916738609878257,
+      0.26738586376374607
+    ]
+  },
+  {
+    "product_name": "Saltletts Crunchy Bites",
+    "price": "null",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.5052982823069809,
+      0.27773729246223205,
+      0.9616572636641332,
+      0.4801999916403077
+    ]
+  },
+  {
+    "product_name": "Cheez It",
+    "price": "null",
+    "discount": null,
+    "unit": "120 g",
+    "original_price": null,
+    "bbox": [
+      0.2642722251290748,
+      0.2786025176723948,
+      0.4881695269745409,
+      0.47933476643014505
+    ]
+  },
+  {
+    "product_name": "Dr. Oetker Kuchen Snacks",
+    "price": "null",
+    "discount": null,
+    "unit": "140 g",
+    "original_price": null,
+    "bbox": [
+      0.03303402814113435,
+      0.48798701853177223,
+      0.25081391736787195,
+      0.6939106185504988
+    ]
+  },
+  {
+    "product_name": "Listerine Mundspülung",
+    "price": "null",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.04037492328360865,
+      0.7060237714927768,
+      0.2544843649391091,
+      0.9067560202505272
+    ]
+  },
+  {
+    "product_name": "Carefree Slipeinlagen",
+    "price": "null",
+    "discount": null,
+    "unit": "40 - 56 Stück",
+    "original_price": null,
+    "bbox": [
+      0.2716131202715491,
+      0.7034280958622887,
+      0.4918399745457781,
+      0.9041603446200391
+    ]
+  }
+]

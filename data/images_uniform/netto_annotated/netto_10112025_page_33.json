@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Grundig LED Weihnachtsdeko",
+    "price": "2.99",
+    "discount": null,
+    "unit": "versch. Ausführungen",
+    "original_price": null,
+    "bbox": [
+      0.03547814771484867,
+      0.04863447903319778,
+      0.6515655568554471,
+      0.48090936013811053
+    ]
+  },
+  {
+    "product_name": "DEKOR 3D Leuchtstern",
+    "price": "2.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6634781477148486,
+      0.0662265996547135,
+      0.9639999999999995,
+      0.48199999999999954
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Tannengirlande",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03479753888297461,
+      0.4936532331868129,
+      0.6501901555318949,
+      0.6942992815140363
+    ]
+  },
+  {
+    "product_name": "DEKOR 3D Leuchtsternkette mit 10 Sternen",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6620000000000007,
+      0.49000000000000055,
+      0.9629999999999999,
+      0.9055858550860219
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Glitzerschlauch",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03479753888297464,
+      0.6980000000000004,
+      0.6505793457663356,
+      0.9060000000000005
+    ]
+  }
+]

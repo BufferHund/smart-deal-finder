@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Weihnachtliches Verpacken",
+    "price": "1.00",
+    "discount": null,
+    "unit": "versch. Ausführungen",
+    "original_price": null,
+    "bbox": [
+      0.03191508934796714,
+      0.064453985683152,
+      0.6479718728211524,
+      0.4818184057267415
+    ]
+  },
+  {
+    "product_name": "Geschenkpapier",
+    "price": "0.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6540897748870023,
+      0.07108956563956485,
+      0.9834575446739977,
+      0.4795460143168555
+    ]
+  },
+  {
+    "product_name": "DEKOR Stabkerzen mit LED Flamme, 4er Pack",
+    "price": "6.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03142455326016443,
+      0.4925460143168504,
+      0.6533537061975566,
+      0.6939092028633698
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Lichterkette mit 1000 LEDs",
+    "price": "19.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6661508934796728,
+      0.4870012314970659,
+      0.9619480807617866,
+      0.9069067398692386
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Adventskranzkerzen, 4er Set",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03450946391219738,
+      0.7040000000000055,
+      0.6518112508715401,
+      0.9065447828197826
+    ]
+  }
+]

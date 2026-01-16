@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Damen oder Kinder Onesie",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.031628745967973056,
+      0.07615136695857867,
+      0.34402996774378447,
+      0.4780302733917151
+    ]
+  },
+  {
+    "product_name": "Dekokissen",
+    "price": "6.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.35314372983986514,
+      0.3003945321656852,
+      0.6490599354875682,
+      0.47900000000000004
+    ]
+  },
+  {
+    "product_name": "Bettwäsche Biber, 2-teilig",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6660299677437844,
+      0.2800302733917157,
+      0.9615149838718919,
+      0.479
+    ]
+  },
+  {
+    "product_name": "Wohndecke Flanell",
+    "price": "12.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03300000000000003,
+      0.4879091798248523,
+      0.33319202422081956,
+      0.693121093566863
+    ]
+  },
+  {
+    "product_name": "Kuscheldecke mit Ärmeln",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.34730578631690046,
+      0.4908183596497055,
+      0.9628862379039181,
+      0.6950605467834318
+    ]
+  },
+  {
+    "product_name": "Vorhangschal, 1er Pack",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03299999999999988,
+      0.7019999999999978,
+      0.3319510308103173,
+      0.9026919381505365
+    ]
+  },
+  {
+    "product_name": "Stuhlhusse, 2er Pack",
+    "price": "6.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.34802996774378414,
+      0.7019999999999996,
+      0.6490599354875688,
+      0.9029999999999997
+    ]
+  },
+  {
+    "product_name": "Fußmatte",
+    "price": "6.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6609162056477035,
+      0.7029697266082843,
+      0.9642574919359459,
+      0.9039697266082843
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Backfee Kokosraspel",
+    "price": "2.50",
+    "discount": "16",
+    "unit": "2 x 200 g",
+    "original_price": "2.98",
+    "bbox": [
+      0.672928025776796,
+      0.7047928789834743,
+      0.9673920386651934,
+      0.9071030955454599
+    ]
+  },
+  {
+    "product_name": "Pickerd Kuchenglasur",
+    "price": "1.49",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03761981611893584,
+      0.06572769953051644,
+      0.33857834507042256,
+      0.27073552425665104
+    ]
+  },
+  {
+    "product_name": "Landliebe Konfitüre, Gelee oder Fruchtaufstrich",
+    "price": "1.49",
+    "discount": "40",
+    "unit": "180 - 200 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.03225572934364579,
+      0.2806403089598388,
+      0.33330920321767316,
+      0.4794191051044215
+    ]
+  },
+  {
+    "product_name": "Lawa Plätzchen-teige",
+    "price": "1.99",
+    "discount": "28",
+    "unit": "300 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.030719742232043608,
+      0.4953176559668291,
+      0.33330920321767316,
+      0.6908377833221564
+    ]
+  },
+  {
+    "product_name": "Gutes Land Speisequark",
+    "price": "1.11",
+    "discount": "13",
+    "unit": "500 g",
+    "original_price": "1.29",
+    "bbox": [
+      0.03379171645524797,
+      0.7034611401777536,
+      0.33330920321767316,
+      0.9054986051115919
+    ]
+  },
+  {
+    "product_name": "Backfee Mandeln",
+    "price": "5",
+    "discount": "16",
+    "unit": "4 x 100 g",
+    "original_price": "5.96",
+    "bbox": [
+      0.3594209841149102,
+      0.06300092992560546,
+      0.9722798416441801,
+      0.2661246177891955
+    ]
+  },
+  {
+    "product_name": "Backfee Mandeln",
+    "price": "4",
+    "discount": "12",
+    "unit": "2 x 200 g",
+    "original_price": "4.58",
+    "bbox": [
+      0.3594209841149102,
+      0.2780730700164655,
+      0.9630639189745671,
+      0.48011053495030365
+    ]
+  },
+  {
+    "product_name": "Backfee Walnusskerne",
+    "price": "4.44",
+    "discount": "17",
+    "unit": "2 x 200 g",
+    "original_price": "5.38",
+    "bbox": [
+      0.3548130227801037,
+      0.4898865413180699,
+      0.6512585353193245,
+      0.6919240062519082
+    ]
+  },
+  {
+    "product_name": "Backfee Haselnusskerne",
+    "price": "6",
+    "discount": "20",
+    "unit": "2 x 200 g",
+    "original_price": "7.58",
+    "bbox": [
+      0.6620104451005397,
+      0.4920589871775736,
+      0.9630639189745671,
+      0.6919240062519083
+    ]
+  },
+  {
+    "product_name": "Backfee Chocolate Chunks",
+    "price": "3",
+    "discount": "20",
+    "unit": "2 x 100 g",
+    "original_price": "3.78",
+    "bbox": [
+      0.3563490098917058,
+      0.7056335860372571,
+      0.6497225482077224,
+      0.9033261592520883
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Kellogg's Cerealien",
+    "price": null,
+    "discount": null,
+    "unit": "400 – 420 g",
+    "original_price": null,
+    "bbox": [
+      0.039629152754405234,
+      0.2891481345521254,
+      0.496590087646092,
+      0.7093439231130675
+    ]
+  },
+  {
+    "product_name": "Manner Schnitten",
+    "price": null,
+    "discount": null,
+    "unit": "300 – 440 g",
+    "original_price": null,
+    "bbox": [
+      0.5124699707846344,
+      0.3194920576651961,
+      0.7395300292153653,
+      0.5071799038913389
+    ]
+  },
+  {
+    "product_name": "Manner Crunchies",
+    "price": null,
+    "discount": null,
+    "unit": "130 g",
+    "original_price": null,
+    "bbox": [
+      0.7505300292153642,
+      0.31841004805433015,
+      0.9714699707846346,
+      0.5060978942804729
+    ]
+  },
+  {
+    "product_name": "Eszet Schnitten",
+    "price": null,
+    "discount": null,
+    "unit": "75 g",
+    "original_price": null,
+    "bbox": [
+      0.5109399415692681,
+      0.5197539711674015,
+      0.7349399415692676,
+      0.7088518654478736
+    ]
+  },
+  {
+    "product_name": "Dr. Quendt Dinkelchen",
+    "price": null,
+    "discount": null,
+    "unit": "85 g",
+    "original_price": null,
+    "bbox": [
+      0.7489999999999988,
+      0.5165079423348031,
+      0.9729999999999999,
+      0.7056058366152763
+    ]
+  },
+  {
+    "product_name": "Coppenrath & Wiese Zeit für Genuss Kuchen",
+    "price": null,
+    "discount": null,
+    "unit": "230 – 255 g",
+    "original_price": null,
+    "bbox": [
+      0.03962915275440526,
+      0.715343923113071,
+      0.4945300292153629,
+      0.9081137789500785
+    ]
+  },
+  {
+    "product_name": "Nuii Stieleis",
+    "price": null,
+    "discount": null,
+    "unit": "270 ml",
+    "original_price": null,
+    "bbox": [
+      0.5109399415692686,
+      0.7150158846696059,
+      0.7318798831385385,
+      0.903785740506615
+    ]
+  },
+  {
+    "product_name": "Gelee Bananen in Zartbitter Schokolade",
+    "price": null,
+    "discount": null,
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.7474699707846321,
+      0.7171799038913388,
+      0.9714699707846313,
+      0.9048677501174798
+    ]
+  }
+]
