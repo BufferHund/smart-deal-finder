@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "PICKERD Lieblingstreusel Knallkonfetti",
+    "price": null,
+    "discount": null,
+    "unit": "110 g",
+    "original_price": null,
+    "bbox": [
+      0.0322277287753032,
+      0.039980250598787646,
+      0.33752508264170084,
+      0.2617109784436411
+    ]
+  },
+  {
+    "product_name": "Andechser Natur Bio-Quark zum Backen",
+    "price": "2.22",
+    "discount": "20",
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.4353070837702419,
+      0.5099999999999983,
+      0.9701386438765183,
+      0.7325134844315208
+    ]
+  },
+  {
+    "product_name": "Kölln Blütentarte Haferflocken auch Kernige",
+    "price": "1.19",
+    "discount": "29",
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.03222772877530332,
+      0.5265924820363703,
+      0.3373666758046564,
+      0.9629012529939298
+    ]
+  },
+  {
+    "product_name": "Toppits Back-Bögen mit rutschfester Unterseite",
+    "price": "1.99",
+    "discount": "13",
+    "unit": "20 Bögen",
+    "original_price": null,
+    "bbox": [
+      0.34582213335526013,
+      0.7798420047903014,
+      0.6515150495850194,
+      0.9589802505987828
+    ]
+  },
+  {
+    "product_name": "Toppits Backpapier mit rutschfester Unterlage",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "8 m",
+    "original_price": null,
+    "bbox": [
+      0.6572873208097149,
+      0.7847432577842379,
+      0.9673663726518207,
+      0.9609210023951475
+    ]
+  },
+  {
+    "product_name": "Goldpuder Spezialmehl oder Aurora Weizenmehl Type 550",
+    "price": "null",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.034653390308704304,
+      0.26172690987630454,
+      0.3451477674746949,
+      0.49404630178897946
+    ]
+  }
+]

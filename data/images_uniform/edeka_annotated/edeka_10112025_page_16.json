@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Vegan Garden Gourmet Sensational Burger",
+    "price": "2.49",
+    "discount": "24",
+    "unit": "226 g",
+    "original_price": null,
+    "bbox": [
+      0.6661982652099263,
+      0.057313330081084274,
+      0.965385056682217,
+      0.2619899170676483
+    ]
+  },
+  {
+    "product_name": "Vegan Greenforce Cevapcici oder Bifteki",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "180 g",
+    "original_price": null,
+    "bbox": [
+      0.6614281518454945,
+      0.272206591864937,
+      0.9689626417055419,
+      0.4926032959324689
+    ]
+  },
+  {
+    "product_name": "Hilcona Originale Pesto Basilico Mezzelune oder Ricotta di Bufala & Spinaci Ravioli",
+    "price": "2.79",
+    "discount": "26",
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.033229886635566384,
+      0.5056866699189141,
+      0.5895402267288672,
+      0.7256866699189142
+    ]
+  },
+  {
+    "product_name": "Gulaschsuppe",
+    "price": "6.99",
+    "discount": "12",
+    "unit": "900 g",
+    "original_price": null,
+    "bbox": [
+      0.6450430951632778,
+      0.5144699951216262,
+      0.9629999999999999,
+      0.7282166747972892
+    ]
+  },
+  {
+    "product_name": "Nadler Sahne Heringsfilets",
+    "price": "2.69",
+    "discount": "29",
+    "unit": "400 g + 10% gratis",
+    "original_price": null,
+    "bbox": [
+      0.03422988663556637,
+      0.745493359351326,
+      0.5843907935510355,
+      0.9635900146351223
+    ]
+  },
+  {
+    "product_name": "Chovi Allioli frische Knoblauchcreme",
+    "price": "1.99",
+    "discount": "23",
+    "unit": "150 ml",
+    "original_price": null,
+    "bbox": [
+      0.6598620405598054,
+      0.7420833739864469,
+      0.9631925283411098,
+      0.9610600097567459
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Spitzbub dunkel",
+    "price": "2.29",
+    "discount": null,
+    "unit": "3 Stück",
+    "original_price": null,
+    "bbox": [
+      0.03461410668751483,
+      0.18387703276241651,
+      0.3385788399687274,
+      0.35736890171274704
+    ]
+  },
+  {
+    "product_name": "Vollkorn-Dinkelbrot",
+    "price": "3.29",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.3519035266718731,
+      0.13985569173476714,
+      0.6525435732499365,
+      0.3583689017127424
+    ]
+  },
+  {
+    "product_name": "Laugenstangen",
+    "price": "2.49",
+    "discount": null,
+    "unit": "3 Stück",
+    "original_price": null,
+    "bbox": [
+      0.6608329932342962,
+      0.14326219657450467,
+      0.9653858933124846,
+      0.3575934951602635
+    ]
+  },
+  {
+    "product_name": "Pain au Chocolat",
+    "price": "1.49",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.039,
+      0.407,
+      0.338,
+      0.601
+    ]
+  },
+  {
+    "product_name": "Softbaked Cookies Choc",
+    "price": "1.49",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.34699999999999886,
+      0.3999999999999989,
+      0.647964733281212,
+      0.6009999999999983
+    ]
+  },
+  {
+    "product_name": "Zitronentörtchen",
+    "price": "3.50",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.662771786624965,
+      0.4068770327624142,
+      0.9651929466562414,
+      0.6033262196574503
+    ]
+  },
+  {
+    "product_name": "Tasse Kaffee + 1 Stück Meraner Nusskuchen",
+    "price": "4.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3064823666406026,
+      0.671224593447515,
+      0.6690871464998757,
+      0.8472886165304561
+    ]
+  },
+  {
+    "product_name": "Meraner Nusskuchen",
+    "price": "3.50",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.6637717866249665,
+      0.6408180886077786,
+      0.9649999999999999,
+      0.8447378034254942
+    ]
+  }
+]

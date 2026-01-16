@@ -1,0 +1,223 @@
+[
+  {
+    "product_name": "Puten-Kokos-Curry mit Reis und Beilagensalat",
+    "price": "12.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.07530518059483297,
+      0.026066810804054354,
+      0.5311786584105315,
+      0.21506681080405415
+    ]
+  },
+  {
+    "product_name": "Linseneintopf mit Spätzle und Wienerle",
+    "price": "9.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03473201238420275,
+      0.22862212613063057,
+      0.4756253044368605,
+      0.31893318919594565
+    ]
+  },
+  {
+    "product_name": "Spaghetti mit Tomatensugo und Beilagensalat",
+    "price": "9.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.489357316821063,
+      0.24114822822447482,
+      0.9608213415894685,
+      0.27928184983258364
+    ]
+  },
+  {
+    "product_name": "Gaisburger Marsch",
+    "price": "10.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.034732012384202746,
+      0.3212442522612609,
+      0.4614640247684056,
+      0.40185177177552533
+    ]
+  },
+  {
+    "product_name": "Ofengemüse auf Reis mit Tomatensugo vegetarisch",
+    "price": "10.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.489357316821063,
+      0.2921336216081089,
+      0.9629999999999999,
+      0.33434866063663793
+    ]
+  },
+  {
+    "product_name": "Königsberger Klopse mit Kapernsauce und Salzkartoffeln",
+    "price": "14.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03364268317893697,
+      0.4080146066163659,
+      0.46364268317893703,
+      0.5150146066163659
+    ]
+  },
+  {
+    "product_name": "Fleischkäse mit Bratensauce, Bratkartoffeln und Sauerkraut",
+    "price": "11.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4893573168210633,
+      0.34898539338363477,
+      0.9629999999999999,
+      0.3919561801509025
+    ]
+  },
+  {
+    "product_name": "Schweinekrustenbraten mit Kartoffelgratin und asiatischem Gemüse",
+    "price": "11.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.4893573168210635,
+      0.40582255854279276,
+      0.9608213415894685,
+      0.4481190149917428
+    ]
+  },
+  {
+    "product_name": "Tagessuppe",
+    "price": "3.90",
+    "discount": null,
+    "unit": "150 ml",
+    "original_price": null,
+    "bbox": [
+      0.4839106707947342,
+      0.4512004324121632,
+      0.8509106707947343,
+      0.5112004324121632
+    ]
+  },
+  {
+    "product_name": "Tagessuppe",
+    "price": "6.90",
+    "discount": null,
+    "unit": "300 ml",
+    "original_price": null,
+    "bbox": [
+      0.4817320123842028,
+      0.4527411411223733,
+      0.9597320123842028,
+      0.5127411411223733
+    ]
+  },
+  {
+    "product_name": "Pizza-Fleischkäse mit Brötchen",
+    "price": "2.70",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.03799999999999998,
+      0.565,
+      0.2624963467576762,
+      0.7335553153265759
+    ]
+  },
+  {
+    "product_name": "Hähnchen-schnitzel mit Brötchen",
+    "price": "3.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.26600000000000085,
+      0.5692296456448949,
+      0.5041588441735726,
+      0.7320146066163646
+    ]
+  },
+  {
+    "product_name": "Chicken Nuggets 6er",
+    "price": "5.90",
+    "discount": null,
+    "unit": "6er",
+    "original_price": null,
+    "bbox": [
+      0.5051240866894197,
+      0.5777035435510506,
+      0.7285161609946356,
+      0.7304738979061551
+    ]
+  },
+  {
+    "product_name": "Schweinegulasch mit Speck, Perlzwiebeln und Kartoffel-brötchen",
+    "price": "9.90",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.7281859648951791,
+      0.54770354355105,
+      0.9630000000000003,
+      0.7297035435510498
+    ]
+  },
+  {
+    "product_name": "Rotes Thai Curry (scharf) mit gebratenen Garnelen knackigem Gemüse und Duftreis",
+    "price": "12.90",
+    "discount": null,
+    "unit": "Portion",
+    "original_price": null,
+    "bbox": [
+      0.02614390092637818,
+      0.7619605042725346,
+      0.3398707120429163,
+      0.9491566125630657
+    ]
+  },
+  {
+    "product_name": "Süß Sauer Gemüse knackiges Gemüse in süß-sauer Sauce mit Duftreis",
+    "price": "8.90",
+    "discount": null,
+    "unit": "Portion",
+    "original_price": null,
+    "bbox": [
+      0.35076400409557384,
+      0.7696640478235853,
+      0.6481508771331257,
+      0.9453048407875402
+    ]
+  },
+  {
+    "product_name": "Chop Suey mit Hähnchenbrust-streifen in pikanter Sauce, mit knackigem Gemüse und Duftreis",
+    "price": "9.90",
+    "discount": null,
+    "unit": "Portion",
+    "original_price": null,
+    "bbox": [
+      0.6634014860068462,
+      0.7641915202642255,
+      0.9629670174549294,
+      0.9452247937139161
+    ]
+  }
+]

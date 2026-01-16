@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Gut & Günstig Classic Voll- oder Color-waschmittel",
+    "price": "8.49",
+    "discount": "14",
+    "unit": "XXL, 80 Wasch-ladungen (1 WL = 0,11)",
+    "original_price": null,
+    "bbox": [
+      0.03599999999999999,
+      0.0820000000000001,
+      0.353627971508669,
+      0.2599887787105447
+    ]
+  },
+  {
+    "product_name": "Felix So gut wie es aussieht Katzennahrung",
+    "price": "9.99",
+    "discount": "33",
+    "unit": "versch. Sorten, 40 x 85 g",
+    "original_price": null,
+    "bbox": [
+      0.3475727055188786,
+      0.12999999999999817,
+      0.9669999999999932,
+      0.495516110035832
+    ]
+  },
+  {
+    "product_name": "Perwoll Waschmittel",
+    "price": "4.99",
+    "discount": "26",
+    "unit": "versch. Sorten, 27 Wasch-ladungen (1 WL = 0,18)",
+    "original_price": null,
+    "bbox": [
+      0.0434985102279735,
+      0.27300102036072543,
+      0.33793176379719947,
+      0.4929999999999998
+    ]
+  },
+  {
+    "product_name": "Kuschelweich Weichspüler",
+    "price": "1.49",
+    "discount": "23",
+    "unit": "versch. Sorten, 1 L, 38 Wasch-ladungen (1 WL = 0,04)",
+    "original_price": null,
+    "bbox": [
+      0.07870619838042786,
+      0.5082424551624464,
+      0.33800297954405273,
+      0.7267273654873386
+    ]
+  },
+  {
+    "product_name": "Poliboy Parkett-/Laminat- oder Fliesen-Feuchttücher",
+    "price": "3.49",
+    "discount": null,
+    "unit": "15 Stück",
+    "original_price": null,
+    "bbox": [
+      0.3468605480503456,
+      0.508242455162446,
+      0.6507863527594395,
+      0.7265452690253216
+    ]
+  },
+  {
+    "product_name": "Vitakraft Poésie Katzennahrung Classique Gelee oder Sauce",
+    "price": "3.99",
+    "discount": "16",
+    "unit": "12 x 85 g",
+    "original_price": null,
+    "bbox": [
+      0.6582136472405593,
+      0.517575448375537,
+      0.9637863527594399,
+      0.7284849103248924
+    ]
+  },
+  {
+    "product_name": "Frosch Waschmittel",
+    "price": "4.29",
+    "discount": null,
+    "unit": "versch. Sorten, 22-30 Waschladungen 1,44 L/kg-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.03385756850629322,
+      0.7405150896751053,
+      0.33800297954405273,
+      0.9633933519135213
+    ]
+  },
+  {
+    "product_name": "Frosch Universal Waschmittel",
+    "price": "4.99",
+    "discount": null,
+    "unit": "versch. Sorten, 24-30 Wasch-ladungen, 1,44-1,5 L (1 WL = 0,21-0,17)",
+    "original_price": null,
+    "bbox": [
+      0.3800682362027995,
+      0.7418782622384111,
+      0.647430274025173,
+      0.9592726345126611
+    ]
+  },
+  {
+    "product_name": "Vitakraft Kausnack für Hunde",
+    "price": "1.89",
+    "discount": "20",
+    "unit": "versch. Sorten, 80 g",
+    "original_price": null,
+    "bbox": [
+      0.6617863527594391,
+      0.7408480828881975,
+      0.9605014897720263,
+      0.9609999999999999
+    ]
+  }
+]
