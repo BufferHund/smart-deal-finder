@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Lavazza Crema e Aroma, Lavazza Cremoso Espresso und weitere Sorten",
+    "price": "14.99",
+    "discount": "28",
+    "unit": "ganze Bohnen, 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.030121608562765925,
+      0.03918576097225024,
+      0.6544053618758869,
+      0.49897831465262116
+    ]
+  },
+  {
+    "product_name": "Dallmayr Capsa",
+    "price": "2.59",
+    "discount": "29",
+    "unit": "versch. Sorten, 10er, 56 g",
+    "original_price": null,
+    "bbox": [
+      0.6606757104992889,
+      0.040907119513874865,
+      0.965520268093794,
+      0.264024754895685
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Barista Brazil oder Colombia",
+    "price": "12.99",
+    "discount": "23",
+    "unit": "ganze Bohnen, 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.672114906217906,
+      0.27439627684018664,
+      0.9659999999999999,
+      0.49613932072918504
+    ]
+  },
+  {
+    "product_name": "Eduscho Kaffee Kapseln",
+    "price": "3.99",
+    "discount": "27",
+    "unit": "versch. Sorten, 20er, 96 g",
+    "original_price": null,
+    "bbox": [
+      0.07015544240549584,
+      0.5070464402430589,
+      0.34442546891046244,
+      0.7288637488191221
+    ]
+  },
+  {
+    "product_name": "Edition Scheck Espresso",
+    "price": "18.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.3561621447503528,
+      0.506953559756935,
+      0.6548040214069151,
+      0.7298637488191215
+    ]
+  },
+  {
+    "product_name": "Eilles Gourmet Kaffee gemahlen oder Idee Kaffee",
+    "price": "6.79",
+    "discount": "24",
+    "unit": "versch. Sorten, gemahlen oder ganze Bohnen, 500 g",
+    "original_price": null,
+    "bbox": [
+      0.6612026809379414,
+      0.5049535597569362,
+      0.9699594638124108,
+      0.7278173085760591
+    ]
+  },
+  {
+    "product_name": "Meßmer Tee",
+    "price": "1.59",
+    "discount": "32",
+    "unit": "versch. Sorten, 37,5-75 g",
+    "original_price": null,
+    "bbox": [
+      0.03316214475035471,
+      0.783999999999999,
+      0.3401621447503547,
+      0.9609999999999986
+    ]
+  },
+  {
+    "product_name": "Schwarzwaldmilch Bio haltbare Heumilch 3,8 % oder Frische Heumilch 1,5 % oder 3,8 %",
+    "price": "1.79",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3495608042813819,
+      0.7383715219444986,
+      0.6535202680937943,
+      0.9619999999999999
+    ]
+  },
+  {
+    "product_name": "Lieken Urkorn Brot",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "versch. Sorten, 500 g",
+    "original_price": null,
+    "bbox": [
+      0.6604391957186158,
+      0.7404179621875628,
+      0.9674797319062056,
+      0.9599071195138734
+    ]
+  }
+]

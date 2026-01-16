@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Rougette Ofenkäse fein-würzig oder cremig-mild oder Raclette Classic",
+    "price": "3.99",
+    "discount": "33",
+    "unit": "270-320 g",
+    "original_price": null,
+    "bbox": [
+      0.037555299073534956,
+      0.05608955514639317,
+      0.33918160833289224,
+      0.25537311397524814
+    ]
+  },
+  {
+    "product_name": "Bergader Bavaria blu oder Almzeit",
+    "price": "1.99",
+    "discount": "42",
+    "unit": "175 g",
+    "original_price": null,
+    "bbox": [
+      0.34571187638837436,
+      0.050364177941442746,
+      0.9629999999999999,
+      0.49527760147298555
+    ]
+  },
+  {
+    "product_name": "Almette Frischkäse Natur oder Kräuter",
+    "price": "1.19",
+    "discount": "40",
+    "unit": "150 g",
+    "original_price": null,
+    "bbox": [
+      0.03671187638837437,
+      0.27410146985813333,
+      0.3397828865741966,
+      0.49490746617567255
+    ]
+  },
+  {
+    "product_name": "Grünländer in Scheiben",
+    "price": null,
+    "discount": null,
+    "unit": "140 g",
+    "original_price": null,
+    "bbox": [
+      0.03539872175869573,
+      0.5051820889707214,
+      0.3363131546296786,
+      0.7266358220585584
+    ]
+  },
+  {
+    "product_name": "Zott Zottarella Classic Rolle",
+    "price": null,
+    "discount": null,
+    "unit": "Abtropfgewicht 200 g",
+    "original_price": null,
+    "bbox": [
+      0.3471816083328925,
+      0.5066358220585572,
+      0.6364947629625708,
+      0.7289074661756723
+    ]
+  },
+  {
+    "product_name": "Gran Terre Casa Modena Nduja di Spilinga",
+    "price": null,
+    "discount": null,
+    "unit": "50 g",
+    "original_price": null,
+    "bbox": [
+      0.6581210722219291,
+      0.5076358220585574,
+      0.9367118763883744,
+      0.7209104448536081
+    ]
+  },
+  {
+    "product_name": "Hofglück Wiener Würstchen geräuchert",
+    "price": "2.49",
+    "discount": "13",
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.032085567129017126,
+      0.7377283558828858,
+      0.3359185157393196,
+      0.9610895551463919
+    ]
+  },
+  {
+    "product_name": "Hofglück feine Streifen feingeräucherte Schinkenstreifen",
+    "price": "2.49",
+    "discount": "13",
+    "unit": "2 x 60 g",
+    "original_price": null,
+    "bbox": [
+      0.3459185157393203,
+      0.769444797054031,
+      0.6565302680554822,
+      0.9627253772049496
+    ]
+  },
+  {
+    "product_name": "Rügenwalder Mühle Mühlen Schinken gegrillt oder zart",
+    "price": "1.99",
+    "discount": "20",
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6624342268516085,
+      0.7379104448536066,
+      0.9660000000000004,
+      0.9614537330878343
+    ]
+  }
+]

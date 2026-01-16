@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Odenwald-Quelle classic, naturelle oder medium",
+    "price": "4.49",
+    "discount": "18",
+    "unit": "12 x 0,7 L oder 12 x 0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.03464500485908978,
+      0.03767625168457866,
+      0.6523549951409102,
+      0.49471224629392696
+    ]
+  },
+  {
+    "product_name": "Volvic naturelle",
+    "price": "0.69",
+    "discount": "42",
+    "unit": "1,5 L, zzgl. 0,25 Pfand (1 L = 0,46)",
+    "original_price": null,
+    "bbox": [
+      0.6799025218659032,
+      0.08444600808597748,
+      0.963097478134096,
+      0.4968417456200954
+    ]
+  },
+  {
+    "product_name": "Frische Brise Mineralwasser Classic oder Medium",
+    "price": "2.99",
+    "discount": "21",
+    "unit": "12 x 1 L",
+    "original_price": null,
+    "bbox": [
+      0.03429000971817953,
+      0.51332374831542,
+      0.33690737123412007,
+      0.727971244946264
+    ]
+  },
+  {
+    "product_name": "Vitrex Mineralwasser",
+    "price": "1.49",
+    "discount": "40",
+    "unit": "versch. Sorten, 6 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.3498098931000242,
+      0.5096474966308425,
+      0.6524199805636406,
+      0.728971244946264
+    ]
+  },
+  {
+    "product_name": "Albi Fruchtsaft oder Nektar",
+    "price": "1.29",
+    "discount": "35",
+    "unit": "versch. Sorten, 0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.6875150340136282,
+      0.5525539919140229,
+      0.9634524732750058,
+      0.9630000000000001
+    ]
+  },
+  {
+    "product_name": "Original Oettinger Glorietta Cola-Mix",
+    "price": "6.49",
+    "discount": "23",
+    "unit": "koffeinhaltig und weitere Sorten, 20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.03299999999999991,
+      0.7373884979785069,
+      0.33923229834777313,
+      0.9616762516845787
+    ]
+  },
+  {
+    "product_name": "Bio Lemonaid oder Chari Tea",
+    "price": "27.80",
+    "discount": "17",
+    "unit": "versch. Sorten, 20 x 0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.34990979591822724,
+      0.739517997304674,
+      0.6489699319727429,
+      0.9616762516845785
+    ]
+  }
+]

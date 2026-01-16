@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Charolais Tafelspitz",
+    "price": "1.89",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6550000000000028,
+      0.06148539860810347,
+      0.9665800781428061,
+      0.26219297552196147
+    ]
+  },
+  {
+    "product_name": "Brasilianisches Roastbeef",
+    "price": "2.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6563685825918296,
+      0.2734824388049035,
+      0.9675800781428067,
+      0.49477190208784483
+    ]
+  },
+  {
+    "product_name": "Hähnchenbrustfilets oder Hähnchengeschnetzeltes",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.038000000000000055,
+      0.04893567482601296,
+      0.6425256696326822,
+      0.4967075769138577
+    ]
+  },
+  {
+    "product_name": "Kalbsschnitzel oder -Geschnetzeltes",
+    "price": "3.79",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.3488942522245119,
+      0.5100321625869936,
+      0.6534199218571939,
+      0.7294181136309161
+    ]
+  },
+  {
+    "product_name": "Rinderwade",
+    "price": "1.79",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6595256696326828,
+      0.5390321625869934,
+      0.9703172433264651,
+      0.7303859510439225
+    ]
+  },
+  {
+    "product_name": "Schweine-Schnitzel",
+    "price": "1.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03763141740817059,
+      0.536,
+      0.34084291295914737,
+      0.730353788456932
+    ]
+  },
+  {
+    "product_name": "Salsiccia",
+    "price": "9.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.03526283481634113,
+      0.7498391870650325,
+      0.34394866073463565,
+      0.9626783741300651
+    ]
+  },
+  {
+    "product_name": "Schweinehals ohne Knochen, Ofen-spieße Gyros-Art oder Spießbraten",
+    "price": "1.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.3430513392653649,
+      0.7451286503479743,
+      0.6561570870408528,
+      0.9607748618910468
+    ]
+  },
+  {
+    "product_name": "Rinderleber",
+    "price": "6.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.6615256696326842,
+      0.7393216258699354,
+      0.9713172433264653,
+      0.9608070244780405
+    ]
+  }
+]

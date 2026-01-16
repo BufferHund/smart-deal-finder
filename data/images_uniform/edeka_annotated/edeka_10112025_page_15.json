@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Iglo Chicken Nuggets Classic",
+    "price": "3.99",
+    "discount": null,
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.033655038048023986,
+      0.07696997586064916,
+      0.34485215916343886,
+      0.25940600482787046
+    ]
+  },
+  {
+    "product_name": "Dr. Oetker Die Ofenfrische, Tradizionale Pizza oder La Mia Pinsa",
+    "price": "2.22",
+    "discount": "39",
+    "unit": "versch. Sorten, 305-415 g",
+    "original_price": null,
+    "bbox": [
+      0.36082175908105313,
+      0.06749294064330347,
+      0.9802401625271053,
+      0.4951127473195692
+    ]
+  },
+  {
+    "product_name": "Crosta & Mollica Pizza",
+    "price": "3.99",
+    "discount": "27",
+    "unit": "tiefgefroren, versch. Sorten, 403-447 g",
+    "original_price": null,
+    "bbox": [
+      0.03169791586473649,
+      0.271,
+      0.46169791586473646,
+      0.513
+    ]
+  },
+  {
+    "product_name": "Mövenpick Eis",
+    "price": "1.99",
+    "discount": "50",
+    "unit": "versch. Sorten, 800-900 ml",
+    "original_price": null,
+    "bbox": [
+      0.03269791586473657,
+      0.5097605890350464,
+      0.495938078391842,
+      0.7255211780700901
+    ]
+  },
+  {
+    "product_name": "Frosta Gemüse",
+    "price": "2.22",
+    "discount": "39",
+    "unit": "versch. Sorten, 480-600 g",
+    "original_price": null,
+    "bbox": [
+      0.50323263862158,
+      0.5047605890350446,
+      0.9811238432163161,
+      0.7265211780700899
+    ]
+  },
+  {
+    "product_name": "Langnese Magnum Eis",
+    "price": "2.79",
+    "discount": "30",
+    "unit": "versch. Sorten, 255-360 ml",
+    "original_price": null,
+    "bbox": [
+      0.034992476094473514,
+      0.7555774505360867,
+      0.49758912045947373,
+      0.961816861501041
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Crunchy Yoghurt Raspberry oder White Chocolate and Cookie",
+    "price": "2.99",
+    "discount": null,
+    "unit": "3 x 90 ml",
+    "original_price": null,
+    "bbox": [
+      0.5034108795405261,
+      0.759408430750521,
+      0.9575271988513154,
+      0.9645633318226928
+    ]
+  }
+]

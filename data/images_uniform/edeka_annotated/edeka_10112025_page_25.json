@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "De'Longhi Kaffeevollautomat ECAM 223.61.GB",
+    "price": "379.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.058572010666916786,
+      0.02959867006290944,
+      0.6498160741070025,
+      0.2748742812705113
+    ]
+  },
+  {
+    "product_name": "Glas-dosen Set",
+    "price": "9.99",
+    "discount": null,
+    "unit": "3 Größen: 0,4, 0,9, 1,6 Liter",
+    "original_price": null,
+    "bbox": [
+      0.6606280735455808,
+      0.03911906904403646,
+      0.9638119994385758,
+      0.27207827108178034
+    ]
+  },
+  {
+    "product_name": "Star Mikrowelle MM720CUK",
+    "price": "49.99",
+    "discount": "16",
+    "unit": "20 Liter",
+    "original_price": "59.99",
+    "bbox": [
+      0.036376001122833096,
+      0.28939468025163656,
+      0.6056720527731684,
+      0.47183680815098294
+    ]
+  },
+  {
+    "product_name": "Sudoku Mix",
+    "price": "2.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.6113560488432496,
+      0.2919999999999988,
+      0.9669999999999954,
+      0.4725203989811252
+    ]
+  },
+  {
+    "product_name": "EDEKA zuhause LED 3D Leuchtstern",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.03381199943858321,
+      0.5135611969433816,
+      0.3357439932629988,
+      0.7028809309559618
+    ]
+  },
+  {
+    "product_name": "Küchenläufer",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.3453079949472485,
+      0.4985986700629092,
+      0.7327600112283337,
+      0.700200664968545
+    ]
+  },
+  {
+    "product_name": "Schreibwerk Taschenkalender 2026",
+    "price": "5.99",
+    "discount": null,
+    "unit": "versch. Ausführungen",
+    "original_price": null,
+    "bbox": [
+      0.7429999999999944,
+      0.4781598670062907,
+      0.9631719825960781,
+      0.6985203989811258
+    ]
+  },
+  {
+    "product_name": "Twister Sporty Strumpf-/Sportwolle",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "50 g",
+    "original_price": null,
+    "bbox": [
+      0.033811999438583186,
+      0.722880930955954,
+      0.3367439932629997,
+      0.9291257187294885
+    ]
+  }
+]
