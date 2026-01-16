@@ -368,4 +368,6 @@ $RECYCLE.BIN/
 data/raw/
 data/images/
 
+Arial.ttf
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,pycharm,visualstudiocode,python
