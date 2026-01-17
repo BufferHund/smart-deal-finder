@@ -30,6 +30,7 @@ The images in this dataset were manually collected from German supermarket chain
 - Penny
 - Rossmann
 
+### Human-validated Machine-labeled Data
 All brochure pages and other materials are publicly accessible promotional materials and are used solely for research and educational purposes.
 PDFs were preprocessed into uniform PNG format and stored under [image_uniform](images_uniform), for example, the PNGs of Rewe brochures are stored under [image_uniform/rewe](images_uniform/rewe), while the annotated JSON files under [image_uniform/rewe_annotated](images_uniform/rewe_annotated)
 ```text
@@ -39,8 +40,15 @@ project/
 │   │   ├── rewe # uniform PNG (1024 x 1448)
 │   │   ├── rewe_annotated # annotation for each PNG (JSON files)
 │   │   ├── ...
-|   |   ├── syn # synthetic data
-|   |   ├── syn_annotated # annotations of synthetic data
+```
+### Synthetic data
+For some other models that needs a task-specific fine-tuning process, we also provide synthetic data. These data can be generated and mixed with the real data for fine-tuning, but remember to separate the test and training data. 
+
+The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv.org/abs/2107.09313).
+
+We have prepared the materials (products crawled from internet) for you to generate, you only need to run the generation code.
+```bash
+python3 synthesis_flyer.py --num_flyer (necessary parameter: how many flyers you want to generate)
 ```
 
 ## Annotation Methods
@@ -134,10 +142,6 @@ Data without deal information are annotated as:
 null
 ```
 
-## Synthetic data
-For some other models that needs a task-specific fine-tuning process, we also provide a synthetic dataset with 5 thousand data. These data can be mixed with the real data for fine-tuning, but remember to separate the test and training data. 
-
-The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv.org/abs/2107.09313).
 
 ## License and Usage
 The dataset is intended solely for academic research and educational purposes, not for commercial redistribution.
