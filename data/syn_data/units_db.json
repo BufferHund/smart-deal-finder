@@ -1,0 +1,77 @@
+{
+  "fruit_weight": [
+    "je 1 kg", "je 1,5 kg Netz", "je 2 kg Beutel", "je 1 kg Schale", "je 500 g Schale"
+  ],
+  "fruit_piece": [
+    "je Stück", "je Bund", "je Schale", "je Netz"
+  ],
+  "veg_pack": [
+    "je 500 g Packung", "je 1 kg Netz", "je 2,5 kg Sack", "je 5 kg Sack", "je 3 St. Packung"
+  ],
+  "meat_fresh": [
+    "je 100 g", "je 1 kg", "je 500 g Packung", "je 400 g Packung", "je 600 g Großpackung"
+  ],
+  "meat_processed": [
+    "je 80 g Packung", "je 100 g Packung", "je 125 g Packung", "je 150 g Packung", "je 200 g Packung"
+  ],
+  "dairy_solid": [
+    "je 250 g Stück", "je 200 g Packung", "je 150 g Packung", "je 400 g Packung"
+  ],
+  "dairy_cup": [
+    "je 150 g Becher", "je 200 g Becher", "je 500 g Becher", "je 400 g Becher", "je 125 g Becher"
+  ],
+  "dairy_drink": [
+    "je 1 L Flasche", "je 1 L Packung", "je 500 ml Becher", "je 250 ml Flasche"
+  ],
+  "drink_soft": [
+    "je 1,5 L Flasche (zzgl. 0.25 Pfand)", "je 1,25 L Flasche (zzgl. 0.25 Pfand)", "je 1 L Flasche (zzgl. 0.25 Pfand)", "je 0,5 L Flasche (zzgl. 0.25 Pfand)"
+  ],
+  "drink_can": [
+    "je 0,33 L Dose (zzgl. 0.25 Pfand)", "je 0,5 L Dose (zzgl. 0.25 Pfand)"
+  ],
+  "drink_crate": [
+    "je 20 x 0,5 L Kasten (zzgl. 3.10 Pfand)", "je 24 x 0,33 L Kasten (zzgl. 3.42 Pfand)", "je 11 x 0,5 L Kasten (zzgl. 2.38 Pfand)"
+  ],
+  "alcohol_bottle": [
+    "je 0,75 L Flasche", "je 0,7 L Flasche", "je 1 L Flasche"
+  ],
+  "pantry_pack": [
+    "je 500 g Packung", "je 1 kg Packung", "je 750 g Packung", "je 2 kg Packung"
+  ],
+  "can_food": [
+    "je 400 g Dose", "je 800 g Dose", "je 3 x 200 g Packung", "je 425 ml Dose"
+  ],
+  "tube_pack": [
+    "je 75 ml Tube", "je 100 ml Tube", "je 200 ml Tube", "je 125 ml Tube"
+  ],
+  "jar_pack": [
+    "je 370 ml Glas", "je 720 ml Glas", "je 500 g Glas", "je 250 g Glas"
+  ],
+  "snack_bag": [
+    "je 100 g Beutel", "je 150 g Beutel", "je 175 g Beutel", "je 200 g Beutel", "je 250 g Beutel"
+  ],
+  "chocolate_bar": [
+    "je 100 g Tafel", "je 300 g Tafel", "je 5 x 20 g Riegel"
+  ],
+  "bakery_piece": [
+    "je Stück", "je 3er Packung", "je 500 g Laib", "je 750 g Laib"
+  ],
+  "frozen_box": [
+    "je 300 g Packung", "je 450 g Packung", "je 750 g Beutel", "je 1 kg Beutel"
+  ],
+  "hygiene_bottle": [
+    "je 250 ml Flasche", "je 300 ml Flasche", "je 500 ml Flasche", "je 1 L Nachfüllpack"
+  ],
+  "spray_bottle": [
+    "je 150 ml Dose", "je 250 ml Sprühflasche", "je 500 ml Sprühflasche"
+  ],
+  "paper_pack": [
+    "je 8 x 150 Blatt", "je 10er Packung", "je 12er Packung", "je 56 Tücher Packung"
+  ],
+  "pet_unit": [
+    "je 400 g Dose", "je 12 x 100 g Packung", "je 1,5 kg Beutel", "je 100 g Schale"
+  ],
+  "baby_unit": [
+    "je 3 x 80 Stück Packung", "je 190 g Glas", "je Packung"
+  ]
+}
