@@ -6,16 +6,21 @@ import io
 from icrawler.builtin import BingImageCrawler
 from rembg import remove
 from PIL import Image, ImageDraw, ImageFont, ImageColor
+import argparse
 
+# ------ Parse Arguments ------
+parser = argparse.ArgumentParser(description="Synthesize Promotional Flyers with Product Deals")
+parser.add_argument('--num_flyers', type=int, default=5000, help='Number of flyers to generate')
+args = parser.parse_args()
 # ------ Configurations ------
 
 # basic paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ASSET_DIR = os.path.join(BASE_DIR, "data", "assets")
-RAW_DIR = os.path.join(BASE_DIR, "data", "raw")  
-PIC_DIR = os.path.join(BASE_DIR, "data", "pictures")
-ANNOTATION_DIR = os.path.join(BASE_DIR, "data", "annotations")
-DATA_DIR = os.path.join(BASE_DIR, "data")
+ASSET_DIR = os.path.join(BASE_DIR, "syn_data", "assets")
+RAW_DIR = os.path.join(BASE_DIR, "syn_data", "raw")  
+PIC_DIR = os.path.join(BASE_DIR, "syn_data", "pictures")
+ANNOTATION_DIR = os.path.join(BASE_DIR, "syn_data", "annotations")
+DATA_DIR = os.path.join(BASE_DIR, "syn_data")
 os.makedirs(ASSET_DIR, exist_ok=True)
 os.makedirs(PIC_DIR, exist_ok=True)
 os.makedirs(ANNOTATION_DIR, exist_ok=True)
@@ -465,10 +470,10 @@ def create_flyer(flyer_id=1):
         current_y += row_height + ROW_GAP
 
     # Save output image and annotations
-    image_filename = f"flyer_full_{flyer_id:03d}.jpg"
+    image_filename = f"syn_brochure_{flyer_id:03d}.png"
     canvas.save(os.path.join(PIC_DIR, image_filename))
 
-    json_path = os.path.join(ANNOTATION_DIR, f"flyer_full_{flyer_id:03d}.json")
+    json_path = os.path.join(ANNOTATION_DIR, f"syn_brochure_{flyer_id:03d}.json")
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(product_annotations, f, indent=2, ensure_ascii=False)
         
@@ -476,5 +481,5 @@ def create_flyer(flyer_id=1):
 
 if __name__ == "__main__":
     prepare_assets()
-    for i in range(1, 5001):
+    for i in range(1, args.num_flyers + 1):
         create_flyer(flyer_id=i)
