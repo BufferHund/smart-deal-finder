@@ -2,7 +2,7 @@
 
 ## Overview
 This directory contains the dataset used for the Smart Deal Finder project.
-The goal of the dataset is to provide high-quality supermarket brochure pages with structured product-level information, enabling benchmarking of OCR, layout understanding, and multimodal extraction models.
+The goal of the dataset is to provide high-quality supermarket brochure pages with structured product-level information, enabling benchmarking of OCR, layout understanding, and multimodal extraction models. A synthetic dataset with machine-generated synthetic brochures is also provide, with which a model for Smart Deal Finder can be fine-tuned.
 Each page contains multiple product deals, each annotated with:
 
 - Product name
@@ -30,7 +30,7 @@ The images in this dataset were manually collected from German supermarket chain
 - Penny
 - Rossmann
 
-All brochure pages are publicly accessible promotional materials and are used solely for research and educational purposes.
+All brochure pages and other materials are publicly accessible promotional materials and are used solely for research and educational purposes.
 PDFs were preprocessed into uniform PNG format and stored under [image_uniform](images_uniform), for example, the PNGs of Rewe brochures are stored under [image_uniform/rewe](images_uniform/rewe), while the annotated JSON files under [image_uniform/rewe_annotated](images_uniform/rewe_annotated)
 ```text
 project/
@@ -39,6 +39,8 @@ project/
 │   │   ├── rewe # uniform PNG (1024 x 1448)
 │   │   ├── rewe_annotated # annotation for each PNG (JSON files)
 │   │   ├── ...
+|   |   ├── syn # synthetic data
+|   |   ├── syn_annotated # annotations of synthetic data
 ```
 
 ## Annotation Methods
@@ -51,7 +53,7 @@ Annotations were created using **Label Studio** and **Gemini 2.5 pro** with the 
   - unit
   - original_price
 
-Annotation Workflow
+## Annotation Workflow
 1. Create annotations for each brochure images with the help of Gemini
 2. Convert the annotations into JSON files
 3. Upload brochure images and corresponding Json annotations into a Label Studio project.
@@ -131,6 +133,11 @@ Data without deal information are annotated as:
 ```json
 null
 ```
+
+## Synthetic data
+For some other models that needs a task-specific fine-tuning process, we also provide a synthetic dataset with 5 thousand data. These data can be mixed with the real data for fine-tuning, but remember to separate the test and training data. 
+
+The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv.org/abs/2107.09313).
 
 ## License and Usage
 The dataset is intended solely for academic research and educational purposes, not for commercial redistribution.
