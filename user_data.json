@@ -1,0 +1,9 @@
+{
+  "shopping_list": [
+    "milk"
+  ],
+  "favorites": [],
+  "settings": {
+    "notification_threshold": 0.2
+  }
+}
