@@ -13,6 +13,9 @@ chef_service = ChefService()
 class ShoppingItem(BaseModel):
     item: str
 
+class WatchlistItem(BaseModel):
+    item: str
+
 class ApiKeyRequest(BaseModel):
     api_key: str
 
@@ -44,6 +47,20 @@ def remove_shopping_item(item: str):
     storage.remove_from_list(item)
     return {"status": "removed", "list": storage.get_shopping_list()}
 
+@router.get("/watchlist", response_model=List[str])
+def get_watchlist():
+    return storage.get_watchlist()
+
+@router.post("/watchlist")
+def add_watchlist_item(item: WatchlistItem):
+    storage.add_watchlist_item(item.item)
+    return {"status": "added", "list": storage.get_watchlist()}
+
+@router.delete("/watchlist/{item}")
+def remove_watchlist_item(item: str):
+    storage.remove_watchlist_item(item)
+    return {"status": "removed", "list": storage.get_watchlist()}
+
 @router.get("/settings/key")
 def get_api_key_status():
     key = storage.get_api_key()
@@ -52,7 +69,13 @@ def get_api_key_status():
 @router.post("/settings/key")
 def set_api_key(req: ApiKeyRequest):
     storage.save_api_key(req.api_key)
+    storage.save_api_key(req.api_key)
     return {"status": "saved"}
+
+@router.post("/settings/reset")
+def reset_data():
+    storage.reset_user_data()
+    return {"status": "reset", "message": "All data cleared"}
 
 @router.post("/chat")
 def chat_with_chef(req: ChatRequest):
@@ -72,6 +95,17 @@ def chat_with_chef(req: ChatRequest):
             dish_name = "something delicious"
         result = chef_service.generate_recipe_steps(dish_name)
         return {"type": "recipe", "data": result}
+
+    elif "cook" in msg or "make" in msg or "plan" in msg:
+        # "I want to cook Lasagna" -> Extract "Lasagna"
+        # Naive extraction: take everything after the keyword
+        keyword = "cook" if "cook" in msg else "make" if "make" in msg else "plan"
+        dish_name = msg.split(keyword)[-1].strip()
+        if not dish_name:
+             dish_name = "dinner"
+        
+        result = chef_service.plan_meal(dish_name)
+        return {"type": "meal_plan", "data": result}
         
     else:
         return {

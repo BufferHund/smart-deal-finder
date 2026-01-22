@@ -33,12 +33,27 @@ export default function DealCard({ deal, onAdd }: DealCardProps) {
                         </div>
                     )}
 
+                    {/* Store Badge */}
+                    {deal.store && (
+                        <div className="absolute top-2 left-2 z-20">
+                            <Chip
+                                classNames={{
+                                    base: "bg-black/60 backdrop-blur-md border border-white/10",
+                                    content: "text-white/90 text-xs font-bold"
+                                }}
+                                size="sm"
+                            >
+                                {deal.store}
+                            </Chip>
+                        </div>
+                    )}
+
                     {/* Image Area */}
                     <div className="relative h-48 w-full overflow-hidden bg-gray-900 group-hover:opacity-90 transition-opacity">
                         {deal.image_url ? (
                             <Image
                                 src={deal.image_url}
-                                alt={deal.product}
+                                alt={deal.product_name || deal.product}
                                 className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-transform duration-500"
                                 removeWrapper
                             />
@@ -54,13 +69,13 @@ export default function DealCard({ deal, onAdd }: DealCardProps) {
                     {/* Content */}
                     <div className="p-4 relative z-10 -mt-12">
                         <h3 className="font-bold text-lg text-white leading-tight min-h-[3rem] line-clamp-2 drop-shadow-md">
-                            {deal.product}
+                            {deal.product_name || deal.product || "Unknown Product"}
                         </h3>
                         <div className="mt-3 flex items-end justify-between">
                             <div className="flex flex-col">
-                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">{deal.unit_price || 'Great Deal'}</span>
+                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">{deal.unit || deal.unit_price || ''}</span>
                                 <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                                    {deal.price}
+                                    {deal.price} €
                                 </span>
                             </div>
                         </div>
@@ -73,7 +88,7 @@ export default function DealCard({ deal, onAdd }: DealCardProps) {
                             size="md"
                             fullWidth
                             className="bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur-sm border border-white/10 shadow-lg group-hover:bg-purple-600/80 group-hover:border-purple-500/50 transition-all"
-                            onPress={() => onAdd(deal.product)}
+                            onPress={() => onAdd(deal.product_name || deal.product)}
                         >
                             Add to List ➕
                         </Button>

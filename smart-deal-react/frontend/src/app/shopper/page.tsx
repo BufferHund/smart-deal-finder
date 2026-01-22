@@ -4,13 +4,14 @@ import Navbar from '../../components/Navbar';
 import DealCard from '../../components/DealCard';
 import ChatInterface from '../../components/ChatInterface';
 import { useState, useEffect } from 'react';
-import { Button, useDisclosure, Input, Card, CardBody } from "@heroui/react";
-import { getActiveDeals, getShoppingList, addToShoppingList, removeFromShoppingList } from '../../lib/api';
+import { Button, useDisclosure, Input, Card, CardBody, Tabs, Tab } from "@heroui/react";
+import { getActiveDeals, getShoppingList, addToShoppingList, removeFromShoppingList, getWatchlist, addToWatchlist, removeFromWatchlist } from '../../lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ShopperPage() {
     const [deals, setDeals] = useState<any[]>([]);
     const [shoppingList, setShoppingList] = useState<string[]>([]);
+    const [watchlist, setWatchlist] = useState<string[]>([]);
     const { isOpen: isChatOpen, onOpen: onChatOpen, onOpenChange: onChatOpenChange } = useDisclosure();
     const [isListOpen, setIsListOpen] = useState(false);
     const [newItem, setNewItem] = useState("");
@@ -28,6 +29,9 @@ export default function ShopperPage() {
 
             const listData = await getShoppingList();
             if (Array.isArray(listData)) setShoppingList(listData);
+
+            const watchlistData = await getWatchlist();
+            if (Array.isArray(watchlistData)) setWatchlist(watchlistData);
         } catch (e) {
             console.error("Failed to load shopper data", e);
         } finally {
@@ -54,11 +58,39 @@ export default function ShopperPage() {
         }
     };
 
-    const handleManualAdd = () => {
+    const handleManualAdd = async () => {
         if (newItem.trim()) {
-            handleAddToList(newItem);
+            await handleAddToList(newItem);
             setNewItem("");
         }
+    }
+
+    const handleAddToWatchlist = async (item: string) => {
+        if (!item.trim()) return;
+        try {
+            const res = await addToWatchlist({ item });
+            setWatchlist(res.list);
+            setNewItem(""); // Clear input if used
+        } catch (e) {
+            console.error("Watchlist add failed", e);
+        }
+    };
+
+    const handleRemoveFromWatchlist = async (item: string) => {
+        try {
+            const res = await removeFromWatchlist(item);
+            setWatchlist(res.list);
+        } catch (e) {
+            console.error("Watchlist remove failed", e);
+        }
+    };
+
+    const shareToWhatsApp = () => {
+        if (shoppingList.length === 0) return;
+
+        const text = "🛒 My SmartDeal Shopping List:\n\n" + shoppingList.map(item => `• ${item}`).join("\n");
+        const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
     }
 
     return (
@@ -166,56 +198,124 @@ export default function ShopperPage() {
                                         <Button size="sm" isIconOnly variant="light" onPress={() => setIsListOpen(false)} className="text-white/50 hover:text-white">✕</Button>
                                     </div>
 
-                                    <div className="flex gap-2 mb-6">
-                                        <Input
-                                            placeholder="Add custom item..."
-                                            value={newItem}
-                                            onChange={(e) => setNewItem(e.target.value)}
-                                            onKeyDown={(e) => e.key === 'Enter' && handleManualAdd()}
-                                            classNames={{
-                                                inputWrapper: "bg-white/5 border border-white/10"
-                                            }}
-                                        />
-                                        <Button isIconOnly color="primary" onPress={handleManualAdd}>+</Button>
-                                    </div>
-
-                                    <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
-                                        {shoppingList.length === 0 ? (
-                                            <div className="text-center mt-10 text-white/20">
-                                                <div className="text-4xl mb-2">🛒</div>
-                                                <p>List is empty</p>
+                                    <Tabs
+                                        aria-label="Lists"
+                                        color="primary"
+                                        variant="underlined"
+                                        classNames={{
+                                            tabList: "gap-6 w-full relative rounded-none p-0 border-b border-white/10",
+                                            cursor: "w-full bg-pink-500",
+                                            tab: "max-w-fit px-0 h-12",
+                                            tabContent: "group-data-[selected=true]:text-pink-500 text-white/60 font-medium"
+                                        }}
+                                    >
+                                        <Tab key="shopping" title="Shopping List">
+                                            <div className="flex gap-2 mb-6 mt-4">
+                                                <Input
+                                                    placeholder="Add item..."
+                                                    value={newItem}
+                                                    onChange={(e) => setNewItem(e.target.value)}
+                                                    onKeyDown={(e) => e.key === 'Enter' && handleManualAdd()}
+                                                    classNames={{
+                                                        inputWrapper: "bg-white/5 border border-white/10"
+                                                    }}
+                                                />
+                                                <Button isIconOnly color="primary" onPress={handleManualAdd}>+</Button>
                                             </div>
-                                        ) : (
-                                            <ul className="space-y-3">
-                                                {shoppingList.map((item, i) => (
-                                                    <motion.li
-                                                        key={i}
-                                                        initial={{ opacity: 0, x: -20 }}
-                                                        animate={{ opacity: 1, x: 0 }}
-                                                        className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors group"
-                                                    >
-                                                        <span className="text-white/90 font-medium">{item}</span>
-                                                        <Button
-                                                            size="sm"
-                                                            color="danger"
-                                                            variant="light"
-                                                            isIconOnly
-                                                            className="opacity-0 group-hover:opacity-100 transition-opacity"
-                                                            onPress={() => handleRemoveFromList(item)}
-                                                        >
-                                                            ✕
-                                                        </Button>
-                                                    </motion.li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
 
-                                    <div className="mt-6">
-                                        <Button fullWidth className="bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold shadow-lg">
-                                            Export to WhatsApp
-                                        </Button>
-                                    </div>
+                                            <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar max-h-[60vh]">
+                                                {shoppingList.length === 0 ? (
+                                                    <div className="text-center mt-10 text-white/20">
+                                                        <div className="text-4xl mb-2">🛒</div>
+                                                        <p>List is empty</p>
+                                                    </div>
+                                                ) : (
+                                                    <ul className="space-y-3">
+                                                        {shoppingList.map((item, i) => (
+                                                            <motion.li
+                                                                key={i}
+                                                                initial={{ opacity: 0, x: -20 }}
+                                                                animate={{ opacity: 1, x: 0 }}
+                                                                className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors group"
+                                                            >
+                                                                <span className="text-white/90 font-medium">{item}</span>
+                                                                <Button
+                                                                    size="sm"
+                                                                    color="danger"
+                                                                    variant="light"
+                                                                    isIconOnly
+                                                                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                                                                    onPress={() => handleRemoveFromList(item)}
+                                                                >
+                                                                    ✕
+                                                                </Button>
+                                                            </motion.li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+
+                                            <div className="mt-6">
+                                                <Button
+                                                    fullWidth
+                                                    className="bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold shadow-lg"
+                                                    onPress={shareToWhatsApp}
+                                                >
+                                                    Export to WhatsApp
+                                                </Button>
+                                            </div>
+                                        </Tab>
+
+                                        <Tab key="watchlist" title="Watchlist">
+                                            <div className="flex gap-2 mb-6 mt-4">
+                                                <Input
+                                                    placeholder="Watch item..."
+                                                    value={newItem}
+                                                    onChange={(e) => setNewItem(e.target.value)}
+                                                    onKeyDown={(e) => e.key === 'Enter' && handleAddToWatchlist(newItem)}
+                                                    classNames={{
+                                                        inputWrapper: "bg-white/5 border border-white/10"
+                                                    }}
+                                                />
+                                                <Button isIconOnly color="secondary" onPress={() => handleAddToWatchlist(newItem)}>🔔</Button>
+                                            </div>
+
+                                            <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar max-h-[60vh]">
+                                                <p className="text-xs text-white/40 mb-4 px-1">
+                                                    We'll track these items and find the best deals for you every week.
+                                                </p>
+                                                {watchlist.length === 0 ? (
+                                                    <div className="text-center mt-10 text-white/20">
+                                                        <div className="text-4xl mb-2">👀</div>
+                                                        <p>Watchlist is empty</p>
+                                                    </div>
+                                                ) : (
+                                                    <ul className="space-y-3">
+                                                        {watchlist.map((item, i) => (
+                                                            <motion.li
+                                                                key={i}
+                                                                initial={{ opacity: 0, x: -20 }}
+                                                                animate={{ opacity: 1, x: 0 }}
+                                                                className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5 hover:border-white/20 transition-colors group"
+                                                            >
+                                                                <span className="text-white/90 font-medium">{item}</span>
+                                                                <Button
+                                                                    size="sm"
+                                                                    color="danger"
+                                                                    variant="light"
+                                                                    isIconOnly
+                                                                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                                                                    onPress={() => handleRemoveFromWatchlist(item)}
+                                                                >
+                                                                    ✕
+                                                                </Button>
+                                                            </motion.li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        </Tab>
+                                    </Tabs>
                                 </div>
                             </motion.div>
                         )}

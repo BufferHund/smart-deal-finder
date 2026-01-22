@@ -129,7 +129,9 @@ Example output:
 Return ONLY the JSON array, no other text or explanation."""
 
     # Generate content
+    print(f"DEBUG: Calling Gemini API (Model: {model_name})...")
     response = model_instance.generate_content([prompt, pil_image])
+    print("DEBUG: Gemini API Response Response Received.")
 
     # Parse response
     response_text = response.text.strip()
@@ -140,11 +142,18 @@ Return ONLY the JSON array, no other text or explanation."""
         lines = response_text.split('\n')
         response_text = '\n'.join(lines[1:-1])  # Remove first and last line
 
+    print(f"DEBUG: Gemini Raw JSON Response:\n{response_text}") # Expose full data log
+
     # Parse JSON
     try:
         deals_data = json.loads(response_text)
+        print(f"DEBUG: Successfully parsed {len(deals_data)} deals from Gemini.")
     except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse Gemini response as JSON: {e}\nResponse: {response_text}")
+        print(f"DEBUG: Failed to decode JSON. Response was: {response_text}")
+        raise ValueError(f"Failed to parse Gemini response as JSON: {e}")
+    except Exception as e:
+        print(f"DEBUG: Unexpected error in extraction: {e}")
+        raise e
 
     # Convert to our format
     deals = []

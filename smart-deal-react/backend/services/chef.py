@@ -6,6 +6,9 @@ import os
 import json
 import google.generativeai as genai
 from typing import Dict, List, Any
+from services.history import PriceHistoryService
+
+history_service = PriceHistoryService()
 
 # Configure API
 def get_configured_key():
@@ -76,7 +79,14 @@ class ChefService:
             return json.loads(text)
         except Exception as e:
             print(f"Error generating menu: {e}")
-            return self._mock_menu_suggestion()
+            # return self._mock_menu_suggestion()
+            return {
+                "name": "Error Generating Menu",
+                "description": f"Could not generate menu: {str(e)}",
+                "key_ingredients": [],
+                "total_estimated_cost": 0.00,
+                "savings_note": "Please check API Key and logs."
+            }
 
     def generate_recipe_steps(self, dish_name: str) -> Dict:
         """
@@ -101,8 +111,54 @@ class ChefService:
             return json.loads(text)
         except Exception as e:
             print(f"Error generating recipe: {e}")
-            return self._mock_recipe_steps(dish_name)
-
+            # return self._mock_recipe_steps(dish_name)
+            return {
+                "ingredients": [],
+                "steps": [f"Error: {str(e)}"],
+                "prep_time": "-",
+                "cooking_time": "-"
+            }
+    def plan_meal(self, dish_name: str) -> Dict:
+        """
+        Create a meal plan with ingredients matched to best deals.
+        """
+        # 1. Ask Gemini for ingredients
+        recipe_data = self.generate_recipe_steps(dish_name)
+        ingredients = recipe_data.get('ingredients', [])
+        
+        # 2. Match ingredients to History/Deals
+        shopping_list_with_deals = []
+        total_estimated = 0.0
+        
+        for item in ingredients:
+            # Clean item string (e.g. "200g Pasta" -> "Pasta")
+            # Simple heuristic: remove numbers/units, or just fuzzy match whole string
+            clean_item = item.split(' ')[-1] if ' ' in item else item
+            
+            best_deal = history_service.get_best_price_for_ingredient(clean_item)
+            
+            entry = {
+                "item": item,
+                "found_deal": False,
+                "deal_info": None
+            }
+            
+            if best_deal:
+                entry["found_deal"] = True
+                entry["deal_info"] = best_deal
+                try:
+                    total_estimated += float(best_deal['price'])
+                except:
+                    pass
+            
+            shopping_list_with_deals.append(entry)
+            
+        return {
+            "dish": dish_name,
+            "recipe": recipe_data,
+            "shopping_list": shopping_list_with_deals,
+            "total_estimated": round(total_estimated, 2)
+        }
     def _mock_menu_suggestion(self):
         """Fallback mock data if API fails"""
         return {

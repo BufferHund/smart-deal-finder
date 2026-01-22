@@ -3,19 +3,35 @@
 import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';
 import { Tabs, Tab, Card, CardBody, Button, Progress, Spacer, Chip, CardHeader } from "@heroui/react";
-import { uploadFile, getActiveDeals } from '../../lib/api';
+import { uploadFile, getActiveDeals, getApiKeyStatus, saveApiKey, resetData } from '../../lib/api';
 import { motion } from 'framer-motion';
 import DealCard from '../../components/DealCard';
+import { Input, Select, SelectItem, Switch } from "@heroui/react";
 
 export default function AdminPage() {
     const [selected, setSelected] = useState("upload");
     const [isUploading, setIsUploading] = useState(false);
     const [uploadStatus, setUploadStatus] = useState("");
     const [deals, setDeals] = useState<any[]>([]);
+    const [storeName, setStoreName] = useState("");
+    const [forceRefresh, setForceRefresh] = useState(false);
+    const [apiKey, setApiKey] = useState("");
+    const [keyStatus, setKeyStatus] = useState<{ configured: boolean, masked: string | null }>({ configured: false, masked: null });
+    const [isSavingKey, setIsSavingKey] = useState(false);
 
     useEffect(() => {
         fetchDeals();
+        checkKeyStatus();
     }, []);
+
+    const checkKeyStatus = async () => {
+        try {
+            const status = await getApiKeyStatus();
+            setKeyStatus(status);
+        } catch (e) {
+            console.error("Failed to check key status", e);
+        }
+    }
 
     const fetchDeals = async () => {
         try {
@@ -35,9 +51,16 @@ export default function AdminPage() {
         setIsUploading(true);
         setUploadStatus("Processing with Gemini AI...");
 
+        setUploadStatus("Processing with Gemini AI...");
+        const store = storeName || "Unknown Store";
+
         try {
-            const result = await uploadFile(file);
-            setUploadStatus(`Success! Extracted ${result.deal_count} deals.`);
+            const result = await uploadFile(file, store, forceRefresh);
+            if (result.cached) {
+                setUploadStatus(`⚡️ Instant Load! Found duplicate file. (Cached)`);
+            } else {
+                setUploadStatus(`Success! Extracted ${result.deal_count} deals.`);
+            }
             setDeals(result.deals);
             setTimeout(() => setSelected("dashboard"), 1500);
         } catch (error) {
@@ -46,6 +69,33 @@ export default function AdminPage() {
             setIsUploading(false);
         }
     };
+
+    const handleSaveKey = async () => {
+        if (!apiKey.trim()) return;
+        setIsSavingKey(true);
+        try {
+            await saveApiKey(apiKey);
+            await checkKeyStatus();
+            setApiKey("");
+            alert("API Key saved successfully!");
+        } catch (e) {
+            alert("Failed to save API key.");
+        } finally {
+            setIsSavingKey(false);
+        }
+    }
+
+    const handleReset = async () => {
+        if (confirm("Are you sure you want to clear all data? This cannot be undone.")) {
+            try {
+                await resetData();
+                setDeals([]);
+                alert("Application data reset successfully.");
+            } catch (e) {
+                alert("Failed to reset data.");
+            }
+        }
+    }
 
     return (
         <div className="min-h-screen pt-24 pb-12 px-6">
@@ -74,6 +124,7 @@ export default function AdminPage() {
                             >
                                 <Tab key="upload" title="📤 Upload Flyer" />
                                 <Tab key="dashboard" title="📊 Live Dashboard" />
+                                <Tab key="settings" title="⚙️ Settings" />
                             </Tabs>
                         </div>
                     </div>
@@ -93,6 +144,31 @@ export default function AdminPage() {
                                     <p className="text-lg text-white/60 mb-8 max-w-md">
                                         Upload your supermarket PDF or image. <br />Gemini AI will extract products, prices, and discounts instantly.
                                     </p>
+
+                                    <div className="w-full max-w-xs mb-8">
+                                        <Input
+                                            label="Store Name"
+                                            placeholder="e.g. Aldi, Lidl"
+                                            value={storeName}
+                                            onChange={(e) => setStoreName(e.target.value)}
+                                            classNames={{
+                                                inputWrapper: "bg-white/10 border-white/20 text-white",
+                                                label: "text-white/60"
+                                            }}
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-8 flex items-center justify-center gap-2">
+                                        <Switch
+                                            size="sm"
+                                            color="warning"
+                                            isSelected={forceRefresh}
+                                            onValueChange={setForceRefresh}
+                                        >
+                                            <span className="text-white/70 text-sm">Force Re-process (Ignore Cache)</span>
+                                        </Switch>
+                                    </div>
 
                                     <input
                                         type="file"
@@ -167,6 +243,67 @@ export default function AdminPage() {
                                     <DealCard key={idx} deal={deal} /> // No add button in admin view
                                 ))}
                             </div>
+                        </motion.div>
+                    )}
+
+                    {selected === 'settings' && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="max-w-2xl mx-auto"
+                        >
+                            <Card className="bg-white/5 border border-white/10 backdrop-blur-md p-8">
+                                <CardBody>
+                                    <h2 className="text-2xl font-bold text-white mb-6">⚙️ Configuration</h2>
+
+                                    <div className="mb-8">
+                                        <h3 className="text-lg font-semibold text-white mb-2">Google Gemini API Key</h3>
+                                        <p className="text-white/60 text-sm mb-4">Required for AI deal extraction and chef features.</p>
+
+                                        <div className="flex gap-4 items-end">
+                                            <Input
+                                                label="API Key"
+                                                placeholder="AIzaSy..."
+                                                value={apiKey}
+                                                onChange={(e) => setApiKey(e.target.value)}
+                                                type="password"
+                                                variant="bordered"
+                                                classNames={{
+                                                    inputWrapper: "bg-white/5 border-white/20 text-white",
+                                                    label: "text-white/70"
+                                                }}
+                                                className="flex-1"
+                                            />
+                                            <Button
+                                                color="secondary"
+                                                isLoading={isSavingKey}
+                                                onPress={handleSaveKey}
+                                                className="h-14 font-bold"
+                                            >
+                                                Save Key
+                                            </Button>
+                                        </div>
+
+                                        <div className="mt-4 flex items-center gap-2">
+                                            <div className={`w-3 h-3 rounded-full ${keyStatus.configured ? 'bg-green-500' : 'bg-red-500'}`} />
+                                            <span className="text-white/80">
+                                                Status: {keyStatus.configured ?
+                                                    `Configured (${keyStatus.masked})` :
+                                                    "Not Configured"}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="border-t border-white/10 pt-6">
+                                        <h3 className="text-lg font-semibold text-white mb-2">Application Reset</h3>
+                                        <p className="text-white/60 text-sm mb-4">Clear all deal history and cached data.</p>
+                                        <Button color="danger" variant="flat" onPress={handleReset}>
+                                            Reset All Data
+                                        </Button>
+                                    </div>
+
+                                </CardBody>
+                            </Card>
                         </motion.div>
                     )}
                 </div>
