@@ -4,6 +4,22 @@ import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';
 import { Tabs, Tab, Card, CardBody, Button, Progress, Spacer, Chip, CardHeader } from "@heroui/react";
 import { uploadFile, getActiveDeals, getApiKeyStatus, saveApiKey, resetData } from '../../lib/api';
+// Quick inline API for preferences until Phase 9 refactor
+const getPreferences = async () => {
+    const res = await fetch('http://localhost:8000/api/agent/preferences');
+    return res.json();
+};
+const savePreferences = async (items: string[]) => {
+    await fetch('http://localhost:8000/api/agent/preferences', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ disliked_items: items })
+    });
+};
+const generateMockData = async () => {
+    const res = await fetch('http://localhost:8000/api/agent/mock-data', { method: 'POST' });
+    return res.json();
+};
 import { motion } from 'framer-motion';
 import DealCard from '../../components/DealCard';
 import { Input, Select, SelectItem, Switch } from "@heroui/react";
@@ -19,10 +35,39 @@ export default function AdminPage() {
     const [keyStatus, setKeyStatus] = useState<{ configured: boolean, masked: string | null }>({ configured: false, masked: null });
     const [isSavingKey, setIsSavingKey] = useState(false);
 
+    // Preferences
+    const [dislikedItems, setDislikedItems] = useState<string[]>([]);
+    const [newItem, setNewItem] = useState("");
+    const [isGenerating, setIsGenerating] = useState(false);
+
     useEffect(() => {
         fetchDeals();
         checkKeyStatus();
+        loadPreferences();
     }, []);
+
+    const loadPreferences = async () => {
+        try {
+            const data = await getPreferences();
+            if (data.disliked_items) setDislikedItems(data.disliked_items);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    const addDislike = async () => {
+        if (!newItem.trim()) return;
+        const updated = [...dislikedItems, newItem.trim()];
+        setDislikedItems(updated);
+        setNewItem("");
+        await savePreferences(updated);
+    };
+
+    const removeDislike = async (item: string) => {
+        const updated = dislikedItems.filter(i => i !== item);
+        setDislikedItems(updated);
+        await savePreferences(updated);
+    };
 
     const checkKeyStatus = async () => {
         try {
@@ -292,6 +337,58 @@ export default function AdminPage() {
                                                     "Not Configured"}
                                             </span>
                                         </div>
+                                    </div>
+
+                                    <div className="mb-8 border-t border-white/10 pt-6">
+                                        <h3 className="text-lg font-semibold text-white mb-2">🚫 Negative Preferences</h3>
+                                        <p className="text-white/60 text-sm mb-4">Items you want the Agent to ignore or hide.</p>
+
+                                        <div className="flex gap-2 mb-4">
+                                            <Input
+                                                size="sm"
+                                                placeholder="e.g. Cilantro, Pork"
+                                                value={newItem}
+                                                onChange={(e) => setNewItem(e.target.value)}
+                                                onKeyDown={(e) => e.key === 'Enter' && addDislike()}
+                                                classNames={{ inputWrapper: "bg-white/5 border-white/20 text-white" }}
+                                            />
+                                            <Button size="sm" color="warning" variant="faded" onPress={addDislike}>Block</Button>
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-2">
+                                            {dislikedItems.map(item => (
+                                                <Chip key={item} onClose={() => removeDislike(item)} variant="flat" color="danger">
+                                                    {item}
+                                                </Chip>
+                                            ))}
+                                            {dislikedItems.length === 0 && <span className="text-white/30 text-xs italic">No blocked items.</span>}
+                                        </div>
+                                    </div>
+
+                                    <div className="border-t border-white/10 pt-6">
+                                        <h3 className="text-lg font-semibold text-white mb-2">Simulate Data</h3>
+                                        <p className="text-white/60 text-sm mb-4">Populate the app with 2,000 realistic German supermarket deals.</p>
+                                        <Button
+                                            color="secondary"
+                                            variant="flat"
+                                            onPress={async () => {
+                                                if (confirm("Generate 2000 mock deals? This might take a few seconds.")) {
+                                                    setIsGenerating(true);
+                                                    try {
+                                                        await generateMockData();
+                                                        alert("Success! 2000 deals generated.");
+                                                        fetchDeals(); // Refresh
+                                                    } catch (e) {
+                                                        alert("Error generating data.");
+                                                    } finally {
+                                                        setIsGenerating(false);
+                                                    }
+                                                }
+                                            }}
+                                            isLoading={isGenerating}
+                                        >
+                                            Generate Demo Data (🇩🇪)
+                                        </Button>
                                     </div>
 
                                     <div className="border-t border-white/10 pt-6">

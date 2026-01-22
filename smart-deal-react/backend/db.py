@@ -41,6 +41,17 @@ class DatabaseManager:
                     )
                     """,
                     """
+                    CREATE TABLE IF NOT EXISTS loyalty_cards (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        store_name VARCHAR(255),
+                        card_number VARCHAR(255),
+                        card_format VARCHAR(50) DEFAULT 'BARCODE',
+                        color VARCHAR(50) DEFAULT 'bg-gray-500',
+                        image_path VARCHAR(255),
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                    """,
+                    """
                     CREATE TABLE IF NOT EXISTS uploads (
                         id INT AUTO_INCREMENT PRIMARY KEY,
                         filename VARCHAR(255),
@@ -61,6 +72,8 @@ class DatabaseManager:
                         store VARCHAR(100),
                         confidence FLOAT,
                         source VARCHAR(50),
+                        category VARCHAR(50),
+                        image_url VARCHAR(255),
                         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                         valid_until DATETIME,
                         FOREIGN KEY (upload_id) REFERENCES uploads(id) ON DELETE CASCADE
@@ -79,6 +92,29 @@ class DatabaseManager:
                         item VARCHAR(255) UNIQUE,
                         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
                     )
+                    """,
+                    """
+                    CREATE TABLE IF NOT EXISTS receipts (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        store_name VARCHAR(255),
+                        total_amount DECIMAL(10, 2),
+                        purchase_date DATE,
+                        image_path VARCHAR(255),
+                        items JSON,
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                    """,
+                    """
+                    CREATE TABLE IF NOT EXISTS app_tokens (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        token VARCHAR(255) UNIQUE,
+                        token_type VARCHAR(50) DEFAULT 'trial',
+                        usage_count INT DEFAULT 0,
+                        last_used_date DATE,
+                        max_daily_limit INT DEFAULT 1000,
+                        is_active BOOLEAN DEFAULT TRUE,
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
                     """
                 ]
                 
@@ -89,6 +125,23 @@ class DatabaseManager:
                 cursor.execute("SELECT * FROM users WHERE unique_id = 'default_user'")
                 if not cursor.fetchone():
                     cursor.execute("INSERT INTO users (unique_id) VALUES ('default_user')")
+                
+                # Initialize trial token if not exists
+                trial_token = "AIzaSyBxt3_uitu5fRjJ1u_E0VKKCcMV6Tg4efQ"
+                cursor.execute("SELECT * FROM app_tokens WHERE token = %s", (trial_token,))
+                if not cursor.fetchone():
+                    cursor.execute(
+                        "INSERT INTO app_tokens (token, token_type, max_daily_limit) VALUES (%s, 'trial', 1000)",
+                        (trial_token,)
+                    )
+                    
+                # Schema Migration (Quick Hack for Dev)
+                # Check if card_format exists in loyalty_cards
+                try:
+                    cursor.execute("SELECT card_format FROM loyalty_cards LIMIT 1")
+                except pymysql.Error:
+                    # Column likely missing, add it
+                    cursor.execute("ALTER TABLE loyalty_cards ADD COLUMN card_format VARCHAR(50) DEFAULT 'BARCODE'")
         finally:
             conn.close()
 
@@ -104,6 +157,18 @@ class DatabaseManager:
                     return cursor.lastrowid
         except pymysql.Error as err:
             print(f"Query Error: {err}")
+            raise err
+        finally:
+            conn.close()
+
+    def execute_many(self, query, params_list):
+        conn = self._get_conn()
+        try:
+            with conn.cursor() as cursor:
+                cursor.executemany(query, params_list)
+                conn.commit()
+        except pymysql.Error as err:
+            print(f"Bulk Query Error: {err}")
             raise err
         finally:
             conn.close()

@@ -40,6 +40,7 @@ def calculate_file_hash(file_path: str) -> str:
 async def upload_file(
     file: UploadFile = File(...),
     store_name: str = Form("Unknown Store"),
+    visibility: str = Form("public"),
     force_refresh: str = Form("false")
 ):
     # Manual conversion because FormData sends booleans as strings "true"/"false"
@@ -125,13 +126,13 @@ async def upload_file(
         
         # 6. Log Upload (Get ID)
         if not upload_id:
-            upload_id = storage.log_upload(file.filename, len(deals), file_path, file_hash)
+            upload_id = storage.log_upload(file.filename, len(deals), file_path, file_hash, visibility=visibility)
         else:
             # Update existing upload record timestamp/count if needed
              db.execute_query("UPDATE uploads SET timestamp = CURRENT_TIMESTAMP, deal_count = %s WHERE id = %s", (len(deals), upload_id))
         
         # 7. Save Deals with Upload ID
-        storage.save_active_deals(deals, store_name=store_name, upload_id=upload_id)
+        storage.save_active_deals(deals, store_name=store_name, upload_id=upload_id, visibility=visibility)
         
         return {
             "deals": deals,

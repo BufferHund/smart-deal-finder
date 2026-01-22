@@ -77,6 +77,16 @@ def reset_data():
     storage.reset_user_data()
     return {"status": "reset", "message": "All data cleared"}
 
+@router.post("/settings/load-demo-data")
+def load_demo_data():
+    """Load 2000+ German demo deals into the database."""
+    try:
+        from services.mock_generator import generate_mock_data
+        count = generate_mock_data(2000)
+        return {"status": "ok", "message": f"Successfully loaded {count} demo deals"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 @router.post("/chat")
 def chat_with_chef(req: ChatRequest):
     active_deals = storage.get_active_deals()

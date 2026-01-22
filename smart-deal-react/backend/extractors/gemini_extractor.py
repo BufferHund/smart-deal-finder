@@ -164,6 +164,8 @@ Return ONLY the JSON array, no other text or explanation."""
             'discount': deal_data.get('discount'),
             'unit': deal_data.get('unit'),
             'original_price': deal_data.get('original_price'),
+            'category': deal_data.get('category', 'Other'),
+            'image_url': None, # Placeholder for Phase 8.1
             'confidence': 0.95,  # Gemini is generally high confidence
             'source': 'gemini',
             'model': model
