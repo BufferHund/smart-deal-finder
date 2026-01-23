@@ -48,7 +48,7 @@ The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv
 
 We have prepared the materials (products crawled from internet) for you to generate, you only need to run the generation code.
 ```bash
-python3 synthesis_flyer.py --num_flyer (necessary parameter: how many flyers you want to generate)
+python3 synthesis_flyer.py --num_flyers (necessary parameter: how many flyers you want to generate)
 ```
 
 ## Annotation Methods
