@@ -163,7 +163,12 @@ def resolve_image_path(image_dir: Path, stem: str) -> Path | None:
     return None
 
 
-def run_prebench(repo_dir: Path, data_root: Path, label: str) -> None:
+def run_prebench(
+    repo_dir: Path,
+    data_root: Path,
+    label: str,
+    lora_path: Path | None = None,
+) -> None:
     print(f"[PREBENCH] Running {label} evaluation...")
     output_dir = repo_dir / OUTPUT_DIR / "prebench_inline"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -176,6 +181,13 @@ def run_prebench(repo_dir: Path, data_root: Path, label: str) -> None:
         load_in_4bit=True,
         use_gradient_checkpointing="unsloth",
     )
+    if lora_path is not None and lora_path.exists():
+        try:
+            from peft import PeftModel
+            model = PeftModel.from_pretrained(model, str(lora_path))
+            print(f"[PREBENCH] Loaded LoRA adapter: {lora_path}")
+        except Exception as exc:
+            print(f"[WARN] Failed to load LoRA adapter at {lora_path}: {exc}")
     FastVisionModel.for_inference(model)
 
     samples = build_samples(data_root, BENCH_MAX_SAMPLES)
@@ -955,7 +967,8 @@ def main() -> None:
     tokenizer.save_pretrained(str(repo_dir / "lora_model_qwen3_vl"))
 
     if RUN_POSTBENCH:
-        run_prebench(repo_dir, data_root, "after training")
+        lora_path = repo_dir / "lora_model_qwen3_vl"
+        run_prebench(repo_dir, data_root, "after training", lora_path)
 
 
 if __name__ == "__main__":
