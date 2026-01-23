@@ -35,6 +35,8 @@ RUN_GENERATE_EVAL = True
 RUN_GENERATE_EVAL_BEFORE = False
 GENERATE_EVAL_MAX_SAMPLES = 20
 GENERATE_EVAL_MAX_NEW_TOKENS = 512
+DIAG_VERBOSE = True
+DIAG_MAX_SAMPLES = 3
 
 # Data behavior
 USE_PAGE_LEVEL = True  # True: full page -> list of deals; False: crop each bbox -> single deal
@@ -371,8 +373,19 @@ def run_prebench(
         "name_accuracy": 0.0,
         "price_accuracy": 0.0,
         "unit_accuracy": 0.0,
+        "avg_gt_deals": 0.0,
+        "avg_pred_deals": 0.0,
+        "avg_pred_chars": 0.0,
+        "avg_pred_tokens": 0.0,
+        "empty_pred_rate": 0.0,
+        "empty_gt_rate": 0.0,
     }
     json_ok = 0
+    empty_pred = 0
+    empty_gt = 0
+    pred_chars_sum = 0
+    pred_tokens_sum = 0
+    diag_samples: List[Dict[str, Any]] = []
 
     with log_path.open("w", encoding="utf-8") as log_f:
         for idx, sample in enumerate(samples, start=1):
@@ -426,6 +439,26 @@ def run_prebench(
             agg["name_accuracy"] += metrics["name_accuracy"]
             agg["price_accuracy"] += metrics["price_accuracy"]
             agg["unit_accuracy"] += metrics["unit_accuracy"]
+            agg["avg_gt_deals"] += metrics["gt_total"]
+            agg["avg_pred_deals"] += metrics["pred_total"]
+            pred_chars_sum += len(pred_text)
+            pred_tokens_sum += len(gen_ids)
+            if metrics["pred_total"] == 0:
+                empty_pred += 1
+            if metrics["gt_total"] == 0:
+                empty_gt += 1
+            if DIAG_VERBOSE and len(diag_samples) < DIAG_MAX_SAMPLES:
+                if not metrics["json_parse_ok"] or metrics["pred_total"] == 0:
+                    diag_samples.append(
+                        {
+                            "index": idx,
+                            "json_parse_ok": metrics["json_parse_ok"],
+                            "gt_total": metrics["gt_total"],
+                            "pred_total": metrics["pred_total"],
+                            "prediction_head": pred_text[:400],
+                            "ground_truth_head": target_text[:400],
+                        }
+                    )
 
             log_record = {
                 "index": idx,
@@ -456,11 +489,23 @@ def run_prebench(
         agg["name_accuracy"] /= denom
         agg["price_accuracy"] /= denom
         agg["unit_accuracy"] /= denom
+        agg["avg_gt_deals"] /= denom
+        agg["avg_pred_deals"] /= denom
+        agg["avg_pred_chars"] = pred_chars_sum / denom
+        agg["avg_pred_tokens"] = pred_tokens_sum / denom
+        agg["empty_pred_rate"] = empty_pred / denom
+        agg["empty_gt_rate"] = empty_gt / denom
 
     with summary_path.open("w", encoding="utf-8") as f:
-        json.dump(agg, f, ensure_ascii=False, indent=2)
+        payload = {"summary": agg}
+        if DIAG_VERBOSE and diag_samples:
+            payload["diagnostics"] = diag_samples
+        json.dump(payload, f, ensure_ascii=False, indent=2)
     print("Prebench summary:")
     print(json.dumps(agg, ensure_ascii=False, indent=2))
+    if DIAG_VERBOSE and diag_samples:
+        print("Prebench diagnostics (samples):")
+        print(json.dumps(diag_samples, ensure_ascii=False, indent=2))
 
 
 def run_generate_eval(
@@ -498,8 +543,19 @@ def run_generate_eval(
         "name_accuracy": 0.0,
         "price_accuracy": 0.0,
         "unit_accuracy": 0.0,
+        "avg_gt_deals": 0.0,
+        "avg_pred_deals": 0.0,
+        "avg_pred_chars": 0.0,
+        "avg_pred_tokens": 0.0,
+        "empty_pred_rate": 0.0,
+        "empty_gt_rate": 0.0,
     }
     json_ok = 0
+    empty_pred = 0
+    empty_gt = 0
+    pred_chars_sum = 0
+    pred_tokens_sum = 0
+    diag_samples: List[Dict[str, Any]] = []
 
     with log_path.open("w", encoding="utf-8") as log_f:
         for idx in range(eval_count):
@@ -554,6 +610,26 @@ def run_generate_eval(
             agg["name_accuracy"] += metrics["name_accuracy"]
             agg["price_accuracy"] += metrics["price_accuracy"]
             agg["unit_accuracy"] += metrics["unit_accuracy"]
+            agg["avg_gt_deals"] += metrics["gt_total"]
+            agg["avg_pred_deals"] += metrics["pred_total"]
+            pred_chars_sum += len(pred_text)
+            pred_tokens_sum += len(gen_ids)
+            if metrics["pred_total"] == 0:
+                empty_pred += 1
+            if metrics["gt_total"] == 0:
+                empty_gt += 1
+            if DIAG_VERBOSE and len(diag_samples) < DIAG_MAX_SAMPLES:
+                if not metrics["json_parse_ok"] or metrics["pred_total"] == 0:
+                    diag_samples.append(
+                        {
+                            "index": idx + 1,
+                            "json_parse_ok": metrics["json_parse_ok"],
+                            "gt_total": metrics["gt_total"],
+                            "pred_total": metrics["pred_total"],
+                            "prediction_head": pred_text[:400],
+                            "ground_truth_head": target_text[:400],
+                        }
+                    )
 
             log_record = {
                 "index": idx + 1,
@@ -584,11 +660,23 @@ def run_generate_eval(
         agg["name_accuracy"] /= denom
         agg["price_accuracy"] /= denom
         agg["unit_accuracy"] /= denom
+        agg["avg_gt_deals"] /= denom
+        agg["avg_pred_deals"] /= denom
+        agg["avg_pred_chars"] = pred_chars_sum / denom
+        agg["avg_pred_tokens"] = pred_tokens_sum / denom
+        agg["empty_pred_rate"] = empty_pred / denom
+        agg["empty_gt_rate"] = empty_gt / denom
 
     with summary_path.open("w", encoding="utf-8") as f:
-        json.dump(agg, f, ensure_ascii=False, indent=2)
+        payload = {"summary": agg}
+        if DIAG_VERBOSE and diag_samples:
+            payload["diagnostics"] = diag_samples
+        json.dump(payload, f, ensure_ascii=False, indent=2)
     print("Generate eval summary:")
     print(json.dumps(agg, ensure_ascii=False, indent=2))
+    if DIAG_VERBOSE and diag_samples:
+        print("Generate eval diagnostics (samples):")
+        print(json.dumps(diag_samples, ensure_ascii=False, indent=2))
 
     FastVisionModel.for_training(model)
 
@@ -830,6 +918,8 @@ def main() -> None:
         f"Train size: {len(train_dataset)} | "
         f"Eval size: {len(eval_dataset) if eval_dataset is not None else 0}"
     )
+    if eval_dataset is not None and len(eval_dataset) < 20:
+        print(f"[WARN] Eval set is small ({len(eval_dataset)}). Metrics may be noisy.")
 
     model, tokenizer = FastVisionModel.from_pretrained(
         MODEL_ID,

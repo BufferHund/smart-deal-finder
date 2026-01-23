@@ -54,6 +54,8 @@ Each `*.json` is a list of deal objects with `bbox` and fields.
 - `BENCH_MAX_NEW_TOKENS` caps generation length in prebench.
 - `RUN_GENERATE_EVAL` runs generate-based eval on the validation split.
 - `GENERATE_EVAL_MAX_SAMPLES` limits validation eval size.
+- `DIAG_VERBOSE` enables compact diagnostics (sampled failures).
+- `DIAG_MAX_SAMPLES` caps the number of diagnostic examples logged.
 
 ### Why the prebench exists
 Trainer metrics do not use generate-by-default in this setup, so they can be misleading.
@@ -90,6 +92,7 @@ You may see metrics like 0.5 if the eval set is tiny. Increase:
 - Generate-eval logs:
   - `outputs_qwen3_vl/generate_eval/*.jsonl`
   - `outputs_qwen3_vl/generate_eval/*_summary.json`
+- Diagnostics (if enabled) are embedded in the summary JSON under `diagnostics`.
 
 ## Metrics glossary
 - **deal_retrieval_rate**: recall over ground-truth deals.
