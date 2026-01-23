@@ -52,10 +52,13 @@ Each `*.json` is a list of deal objects with `bbox` and fields.
 - `RUN_PREBENCH`, `RUN_POSTBENCH` control pre/post evaluation.
 - `BENCH_MAX_SAMPLES` limits how many pages are benchmarked.
 - `BENCH_MAX_NEW_TOKENS` caps generation length in prebench.
+- `RUN_GENERATE_EVAL` runs generate-based eval on the validation split.
+- `GENERATE_EVAL_MAX_SAMPLES` limits validation eval size.
 
 ### Why the prebench exists
 Trainer metrics do not use generate-by-default in this setup, so they can be misleading.
 The prebench runs real generation and parses the JSON output to compute practical metrics.
+Generate-eval uses the validation split and also relies on generation, so it is more reliable than trainer metrics.
 
 ## Tier 3: Advanced Notes and Tuning
 
@@ -84,6 +87,9 @@ You may see metrics like 0.5 if the eval set is tiny. Increase:
 - Prebench logs:
   - `outputs_qwen3_vl/prebench_inline/*.jsonl`
   - `outputs_qwen3_vl/prebench_inline/*_summary.json`
+- Generate-eval logs:
+  - `outputs_qwen3_vl/generate_eval/*.jsonl`
+  - `outputs_qwen3_vl/generate_eval/*_summary.json`
 
 ## Metrics glossary
 - **deal_retrieval_rate**: recall over ground-truth deals.

@@ -28,9 +28,13 @@ PREBENCH_SCRIPT = "qwen3_vl_(8b)_vision_supermarket_prebench.py"
 RUN_PREBENCH = True
 RUN_POSTBENCH = True
 PREDICT_WITH_GENERATE = True
-EVAL_DEBUG_SAMPLES = 2
+EVAL_DEBUG_SAMPLES = 0
 BENCH_MAX_SAMPLES = 10
 BENCH_MAX_NEW_TOKENS = 512
+RUN_GENERATE_EVAL = True
+RUN_GENERATE_EVAL_BEFORE = False
+GENERATE_EVAL_MAX_SAMPLES = 20
+GENERATE_EVAL_MAX_NEW_TOKENS = 512
 
 # Data behavior
 USE_PAGE_LEVEL = True  # True: full page -> list of deals; False: crop each bbox -> single deal
@@ -163,6 +167,165 @@ def resolve_image_path(image_dir: Path, stem: str) -> Path | None:
     return None
 
 
+def _parse_json_from_text(text: str) -> Any | None:
+    if not text:
+        return None
+    try:
+        return json.loads(text)
+    except Exception:
+        pass
+    candidates: List[str] = []
+    for m in re.finditer(r"\[.*?\]", text, flags=re.DOTALL):
+        candidates.append(m.group(0))
+    for m in re.finditer(r"\{.*?\}", text, flags=re.DOTALL):
+        candidates.append(m.group(0))
+    for cand in reversed(candidates):
+        try:
+            return json.loads(cand)
+        except Exception:
+            continue
+    return None
+
+
+def _normalize_eval_text(text: Any) -> str:
+    if text is None:
+        return ""
+    return re.sub(r"\s+", " ", str(text)).strip().lower()
+
+
+def _token_set_similarity(a: str, b: str) -> float:
+    tokens_a = set(re.findall(r"[a-z0-9]+", a.lower()))
+    tokens_b = set(re.findall(r"[a-z0-9]+", b.lower()))
+    if not tokens_a and not tokens_b:
+        return 1.0
+    if not tokens_a or not tokens_b:
+        return 0.0
+    intersection = tokens_a & tokens_b
+    union = tokens_a | tokens_b
+    return len(intersection) / len(union)
+
+
+def _name_similarity(a: str, b: str) -> float:
+    norm_a = _normalize_eval_text(a)
+    norm_b = _normalize_eval_text(b)
+    seq = difflib.SequenceMatcher(None, norm_a, norm_b).ratio()
+    tok = _token_set_similarity(norm_a, norm_b)
+    sub = 0.0
+    if len(norm_a) >= MIN_NAME_LEN and len(norm_b) >= MIN_NAME_LEN:
+        if norm_a in norm_b or norm_b in norm_a:
+            sub = 0.9
+    return max(seq, tok, sub)
+
+
+def _normalize_unit_eval(text: Any) -> str:
+    s = _normalize_eval_text(text)
+    if not s:
+        return ""
+    if re.fullmatch(r"[0-9]+([.,][0-9]+)?", s):
+        return ""
+    if "€" in s or "eur" in s:
+        return ""
+    s = re.sub(r"(kg[- ]?preis|price per kg|preis/kg|€/kg|eur/kg|/kg)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
+    s = re.sub(r"(l[- ]?preis|price per l|preis/l|€/l|eur/l|/l)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
+    s = s.replace("stück", "stk").replace("stueck", "stk").replace("stuck", "stk").replace("piece", "stk")
+    s = s.replace("packung", "pack").replace("pk", "pack")
+    s = s.replace("liter", "l").replace("milliliter", "ml").replace("gramm", "g")
+    s = s.replace("kilogramm", "kg")
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def _ensure_list(obj: Any) -> List[Dict[str, Any]]:
+    if isinstance(obj, list):
+        return [o for o in obj if isinstance(o, dict)]
+    if isinstance(obj, dict):
+        return [obj]
+    return []
+
+
+def _match_deals(
+    gt_list: List[Dict[str, Any]],
+    pred_list: List[Dict[str, Any]],
+) -> List[Tuple[int, int, float]]:
+    matches: List[Tuple[int, int, float]] = []
+    used_pred = set()
+    for gi, gt in enumerate(gt_list):
+        gt_name = gt.get("product_name")
+        best = (-1, 0.0)
+        for pi, pred in enumerate(pred_list):
+            if pi in used_pred:
+                continue
+            sim = _name_similarity(gt_name, pred.get("product_name"))
+            if sim > best[1]:
+                best = (pi, sim)
+        if best[0] != -1 and best[1] >= NAME_SIM_THRESHOLD:
+            used_pred.add(best[0])
+            matches.append((gi, best[0], best[1]))
+    return matches
+
+
+def _score_prediction_lists(
+    gt_list: List[Dict[str, Any]],
+    pred_list: List[Dict[str, Any]],
+) -> Dict[str, float]:
+    matches = _match_deals(gt_list, pred_list)
+    matched_count = len(matches)
+    pred_total = len(pred_list)
+    gt_total = len(gt_list)
+    price_correct = 0
+    unit_correct = 0
+    e2e_correct = 0
+
+    for gi, pi, _ in matches:
+        gt = gt_list[gi]
+        pred = pred_list[pi]
+
+        gt_price = _parse_number(gt.get("price"))
+        pred_price = _parse_number(pred.get("price"))
+        price_ok = (
+            gt_price is not None
+            and pred_price is not None
+            and abs(gt_price - pred_price) <= NUMERIC_TOLERANCE
+        )
+        if price_ok:
+            price_correct += 1
+
+        gt_unit = _normalize_unit_eval(gt.get("unit"))
+        pred_unit = _normalize_unit_eval(pred.get("unit"))
+        if not gt_unit or not pred_unit:
+            unit_ok = True
+        else:
+            unit_ok = _token_set_similarity(gt_unit, pred_unit) >= UNIT_SIM_THRESHOLD
+        if unit_ok:
+            unit_correct += 1
+
+        if price_ok and unit_ok:
+            e2e_correct += 1
+
+    precision = matched_count / pred_total if pred_total else 0.0
+    recall = matched_count / gt_total if gt_total else 0.0
+    f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0
+
+    return {
+        "gt_total": gt_total,
+        "pred_total": pred_total,
+        "matched_count": matched_count,
+        "price_correct_count": price_correct,
+        "unit_correct_count": unit_correct,
+        "e2e_correct_count": e2e_correct,
+        "deal_retrieval_rate": recall,
+        "precision": precision,
+        "f1": f1,
+        "overprediction_rate": (pred_total - matched_count) / pred_total if pred_total else 0.0,
+        "price_reliability": price_correct / matched_count if matched_count else 0.0,
+        "safe_deal_rate": e2e_correct / gt_total if gt_total else 0.0,
+        "end_to_end_recall": e2e_correct / gt_total if gt_total else 0.0,
+        "name_accuracy": recall,
+        "price_accuracy": price_correct / gt_total if gt_total else 0.0,
+        "unit_accuracy": unit_correct / gt_total if gt_total else 0.0,
+    }
+
+
 def run_prebench(
     repo_dir: Path,
     data_root: Path,
@@ -194,96 +357,6 @@ def run_prebench(
     if not samples:
         print("[WARN] Prebench: no samples found.")
         return
-
-    def _parse_json(text: str) -> Any | None:
-        if not text:
-            return None
-        try:
-            return json.loads(text)
-        except Exception:
-            pass
-        candidates: List[str] = []
-        for m in re.finditer(r"\[.*?\]", text, flags=re.DOTALL):
-            candidates.append(m.group(0))
-        for m in re.finditer(r"\{.*?\}", text, flags=re.DOTALL):
-            candidates.append(m.group(0))
-        for cand in reversed(candidates):
-            try:
-                return json.loads(cand)
-            except Exception:
-                continue
-        return None
-
-    def _normalize_eval_text(text: Any) -> str:
-        if text is None:
-            return ""
-        return re.sub(r"\s+", " ", str(text)).strip().lower()
-
-    def _token_set_similarity(a: str, b: str) -> float:
-        tokens_a = set(re.findall(r"[a-z0-9]+", a.lower()))
-        tokens_b = set(re.findall(r"[a-z0-9]+", b.lower()))
-        if not tokens_a and not tokens_b:
-            return 1.0
-        if not tokens_a or not tokens_b:
-            return 0.0
-        intersection = tokens_a & tokens_b
-        union = tokens_a | tokens_b
-        return len(intersection) / len(union)
-
-    def _name_similarity(a: str, b: str) -> float:
-        norm_a = _normalize_eval_text(a)
-        norm_b = _normalize_eval_text(b)
-        seq = difflib.SequenceMatcher(None, norm_a, norm_b).ratio()
-        tok = _token_set_similarity(norm_a, norm_b)
-        sub = 0.0
-        if len(norm_a) >= MIN_NAME_LEN and len(norm_b) >= MIN_NAME_LEN:
-            if norm_a in norm_b or norm_b in norm_a:
-                sub = 0.9
-        return max(seq, tok, sub)
-
-    def _normalize_unit_eval(text: Any) -> str:
-        s = _normalize_eval_text(text)
-        if not s:
-            return ""
-        if re.fullmatch(r"[0-9]+([.,][0-9]+)?", s):
-            return ""
-        if "€" in s or "eur" in s:
-            return ""
-        s = re.sub(r"(kg[- ]?preis|price per kg|preis/kg|€/kg|eur/kg|/kg)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
-        s = re.sub(r"(l[- ]?preis|price per l|preis/l|€/l|eur/l|/l)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
-        s = s.replace("stück", "stk").replace("stueck", "stk").replace("stuck", "stk").replace("piece", "stk")
-        s = s.replace("packung", "pack").replace("pk", "pack")
-        s = s.replace("liter", "l").replace("milliliter", "ml").replace("gramm", "g")
-        s = s.replace("kilogramm", "kg")
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
-
-    def _ensure_list(obj: Any) -> List[Dict[str, Any]]:
-        if isinstance(obj, list):
-            return [o for o in obj if isinstance(o, dict)]
-        if isinstance(obj, dict):
-            return [obj]
-        return []
-
-    def _match_deals(
-        gt_list: List[Dict[str, Any]],
-        pred_list: List[Dict[str, Any]],
-    ) -> List[Tuple[int, int, float]]:
-        matches: List[Tuple[int, int, float]] = []
-        used_pred = set()
-        for gi, gt in enumerate(gt_list):
-            gt_name = gt.get("product_name")
-            best = (-1, 0.0)
-            for pi, pred in enumerate(pred_list):
-                if pi in used_pred:
-                    continue
-                sim = _name_similarity(gt_name, pred.get("product_name"))
-                if sim > best[1]:
-                    best = (pi, sim)
-            if best[0] != -1 and best[1] >= NAME_SIM_THRESHOLD:
-                used_pred.add(best[0])
-                matches.append((gi, best[0], best[1]))
-        return matches
 
     agg = {
         "total_samples": 0,
@@ -333,66 +406,12 @@ def run_prebench(
             gen_ids = output_ids[0][input_len:]
             pred_text = tokenizer.decode(gen_ids, skip_special_tokens=True)
 
-            label_obj = _parse_json(target_text)
-            pred_obj = _parse_json(pred_text)
+            label_obj = _parse_json_from_text(target_text)
+            pred_obj = _parse_json_from_text(pred_text)
             gt_list = _ensure_list(label_obj)
             pred_list = _ensure_list(pred_obj)
-            matches = _match_deals(gt_list, pred_list)
-
-            deal_retrieved = len(matches)
-            matched_count = len(matches)
-            pred_total = len(pred_list)
-            gt_total = len(gt_list)
-            price_correct = 0
-            unit_correct = 0
-            e2e_correct = 0
-
-            for gi, pi, _ in matches:
-                gt = gt_list[gi]
-                pred = pred_list[pi]
-
-                gt_price = _parse_number(gt.get("price"))
-                pred_price = _parse_number(pred.get("price"))
-                price_ok = (
-                    gt_price is not None
-                    and pred_price is not None
-                    and abs(gt_price - pred_price) <= NUMERIC_TOLERANCE
-                )
-                if price_ok:
-                    price_correct += 1
-
-                gt_unit = _normalize_unit_eval(gt.get("unit"))
-                pred_unit = _normalize_unit_eval(pred.get("unit"))
-                if not gt_unit or not pred_unit:
-                    unit_ok = True
-                else:
-                    unit_ok = _token_set_similarity(gt_unit, pred_unit) >= UNIT_SIM_THRESHOLD
-                if unit_ok:
-                    unit_correct += 1
-
-                if price_ok and unit_ok:
-                    e2e_correct += 1
-
-            precision = matched_count / pred_total if pred_total else 0.0
-            recall = deal_retrieved / gt_total if gt_total else 0.0
-            f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0
-
-            metrics = {
-                "json_parse_ok": pred_obj is not None,
-                "gt_total": gt_total,
-                "pred_total": pred_total,
-                "matched_count": matched_count,
-                "deal_retrieval_rate": recall,
-                "precision": precision,
-                "f1": f1,
-                "overprediction_rate": (pred_total - matched_count) / pred_total if pred_total else 0.0,
-                "price_reliability": price_correct / matched_count if matched_count else 0.0,
-                "safe_deal_rate": e2e_correct / gt_total if gt_total else 0.0,
-                "end_to_end_recall": e2e_correct / gt_total if gt_total else 0.0,
-                "name_accuracy": recall,
-                "price_accuracy": price_correct / gt_total if gt_total else 0.0,
-                "unit_accuracy": unit_correct / gt_total if gt_total else 0.0,
-            }
+            metrics = _score_prediction_lists(gt_list, pred_list)
+            metrics["json_parse_ok"] = pred_obj is not None
 
             agg["total_samples"] += 1
             if metrics["json_parse_ok"]:
@@ -442,6 +461,136 @@ def run_prebench(
         json.dump(agg, f, ensure_ascii=False, indent=2)
     print("Prebench summary:")
     print(json.dumps(agg, ensure_ascii=False, indent=2))
+
+
+def run_generate_eval(
+    model,
+    tokenizer,
+    dataset: Dataset | None,
+    label: str,
+    output_dir: Path,
+    max_samples: int,
+    max_new_tokens: int,
+) -> None:
+    if dataset is None or len(dataset) == 0:
+        print(f"[GENEVAL] Skipping {label}: no eval dataset.")
+        return
+
+    output_dir = output_dir / "generate_eval"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    log_path = output_dir / f"geneval_{label.replace(' ', '_')}.jsonl"
+    summary_path = output_dir / f"geneval_{label.replace(' ', '_')}_summary.json"
+
+    eval_count = min(max_samples, len(dataset))
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    FastVisionModel.for_inference(model)
+
+    agg = {
+        "total_samples": 0,
+        "json_parse_rate": 0.0,
+        "deal_retrieval_rate": 0.0,
+        "precision": 0.0,
+        "f1": 0.0,
+        "overprediction_rate": 0.0,
+        "price_reliability": 0.0,
+        "safe_deal_rate": 0.0,
+        "end_to_end_recall": 0.0,
+        "name_accuracy": 0.0,
+        "price_accuracy": 0.0,
+        "unit_accuracy": 0.0,
+    }
+    json_ok = 0
+
+    with log_path.open("w", encoding="utf-8") as log_f:
+        for idx in range(eval_count):
+            sample = dataset[idx]
+            prompt_text = sample["messages"][0]["content"][0]["text"]
+            image = sample["messages"][0]["content"][1]["image"]
+            target_text = sample["messages"][1]["content"][0]["text"]
+
+            messages = [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt_text},
+                        {"type": "image", "image": image},
+                    ],
+                }
+            ]
+            input_text = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
+            inputs = tokenizer(
+                image,
+                input_text,
+                add_special_tokens=False,
+                return_tensors="pt",
+            ).to(device)
+            input_len = int(inputs["input_ids"].shape[-1])
+            with torch.inference_mode():
+                output_ids = model.generate(
+                    **inputs,
+                    max_new_tokens=max_new_tokens,
+                    use_cache=True,
+                )
+            gen_ids = output_ids[0][input_len:]
+            pred_text = tokenizer.decode(gen_ids, skip_special_tokens=True)
+
+            label_obj = _parse_json_from_text(target_text)
+            pred_obj = _parse_json_from_text(pred_text)
+            gt_list = _ensure_list(label_obj)
+            pred_list = _ensure_list(pred_obj)
+            metrics = _score_prediction_lists(gt_list, pred_list)
+            metrics["json_parse_ok"] = pred_obj is not None
+
+            agg["total_samples"] += 1
+            if metrics["json_parse_ok"]:
+                json_ok += 1
+            agg["deal_retrieval_rate"] += metrics["deal_retrieval_rate"]
+            agg["precision"] += metrics["precision"]
+            agg["f1"] += metrics["f1"]
+            agg["overprediction_rate"] += metrics["overprediction_rate"]
+            agg["price_reliability"] += metrics["price_reliability"]
+            agg["safe_deal_rate"] += metrics["safe_deal_rate"]
+            agg["end_to_end_recall"] += metrics["end_to_end_recall"]
+            agg["name_accuracy"] += metrics["name_accuracy"]
+            agg["price_accuracy"] += metrics["price_accuracy"]
+            agg["unit_accuracy"] += metrics["unit_accuracy"]
+
+            log_record = {
+                "index": idx + 1,
+                "prompt": prompt_text,
+                "ground_truth": target_text,
+                "prediction": pred_text,
+                "metrics": metrics,
+            }
+            log_f.write(json.dumps(log_record, ensure_ascii=False) + "\n")
+            log_f.flush()
+            print(
+                f"[GENEVAL {idx + 1}/{eval_count}] "
+                f"recall={metrics['deal_retrieval_rate']:.3f} "
+                f"precision={metrics['precision']:.3f} "
+                f"safe_deal={metrics['safe_deal_rate']:.3f}"
+            )
+
+    if agg["total_samples"] > 0:
+        denom = agg["total_samples"]
+        agg["json_parse_rate"] = json_ok / denom
+        agg["deal_retrieval_rate"] /= denom
+        agg["precision"] /= denom
+        agg["f1"] /= denom
+        agg["overprediction_rate"] /= denom
+        agg["price_reliability"] /= denom
+        agg["safe_deal_rate"] /= denom
+        agg["end_to_end_recall"] /= denom
+        agg["name_accuracy"] /= denom
+        agg["price_accuracy"] /= denom
+        agg["unit_accuracy"] /= denom
+
+    with summary_path.open("w", encoding="utf-8") as f:
+        json.dump(agg, f, ensure_ascii=False, indent=2)
+    print("Generate eval summary:")
+    print(json.dumps(agg, ensure_ascii=False, indent=2))
+
+    FastVisionModel.for_training(model)
 
 
 def clamp(v: float, lo: float, hi: float) -> float:
@@ -689,7 +838,7 @@ def main() -> None:
     )
     print(f"Model: {MODEL_ID}")
     if PREDICT_WITH_GENERATE:
-        print("[WARN] SFTConfig does not support predict_with_generate; using prebench for generate-based eval.")
+        print("[WARN] Trainer eval metrics are disabled; using generate-based eval instead.")
 
     model = FastVisionModel.get_peft_model(
         model,
@@ -714,111 +863,16 @@ def main() -> None:
         print(sample_preview[:600])
         print("Target preview:")
         print(target_preview[:600])
-
-    def _parse_json_from_text(text: str) -> Any | None:
-        if not text:
-            return None
-        try:
-            return json.loads(text)
-        except Exception:
-            pass
-        candidates: List[str] = []
-        for m in re.finditer(r"\[.*?\]", text, flags=re.DOTALL):
-            candidates.append(m.group(0))
-        for m in re.finditer(r"\{.*?\}", text, flags=re.DOTALL):
-            candidates.append(m.group(0))
-        for cand in reversed(candidates):
-            try:
-                return json.loads(cand)
-            except Exception:
-                continue
-        return None
-
-    def _parse_number(value: Any) -> float | None:
-        if value is None:
-            return None
-        if isinstance(value, (int, float)):
-            return float(value)
-        if isinstance(value, str):
-            cleaned = value.replace(",", ".")
-            match = re.search(r"-?\d+(?:\.\d+)?", cleaned)
-            if match:
-                try:
-                    return float(match.group(0))
-                except Exception:
-                    return None
-        return None
-
-    def _normalize_text(text: Any) -> str:
-        if text is None:
-            return ""
-        return re.sub(r"\s+", " ", str(text)).strip().lower()
-
-    def _token_set_similarity(a: str, b: str) -> float:
-        tokens_a = set(re.findall(r"[a-z0-9]+", a.lower()))
-        tokens_b = set(re.findall(r"[a-z0-9]+", b.lower()))
-        if not tokens_a and not tokens_b:
-            return 1.0
-        if not tokens_a or not tokens_b:
-            return 0.0
-        intersection = tokens_a & tokens_b
-        union = tokens_a | tokens_b
-        return len(intersection) / len(union)
-
-    def _name_similarity(a: str, b: str) -> float:
-        norm_a = _normalize_text(a)
-        norm_b = _normalize_text(b)
-        seq = difflib.SequenceMatcher(None, norm_a, norm_b).ratio()
-        tok = _token_set_similarity(norm_a, norm_b)
-        sub = 0.0
-        if len(norm_a) >= MIN_NAME_LEN and len(norm_b) >= MIN_NAME_LEN:
-            if norm_a in norm_b or norm_b in norm_a:
-                sub = 0.9
-        return max(seq, tok, sub)
-
-    def _normalize_unit(text: Any) -> str:
-        s = _normalize_text(text).lower()
-        if not s:
-            return ""
-        if re.fullmatch(r"[0-9]+([.,][0-9]+)?", s):
-            return ""
-        if "€" in s or "eur" in s:
-            return ""
-        s = re.sub(r"(kg[- ]?preis|price per kg|preis/kg|€/kg|eur/kg|/kg)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
-        s = re.sub(r"(l[- ]?preis|price per l|preis/l|€/l|eur/l|/l)\s*[-:]?\s*[0-9]+([.,][0-9]+)?", "", s)
-        s = s.replace("stück", "stk").replace("stueck", "stk").replace("stuck", "stk").replace("piece", "stk")
-        s = s.replace("packung", "pack").replace("pk", "pack")
-        s = s.replace("liter", "l").replace("milliliter", "ml").replace("gramm", "g")
-        s = s.replace("kilogramm", "kg")
-        s = re.sub(r"\s+", " ", s).strip()
-        return s
-
-    def _ensure_list(obj: Any) -> List[Dict[str, Any]]:
-        if isinstance(obj, list):
-            return [o for o in obj if isinstance(o, dict)]
-        if isinstance(obj, dict):
-            return [obj]
-        return []
-
-    def _match_deals(
-        gt_list: List[Dict[str, Any]],
-        pred_list: List[Dict[str, Any]],
-    ) -> List[Tuple[int, int, float]]:
-        matches: List[Tuple[int, int, float]] = []
-        used_pred = set()
-        for gi, gt in enumerate(gt_list):
-            gt_name = gt.get("product_name")
-            best = (-1, 0.0)
-            for pi, pred in enumerate(pred_list):
-                if pi in used_pred:
-                    continue
-                sim = _name_similarity(gt_name, pred.get("product_name"))
-                if sim > best[1]:
-                    best = (pi, sim)
-            if best[0] != -1 and best[1] >= NAME_SIM_THRESHOLD:
-                used_pred.add(best[0])
-                matches.append((gi, best[0], best[1]))
-        return matches
+    if RUN_GENERATE_EVAL and RUN_GENERATE_EVAL_BEFORE:
+        run_generate_eval(
+            model,
+            tokenizer,
+            eval_dataset,
+            "before training",
+            repo_dir / OUTPUT_DIR,
+            GENERATE_EVAL_MAX_SAMPLES,
+            GENERATE_EVAL_MAX_NEW_TOKENS,
+        )
 
     def compute_metrics(eval_pred):
         logits, labels = eval_pred
@@ -874,38 +928,15 @@ def main() -> None:
 
             gt_list = _ensure_list(label_obj)
             pred_list = _ensure_list(pred_obj)
+            metrics = _score_prediction_lists(gt_list, pred_list)
 
-            matches = _match_deals(gt_list, pred_list)
-            gt_total_sum += len(gt_list)
-            matched_count += len(matches)
-            deal_retrieved += len(matches)
-            pred_total_sum += len(pred_list)
-
-            for gi, pi, _ in matches:
-                gt = gt_list[gi]
-                pred = pred_list[pi]
-
-                gt_price = _parse_number(gt.get("price"))
-                pred_price = _parse_number(pred.get("price"))
-                price_ok = (
-                    gt_price is not None
-                    and pred_price is not None
-                    and abs(gt_price - pred_price) <= NUMERIC_TOLERANCE
-                )
-                if price_ok:
-                    price_correct += 1
-
-                gt_unit = _normalize_unit(gt.get("unit"))
-                pred_unit = _normalize_unit(pred.get("unit"))
-                if not gt_unit or not pred_unit:
-                    unit_ok = True
-                else:
-                    unit_ok = _token_set_similarity(gt_unit, pred_unit) >= UNIT_SIM_THRESHOLD
-                if unit_ok:
-                    unit_correct += 1
-
-                if price_ok and unit_ok:
-                    e2e_correct += 1
+            gt_total_sum += metrics["gt_total"]
+            matched_count += metrics["matched_count"]
+            deal_retrieved += metrics["matched_count"]
+            pred_total_sum += metrics["pred_total"]
+            price_correct += metrics["price_correct_count"]
+            unit_correct += metrics["unit_correct_count"]
+            e2e_correct += metrics["e2e_correct_count"]
             if EVAL_DEBUG_SAMPLES and idx < EVAL_DEBUG_SAMPLES:
                 print(f"[EVAL DEBUG {idx}] label_text={label_text_raw[:400]}")
                 print(f"[EVAL DEBUG {idx}] pred_text={pred_text_raw[:400]}")
@@ -945,7 +976,7 @@ def main() -> None:
         dataset_kwargs={"skip_prepare_dataset": True},
         max_length=MAX_LENGTH,
     )
-    if eval_dataset is not None:
+    if eval_dataset is not None and not PREDICT_WITH_GENERATE:
         config_kwargs["eval_strategy"] = "steps"
         config_kwargs["eval_steps"] = stage["eval_steps"]
     else:
@@ -957,11 +988,22 @@ def main() -> None:
         data_collator=UnslothVisionDataCollator(model, tokenizer),
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
-        compute_metrics=compute_metrics if eval_dataset is not None else None,
+        compute_metrics=compute_metrics if (eval_dataset is not None and not PREDICT_WITH_GENERATE) else None,
         args=SFTConfig(**config_kwargs),
     )
 
     trainer.train()
+
+    if RUN_GENERATE_EVAL:
+        run_generate_eval(
+            model,
+            tokenizer,
+            eval_dataset,
+            "after training",
+            repo_dir / OUTPUT_DIR,
+            GENERATE_EVAL_MAX_SAMPLES,
+            GENERATE_EVAL_MAX_NEW_TOKENS,
+        )
 
     model.save_pretrained(str(repo_dir / "lora_model_qwen3_vl"))
     tokenizer.save_pretrained(str(repo_dir / "lora_model_qwen3_vl"))
