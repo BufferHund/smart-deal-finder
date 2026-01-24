@@ -1,5 +1,6 @@
 import os
 import sys
+import io
 import json
 import math
 import random
@@ -167,6 +168,19 @@ def resolve_image_path(image_dir: Path, stem: str) -> Path | None:
         if candidate.exists():
             return candidate
     return None
+
+
+def _coerce_image(image: Any) -> Image.Image:
+    if isinstance(image, Image.Image):
+        return image.convert("RGB")
+    if isinstance(image, dict):
+        if "image" in image and isinstance(image["image"], Image.Image):
+            return image["image"].convert("RGB")
+        if "path" in image:
+            return Image.open(image["path"]).convert("RGB")
+        if "bytes" in image:
+            return Image.open(io.BytesIO(image["bytes"])).convert("RGB")
+    raise TypeError(f"Unsupported image type for eval: {type(image)}")
 
 
 def _parse_json_from_text(text: str) -> Any | None:
@@ -390,7 +404,7 @@ def run_prebench(
     with log_path.open("w", encoding="utf-8") as log_f:
         for idx, sample in enumerate(samples, start=1):
             prompt_text = sample["messages"][0]["content"][0]["text"]
-            image = sample["messages"][0]["content"][1]["image"]
+            image = _coerce_image(sample["messages"][0]["content"][1]["image"])
             target_text = sample["messages"][1]["content"][0]["text"]
 
             messages = [
@@ -561,7 +575,7 @@ def run_generate_eval(
         for idx in range(eval_count):
             sample = dataset[idx]
             prompt_text = sample["messages"][0]["content"][0]["text"]
-            image = sample["messages"][0]["content"][1]["image"]
+            image = _coerce_image(sample["messages"][0]["content"][1]["image"])
             target_text = sample["messages"][1]["content"][0]["text"]
 
             messages = [
