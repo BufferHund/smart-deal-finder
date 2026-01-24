@@ -170,17 +170,17 @@ def resolve_image_path(image_dir: Path, stem: str) -> Path | None:
     return None
 
 
-def _coerce_image(image: Any) -> Image.Image:
+def _coerce_image(image: Any) -> Image.Image | None:
     if isinstance(image, Image.Image):
         return image.convert("RGB")
     if isinstance(image, dict):
         if "image" in image and isinstance(image["image"], Image.Image):
             return image["image"].convert("RGB")
-        if "path" in image:
+        if "path" in image and image["path"]:
             return Image.open(image["path"]).convert("RGB")
-        if "bytes" in image:
+        if "bytes" in image and image["bytes"]:
             return Image.open(io.BytesIO(image["bytes"])).convert("RGB")
-    raise TypeError(f"Unsupported image type for eval: {type(image)}")
+    return None
 
 
 def _parse_json_from_text(text: str) -> Any | None:
@@ -376,6 +376,7 @@ def run_prebench(
 
     agg = {
         "total_samples": 0,
+        "input_samples": 0,
         "json_parse_rate": 0.0,
         "deal_retrieval_rate": 0.0,
         "precision": 0.0,
@@ -393,19 +394,46 @@ def run_prebench(
         "avg_pred_tokens": 0.0,
         "empty_pred_rate": 0.0,
         "empty_gt_rate": 0.0,
+        "skipped_bad_images": 0,
+        "bad_image_rate": 0.0,
     }
     json_ok = 0
     empty_pred = 0
     empty_gt = 0
+    bad_image = 0
     pred_chars_sum = 0
     pred_tokens_sum = 0
     diag_samples: List[Dict[str, Any]] = []
 
     with log_path.open("w", encoding="utf-8") as log_f:
+        agg["input_samples"] = len(samples)
         for idx, sample in enumerate(samples, start=1):
             prompt_text = sample["messages"][0]["content"][0]["text"]
             image = _coerce_image(sample["messages"][0]["content"][1]["image"])
             target_text = sample["messages"][1]["content"][0]["text"]
+            if image is None:
+                bad_image += 1
+                if DIAG_VERBOSE and len(diag_samples) < DIAG_MAX_SAMPLES:
+                    diag_samples.append(
+                        {
+                            "index": idx,
+                            "reason": "bad_image",
+                            "prompt_head": prompt_text[:200],
+                        }
+                    )
+                log_f.write(
+                    json.dumps(
+                        {
+                            "index": idx,
+                            "error": "bad_image",
+                            "prompt_head": prompt_text[:200],
+                        },
+                        ensure_ascii=False,
+                    )
+                    + "\n"
+                )
+                log_f.flush()
+                continue
 
             messages = [
                 {
@@ -509,6 +537,9 @@ def run_prebench(
         agg["avg_pred_tokens"] = pred_tokens_sum / denom
         agg["empty_pred_rate"] = empty_pred / denom
         agg["empty_gt_rate"] = empty_gt / denom
+    if agg["input_samples"]:
+        agg["skipped_bad_images"] = bad_image
+        agg["bad_image_rate"] = bad_image / agg["input_samples"]
 
     with summary_path.open("w", encoding="utf-8") as f:
         payload = {"summary": agg}
@@ -546,6 +577,7 @@ def run_generate_eval(
 
     agg = {
         "total_samples": 0,
+        "input_samples": 0,
         "json_parse_rate": 0.0,
         "deal_retrieval_rate": 0.0,
         "precision": 0.0,
@@ -563,20 +595,47 @@ def run_generate_eval(
         "avg_pred_tokens": 0.0,
         "empty_pred_rate": 0.0,
         "empty_gt_rate": 0.0,
+        "skipped_bad_images": 0,
+        "bad_image_rate": 0.0,
     }
     json_ok = 0
     empty_pred = 0
     empty_gt = 0
+    bad_image = 0
     pred_chars_sum = 0
     pred_tokens_sum = 0
     diag_samples: List[Dict[str, Any]] = []
 
     with log_path.open("w", encoding="utf-8") as log_f:
+        agg["input_samples"] = eval_count
         for idx in range(eval_count):
             sample = dataset[idx]
             prompt_text = sample["messages"][0]["content"][0]["text"]
             image = _coerce_image(sample["messages"][0]["content"][1]["image"])
             target_text = sample["messages"][1]["content"][0]["text"]
+            if image is None:
+                bad_image += 1
+                if DIAG_VERBOSE and len(diag_samples) < DIAG_MAX_SAMPLES:
+                    diag_samples.append(
+                        {
+                            "index": idx + 1,
+                            "reason": "bad_image",
+                            "prompt_head": prompt_text[:200],
+                        }
+                    )
+                log_f.write(
+                    json.dumps(
+                        {
+                            "index": idx + 1,
+                            "error": "bad_image",
+                            "prompt_head": prompt_text[:200],
+                        },
+                        ensure_ascii=False,
+                    )
+                    + "\n"
+                )
+                log_f.flush()
+                continue
 
             messages = [
                 {
@@ -680,6 +739,9 @@ def run_generate_eval(
         agg["avg_pred_tokens"] = pred_tokens_sum / denom
         agg["empty_pred_rate"] = empty_pred / denom
         agg["empty_gt_rate"] = empty_gt / denom
+    if agg["input_samples"]:
+        agg["skipped_bad_images"] = bad_image
+        agg["bad_image_rate"] = bad_image / agg["input_samples"]
 
     with summary_path.open("w", encoding="utf-8") as f:
         payload = {"summary": agg}
