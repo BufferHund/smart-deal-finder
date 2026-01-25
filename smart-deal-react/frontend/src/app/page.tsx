@@ -4,15 +4,16 @@ import { Card, CardBody, CardFooter, Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from '../components/Navbar';
+import { BarChart3, ShoppingBag } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-hidden flex flex-col">
+    <div className="dark min-h-screen relative overflow-hidden flex flex-col bg-background text-foreground">
       <Navbar />
 
       {/* Abstract Background Orbs */}
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[120px]" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-pink-600/30 rounded-full blur-[120px]" />
+      {/* Clean Background - Removing Orbs */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background" />
 
       <main className="flex-grow flex items-center justify-center p-6 pt-24 z-10">
         <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
@@ -26,7 +27,7 @@ export default function Home() {
             >
               <h1 className="text-6xl md:text-7xl font-black text-white leading-tight">
                 Shopping <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
+                <span className="text-indigo-500 dark:text-indigo-400">
                   Reimagined
                 </span>
               </h1>
@@ -78,8 +79,8 @@ export default function Home() {
               <Link href="/admin">
                 <Card className="glass-card py-4 cursor-pointer group">
                   <CardBody className="flex flex-row items-center gap-6 p-6">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                      📊
+                    <div className="h-16 w-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                      <BarChart3 className="w-8 h-8 text-indigo-500 dark:text-indigo-400" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-1">Upload & Extract</h3>
@@ -99,8 +100,8 @@ export default function Home() {
               <Link href="/shopper">
                 <Card className="glass-card py-4 cursor-pointer group">
                   <CardBody className="flex flex-row items-center gap-6 p-6">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                      🛍️
+                    <div className="h-16 w-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                      <ShoppingBag className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-1">Smart Shopping</h3>

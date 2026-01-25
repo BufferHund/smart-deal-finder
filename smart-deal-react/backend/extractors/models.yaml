@@ -40,6 +40,35 @@ models:
     requires:
       - google-generativeai
       - api_key
+      
+  gemini_flash_lite:
+    name: "Gemini 2.5 Flash Lite"
+    type: "ai"
+    architecture: "ocr_free"
+    source: "web_api"
+    description: "Ultra-fast, cost-effective model (Benchmark Winner)"
+    accuracy: 0.96
+    speed: "instant"
+    cost: "€0.002/page"
+    model_id: "gemini-2.5-flash-lite"
+    requires:
+      - google-generativeai
+      - api_key
+
+  gemini_pro:
+    name: "Gemini 2.5 Pro"
+    type: "ai"
+    architecture: "ocr_free"
+    source: "web_api"
+    description: "High-intelligence model for complex layouts (Benchmark Runner-up)"
+    accuracy: 0.99
+    speed: "fast"
+    cost: "€0.01/page"
+    model_id: "gemini-2.5-pro"
+    requires:
+      - google-generativeai
+      - api_key
+
 
   # Ollama VLM models (End-to-End OCR Free + Local)
   ollama_qwen25vl:

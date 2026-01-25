@@ -6,10 +6,10 @@ import hashlib
 import numpy as np
 from PIL import Image
 from typing import List, Optional, Any
-from extractors.gemini_extractor import extract_with_gemini
-from preprocessing.pdf_processor import convert_pdf_to_images
+from services.model_router import extract_deals, ExtractionMethod
 from services import storage
 from db import db
+from datetime import datetime
 
 router = APIRouter()
 
@@ -41,11 +41,13 @@ async def upload_file(
     file: UploadFile = File(...),
     store_name: str = Form("Unknown Store"),
     visibility: str = Form("public"),
-    force_refresh: str = Form("false")
+    force_refresh: str = Form("false"),
+    extraction_method: str = Form("gemini"),
+    model_id: str = Form(None)
 ):
     # Manual conversion because FormData sends booleans as strings "true"/"false"
     is_force_refresh = force_refresh.lower() == "true"
-    print(f"DEBUG: Upload request received. File: {file.filename}, Raw Refresh Param: '{force_refresh}', Parsed: {is_force_refresh}")
+    print(f"DEBUG: Upload request received. File: {file.filename}, Method: {extraction_method}, Model: {model_id}")
 
     # 1. Save upload temporarily to calculate hash
     UPLOAD_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "uploads")
@@ -96,7 +98,24 @@ async def upload_file(
         else:
              upload_id = None
 
-        # 3. Not in Cache -> Process File
+        # --- 3. Handle Markdown (Knowledge Base) ---
+        if file.filename.lower().endswith(".md"):
+            KB_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "knowledge_base")
+            os.makedirs(KB_DIR, exist_ok=True)
+            kb_path = os.path.join(KB_DIR, file.filename)
+            
+            # Save file
+            shutil.copyfile(file_path, kb_path)
+            print(f"DEBUG: Saved Knowledge Base file: {kb_path}")
+            
+            return {
+                "deals": [], # No structured deals
+                "num_deals": 0,
+                "cached": False,
+                # Hack: Add extra field if frontend can handle it, otherwise empty deals is fine signal for now
+            }
+
+        # 3. Not in Cache -> Process File (Images/PDF)
         image_array = None
         if file.filename.lower().endswith(".pdf"):
             images = convert_pdf_to_images(file_path)
@@ -110,16 +129,21 @@ async def upload_file(
             raise HTTPException(400, "Could not process file as image or PDF")
 
         # 4. Get API Key
-        api_key = storage.get_api_key()
-        if not api_key:
-             api_key = os.getenv("GOOGLE_API_KEY")
-             if not api_key:
-                 raise HTTPException(400, "Gemini API Key not set.")
+        # 4. Determine Method
+        try:
+            method_enum = ExtractionMethod(extraction_method)
+        except ValueError:
+            method_enum = ExtractionMethod.GEMINI # Default fallback
+            
+        print(f"DEBUG: Starting extraction for file: {file.filename} using {method_enum.value} ({model_id or 'default'})")
 
-        print(f"DEBUG: Starting extraction for file: {file.filename}")
-
-        # 5. Extract
-        result = extract_with_gemini(image_array, api_key=api_key)
+        # 5. Extract via Router
+        result = await extract_deals(
+            file_path=file_path, 
+            store_name=store_name, 
+            method=method_enum,
+            model_id=model_id
+        )
         deals = result.get('deals', [])
         
         print(f"DEBUG: Extraction complete. Found {len(deals)} deals.")

@@ -65,10 +65,10 @@ class DatabaseManager:
                     CREATE TABLE IF NOT EXISTS deals (
                         id INT AUTO_INCREMENT PRIMARY KEY,
                         upload_id INT,
-                        product_name VARCHAR(255),
+                        product_name VARCHAR(500),
                         price DECIMAL(10, 2),
-                        original_price VARCHAR(50),
-                        unit VARCHAR(50),
+                        original_price VARCHAR(100),
+                        unit VARCHAR(255),
                         store VARCHAR(100),
                         confidence FLOAT,
                         source VARCHAR(50),
@@ -115,6 +115,31 @@ class DatabaseManager:
                         is_active BOOLEAN DEFAULT TRUE,
                         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
                     )
+                    """,
+                    """
+                    CREATE TABLE IF NOT EXISTS ai_audit_logs (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        feature VARCHAR(50),
+                        model VARCHAR(50),
+                        prompt_chars INT,
+                        image_present BOOLEAN DEFAULT FALSE,
+                        response_chars INT,
+                        tokens_used INT DEFAULT 0,
+                        cost_usd FLOAT DEFAULT 0.0,
+                        latency_ms INT DEFAULT 0,
+                        status VARCHAR(20),
+                        error_msg TEXT,
+                        raw_input MEDIUMTEXT,
+                        raw_output MEDIUMTEXT
+                    )
+                    """,
+                    """
+                    CREATE TABLE IF NOT EXISTS system_settings (
+                        setting_key VARCHAR(50) PRIMARY KEY,
+                        setting_value VARCHAR(255),
+                        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                    )
                     """
                 ]
                 
@@ -142,6 +167,14 @@ class DatabaseManager:
                 except pymysql.Error:
                     # Column likely missing, add it
                     cursor.execute("ALTER TABLE loyalty_cards ADD COLUMN card_format VARCHAR(50) DEFAULT 'BARCODE'")
+                
+                # Expand deals columns if they are old size
+                try:
+                    cursor.execute("ALTER TABLE deals MODIFY COLUMN unit VARCHAR(255)")
+                    cursor.execute("ALTER TABLE deals MODIFY COLUMN original_price VARCHAR(100)")
+                    cursor.execute("ALTER TABLE deals MODIFY COLUMN product_name VARCHAR(500)")
+                except pymysql.Error as e:
+                    print(f"Migration Note (Deals): {e}")
         finally:
             conn.close()
 

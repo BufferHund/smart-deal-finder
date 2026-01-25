@@ -1,24 +1,62 @@
 """
 Route Planning API for Smart Shopping Route Optimizer.
-Provides endpoints for planning optimized shopping routes based on cart items and location.
+Uses same category-based smart matching as optimization.
 """
 from fastapi import APIRouter, HTTPException, Body
 from typing import List, Dict, Optional
 from pydantic import BaseModel
 from services import storage
-from services.rag_service import (
-    find_product_matches,
-    find_alternatives,
-    calculate_store_value
-)
+from services.rag_service import find_product_matches
 import math
+import re
 
 router = APIRouter(prefix="/api/route", tags=["route"])
 
+# Category keywords (same as shopping.py)
+CATEGORY_KEYWORDS = {
+    "Fruit & Veg": ["apple", "banana", "orange", "tomato", "potato", "carrot", "onion", "lettuce", "cucumber", "pepper", "lemon", "avocado", "spinach", "broccoli", "fruit", "vegetable", "salad", "berry"],
+    "Meat & Fish": ["chicken", "beef", "pork", "fish", "salmon", "tuna", "sausage", "bacon", "ham", "meat", "steak", "ground", "fillet", "shrimp"],
+    "Dairy": ["milk", "cheese", "yogurt", "butter", "cream", "egg", "eggs", "dairy", "joghurt"],
+    "Bakery": ["bread", "roll", "bun", "croissant", "cake", "pastry", "bagel", "toast"],
+    "Drinks": ["water", "juice", "cola", "soda", "beer", "wine", "coffee", "tea", "drink", "beverage"],
+    "Snacks": ["chips", "chocolate", "candy", "cookie", "biscuit", "nuts", "snack", "ice cream"],
+    "Household": ["soap", "detergent", "paper", "tissue", "cleaner", "shampoo", "toothpaste"]
+}
+
+def guess_category(item: str) -> str:
+    item_lower = item.lower()
+    for category, keywords in CATEGORY_KEYWORDS.items():
+        for kw in keywords:
+            if kw in item_lower:
+                return category
+    return "Other"
+
+def parse_unit_price(deal: Dict) -> float:
+    try:
+        price = float(deal.get('price', 0))
+        unit = deal.get('unit', '').lower()
+        if 'kg' in unit:
+            return price
+        elif 'g' in unit:
+            match = re.search(r'(\d+)\s*g', unit)
+            if match:
+                grams = int(match.group(1))
+                return (price / grams) * 1000
+        return price
+    except:
+        return 999.0
+
+class StoreLocation(BaseModel):
+    name: str
+    type: Optional[str] = "Supermarket"
+    lat: float
+    lng: float
+
 class RoutePlanRequest(BaseModel):
     items: List[str]
-    location: List[float]  # [lat, lng]
+    location: List[float]
     max_distance_km: float = 5.0
+    available_stores: List[StoreLocation] = []
 
 class AlternativeRequest(BaseModel):
     item: str
@@ -27,71 +65,36 @@ class AlternativeRequest(BaseModel):
 
 class RouteConfirmRequest(BaseModel):
     selected_stores: List[str]
-    substitutions: List[Dict] = []  # [{original: str, replacement: str, store: str}]
-
-# German supermarket locations (mock data - in production would use Overpass API)
-STORE_LOCATIONS = {
-    "Rewe": {"lat": 52.5200, "lng": 13.4050},
-    "Lidl": {"lat": 52.5180, "lng": 13.4100},
-    "Aldi": {"lat": 52.5220, "lng": 13.4000},
-    "Edeka": {"lat": 52.5150, "lng": 13.4150},
-    "Penny": {"lat": 52.5250, "lng": 13.3950},
-    "Netto": {"lat": 52.5100, "lng": 13.4200},
-    "Kaufland": {"lat": 52.5300, "lng": 13.3900},
-}
+    substitutions: List[Dict] = []
 
 def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    """Calculate distance between two points in km using Haversine formula"""
-    R = 6371  # Earth radius in km
-    
-    lat1_rad = math.radians(lat1)
-    lat2_rad = math.radians(lat2)
+    R = 6371
+    lat1_rad, lat2_rad = math.radians(lat1), math.radians(lat2)
     delta_lat = math.radians(lat2 - lat1)
     delta_lon = math.radians(lon2 - lon1)
-    
     a = math.sin(delta_lat/2)**2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(delta_lon/2)**2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
-    
-    return R * c
-
-def get_store_distance(store_name: str, user_lat: float, user_lng: float) -> float:
-    """Get distance to a store from user location"""
-    # Try to find store in our location map
-    for key, coords in STORE_LOCATIONS.items():
-        if key.lower() in store_name.lower():
-            return haversine_distance(user_lat, user_lng, coords["lat"], coords["lng"])
-    # Default distance if store not found
-    return 2.0
+    return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
 
 @router.post("/plan")
 async def plan_route(request: RoutePlanRequest):
-    """
-    Generate an optimized shopping route based on cart items and user location.
-    
-    Returns:
-    - recommended_stores: Stores worth visiting with their matches
-    - not_recommended: Stores not worth the trip (with reasons)
-    - total_savings: Estimated total savings
-    - route_order: Optimized order to visit stores (TSP-like)
-    """
+    """Smart route planning with category-based matching."""
     items = request.items
     user_lat, user_lng = request.location
     max_distance = request.max_distance_km
+    available_stores = request.available_stores
     
     if not items:
-        raise HTTPException(status_code=400, detail="No items in cart")
+        raise HTTPException(400, "No items in cart")
     
-    # Get all active deals
-    deals_data = storage.get_active_deals()
-    all_deals = deals_data.get("deals", [])
+    all_deals = storage.get_active_deals().get("deals", [])
     
     if not all_deals:
         return {
             "status": "no_deals",
-            "message": "No deals available. Please upload some brochures first.",
+            "message": "No deals available.",
             "recommended_stores": [],
-            "not_recommended": [],
-            "total_savings": 0
+            "items_not_found": items,
+            "alternatives": []
         }
     
     # Group deals by store
@@ -102,133 +105,159 @@ async def plan_route(request: RoutePlanRequest):
             stores_deals[store] = []
         stores_deals[store].append(deal)
     
-    # For each store, find matching products and calculate value
     store_results = []
+    all_found_items = set()
+    category_alternatives = []
     
-    for store, deals in stores_deals.items():
-        # Calculate distance
-        distance = get_store_distance(store, user_lat, user_lng)
+    for store_name, deals in stores_deals.items():
+        # Find store distance
+        distance = 999.0
+        store_loc = None
+        
+        for s in available_stores:
+            if s.name.lower() in store_name.lower() or store_name.lower() in s.name.lower() or (s.type and s.type.lower() in store_name.lower()):
+                dist = haversine_distance(user_lat, user_lng, s.lat, s.lng)
+                if dist < distance:
+                    distance = dist
+                    store_loc = s
+        
         if distance > max_distance:
             continue
         
-        # Find matches for all items at this store
-        all_matches = []
-        matched_items = set()
+        # Match items with 0.6 threshold (strict)
+        matches = []
+        total_price = 0.0
         
         for item in items:
-            matches = find_product_matches(item, deals, threshold=0.4)
-            if matches:
-                # Take best match for each item
-                best = matches[0]
-                if best['_matched_item'] not in matched_items:
-                    all_matches.append(best)
-                    matched_items.add(best['_matched_item'])
+            product_matches = find_product_matches(item, deals, threshold=0.6)
+            
+            if product_matches:
+                best = product_matches[0]
+                price = float(best.get('price', 0))
+                matches.append({
+                    "item": item,
+                    "product": best.get('product_name'),
+                    "price": price,
+                    "match_type": "exact"
+                })
+                total_price += price
+                all_found_items.add(item)
         
-        # Calculate store value
-        value = calculate_store_value(store, all_matches, distance)
-        
-        # Add coordinates
-        coords = STORE_LOCATIONS.get(store, {})
-        if not coords:
-             # Try Partial Match
-             for k, v in STORE_LOCATIONS.items():
-                 if k.lower() in store.lower():
-                     coords = v
-                     break
-        
-        value['lat'] = coords.get('lat', 0.0)
-        value['lng'] = coords.get('lng', 0.0)
-        
-        store_results.append(value)
+        if matches:
+            result = {
+                "store": store_name,
+                "match_count": len(matches),
+                "total_price": round(total_price, 2),
+                "distance_km": round(distance, 1),
+                "matches": matches,
+                "worthwhile": len(matches) >= 2 or len(matches) == len(items),
+                "score": len(matches) * 10 - distance
+            }
+            if store_loc:
+                result["lat"] = store_loc.lat
+                result["lng"] = store_loc.lng
+            store_results.append(result)
     
-    # Separate into recommended and not recommended
+    # Category fallback for not-found items
+    not_found = [item for item in items if item not in all_found_items]
+    
+    for item in not_found:
+        item_category = guess_category(item)
+        if item_category == "Other":
+            continue
+            
+        category_deals = [d for d in all_deals if d.get('category') == item_category]
+        if category_deals:
+            category_deals.sort(key=lambda d: parse_unit_price(d))
+            best = category_deals[0]
+            category_alternatives.append({
+                "original_item": item,
+                "suggestion": best.get('product_name'),
+                "price": best.get('price'),
+                "store": best.get('store'),
+                "reason": f"Cheapest {item_category}"
+            })
+    
+    # Sort stores by score
+    store_results.sort(key=lambda x: -x['score'])
+    
     recommended = [s for s in store_results if s['worthwhile']]
     not_recommended = [s for s in store_results if not s['worthwhile']]
     
-    # Sort recommended by score
-    recommended.sort(key=lambda x: -x['score'])
+    # Route order (simple greedy)
+    route_order = []
+    if recommended:
+        remaining = recommended.copy()
+        curr_lat, curr_lng = user_lat, user_lng
+        while remaining:
+            def dist_to(s):
+                return haversine_distance(curr_lat, curr_lng, s.get('lat', user_lat), s.get('lng', user_lng))
+            nearest = min(remaining, key=dist_to)
+            route_order.append(nearest['store'])
+            remaining.remove(nearest)
+            curr_lat = nearest.get('lat', curr_lat)
+            curr_lng = nearest.get('lng', curr_lng)
     
-    # Optimize route order (simple greedy TSP)
-    if len(recommended) > 1:
-        route_order = optimize_route_order(recommended, user_lat, user_lng)
-    else:
-        route_order = [s['store'] for s in recommended]
-    
-    # Calculate totals
-    total_savings = sum(s['total_savings'] for s in recommended)
-    total_items = sum(s['match_count'] for s in recommended)
+    # Smart recommendation
+    recommendation = ""
+    if recommended:
+        best = recommended[0]
+        recommendation = f"🏆 Start at {best['store']} ({best['match_count']} items, {best['distance_km']}km away)"
+    if category_alternatives:
+        recommendation += f" | 💡 {len(category_alternatives)} alternatives available"
+    if not_found and not category_alternatives:
+        recommendation += f" | ❌ {len(not_found)} items not found this week"
     
     return {
         "status": "success",
         "recommended_stores": recommended,
         "not_recommended": not_recommended,
         "route_order": route_order,
-        "total_savings": round(total_savings, 2),
-        "total_items_found": total_items,
-        "items_not_found": [i for i in items if not any(
-            i in str(s.get('matches', [])) for s in recommended
-        )]
+        "total_items_found": len(all_found_items),
+        "items_not_found": [i for i in not_found if i not in [a['original_item'] for a in category_alternatives]],
+        "alternatives": category_alternatives,
+        "recommendation": recommendation
     }
-
-def optimize_route_order(stores: List[Dict], start_lat: float, start_lng: float) -> List[str]:
-    """
-    Simple greedy TSP: Start from user, always go to nearest unvisited store.
-    """
-    remaining = stores.copy()
-    order = []
-    current_lat, current_lng = start_lat, start_lng
-    
-    while remaining:
-        # Find nearest store
-        nearest = min(remaining, key=lambda s: get_store_distance(s['store'], current_lat, current_lng))
-        order.append(nearest['store'])
-        remaining.remove(nearest)
-        # Update current position
-        store_coords = STORE_LOCATIONS.get(nearest['store'], {"lat": current_lat, "lng": current_lng})
-        current_lat, current_lng = store_coords.get("lat", current_lat), store_coords.get("lng", current_lng)
-    
-    return order
 
 @router.post("/alternatives")
 async def get_alternatives(request: AlternativeRequest):
-    """
-    Find alternative products for an item, excluding certain stores.
-    
-    Returns alternatives sorted by:
-    1. Same product at different stores
-    2. Same category products
-    """
+    """Find alternative products using category matching."""
     item = request.item
-    category = request.category
     excluded_stores = request.excluded_stores
     
-    # Get all deals
-    deals_data = storage.get_active_deals()
-    all_deals = deals_data.get("deals", [])
+    all_deals = storage.get_active_deals().get("deals", [])
+    item_category = guess_category(item)
     
-    alternatives = find_alternatives(item, category, excluded_stores, all_deals, limit=10)
+    # Same product at other stores
+    same_product = []
+    for deal in all_deals:
+        if deal.get('store') in excluded_stores:
+            continue
+        matches = find_product_matches(item, [deal], threshold=0.6)
+        if matches:
+            same_product.append(matches[0])
     
-    # Group by type
-    same_product = [a for a in alternatives if a.get('_alt_type') == 'same_product']
-    same_category = [a for a in alternatives if a.get('_alt_type') == 'same_category']
+    # Same category alternatives
+    same_category = []
+    if item_category != "Other":
+        category_deals = [d for d in all_deals 
+                         if d.get('category') == item_category 
+                         and d.get('store') not in excluded_stores]
+        category_deals.sort(key=lambda d: parse_unit_price(d))
+        same_category = category_deals[:5]
     
     return {
         "item": item,
-        "same_product_alternatives": same_product,
+        "category": item_category,
+        "same_product_alternatives": same_product[:5],
         "same_category_alternatives": same_category,
-        "total_alternatives": len(alternatives)
+        "total_alternatives": len(same_product) + len(same_category)
     }
 
 @router.post("/confirm")
 async def confirm_route(request: RouteConfirmRequest):
-    """
-    Confirm the selected route and apply any substitutions to the shopping list.
-    """
-    selected_stores = request.selected_stores
-    substitutions = request.substitutions
-    
-    # Apply substitutions to shopping list
-    for sub in substitutions:
+    """Confirm route and apply substitutions."""
+    for sub in request.substitutions:
         original = sub.get('original')
         replacement = sub.get('replacement')
         if original and replacement:
@@ -240,7 +269,7 @@ async def confirm_route(request: RouteConfirmRequest):
     
     return {
         "status": "confirmed",
-        "selected_stores": selected_stores,
-        "substitutions_applied": len(substitutions),
-        "message": f"Route confirmed! Visit {len(selected_stores)} store(s)."
+        "selected_stores": request.selected_stores,
+        "substitutions_applied": len(request.substitutions),
+        "message": f"Route confirmed! Visit {len(request.selected_stores)} store(s)."
     }

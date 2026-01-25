@@ -1,85 +1,53 @@
 """
 Service for AI-powered meal planning and recipe generation.
-Uses Google Gemini to create recipes based on available deals.
+Uses unified AI client for retry, caching, and cost tracking.
 """
-import os
-import json
-import google.generativeai as genai
+import asyncio
 from typing import Dict, List, Any
+from services.ai_client import get_ai_client
 from services.history import PriceHistoryService
 
 history_service = PriceHistoryService()
 
-# Configure API
-def get_configured_key():
-    """Get API key from environment or storage."""
-    env_key = os.getenv("GOOGLE_API_KEY")
-    if env_key:
-        return env_key
-    
-    # Try dynamic import to avoid circular dependency issues if running standalone
-    try:
-        from services import storage
-        return storage.get_api_key()
-    except ImportError:
-        # Fallback for relative import
-        try:
-            import sys
-            sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-            from src.services import storage
-            return storage.get_api_key()
-        except:
-            return None
 
 class ChefService:
+    """AI-powered chef for meal suggestions and recipe generation."""
+    
     def __init__(self):
-        self.reload_model()
-
-    def reload_model(self):
-        """Reload model with current API key."""
-        api_key = get_configured_key()
-        if api_key:
-            genai.configure(api_key=api_key)
-            self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
-        else:
-            self.model = None
-
-    def suggest_menu_from_deals(self, deals: List[Dict]) -> Dict:
+        self.client = get_ai_client()
+    
+    async def suggest_menu_from_deals_async(self, deals: List[Dict]) -> Dict:
         """
         Suggest a menu based on the provided list of deals.
         Returns JSON with menu name, description, usage of deals, and savings.
         """
-        if not self.model:
+        if not deals:
             return self._mock_menu_suggestion()
 
-        # Prepare context for LLM
-        deal_summary = "\n".join([f"- {d['product']} (€{d['price']})" for d in deals[:15]])
+        deal_summary = "\n".join([f"- {d.get('product', d.get('product_name', 'Item'))} (€{d.get('price', '?')})" for d in deals[:15]])
         
-        prompt = f"""
-        You are a smart budget chef. Here are the current supermarket deals:
-        {deal_summary}
-        
-        Suggest ONE delicious dinner menu that uses as many of these deals as possible.
-        Return ONLY valid JSON (no markdown) with this structure:
-        {{
-            "name": "Dish Name",
-            "description": "Short appetizing description",
-            "key_ingredients": ["list", "of", "ingredients", "from", "deals"],
-            "total_estimated_cost": 0.00,
-            "savings_note": "Why this is a good deal"
-        }}
-        """
+        prompt = f"""You are a smart budget chef. Here are the current supermarket deals:
+{deal_summary}
+
+Suggest ONE delicious dinner menu that uses as many of these deals as possible.
+Return ONLY valid JSON (no markdown) with this structure:
+{{
+    "name": "Dish Name",
+    "description": "Short appetizing description",
+    "key_ingredients": ["list", "of", "ingredients", "from", "deals"],
+    "total_estimated_cost": 0.00,
+    "savings_note": "Why this is a good deal"
+}}"""
         
         try:
-            response = self.model.generate_content(prompt)
-            print(f"DEBUG: Gemini Menu Response: {response.text}") # Debug log
-            
-            # Simple cleanup if the model returns markdown code blocks
-            text = response.text.replace("```json", "").replace("```", "").strip()
-            return json.loads(text)
+            result = await self.client.generate_json(
+                prompt=prompt,
+                model="gemini-2.5-flash",
+                feature="chef_menu"
+            )
+            return result
         except Exception as e:
             print(f"Error generating menu: {e}")
-            # return self._mock_menu_suggestion()
             return {
                 "name": "Error Generating Menu",
                 "description": f"Could not generate menu: {str(e)}",
@@ -87,54 +55,72 @@ class ChefService:
                 "total_estimated_cost": 0.00,
                 "savings_note": "Please check API Key and logs."
             }
-
-    def generate_recipe_steps(self, dish_name: str) -> Dict:
-        """
-        Generate detailed cooking steps for a specific dish.
-        """
-        if not self.model:
-            return self._mock_recipe_steps(dish_name)
-            
-        prompt = f"""
-        Create a simple recipe for "{dish_name}".
-        Return ONLY valid JSON (no markdown) with this structure:
-        {{
-            "ingredients": ["item 1", "item 2"],
-            "steps": ["Step 1", "Step 2", "Step 3"],
-            "prep_time": "15 mins",
-            "cooking_time": "20 mins"
-        }}
-        """
+    
+    def suggest_menu_from_deals(self, deals: List[Dict]) -> Dict:
+        """Synchronous wrapper for backward compatibility."""
         try:
-            response = self.model.generate_content(prompt)
-            text = response.text.replace("```json", "").replace("```", "").strip()
-            return json.loads(text)
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # If already in async context, create new task
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    future = pool.submit(asyncio.run, self.suggest_menu_from_deals_async(deals))
+                    return future.result()
+            else:
+                return loop.run_until_complete(self.suggest_menu_from_deals_async(deals))
+        except RuntimeError:
+            return asyncio.run(self.suggest_menu_from_deals_async(deals))
+
+    async def generate_recipe_steps_async(self, dish_name: str) -> Dict:
+        """Generate detailed cooking steps for a specific dish."""
+        prompt = f"""Create a simple recipe for "{dish_name}".
+Return ONLY valid JSON (no markdown) with this structure:
+{{
+    "ingredients": ["item 1", "item 2"],
+    "steps": ["Step 1", "Step 2", "Step 3"],
+    "prep_time": "15 mins",
+    "cooking_time": "20 mins"
+}}"""
+        
+        try:
+            return await self.client.generate_json(
+                prompt=prompt,
+                model="gemini-2.5-flash",
+                feature="chef_recipe"
+            )
         except Exception as e:
             print(f"Error generating recipe: {e}")
-            # return self._mock_recipe_steps(dish_name)
             return {
                 "ingredients": [],
                 "steps": [f"Error: {str(e)}"],
                 "prep_time": "-",
                 "cooking_time": "-"
             }
+    
+    def generate_recipe_steps(self, dish_name: str) -> Dict:
+        """Synchronous wrapper for backward compatibility."""
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    future = pool.submit(asyncio.run, self.generate_recipe_steps_async(dish_name))
+                    return future.result()
+            else:
+                return loop.run_until_complete(self.generate_recipe_steps_async(dish_name))
+        except RuntimeError:
+            return asyncio.run(self.generate_recipe_steps_async(dish_name))
+    
     def plan_meal(self, dish_name: str) -> Dict:
-        """
-        Create a meal plan with ingredients matched to best deals.
-        """
-        # 1. Ask Gemini for ingredients
+        """Create a meal plan with ingredients matched to best deals."""
         recipe_data = self.generate_recipe_steps(dish_name)
         ingredients = recipe_data.get('ingredients', [])
         
-        # 2. Match ingredients to History/Deals
         shopping_list_with_deals = []
         total_estimated = 0.0
         
         for item in ingredients:
-            # Clean item string (e.g. "200g Pasta" -> "Pasta")
-            # Simple heuristic: remove numbers/units, or just fuzzy match whole string
             clean_item = item.split(' ')[-1] if ' ' in item else item
-            
             best_deal = history_service.get_best_price_for_ingredient(clean_item)
             
             entry = {
@@ -159,8 +145,9 @@ class ChefService:
             "shopping_list": shopping_list_with_deals,
             "total_estimated": round(total_estimated, 2)
         }
+    
     def _mock_menu_suggestion(self):
-        """Fallback mock data if API fails"""
+        """Fallback mock data if no deals available."""
         return {
             "name": "Mock Mediterranean Pasta",
             "description": "A classic pasta dish using on-sale tomatoes and fresh herbs.",

@@ -4,8 +4,8 @@
 @config "../../tailwind.config.ts";
 
 @theme {
-  --color-background: #0f0c29;
-  --color-foreground: #ffffff;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --font-inter: Inter, sans-serif;
 }
 
@@ -35,16 +35,26 @@
 }
 
 :root {
-  --background: #0f0c29;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #09090b;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
 }
 
 body {
   color: var(--foreground);
-  background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
-  background-attachment: fixed;
+  background: var(--background);
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
+}
+
+.dark body {
+  /* Professional Dark: Slate 950 base */
+  background-color: #020617;
+  background-image: none;
 }
 
 /* Custom Scrollbar */

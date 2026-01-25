@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
+import { Tags } from "lucide-react";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -31,9 +32,9 @@ export default function Navbar() {
                     className="sm:hidden text-white"
                 />
                 <NavbarBrand>
-                    <Link href="/" className="font-bold text-inherit hover:opacity-80 transition-opacity">
-                        <span className="text-3xl mr-2 filter drop-shadow-lg">🏷️</span>
-                        <span className="text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 font-extrabold">
+                    <Link href="/" className="font-bold text-inherit hover:opacity-80 transition-opacity flex items-center">
+                        <Tags className="w-7 h-7 mr-2 text-indigo-500 dark:text-indigo-400" />
+                        <span className="text-2xl tracking-tight text-foreground font-extrabold flex items-center">
                             SmartDeal
                         </span>
                     </Link>

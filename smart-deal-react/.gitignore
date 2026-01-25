@@ -1,0 +1,42 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Environments
+node_modules/
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Data & Logs
+*.log
+backend/data/
+data/
+database.db
+*.sqlite3
+backend/logs/
+
+# Secrets
+.env
+.env.local
+
+# Temp / Testing
+dummy.txt
+dummy_test.txt
+test.png
+backend/outputs_ollama_prebench/
+/tmp/
+
+# Editor
+.vscode/
+.idea/
+
+# Local Build
+.next/
+build/
+dist/

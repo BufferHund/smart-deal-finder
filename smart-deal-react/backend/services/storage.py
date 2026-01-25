@@ -9,6 +9,19 @@ def get_api_key() -> Optional[str]:
 def save_api_key(key: str):
     db.execute_query("UPDATE users SET api_key = %s WHERE unique_id = 'default_user'", (key,))
 
+# System Settings
+def get_system_setting(key: str, default: str = "true") -> str:
+    res = db.execute_query("SELECT setting_value FROM system_settings WHERE setting_key = %s", (key,))
+    return res[0]['setting_value'] if res else default
+
+def set_system_setting(key: str, value: str):
+    # Upsert
+    exists = db.execute_query("SELECT 1 FROM system_settings WHERE setting_key = %s", (key,))
+    if exists:
+        db.execute_query("UPDATE system_settings SET setting_value = %s WHERE setting_key = %s", (value, key))
+    else:
+        db.execute_query("INSERT INTO system_settings (setting_key, setting_value) VALUES (%s, %s)", (key, value))
+
 def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", upload_id: int = None, visibility: str = 'public'):
     # Depending on how 'active deals' are defined. 
     # For now, we just insert them into the deals table linked to an upload.
@@ -16,11 +29,15 @@ def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", uplo
     
     for deal in deals:
         # Clean price for Decimal
-        price_str = deal.get('price', '0').replace('€', '').replace(',', '.')
-        try:
-            price = float(price_str)
-        except:
-            price = 0.0
+        p = deal.get('price', '0')
+        if isinstance(p, (int, float)):
+            price = float(p)
+        else:
+            try:
+                price_str = str(p).replace('€', '').replace(',', '.')
+                price = float(price_str)
+            except:
+                price = 0.0
 
         db.execute_query(
             """
@@ -29,11 +46,11 @@ def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", uplo
             """,
             (
                 upload_id,
-                deal.get('product_name'),
+                (deal.get('product_name') or "")[:500],
                 price,
-                deal.get('original_price'),
-                deal.get('unit'),
-                store_name,
+                (str(deal.get('original_price') or ""))[:100],
+                (deal.get('unit') or "")[:255],
+                (store_name or "")[:100],
                 deal.get('confidence', 0.95),
                 deal.get('source', 'gemini'),
                 deal.get('category', 'Uncategorized'),
@@ -42,19 +59,29 @@ def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", uplo
             )
         )
 
+def add_deal(deal: Dict, upload_id: int = None, visibility: str = 'public'):
+    """Add a single deal to storage (wrapper for save_active_deals)"""
+    save_active_deals([deal], store_name=deal.get('store', 'Unknown'), upload_id=upload_id, visibility=visibility)
+
 def get_active_deals() -> Dict:
     # Retrieve deals from the most recent upload(s) or just all recent deals
     # Let's get deals from the last 7 days
     # Filtering: Return Public OR Private (since we assume single user for now, private is fine to return)
-    # In a real multi-user app, this would be: WHERE visibility = 'public' OR (visibility = 'private' AND user_id = current_user)
-    results = db.execute_query(
-        """
+    # Check synthetic visibility
+    show_synthetic = get_system_setting("show_synthetic_data", "true") == "true"
+    
+    query = """
         SELECT product_name, price, original_price, unit, store, confidence, source, category, image_url, created_at, visibility
         FROM deals 
-        ORDER BY created_at DESC 
-        LIMIT 100
-        """
-    )
+        WHERE 1=1
+    """
+    
+    if not show_synthetic:
+         query += " AND source != 'mock_generator'"
+         
+    query += " ORDER BY created_at DESC LIMIT 100"
+    
+    results = db.execute_query(query)
     # Format for frontend
     formatted = []
     for r in results:

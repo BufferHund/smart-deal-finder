@@ -37,7 +37,7 @@ def encode_image_to_base64(image_array) -> str:
 def extract_with_gemini(
     image_array,
     api_key: str,
-    model: str = "gemini-2.5-pro",
+    model: str = "gemini-2.5-flash",
     language: str = "German"
 ) -> Dict:
     """
@@ -225,5 +225,5 @@ def get_available_models(api_key: str) -> List[str]:
 
         return model_names
     except Exception:
-        # Return default models if API call fails (Gemini 2.5 series)
-        return ['gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.5-flash-lite']
+        # Return default models if API call fails (Gemini 2.5+ series)
+        return ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-3-flash-preview']

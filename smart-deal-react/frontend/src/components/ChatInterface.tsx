@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import { chatWithChef } from '../lib/api';
 import { motion } from 'framer-motion';
+import { Lightbulb, Clock, ChefHat } from 'lucide-react';
 
 interface ChatInterfaceProps {
     isOpen: boolean;
@@ -93,8 +94,8 @@ export default function ChatInterface({ isOpen, onOpenChange }: ChatInterfacePro
                     <div className="flex justify-between items-center text-sm">
                         <span className="font-mono text-emerald-400 font-bold">Est. Cost: €{menu.total_estimated_cost}</span>
                     </div>
-                    <div className="mt-2 text-xs text-green-200/60 border-t border-white/10 pt-2">
-                        💡 {menu.savings_note}
+                    <div className="mt-2 text-xs text-green-200/60 border-t border-white/10 pt-2 flex items-center gap-1">
+                        <Lightbulb size={12} /> {menu.savings_note}
                     </div>
                 </div>
             )
@@ -105,8 +106,8 @@ export default function ChatInterface({ isOpen, onOpenChange }: ChatInterfacePro
                 <div className="bg-white/10 p-4 rounded-xl border border-white/10 mt-2">
                     <h3 className="font-bold text-lg text-amber-300 mb-3 border-b border-white/10 pb-2">Recipe Card</h3>
                     <div className="flex gap-4 text-xs mb-4 text-white/60">
-                        <span className="flex items-center gap-1">🕒 {recipe.prep_time} Prep</span>
-                        <span className="flex items-center gap-1">🍳 {recipe.cooking_time} Cook</span>
+                        <span className="flex items-center gap-1"><Clock size={12} /> {recipe.prep_time} Prep</span>
+                        <span className="flex items-center gap-1"><ChefHat size={12} /> {recipe.cooking_time} Cook</span>
                     </div>
 
                     <div className="mb-4">
@@ -157,8 +158,8 @@ export default function ChatInterface({ isOpen, onOpenChange }: ChatInterfacePro
                     <>
                         <ModalHeader className="flex flex-col gap-1">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-gradient-to-tr from-pink-500 to-indigo-500 rounded-lg shadow-lg">
-                                    👨‍🍳
+                                <div className="p-2 bg-zinc-800 rounded-lg shadow-sm border border-white/10">
+                                    <ChefHat className="w-5 h-5 text-white/90" />
                                 </div>
                                 <div>
                                     <h3 className="text-white font-bold text-lg">AI Budget Chef</h3>
@@ -176,8 +177,8 @@ export default function ChatInterface({ isOpen, onOpenChange }: ChatInterfacePro
                                         className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
                                         <div className={`max-w-[85%] rounded-2xl p-4 shadow-sm ${msg.role === 'user'
-                                                ? 'bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-tr-sm'
-                                                : 'bg-white/5 border border-white/5 backdrop-blur-sm rounded-tl-sm'
+                                            ? 'bg-zinc-800 border border-white/10 text-white rounded-tr-sm'
+                                            : 'bg-white/5 border border-white/5 backdrop-blur-sm rounded-tl-sm'
                                             }`}>
                                             {renderContent(msg)}
                                         </div>
@@ -212,7 +213,7 @@ export default function ChatInterface({ isOpen, onOpenChange }: ChatInterfacePro
                                     }}
                                 />
                                 <Button
-                                    className="bg-gradient-to-r from-pink-500 to-indigo-500 text-white font-bold shadow-lg"
+                                    className="bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold shadow-sm"
                                     onPress={handleSend}
                                     isLoading={isLoading}
                                     isIconOnly={false}

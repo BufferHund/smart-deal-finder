@@ -1,6 +1,7 @@
 'use client';
 
-import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle, useMap, useMapEvents } from 'react-leaflet';
+import { debounce } from 'lodash';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useEffect, useState } from 'react';
@@ -32,6 +33,16 @@ function MapCenterUpdater({ position }: { position: [number, number] }) {
     useEffect(() => {
         map.setView(position, map.getZoom());
     }, [position, map]);
+    return null;
+}
+
+// Component to handle dynamic fetching
+function MapEvents({ onMoveEnd }: { onMoveEnd: (center: L.LatLng) => void }) {
+    const map = useMapEvents({
+        moveend: () => {
+            onMoveEnd(map.getCenter());
+        },
+    });
     return null;
 }
 
@@ -139,6 +150,11 @@ export default function LeafletMap({ userPosition, stores: externalStores, onSto
                         ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
                         : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                     }
+                />
+                <MapEvents
+                    onMoveEnd={debounce((center: L.LatLng) => {
+                        fetchStores(center.lat, center.lng);
+                    }, 1000)}
                 />
 
                 <Circle center={position} radius={500} pathOptions={{ fillColor: 'blue', fillOpacity: 0.1, color: 'blue', opacity: 0.3 }} />

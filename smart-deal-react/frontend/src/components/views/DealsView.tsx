@@ -3,7 +3,7 @@
 import { Card, CardBody, Button, Chip, Select, SelectItem, Tabs, Tab, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Switch, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Input, useDisclosure, CircularProgress } from "@heroui/react";
 import { Search, ShoppingCart, Filter, Sparkles, TrendingUp, Store, Apple, Beef, Milk, Croissant, Beer, IceCream, SprayCan, Package, ScanLine, Upload, Globe, Lock } from "lucide-react";
 import { useState, useEffect, useRef } from 'react';
-import { getActiveDeals, addToShoppingList, uploadFile } from '../../lib/api';
+import { getActiveDeals, addToShoppingList, uploadFile, getAgenticRecommendations, getShoppingList, AgentRecommendation } from '../../lib/api';
 import { motion, AnimatePresence } from "framer-motion";
 
 // Store Metadata Helper (reused/simplified)
@@ -54,7 +54,13 @@ export default function DealsView() {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [loading, setLoading] = useState(true);
     const [dislikedFilter, setDislikedFilter] = useState<string[]>([]);
-    // Demo mode removed per request
+
+    // Agentic Recommendation State
+    const [agentRecs, setAgentRecs] = useState<AgentRecommendation[]>([]);
+    const [agentReasoning, setAgentReasoning] = useState("");
+    const [isAgentMode, setIsAgentMode] = useState(false);
+    const [isLoadingAgent, setIsLoadingAgent] = useState(false);
+    const [agentReady, setAgentReady] = useState(false); // New: AI ready indicator
 
     // Scan Modal State
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -70,16 +76,37 @@ export default function DealsView() {
 
     const loadData = async () => {
         try {
+            // Step 1: Load deals FIRST for fast initial display
             const [dealsData, prefData] = await Promise.all([
                 getActiveDeals(),
-                fetch('http://localhost:8000/api/agent/preferences').then(res => res.json()).catch(() => ({ disliked_items: [] }))
+                fetch('/api/agent/preferences').then(res => res.json()).catch(() => ({ disliked_items: [] }))
             ]);
 
             if (dealsData.deals) setDeals(dealsData.deals);
             if (prefData.disliked_items) setDislikedFilter(prefData.disliked_items);
+            setLoading(false); // Show content immediately!
+
+            // Step 2: Fetch AI recommendations IN BACKGROUND
+            setIsLoadingAgent(true);
+            try {
+                const shoppingList = await getShoppingList().catch(() => []);
+                const agentRes = await getAgenticRecommendations(Array.isArray(shoppingList) ? shoppingList : [], 12);
+                setAgentRecs(agentRes.recommendations);
+                setAgentReasoning(agentRes.reasoning);
+                setIsAgentMode(agentRes.agent_mode);
+
+                // Step 3: Trigger ready animation!
+                if (agentRes.agent_mode && agentRes.recommendations.length > 0) {
+                    setAgentReady(true);
+                }
+            } catch (e) {
+                console.error("Agent recommendation failed:", e);
+                setIsAgentMode(false);
+            } finally {
+                setIsLoadingAgent(false);
+            }
         } catch (e) {
             console.error(e);
-        } finally {
             setLoading(false);
         }
     };
@@ -108,9 +135,10 @@ export default function DealsView() {
         return true;
     });
 
-    const displayDeals = activeTab === 'foryou'
-        ? filteredDeals.sort(() => 0.5 - Math.random()) // Shuffle for recommendations
-        : filteredDeals; // Regular list
+    // Use Agentic Recommendations for "For You" tab
+    const displayDeals = (activeTab === 'foryou' && isAgentMode && agentRecs.length > 0)
+        ? agentRecs
+        : filteredDeals;
 
     return (
         <div className="p-4 pb-24 min-h-full">
@@ -126,7 +154,10 @@ export default function DealsView() {
                 {/* Main Tabs */}
                 <Tabs
                     selectedKey={activeTab}
-                    onSelectionChange={(k) => setActiveTab(k as string)}
+                    onSelectionChange={(k) => {
+                        setActiveTab(k as string);
+                        if (k === 'foryou') setAgentReady(false); // Clear indicator on click
+                    }}
                     variant="light"
                     classNames={{
                         tabList: "bg-black/5 dark:bg-white/5 p-1 rounded-full w-full max-w-xs",
@@ -134,7 +165,30 @@ export default function DealsView() {
                         tabContent: "text-black/70 dark:text-white/70 group-data-[selected=true]:text-white font-bold"
                     }}
                 >
-                    <Tab key="foryou" title={<div className="flex items-center gap-2"><Sparkles size={14} /> For You</div>} />
+                    <Tab key="foryou" title={
+                        <div className="flex items-center gap-2 relative">
+                            {isLoadingAgent ? (
+                                <CircularProgress size="sm" classNames={{ svg: "w-4 h-4" }} color="secondary" />
+                            ) : agentReady ? (
+                                <motion.div
+                                    animate={{ scale: [1, 1.3, 1], rotate: [0, 15, -15, 0] }}
+                                    transition={{ repeat: Infinity, duration: 1.5 }}
+                                >
+                                    <Sparkles size={14} className="text-yellow-400" />
+                                </motion.div>
+                            ) : (
+                                <Sparkles size={14} />
+                            )}
+                            <span>For You</span>
+                            {agentReady && activeTab !== 'foryou' && (
+                                <motion.span
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    className="absolute -top-1 -right-2 w-2 h-2 bg-pink-500 rounded-full"
+                                />
+                            )}
+                        </div>
+                    } />
                     <Tab key="browse" title={<div className="flex items-center gap-2"><TrendingUp size={14} /> Browse</div>} />
                 </Tabs>
 
@@ -180,6 +234,25 @@ export default function DealsView() {
                 </div>
             </header>
 
+            {/* Agent Reasoning Banner - Compact */}
+            {activeTab === 'foryou' && isAgentMode && agentReasoning && (
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-4 px-4 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 flex items-center gap-2"
+                >
+                    <span className="text-lg">🤖</span>
+                    <p className="text-sm text-black/70 dark:text-white/70 font-medium">{agentReasoning}</p>
+                </motion.div>
+            )}
+
+            {activeTab === 'foryou' && isLoadingAgent && (
+                <div className="mb-4 p-4 rounded-2xl bg-black/5 dark:bg-white/5 flex items-center gap-3">
+                    <CircularProgress size="sm" color="secondary" />
+                    <p className="text-sm text-black/60 dark:text-white/60">AI Agent is analyzing your preferences...</p>
+                </div>
+            )}
+
             {/* Content Grid */}
             <div className="grid grid-cols-2 gap-3">
                 {loading ? (
@@ -210,6 +283,13 @@ export default function DealsView() {
                                     {deal.store}
                                 </div>
 
+                                {/* AI Score Badge (only in agent mode) */}
+                                {deal.ai_score && (
+                                    <div className="absolute top-0 left-0 px-2 py-1 text-[10px] font-bold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-br-lg z-10">
+                                        🤖 {deal.ai_score}%
+                                    </div>
+                                )}
+
                                 {/* Placeholder Image Area - Colorful Gradients */}
                                 <div className={`h-28 flex items-center justify-center relative overflow-hidden ${!deal.image_url ? getCategoryGradient(deal.category) : 'bg-gray-50 dark:bg-white/5'}`}>
                                     {deal.image_url ? (
@@ -225,9 +305,15 @@ export default function DealsView() {
                                 <CardBody className="pt-0 pb-4 px-3 flex flex-col justify-between h-[120px]">
                                     <div>
                                         <p className="text-xs text-secondary font-bold mb-1">{deal.category || 'Deal'}</p>
-                                        <h3 className="text-sm font-semibold text-black dark:text-white line-clamp-2 leading-tight mb-2">
+                                        <h3 className="text-sm font-semibold text-black dark:text-white line-clamp-2 leading-tight mb-1">
                                             {deal.product_name}
                                         </h3>
+                                        {/* AI Reason - compact tag style */}
+                                        {deal.ai_reason && (
+                                            <p className="text-[10px] text-purple-600 dark:text-purple-400 line-clamp-1 font-medium">
+                                                {deal.ai_reason}
+                                            </p>
+                                        )}
                                     </div>
                                     <div className="flex items-end justify-between">
                                         <div>

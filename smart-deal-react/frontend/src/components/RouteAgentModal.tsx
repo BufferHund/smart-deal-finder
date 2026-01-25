@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Card, CardBody, Chip, Divider } from "@heroui/react";
 import { MapPin, Navigation, AlertTriangle, CheckCircle, RefreshCw, Store, ArrowRight, X, Package, ArrowLeftRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { planRoute, getRouteAlternatives, confirmRoute, RoutePlanResult, StoreResult } from '../lib/api';
+import { planRoute, getRouteAlternatives, confirmRoute, getNearbyStores, RoutePlanResult, StoreResult } from '../lib/api';
 import dynamic from 'next/dynamic';
 
 // Dynamic import for Leaflet map to avoid SSR issues
@@ -69,7 +69,10 @@ export default function RouteAgentModal({ isOpen, onClose, items, userLocation, 
 
         try {
             setLoading(true);
-            const result = await planRoute(items, userLocation);
+            // Fetch real stores nearby
+            const stores = await getNearbyStores(userLocation[0], userLocation[1]);
+
+            const result = await planRoute(items, userLocation, 5.0, stores);
             setRoutePlan(result);
 
             if (result.status === 'no_deals') {
@@ -159,7 +162,7 @@ export default function RouteAgentModal({ isOpen, onClose, items, userLocation, 
             setStep('complete');
             addMessage({
                 type: 'agent',
-                content: `🎉 Route confirmed! ${selectedStores.length} stops, saving €${routePlan.total_savings.toFixed(2)}`
+                content: `🎉 Route confirmed! ${selectedStores.length} stops, saving €${(routePlan.total_savings || 0).toFixed(2)}`
             });
             onRouteConfirmed?.(selectedStores);
         } catch (error) {
@@ -243,10 +246,10 @@ export default function RouteAgentModal({ isOpen, onClose, items, userLocation, 
                                 {store.match_count} items
                             </Chip>
                             <Chip size="sm" className="bg-white/20 text-white">
-                                {store.distance_km.toFixed(1)} km
+                                {(store.distance_km || 0).toFixed(1)} km
                             </Chip>
                             <Chip size="sm" className="bg-green-500 text-white">
-                                Save €{store.total_savings.toFixed(2)}
+                                Save €{(store.total_savings || 0).toFixed(2)}
                             </Chip>
                         </div>
                     </div>
@@ -468,7 +471,7 @@ export default function RouteAgentModal({ isOpen, onClose, items, userLocation, 
 
                             <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
                                 <p className="text-lg font-bold text-green-700 dark:text-green-300">
-                                    💰 Estimated total savings: €{routePlan.total_savings.toFixed(2)}
+                                    💰 Estimated total savings: €{(routePlan?.total_savings || 0).toFixed(2)}
                                 </p>
                             </div>
                         </motion.div>

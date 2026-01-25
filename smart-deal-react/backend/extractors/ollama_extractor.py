@@ -39,86 +39,59 @@ def check_ollama_available() -> bool:
 
 def get_available_ollama_models() -> List[Dict]:
     """
-    Get list of available Ollama VLM models
-
+    Get list of actually installed vision-capable Ollama models
+    
     Returns:
         List of model dictionaries with info
     """
-    models = [
-        {
-            "name": "Qwen2.5-VL 7B (Best Quality) ⭐",
-            "model_id": "qwen2.5vl:7b",
-            "description": "Most powerful vision-language model (~6.0GB)",
-            "size": "~6.0 GB",
-            "speed": "Fast",
-            "accuracy": "⭐⭐⭐⭐⭐",
-            "downloaded": False
-        },
-        {
-            "name": "Llama 3.2 Vision - 11B",
-            "model_id": "llama3.2-vision:11b",
-            "description": "Meta's latest vision model (~7.8GB)",
-            "size": "~7.8 GB",
-            "speed": "Fast",
-            "accuracy": "⭐⭐⭐⭐⭐",
-            "downloaded": False
-        },
-        {
-            "name": "LLaVA - 7B",
-            "model_id": "llava:7b",
-            "description": "Proven reliable model (~4.1GB)",
-            "size": "~4.1 GB",
-            "speed": "Fast",
-            "accuracy": "⭐⭐⭐⭐",
-            "downloaded": False
-        },
-        {
-            "name": "LLaVA-Llama3 - 8B",
-            "model_id": "llava-llama3",
-            "description": "LLaVA with Llama3 base (~5.5GB)",
-            "size": "~5.5 GB",
-            "speed": "Fast",
-            "accuracy": "⭐⭐⭐⭐",
-            "downloaded": False
-        },
-        {
-            "name": "LLaVA-Phi3 - 3.8B (Smallest)",
-            "model_id": "llava-phi3",
-            "description": "Smallest and fastest (~2.3GB)",
-            "size": "~2.3 GB",
-            "speed": "Very Fast",
-            "accuracy": "⭐⭐⭐",
-            "downloaded": False
-        },
-        {
-            "name": "Llama 3.2 Vision - 90B (Advanced)",
-            "model_id": "llama3.2-vision:90b",
-            "description": "Highest accuracy, needs powerful GPU (~55GB)",
-            "size": "~55 GB",
-            "speed": "Slow",
-            "accuracy": "⭐⭐⭐⭐⭐",
-            "downloaded": False
-        }
-    ]
-
-    # Check which models are downloaded
     try:
         client = get_ollama_client()
-        if client:
-            downloaded_models = client.list()
-            downloaded_names = {m['name'] for m in downloaded_models.get('models', [])}
-
-            for model in models:
-                # Check if model is downloaded (with or without tag)
-                model_base = model['model_id'].split(':')[0]
-                model['downloaded'] = any(
-                    model['model_id'] in name or model_base in name
-                    for name in downloaded_names
-                )
-    except Exception:
-        pass
-
-    return models
+        if not client:
+            return []
+            
+        ollama_data = client.list()
+        installed_models = ollama_data.get('models', [])
+        
+        vision_models = []
+        
+        for m in installed_models:
+            # Handle both dictionary and object formats
+            if hasattr(m, 'model'):
+                model_id = m.model
+                size_bytes = m.size
+            else:
+                model_id = m.get('name', '')
+                size_bytes = m.get('size', 0)
+                
+            try:
+                # Check actual capabilities of the model
+                info = client.show(model_id)
+                capabilities = getattr(info, 'capabilities', [])
+                
+                # Only include models that explicitly support vision
+                if 'vision' in capabilities:
+                    size_gb = size_bytes / (1024**3)
+                    
+                    vision_models.append({
+                        "name": model_id.split(':')[0].replace('-', ' ').capitalize(),
+                        "model_id": model_id,
+                        "description": f"Local Vision model. Size: {size_gb:.1f} GB",
+                        "size": f"{size_gb:.1f} GB",
+                        "speed": "Fast (Local)",
+                        "accuracy": "⭐⭐⭐⭐",
+                        "downloaded": True
+                    })
+            except Exception as e:
+                print(f"Error checking model {model_id}: {e}")
+                continue
+        
+        # Sort by name
+        vision_models.sort(key=lambda x: x['name'])
+        return vision_models
+        
+    except Exception as e:
+        print(f"Error listing Ollama models: {e}")
+        return []
 
 
 def check_model_downloaded(model_id: str) -> bool:
@@ -236,6 +209,10 @@ def extract_with_ollama(
     if not check_model_downloaded(model_id):
         print(f"⬇️  Downloading {model_id} model (first time only)...")
         print(f"This may take a few minutes depending on your connection...")
+        try:
+            client.pull(model_id)
+        except Exception as pull_err:
+            print(f"Error pulling model {model_id}: {pull_err}")
 
     try:
         # Call Ollama API
@@ -267,7 +244,8 @@ def extract_with_ollama(
                 "extraction_method": f"Ollama {model_id}",
                 "status": "error",
                 "error": "No valid products extracted",
-                "raw_response": response_text[:1000]  # Include first 1000 chars for debugging
+                "raw_input": prompt,
+                "raw_response": response_text
             }
 
         # Calculate confidence based on completeness
@@ -282,7 +260,9 @@ def extract_with_ollama(
                 "model": model_id,
                 "provider": "Ollama (Local)"
             },
-            "status": "success"
+            "status": "success",
+            "raw_input": prompt,
+            "raw_response": response_text
         }
 
     except Exception as e:
@@ -290,14 +270,16 @@ def extract_with_ollama(
 
         # Provide helpful error messages
         if "model" in error_msg.lower() and "not found" in error_msg.lower():
-            error_msg = f"Model {model_id} not found. It will be downloaded automatically on first use."
+            error_msg = f"Model {model_id} not found. Please ensure it is available in Ollama."
 
         return {
             "deals": [],
             "total_products": 0,
             "extraction_method": f"Ollama {model_id}",
             "status": "error",
-            "error": error_msg
+            "error": error_msg,
+            "raw_input": prompt,
+            "raw_response": f"Ollama Error: {error_msg}"
         }
 
 
