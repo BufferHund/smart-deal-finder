@@ -85,3 +85,6 @@ smart_deal_db.json
 smart-deal-react/backend/uploads/
 *.pdf
 smart-deal-react/backend/smart_deal_db.json
+
+# Archive (Legacy Code)
+_archive/

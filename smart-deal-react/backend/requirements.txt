@@ -14,3 +14,5 @@ pypdfium2>=4.24.0
 Pillow>=10.0.0
 pdf2image
 numpy>=1.24.0
+PyYAML>=6.0
+

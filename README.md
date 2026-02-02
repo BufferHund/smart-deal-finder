@@ -1,238 +1,115 @@
-# SmartDeal: Brochure Information Extraction System
+# 🛍️ Smart Deal Finder
 
-An extensible framework for extracting product deals from supermarket brochures using multiple AI models.
+An AI-powered application that intelligently extracts, analyzes, and organizes product deals from supermarket flyers and receipts.
 
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Next.js 14](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+## ✨ Key Features
 
-SmartDeal automatically extracts structured deal information (products, prices, discounts) from visually complex supermarket brochures. The system features a plugin-based architecture that makes it easy to add and switch between different extraction models.
+| Feature | Description |
+|---------|-------------|
+| **🧠 AI Extraction** | Uses Gemini 2.0 Flash/Pro and local Ollama VLMs to extract deals from complex flyer layouts |
+| **🎛️ Feature Intelligence** | Smart routing system that assigns tasks to optimal models (Speed vs. Accuracy) |
+| **📊 Admin Dashboard** | Batch upload, model comparison, analytics, and audit logging |
+| **🎨 Modern UI** | Dark mode, mobile-responsive, accessible via LAN |
+| **🗺️ Store Map** | Leaflet-based map with nearby store discovery |
+| **👨‍🍳 AI Chef** | Recipe suggestions based on your shopping list and deals |
 
-### Key Features
+## 🚀 Quick Start
 
-- Multiple Extraction Models: OCR, Gemini AI, Ollama VLM
-- Plugin Architecture: Add new models in 3 simple steps
-- Model Registry: Automatic model discovery and management
-- PDF Support: Process multi-page brochures
-- Well-Documented: Comprehensive guides for developers
+### Prerequisites
+- **Node.js** v18+
+- **Python** v3.10+
+- **Google Cloud API Key** (for Gemini features)
 
-## Quick Start
-
-### Option 1: Docker (Recommended)
-
-No installation required - just run:
-
-```bash
-# Clone repository
-git clone https://github.com/BufferHund/smart-deal-finder.git
-cd smart-deal-finder
-
-# Start with Docker Compose
-docker-compose up -d
-```
-
-Visit http://localhost:8501
-
-See [DOCKER_GUIDE.md](DOCKER_GUIDE.md) for detailed instructions.
-
-### Option 2: Local Installation
+### 1. Backend
 
 ```bash
-# Clone repository
-git clone https://github.com/BufferHund/smart-deal-finder.git
-cd smart-deal-finder
+cd smart-deal-react/backend
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run application
-streamlit run src/app/enhanced_app.py
+# Set API Key
+export GOOGLE_API_KEY="your_key_here"
+
+# Run server
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Visit http://localhost:8501
-
-## Available Models
-
-### OCR-Based
-- **Tesseract OCR**: Fast, free, ~90% accuracy
-- **PaddleOCR**: Advanced, ~92% accuracy
-
-### AI-Based
-- **Gemini 2.0 Flash**: Best quality, ~98% accuracy
-- **Ollama VLM**: Local AI, ~90-95% accuracy, free
-  - Qwen2.5-VL (7B) - Most powerful
-  - LLaVA (7B) - Reliable
-  - Llama 3.2 Vision (11B) - Latest
-  - LLaVA-Phi3 (3.8B) - Fastest
-
-## Architecture
-
-```
-smartdeal/
-├── src/
-│   ├── extractors/         # Model plugins (extensible)
-│   │   ├── base.py         # Abstract interface
-│   │   ├── model_registry.py
-│   │   ├── models.yaml
-│   │   ├── ocr_extractor.py
-│   │   ├── gemini_extractor.py
-│   │   └── ollama_extractor.py
-│   ├── preprocessing/      # PDF/Image processing
-│   ├── app/               # Frontend applications
-│   └── config/            # Configuration
-├── docs/                  # Documentation
-├── tests/                 # Unit tests
-└── data/samples/          # Sample brochures
-```
-
-### Plugin Architecture
-
-Adding a new model:
-
-```python
-from extractors.base import BaseExtractor
-from extractors.model_registry import register_model
-
-@register_model("my_model")
-class MyExtractor(BaseExtractor):
-    def is_available(self) -> bool:
-        return True
-
-    def extract(self, image, **kwargs):
-        return {"deals": [...], "status": "success"}
-```
-
-## Documentation
-
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System architecture and design principles
-- **[ADDING_MODELS.md](docs/ADDING_MODELS.md)** - Step-by-step guide for adding models
-
-## Configuration
-
-### Model Configuration (`src/extractors/models.yaml`)
-
-```yaml
-my_model:
-  name: "My Custom Model"
-  type: "ai"
-  description: "Description here"
-  accuracy: 0.95
-  speed: "fast"
-  cost: "free"
-```
-
-### Application Settings (`src/config/settings.py`)
-
-```python
-class Config:
-    DEFAULT_OCR_ENGINE = "tesseract"
-    DEFAULT_VLM_MODEL = "qwen2.5vl:7b"
-    MAX_FILE_SIZE_MB = 50
-```
-
-## Usage Examples
-
-### Python API
-
-```python
-from extractors.model_registry import registry
-
-# List available models
-models = registry.list_available()
-
-# Use a specific model
-extractor = registry.get("ocr_tesseract")
-result = extractor.extract(image)
-```
-
-### Command Line
+### 2. Frontend
 
 ```bash
-# Extract from a brochure
-python -m src.extractors.cli extract --model ocr_tesseract --input brochure.pdf
+cd smart-deal-react/frontend
 
-# List available models
-python -m src.extractors.cli list-models
+npm install
+npm run dev
 ```
 
-## Testing
+**Open**: http://localhost:3000
 
-```bash
-# Run all tests
-pytest tests/
+## 📱 Mobile Access (LAN)
 
-# With coverage
-pytest --cov=src tests/
+Access from your phone on the same Wi-Fi:
+1. Find your computer's IP (e.g., `192.168.1.100`)
+2. Ensure both servers are running with `--host 0.0.0.0`
+3. Open `http://192.168.1.100:3000` on your phone
+
+## 📂 Project Structure
+
+```
+smart-deal-finder/
+├── smart-deal-react/          # ⭐ Main Application
+│   ├── backend/               # FastAPI API Server
+│   │   ├── routers/           # API endpoints
+│   │   ├── services/          # Business logic (AI Client, Model Router)
+│   │   └── extractors/        # AI model plugins
+│   ├── frontend/              # Next.js Web App
+│   │   ├── src/app/           # Pages (Home, Admin, Shopper)
+│   │   └── src/components/    # Reusable UI components
+│   └── docker-compose.yml     # Container deployment
+├── docs/                      # Documentation
+├── tests/                     # Test suite
+├── _archive/                  # Legacy code (gitignored)
+└── README.md                  # This file
 ```
 
-## Model Comparison
+## 🛠️ Tech Stack
 
-| Model | Accuracy | Speed | Cost | Best For |
-|-------|----------|-------|------|----------|
-| Tesseract OCR | ~90% | 3-4s | Free | High volume |
-| PaddleOCR | ~92% | 5-6s | Free | Asian languages |
-| Gemini Flash | ~98% | 10s | $0.005 | Best quality |
-| Qwen2.5-VL | ~95% | 15s | Free | Local/Privacy |
-| LLaVA | ~90% | 15s | Free | Balanced |
+| Layer | Technologies |
+|-------|--------------|
+| **Frontend** | Next.js 14, Tailwind CSS v4, Lucide Icons |
+| **Backend** | FastAPI, Uvicorn, TinyDB |
+| **AI** | Google Gemini 2.0, Ollama (LLaVA, Bakllava) |
+| **Maps** | Leaflet, Overpass API |
 
-## Development
+## 🧪 Model Performance
 
-### Adding a New Model
+Based on 50-page benchmark tests:
 
-See [ADDING_MODELS.md](docs/ADDING_MODELS.md) for detailed instructions.
+| Model | Accuracy | Speed | Cost |
+|-------|----------|-------|------|
+| **Gemini 2.5 Flash Lite** | 76% | 2s | $0.001 |
+| Gemini 2.5 Flash | 74% | 3s | $0.002 |
+| Gemini 2.5 Pro | 78% | 8s | $0.01 |
+| Ollama LLaVA | ~15% | 100s+ | Free |
 
-Steps:
-1. Create extractor class with `@register_model()` decorator
-2. Add configuration to `models.yaml`
-3. Import in `__init__.py`
+## 📄 Documentation
 
-### Project Structure
+- [Backend README](smart-deal-react/backend/README.md) - API setup and modules
+- [Frontend README](smart-deal-react/frontend/README.md) - UI components and scripts
+- [Docker Guide](DOCKER_GUIDE.md) - Container deployment
 
-- **`src/extractors/`**: Core extraction models
-- **`src/preprocessing/`**: PDF and image processing
-- **`src/app/`**: Frontend applications
-- **`tests/`**: Unit and integration tests
-- **`docs/`**: Documentation
+## 🎯 Target Supermarkets
 
-## Roadmap
+Aldi · REWE · Edeka · Lidl · Penny · Netto · Kaufland
 
-- REST API with FastAPI
-- Model ensemble
-- Fine-tuning support
-- Performance monitoring
-- Docker deployment
-- Batch processing API
+## 📜 License
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Follow the [ADDING_MODELS.md](docs/ADDING_MODELS.md) guide
-4. Add tests for your changes
-5. Submit a Pull Request
-
-## Target Supermarkets
-
-- Aldi Süd/Nord
-- REWE
-- Edeka
-- Lidl
-- Penny
-- Netto
-- Kaufland
-
-## Technologies
-
-**Core**: Python 3.12+, Streamlit, pandas, numpy
-**OCR**: Tesseract, PaddleOCR
-**AI**: Google Gemini API, Ollama (LLaVA, Qwen, Llama)
-**Image Processing**: OpenCV, Pillow
-
-## License
-
-This project is licensed under the MIT License.
+MIT License

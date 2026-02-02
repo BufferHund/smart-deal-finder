@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Deal Finder - Frontend
 
-## Getting Started
+The frontend for **Smart Deal Finder** is built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). It provides a responsive, dark-mode enabled interface for managing and visualizing supermarket deals extracted by AI.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Admin Dashboard**: `/admin`
+  - **Batch Upload**: Drag-and-drop flyers for processing.
+  - **Analytics**: View extraction confidence and model performance.
+  - **Settings**: Configure AI models and system preferences.
+- **Deal Feed**: Main view showing extracted product cards with prices and discounts.
+- **Responsive Design**: optimized for both Desktop and Mobile web.
+
+## 🛠️ Scripts
+
+In the project directory, you can run:
+
+### `npm run dev`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm run build`
+Builds the app for production to the `.next` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `npm run start`
+Starts the production server after building.
+
+## 📂 Structure
+
+- `src/app`: App Router pages (`page.tsx`, `layout.tsx`).
+  - `admin/`: Admin dashboard routes.
+- `src/components`: Reusable UI components.
+  - `ui/`: Fundamental building blocks (Buttons, Cards, Modals).
+  - `views/`: specific page sections (`DealsView`, `SettingsTab`).
+- `src/lib`: Utility functions and API clients (`api.ts`).
+
+## ⚙️ Configuration
+
+The frontend interacts with the backend via a reverse proxy configured in `next.config.ts`:
+
+```typescript
+// next.config.ts
+rewrites: async () => [
+  {
+    source: '/api/:path*',
+    destination: 'http://127.0.0.1:8000/api/:path*', // Hooks up to FastAPI
+  },
+]
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This ensures no CORS issues and simplifies mobile access via LAN.
