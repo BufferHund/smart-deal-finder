@@ -89,16 +89,34 @@ smart-deal-finder/
 | **AI** | Google Gemini 2.0, Ollama (LLaVA, Bakllava) |
 | **Maps** | Leaflet, Overpass API |
 
-## 🧪 Model Performance
+## 🧪 VLM Benchmark Results
 
-Based on 50-page benchmark tests:
+We tested 20+ Vision Language Models on 50 supermarket flyer pages. Here are the results:
 
-| Model | Accuracy | Speed | Cost |
-|-------|----------|-------|------|
-| **Gemini 2.5 Flash Lite** | 76% | 2s | $0.001 |
-| Gemini 2.5 Flash | 74% | 3s | $0.002 |
-| Gemini 2.5 Pro | 78% | 8s | $0.01 |
-| Ollama LLaVA | ~15% | 100s+ | Free |
+### 🏆 Top Performers
+
+| Model | E2E Recall | Price Acc | Latency | Recommendation |
+|-------|------------|-----------|---------|----------------|
+| **gemini-3-flash-preview** | 85.6% | 94.4% | 10.7s | 🥇 Best Quality |
+| **gemini-2.5-pro** | 84.9% | 93.0% | 23.9s | 🥈 Runner-up |
+| **gemini-2.5-flash-lite** | 75.9% | 94.2% | **2.2s** | ⚡ Best Speed |
+| gemini-2.5-flash | 76.1% | 92.2% | 11.4s | Good Balance |
+| qwen3-vl:235b-cloud | 75.8% | 85.7% | 75.1s | Google Alt |
+
+### 📉 Other Models Tested
+
+| Model | E2E Recall | Notes |
+|-------|------------|-------|
+| deepseek-vl2 (SiliconFlow) | 41.3% | Good retrieval, poor details |
+| devstral-small-2:24b | 64.1% | Fast but lower accuracy |
+| Qwen3-VL (8B/30B/235B) | ~5-14% | Poor recall (1 item/page) |
+| Local Ollama (LLaVA, etc.) | 0-15% | Too slow on CPU, hallucinations |
+
+### 💡 Recommendations
+
+1. **Production Default**: `gemini-2.5-flash-lite` — 76% recall at 2.2s
+2. **Deep Scan Mode**: `gemini-3-flash-preview` — 86% recall (rate limited)
+3. **Backup**: `qwen3-vl:235b-cloud` if Google API unavailable
 
 ## 📄 Documentation
 
