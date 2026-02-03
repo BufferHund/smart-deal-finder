@@ -15,7 +15,6 @@ features:
     default_model: gemini-2.5-flash
     allowed_models:
     - gemini-2.5-flash
-    - claude-3.5-sonnet
     - gpt-4o
     fallback_model: gemini-2.5-flash-lite
     prompt_template: agent_v1

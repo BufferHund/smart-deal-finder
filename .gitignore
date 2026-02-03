@@ -93,5 +93,4 @@ smart-deal-app/backend/smart_deal_db.json
 _archive/
 
 # Agent Config
-.claude/
 .agent/
