@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "ADVENTURIDGE Outdoor-Fleecejacke",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.7167244930906504,
+      0.22738557561289238,
+      0.8371730366672391,
+      0.396993758516177
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Marzipan-kartoffeln",
+    "price": "0.89",
+    "discount": "40",
+    "unit": null,
+    "original_price": "1.49",
+    "bbox": [
+      0.1333779771514404,
+      0.34584951464513014,
+      0.32527550690933915,
+      0.6463824548709781
+    ]
+  }
+]

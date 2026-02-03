@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Ben's Original Express Reis",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 220-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.4577801088621634,
+      0.0,
+      0.8999195378040745,
+      0.2922887664891356
+    ]
+  },
+  {
+    "product_name": "Ben's Original Sauce Süss-Sauer",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 400-g-Glas",
+    "original_price": null,
+    "bbox": [
+      0.12371601893268103,
+      0.3986057330263065,
+      0.36880816826428936,
+      0.5252527519418948
+    ]
+  },
+  {
+    "product_name": "Oro di Parma Tomatenmark oder Italienische Tomaten Stückig",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 200-g-Tube oder je 400-g-Dose",
+    "original_price": null,
+    "bbox": [
+      0.38391722991381266,
+      0.3220658653257749,
+      0.6101154526091839,
+      0.5250614239366325
+    ]
+  },
+  {
+    "product_name": "Knorr Salat Krönung",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 5er-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6415504787603061,
+      0.32118137295863813,
+      0.8648081682642875,
+      0.5253719322879801
+    ]
+  },
+  {
+    "product_name": "Teekanne Kräutertee Pfefferminze oder Früchtetee Waldbeere",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 45-g-Pckg. oder je 50-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12205946680861138,
+      0.5387979482721905,
+      0.35315857815629736,
+      0.7504904625228432
+    ]
+  },
+  {
+    "product_name": "Pfanni Kartoffel Püree das Lockere, oder Kartoffel Püree das Komplette",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 240-g-Pckg. oder je 283,5-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.38476213276555454,
+      0.5388936122748222,
+      0.6207621327655537,
+      0.7512792908873502
+    ]
+  },
+  {
+    "product_name": "Knorr Feinschmecker Sauce",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je Btl.",
+    "original_price": null,
+    "bbox": [
+      0.6355008839193946,
+      0.5354277904654506,
+      0.8783621280326347,
+      0.7521402669110356
+    ]
+  },
+  {
+    "product_name": "Maggi Fix Lachs-Sahne Gratin oder Airfryer Paprika Pommes Frites",
+    "price": "0.49",
+    "discount": null,
+    "unit": "je 26-g-Btl. oder je 34-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.12499999999999983,
+      0.7558133505132794,
+      0.36590088865231446,
+      0.9765897992386978
+    ]
+  },
+  {
+    "product_name": "Kölln Knusper Schoko & Keks Hafer-Müsli oder Schoko weniger Zucker Hafer-Müsli",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 440-g-Pckg. oder je 450-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3760758080701097,
+      0.7613351490648216,
+      0.6235008839193946,
+      0.9758009708741928
+    ]
+  },
+  {
+    "product_name": "Melitta Auslese Kaffee",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 500-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6299236208734742,
+      0.7631041337990979,
+      0.8816891799775259,
+      0.9754904625228462
+    ]
+  }
+]

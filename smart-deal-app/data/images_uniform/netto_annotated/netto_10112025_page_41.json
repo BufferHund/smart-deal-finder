@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Hofmaier Hähnchenbrustfilet oder Putenbrust",
+    "price": "1.39",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.338972104661626,
+      0.10843285796052847,
+      0.961851544168468,
+      0.5064506623971298
+    ]
+  },
+  {
+    "product_name": "Pfälzer Leberwurst",
+    "price": "1.29",
+    "discount": "23",
+    "unit": "200 g",
+    "original_price": "1.69",
+    "bbox": [
+      0.04151914420446187,
+      0.5207234155992825,
+      0.3311473511699058,
+      0.7066613701967707
+    ]
+  },
+  {
+    "product_name": "Barbecue Bratwurst",
+    "price": "2.99",
+    "discount": "21",
+    "unit": "540 g",
+    "original_price": "3.79",
+    "bbox": [
+      0.03164351859251373,
+      0.1211484377281684,
+      0.3306202115010918,
+      0.3109733783723049
+    ]
+  },
+  {
+    "product_name": "Sauels Toastschinken",
+    "price": "1.49",
+    "discount": "16",
+    "unit": "150 g",
+    "original_price": "1.79",
+    "bbox": [
+      0.03164351859251373,
+      0.3202331315744578,
+      0.32952905568755675,
+      0.5077431339180561
+    ]
+  },
+  {
+    "product_name": "Schinkenzwiebelmettwurst",
+    "price": "1.79",
+    "discount": "10",
+    "unit": "2 x 100 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.3426229254499763,
+      0.7152625890337955,
+      0.6426907741720892,
+      0.9050875296779319
+    ]
+  },
+  {
+    "product_name": "Feinschmecker Frikadellen",
+    "price": "2.49",
+    "discount": "10",
+    "unit": "300 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.03382583021958364,
+      0.7168592270666779,
+      0.32952905568755675,
+      0.9043692294102761
+    ]
+  },
+  {
+    "product_name": "Hofmaier Leberkäse",
+    "price": "2.79",
+    "discount": "20",
+    "unit": "2 x 200 g",
+    "original_price": "3.49",
+    "bbox": [
+      0.6606505419906287,
+      0.7168592270666779,
+      0.9563537674586018,
+      0.904369229410276
+    ]
+  },
+  {
+    "product_name": "Snack it Kabanossi",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "120 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.345479391186249,
+      0.5122319438085576,
+      0.9653100636086367,
+      0.7083014028299006
+    ]
+  }
+]

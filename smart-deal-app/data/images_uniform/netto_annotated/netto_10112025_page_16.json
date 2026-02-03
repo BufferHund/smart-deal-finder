@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Aurora Sonnenstern Weizenmehl Type 405",
+    "price": "2.29",
+    "discount": "39",
+    "unit": "2,5 kg",
+    "original_price": "3.79",
+    "bbox": [
+      0.0449161457409061,
+      0.2929445678401002,
+      0.5413637368289693,
+      0.6940533609494708
+    ]
+  },
+  {
+    "product_name": "Clarkys Erdnüsse",
+    "price": "2.22",
+    "discount": null,
+    "unit": "550 g",
+    "original_price": null,
+    "bbox": [
+      0.5657694007874918,
+      0.34030630765685915,
+      0.9704895182176111,
+      0.690893278101053
+    ]
+  },
+  {
+    "product_name": "Müller's Back-gewürze",
+    "price": "0.69",
+    "discount": null,
+    "unit": "10 - 30 g",
+    "original_price": null,
+    "bbox": [
+      0.3530691418034459,
+      0.7021995857579125,
+      0.9704895182176132,
+      0.9072134437978892
+    ]
+  },
+  {
+    "product_name": "Deli Reform",
+    "price": "1.29",
+    "discount": null,
+    "unit": "450 g",
+    "original_price": null,
+    "bbox": [
+      0.031279882569878584,
+      0.7004850313991227,
+      0.3425891900510512,
+      0.9058904165462338
+    ]
+  }
+]

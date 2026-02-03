@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "GRANINI Trinkgenuss",
+    "price": "1.29",
+    "discount": "52",
+    "unit": "je 1-l-PET-Fl.",
+    "original_price": "2.69",
+    "bbox": [
+      0.13987512890335688,
+      0.01725073970115569,
+      0.9205170278768149,
+      0.4683239370923786
+    ]
+  },
+  {
+    "product_name": "CAPRI-SUN Fruchtsaftgetränk",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 10 x 0,2-l-Packg.",
+    "original_price": null,
+    "bbox": [
+      0.07668214629945415,
+      0.4504535119293299,
+      0.9104602682874313,
+      0.9297690390489612
+    ]
+  }
+]

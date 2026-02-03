@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Leerdammer Käsescheiben",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 140-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.33599999999999874,
+      0.014999999999999956,
+      0.8751599702566083,
+      0.2986558732883927
+    ]
+  },
+  {
+    "product_name": "Rougette Ofenkäse fein-würziger Weichkäse",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 320-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12245720410575414,
+      0.33948578980144384,
+      0.35534334574949006,
+      0.5193441267116033
+    ]
+  },
+  {
+    "product_name": "Chaumes oder Saint Albray Classic frz. Weichkäse",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.36872646348255395,
+      0.3144902493978918,
+      0.6199999999999972,
+      0.5309999999999963
+    ]
+  },
+  {
+    "product_name": "Grünländer mild & nussig Schnittkäse",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.6321776182892106,
+      0.3080000000000001,
+      0.8779069902195878,
+      0.5309999999999999
+    ]
+  },
+  {
+    "product_name": "Reinert Bärchen Wurst Mortadella oder Bärchen-Streich cremiger Brotaufstrich",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 115-g-Pckg. oder je 125-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12434887579757203,
+      0.5369609909085077,
+      0.35912424973584,
+      0.7502322623167652
+    ]
+  },
+  {
+    "product_name": "Wiesbauer Feine Extrawurst oder Scharfe Knacker",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 80-g-Pckg. oder je 100-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3787673740044071,
+      0.535999999999999,
+      0.6199999999999974,
+      0.7536356357041296
+    ]
+  },
+  {
+    "product_name": "Philadelphia Natur oder Cottage Cheese",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 195-g-Pckg. oder je 200-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6352800099144619,
+      0.5374422776439732,
+      0.877993818698404,
+      0.7529676198651771
+    ]
+  },
+  {
+    "product_name": "Handl Tyrol Kaminwurzerl",
+    "price": "2.19",
+    "discount": null,
+    "unit": "je 100-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.11906156515432458,
+      0.7633157940936361,
+      0.36517233285979056,
+      0.9753603167790145
+    ]
+  },
+  {
+    "product_name": "Leicht & Cross Knusperbrot",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 125-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3822861912160533,
+      0.7666558732883906,
+      0.6133876869691323,
+      0.9746923009400621
+    ]
+  },
+  {
+    "product_name": "Milka Tender oder Choco & Cake",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 5 x 37-g-Pckg. oder je 175-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6371692422089893,
+      0.7626477782546833,
+      0.8761045864038671,
+      0.9753603167790085
+    ]
+  }
+]

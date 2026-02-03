@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "DR. QUENDT Dresdner Christstollen",
+    "price": "9.99",
+    "discount": null,
+    "unit": "1-kg-Packung",
+    "original_price": null,
+    "bbox": [
+      0.11099999999999996,
+      0.742188182565942,
+      0.3919999999999998,
+      0.9410000000000003
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Edelmarzipan-Brot Mit Zartbitterschokolade überzogen",
+    "price": "1.49",
+    "discount": null,
+    "unit": "125-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5476758515092613,
+      0.7407141132408441,
+      0.8590000000000002,
+      0.7930000000000001
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Baumstamm Versch. Sorten",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 100-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5486353329479194,
+      0.7929999999999997,
+      0.8590000000000011,
+      0.8379999999999996
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Gewürzspekulatius",
+    "price": "1.69",
+    "discount": null,
+    "unit": "600-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5467163700706039,
+      0.838,
+      0.8590000000000004,
+      0.887
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Edelmarzipanstollen 12 % Edelmarzipan",
+    "price": "4.99",
+    "discount": null,
+    "unit": "1-kg-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5467163700706039,
+      0.8869999999999996,
+      0.8590000000000004,
+      0.9400711698612658
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Osborne Veterano",
+    "price": "9.99",
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.036605482485163134,
+      0.040069109339803385,
+      0.3400274124258158,
+      0.2610414656038821
+    ]
+  },
+  {
+    "product_name": "Rotkäppchen Sekt oder Fruchtsecco",
+    "price": "3.29",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.364,
+      0.046,
+      0.966,
+      0.506
+    ]
+  },
+  {
+    "product_name": "Jack Daniel's Gentleman Jack Whiskey",
+    "price": "19.99",
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.038000000000000006,
+      0.2749861781320396,
+      0.3380548248516311,
+      0.4939447125281573
+    ]
+  },
+  {
+    "product_name": "Johnnie Walker Red Label",
+    "price": "10.99",
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.03800000000000001,
+      0.5049999999999999,
+      0.335871272307121,
+      0.7239999999999998
+    ]
+  },
+  {
+    "product_name": "Verpoorten Original Eierlikör",
+    "price": "10.99",
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.35005482485163186,
+      0.5079723562640787,
+      0.6522109649703263,
+      0.7239723562640782
+    ]
+  },
+  {
+    "product_name": "Fies Select Williams Birnenbrand",
+    "price": "9.99",
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.6941013152670651,
+      0.5099447125281573,
+      0.9629999999999999,
+      0.7269447125281574
+    ]
+  },
+  {
+    "product_name": "Cointreau Liqueur",
+    "price": "14.99",
+    "discount": null,
+    "unit": "0,7-L-Flasche",
+    "original_price": null,
+    "bbox": [
+      0.0376054824851632,
+      0.7409170687922361,
+      0.3346877197626104,
+      0.9599585343961194
+    ]
+  },
+  {
+    "product_name": "Glenfiddich Single Malt Scotch Whisky",
+    "price": null,
+    "discount": null,
+    "unit": "0,7 L",
+    "original_price": null,
+    "bbox": [
+      0.3542383773961426,
+      0.7419032469242753,
+      0.66,
+      0.959958534396119
+    ]
+  },
+  {
+    "product_name": "Original Fies Bratapfellikör",
+    "price": "7.99",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.7038629378709228,
+      0.7379723562640786,
+      0.9653945175148368,
+      0.9599861781320398
+    ]
+  }
+]

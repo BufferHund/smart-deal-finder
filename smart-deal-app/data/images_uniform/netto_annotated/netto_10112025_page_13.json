@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Gü Cheesecake",
+    "price": "2.99",
+    "discount": null,
+    "unit": "2 x 80 g / 184 g",
+    "original_price": null,
+    "bbox": [
+      0.031992130829694515,
+      0.06700957375550691,
+      0.6475942292751093,
+      0.26626806515418977
+    ]
+  },
+  {
+    "product_name": "Arla Buko Frischkäse/-zubereitung",
+    "price": "1.11",
+    "discount": null,
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.03339265544104821,
+      0.27927763890969637,
+      0.6461937046637556,
+      0.481
+    ]
+  },
+  {
+    "product_name": "Sushi-Box „Takashi“ oder „Yamato“",
+    "price": "2.39",
+    "discount": null,
+    "unit": "190 - 200 g",
+    "original_price": null,
+    "bbox": [
+      0.03759422927510923,
+      0.49403829502202606,
+      0.33316222798253353,
+      0.6929904262444931
+    ]
+  },
+  {
+    "product_name": "Meine Lieblinge Lachs",
+    "price": "3.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34996327720524095,
+      0.49304786877753387,
+      0.962201573834061,
+      0.6901148850660814
+    ]
+  },
+  {
+    "product_name": "Costa Ofenfisch",
+    "price": "3.99",
+    "discount": null,
+    "unit": "400 g",
+    "original_price": null,
+    "bbox": [
+      0.033793180052401936,
+      0.7100765900440542,
+      0.6495837370480352,
+      0.9038851149339188
+    ]
+  },
+  {
+    "product_name": "Sea Gold Norwegische Lachsfilets",
+    "price": "7.99",
+    "discount": null,
+    "unit": "3 x 125 g",
+    "original_price": null,
+    "bbox": [
+      0.6649868847161576,
+      0.7100765900440542,
+      0.9636020984454146,
+      0.9038851149339178
+    ]
+  },
+  {
+    "product_name": "Bio Bio Bio Berg-käsesstück",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "200 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.6666497150043614,
+      0.06932983711452571,
+      0.9635609326113459,
+      0.4773854498457342
+    ]
+  }
+]

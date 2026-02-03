@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "BÄCKERKRÖNUNG Weizenbrötchen",
+    "price": "1.00",
+    "discount": "25",
+    "unit": "je 7 Stück",
+    "original_price": "1.33",
+    "bbox": [
+      0.5050000000000001,
+      0.05299999999999994,
+      0.8693592901235914,
+      0.4985674315581398
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Ciabatta",
+    "price": "0.79",
+    "discount": null,
+    "unit": "je 300 g",
+    "original_price": null,
+    "bbox": [
+      0.12457351737536528,
+      0.23850563606644593,
+      0.48617964506179584,
+      0.48867975040863676
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Frisches Buttercroissant",
+    "price": "0.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12524683756283905,
+      0.5038146135249174,
+      0.4782195661866394,
+      0.7210617954916947
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Das süße Nuss-Nugat-Creme-Croissant Mit Nussstückchen,",
+    "price": "0.69",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5029999999999999,
+      0.5030000000000001,
+      0.8582994084363255,
+      0.7173089774584713
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Knäckebrot Versch. Sorten,",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 250 g",
+    "original_price": null,
+    "bbox": [
+      0.125246837562839,
+      0.7323202495913628,
+      0.47954624599916545,
+      0.9481853864750827
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Mini Chinois Versch. Sorten,",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 300 g",
+    "original_price": null,
+    "bbox": [
+      0.5023466403749483,
+      0.7370112721328916,
+      0.8632794478739045,
+      0.9482471819667769
+    ]
+  }
+]

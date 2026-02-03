@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Clementinen Kl. I",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 1-kg-Netz",
+    "original_price": null,
+    "bbox": [
+      0.12144108695471174,
+      0.04677917348537334,
+      0.45334706956543447,
+      0.21497342071026615
+    ]
+  },
+  {
+    "product_name": "Rote Paprika Kl. I",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 500-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12387637391108894,
+      0.2294454760544059,
+      0.45091178260905773,
+      0.39463972327929897
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Ente",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je kg",
+    "original_price": null,
+    "bbox": [
+      0.47091178260905797,
+      0.03719479337134342,
+      0.8733824782634033,
+      0.2626945202981183
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Frisches Hähnchen-Geschnetzeltes",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 800-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.47700000000000004,
+      0.27399999999999913,
+      0.873382478263403,
+      0.48963917713284844
+    ]
+  },
+  {
+    "product_name": "Roter Weihnachtsstern",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12365873043290049,
+      0.41169506644456805,
+      0.45700000000000024,
+      0.5801671217887082
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF XXL Delikatess Hinterschinken",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 350 g",
+    "original_price": null,
+    "bbox": [
+      0.47363553043956214,
+      0.5055556162384948,
+      0.8727295478288384,
+      0.7205832878211291
+    ]
+  },
+  {
+    "product_name": "Christrose",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12487637391108883,
+      0.59305588931172,
+      0.4582176434781886,
+      0.7675556162384941
+    ]
+  },
+  {
+    "product_name": "Herbst-Mix",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Tray",
+    "original_price": null,
+    "bbox": [
+      0.12244108695471188,
+      0.7816109594037637,
+      0.45821764347818855,
+      0.9473608228671493
+    ]
+  },
+  {
+    "product_name": "MEICA 6 Würstchen Frankfurter Art",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 540 g",
+    "original_price": null,
+    "bbox": [
+      0.47320024348318457,
+      0.7323331512845168,
+      0.8702942608724615,
+      0.9482219188075282
+    ]
+  }
+]

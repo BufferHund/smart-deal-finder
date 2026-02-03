@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "Span./niederl. Gurke, lose",
+    "price": "0.49",
+    "discount": "44",
+    "unit": "je Stück",
+    "original_price": "0.89",
+    "bbox": [
+      0.36910617724081085,
+      0.43776520095650995,
+      0.7698321277981724,
+      0.627512939391267
+    ]
+  },
+  {
+    "product_name": "K-CLASSIC Toilettenpapier Soft XXL",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je Großpackg. = 20 x 220 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.08862368003737324,
+      0.6649999999999985,
+      0.9205936641793913,
+      0.9388434673043435
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Amica Herd-Set EHC 933 041 E",
+    "price": "299.99",
+    "discount": "14",
+    "unit": null,
+    "original_price": "349.99",
+    "bbox": [
+      0.031014763953084355,
+      0.1022024186050074,
+      0.5165830214539529,
+      0.34213945302258464
+    ]
+  },
+  {
+    "product_name": "CHiQ Kühl-/Gefrierkombination FBM990NEIGMK",
+    "price": "399.99",
+    "discount": "11",
+    "unit": null,
+    "original_price": "449.99",
+    "bbox": [
+      0.5297933562211081,
+      0.014937034417576349,
+      0.9665940944187659,
+      0.34129135627838414
+    ]
+  },
+  {
+    "product_name": "Amica Waschmaschine WA6010-060D",
+    "price": "199.99",
+    "discount": "20",
+    "unit": null,
+    "original_price": "250.00",
+    "bbox": [
+      0.029416978546047044,
+      0.3859999999999974,
+      0.4921992618023458,
+      0.6491394530225846
+    ]
+  },
+  {
+    "product_name": "CHiQ Waschmaschine PFL80141M3XWGA",
+    "price": "279.99",
+    "discount": "15",
+    "unit": null,
+    "original_price": "329.99",
+    "bbox": [
+      0.5026014763953065,
+      0.3784304520927942,
+      0.9657933562211116,
+      0.6515318399993859
+    ]
+  },
+  {
+    "product_name": "exquisit Wärmepumpentrockner TWP 803-030",
+    "price": "349.99",
+    "discount": "12",
+    "unit": null,
+    "original_price": "399.99",
+    "bbox": [
+      0.029416978546047082,
+      0.663924226976187,
+      0.5017933562211119,
+      0.935544290232601
+    ]
+  },
+  {
+    "product_name": "AEG Bodensauger LX5-2-2SW",
+    "price": "89.99",
+    "discount": "10",
+    "unit": null,
+    "original_price": "99.99",
+    "bbox": [
+      0.4968191931389989,
+      0.6661899683717827,
+      0.9693911416281489,
+      0.9336961934884003
+    ]
+  }
+]

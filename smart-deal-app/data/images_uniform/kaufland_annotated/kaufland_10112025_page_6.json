@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "IGLO Schlemmer-Filet",
+    "price": "2.39",
+    "discount": null,
+    "unit": "je 380-g-Packg.",
+    "original_price": null,
+    "bbox": [
+      0.09243923514443847,
+      0.018349706484650674,
+      0.9002089233148791,
+      0.2913059268649818
+    ]
+  },
+  {
+    "product_name": "ARIEL Voll- oder Colorwaschmittel",
+    "price": "15.99",
+    "discount": "15",
+    "unit": "Pulver 3,96 kg, Flüssig 3,6 l oder All-in-1 Pods 1,194 - 1,266 kg",
+    "original_price": "18.95",
+    "bbox": [
+      0.1329936262036564,
+      0.2501393486104288,
+      0.886208923314867,
+      0.6149999999999927
+    ]
+  }
+]

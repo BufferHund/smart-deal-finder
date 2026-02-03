@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "UP2FASHION Strickjacke oder -Pullover",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5158867405630978,
+      0.041084184727379985,
+      0.8746546934305277,
+      0.33157775962297076
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Pyjama",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.13511878769566738,
+      0.05299999999999998,
+      0.4891132594369027,
+      0.46101285020881777
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Socken",
+    "price": "3.99",
+    "discount": null,
+    "unit": "2 Paar",
+    "original_price": null,
+    "bbox": [
+      0.1404143678833667,
+      0.47275321255220426,
+      0.48252209906150423,
+      0.7092724878654306
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Leder-Komfort-Einlegesohlen",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Paar",
+    "original_price": null,
+    "bbox": [
+      0.12090193628792316,
+      0.7288116968619491,
+      0.48452209906150334,
+      0.9468830313805107
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Joggpants",
+    "price": "11.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.7526602216892928,
+      0.5676947282424607,
+      0.8832458538059254,
+      0.9314607910034822
+    ]
+  }
+]

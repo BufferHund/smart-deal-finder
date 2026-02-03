@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "GOURMET FINEST CUISINE Knusperente",
+    "price": "4.19",
+    "discount": "30",
+    "unit": "320-g-Packung",
+    "original_price": "5.99",
+    "bbox": [
+      0.5002872540788735,
+      0.2987764895968089,
+      0.8577687221894938,
+      0.528982806892061
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Wildlachsfilet in Blätterteig",
+    "price": "1.89",
+    "discount": "36",
+    "unit": "je 300-g-Packung",
+    "original_price": "2.99",
+    "bbox": [
+      0.12199527187759777,
+      0.4120171931079376,
+      0.48586649035902457,
+      0.6700171931079377
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Gänsebrustfilet",
+    "price": "5.79",
+    "discount": "31",
+    "unit": "400-g-Packung",
+    "original_price": "8.49",
+    "bbox": [
+      0.49998449332547773,
+      0.5407936827047467,
+      0.8591584725603005,
+      0.7267077171650576
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Wildlachsfilet mit Topping",
+    "price": "4.79",
+    "discount": "31",
+    "unit": "je 700-g-Packung",
+    "original_price": "6.99",
+    "bbox": [
+      0.12060552150679066,
+      0.7238280689206203,
+      0.47574848739257064,
+      0.9464670136539292
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Riesengarnelen mit Schale",
+    "price": "4.79",
+    "discount": "36",
+    "unit": "360- bzw. 400-g-Packung",
+    "original_price": "7.49",
+    "bbox": [
+      0.4999844933254771,
+      0.7405185929777418,
+      0.863327723672721,
+      0.943518592977742
+    ]
+  }
+]

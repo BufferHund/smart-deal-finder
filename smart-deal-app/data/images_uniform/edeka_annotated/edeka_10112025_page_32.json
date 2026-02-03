@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Trauben hell oder rot kernlos",
+    "price": "4.44",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.030047915847513842,
+      0.1487209140589361,
+      0.4951916633900552,
+      0.5700000000000001
+    ]
+  },
+  {
+    "product_name": "Frische Puten-Schnitzel oder -Brust HKL A",
+    "price": "1.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.507278869164641,
+      0.20952196831696232,
+      0.9632788691646411,
+      0.5681395429705324
+    ]
+  },
+  {
+    "product_name": "ofenfrische Brötchen",
+    "price": "0.19",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.023932439188950293,
+      0.6159043936633933,
+      0.25780594348729247,
+      0.8249043936633932
+    ]
+  },
+  {
+    "product_name": "EDEKA Wintermix Salatmischung nach Saison",
+    "price": "1.00",
+    "discount": null,
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.266355055896133,
+      0.6178087873267877,
+      0.49267082186519295,
+      0.8217571176241018
+    ]
+  },
+  {
+    "product_name": "gebackenen Fleischkäse am Stück",
+    "price": "0.69",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.5064791584751379,
+      0.6160956063366074,
+      0.739603261054143,
+      0.8253746922776716
+    ]
+  }
+]

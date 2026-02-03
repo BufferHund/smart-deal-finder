@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "JUSKYS Mülltonnenbox Arel",
+    "price": "299.99",
+    "discount": "50",
+    "unit": null,
+    "original_price": "599.99",
+    "bbox": [
+      0.040422974784206665,
+      0.29821428873407435,
+      0.48907835302110536,
+      0.5248235269248803
+    ]
+  },
+  {
+    "product_name": "JUSKYS Carport, 5 x 3 m",
+    "price": "799.00",
+    "discount": "46",
+    "unit": null,
+    "original_price": "1499.00",
+    "bbox": [
+      0.5075770252157934,
+      0.3713613637223551,
+      0.9634229747842064,
+      0.5177794086560983
+    ]
+  },
+  {
+    "product_name": "JUSKYS Gerätehaus Luzern Pro",
+    "price": "799.00",
+    "discount": "52",
+    "unit": null,
+    "original_price": "1699.00",
+    "bbox": [
+      0.03942297478420663,
+      0.5348739478034857,
+      0.48507835302110625,
+      0.9040063026098244
+    ]
+  },
+  {
+    "product_name": "JUSKYS Lamellendach Tahiti",
+    "price": "799.00",
+    "discount": "46",
+    "unit": null,
+    "original_price": "1499.00",
+    "bbox": [
+      0.5021540504315866,
+      0.5328613425838343,
+      0.9662689243526192,
+      0.8848865530231369
+    ]
+  }
+]

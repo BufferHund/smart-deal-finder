@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Martini Bianco Wermut oder Vibrante Aperitif",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je 0,75-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.4422350830745883,
+      0.011179680714620213,
+      0.8740065109274877,
+      0.29905513072364487
+    ]
+  },
+  {
+    "product_name": "Hohes C 100% Orangensaft",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 1-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.12311916027835547,
+      0.33744094780325057,
+      0.3611730450425875,
+      0.533000000000003
+    ]
+  },
+  {
+    "product_name": "USA/Kalifornien: Gallo Family oder Barefoot",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 0,75-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.38006807489341654,
+      0.3150000000000006,
+      0.6248443174307102,
+      0.5290835355152808
+    ]
+  },
+  {
+    "product_name": "Three Sixty Vodka",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je 0,7-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.6359978296908387,
+      0.3160000000000005,
+      0.8762367793176798,
+      0.5290835355152804
+    ]
+  },
+  {
+    "product_name": "Heineken Premium Beer oder alkoholfrei 0,0%",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 6 x 0,33-l-Fl. Sixpack",
+    "original_price": null,
+    "bbox": [
+      0.12311916027835539,
+      0.5400000000000067,
+      0.362114089488649,
+      0.7510501213091748
+    ]
+  },
+  {
+    "product_name": "Söhnlein Brillant Sekt oder Frucht-Sparkling",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 0,75-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.37906807489341643,
+      0.5390000000000053,
+      0.6247675613006458,
+      0.7550000000000052
+    ]
+  },
+  {
+    "product_name": "Pepsi Cola",
+    "price": "3.49",
+    "discount": null,
+    "unit": "je 6 x 0,5-l-Fl.-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6370745858209036,
+      0.5400000000000079,
+      0.8773135354477467,
+      0.7550000000000079
+    ]
+  },
+  {
+    "product_name": "Carlsberg Elephant Premium Beer",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 0,5-l-Dose",
+    "original_price": null,
+    "bbox": [
+      0.12057521040614126,
+      0.762916464484721,
+      0.3616951457889047,
+      0.9771336568244482
+    ]
+  },
+  {
+    "product_name": "Veltins Pilsener",
+    "price": "0.79",
+    "discount": null,
+    "unit": "je 0,5-l-Dose",
+    "original_price": null,
+    "bbox": [
+      0.3793091948294201,
+      0.7619331715877772,
+      0.6228551689765185,
+      0.9761503639275045
+    ]
+  },
+  {
+    "product_name": "Volvic Naturelle",
+    "price": "0.65",
+    "discount": null,
+    "unit": "je 1-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.636162193496777,
+      0.7639164644847203,
+      0.8774778992536817,
+      0.9781169497213925
+    ]
+  }
+]

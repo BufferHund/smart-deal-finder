@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Zitronen",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 750-g-Netz",
+    "original_price": null,
+    "bbox": [
+      0.20817334404230503,
+      0.17679100617286247,
+      0.8548878112913613,
+      0.4022294160880007
+    ]
+  },
+  {
+    "product_name": "Marktliebe Kaki",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 1-kg-Schale",
+    "original_price": null,
+    "bbox": [
+      0.12299999999999947,
+      0.3670858136574108,
+      0.8169848170618721,
+      0.5629999999999953
+    ]
+  },
+  {
+    "product_name": "Marktliebe Heidelbeeren",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 200-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.12299999999999903,
+      0.5313245713734838,
+      0.8613112612289644,
+      0.6779999999999946
+    ]
+  },
+  {
+    "product_name": "CHIQUITA Bananen",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je kg",
+    "original_price": null,
+    "bbox": [
+      0.141,
+      0.745,
+      0.576,
+      0.953
+    ]
+  }
+]

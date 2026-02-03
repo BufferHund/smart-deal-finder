@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Bio Avocados",
+    "price": "1.99",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.029943844334306354,
+      0.045962735372957794,
+      0.3511598107678663,
+      0.2609999999999997
+    ]
+  },
+  {
+    "product_name": "Speisekartoffeln",
+    "price": "1.49",
+    "discount": null,
+    "unit": "4 kg",
+    "original_price": null,
+    "bbox": [
+      0.3470369536076577,
+      0.04177622190636558,
+      0.968314809600477,
+      0.49640432328975354
+    ]
+  },
+  {
+    "product_name": "Champignons weiss",
+    "price": "2.22",
+    "discount": null,
+    "unit": "300 g",
+    "original_price": null,
+    "bbox": [
+      0.030972214400718026,
+      0.27294945958878064,
+      0.3382867424270426,
+      0.49294945958878067
+    ]
+  },
+  {
+    "product_name": "Unsere Heimat - echt & gut Bio Demeter Endivien",
+    "price": "1.99",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.03468519039952155,
+      0.5090505404112191,
+      0.3346293376268034,
+      0.7304043232897518
+    ]
+  },
+  {
+    "product_name": "Unsere Heimat - echt & gut Bio Bioland Petersilie oder Basilikum",
+    "price": "1.59",
+    "discount": null,
+    "unit": "im Topf, aus Deutschland, Stück",
+    "original_price": null,
+    "bbox": [
+      0.34565740480023954,
+      0.5083537828785328,
+      0.650972214400718,
+      0.7285054041121923
+    ]
+  },
+  {
+    "product_name": "Unsere Heimat - echt & gut Schalotten",
+    "price": "2.49",
+    "discount": null,
+    "unit": "750 g",
+    "original_price": null,
+    "bbox": [
+      0.6593703807990444,
+      0.5080505404112191,
+      0.9642870240011965,
+      0.7285559445234101
+    ]
+  },
+  {
+    "product_name": "Driscoll's Himbeeren",
+    "price": "1.99",
+    "discount": null,
+    "unit": "125 g",
+    "original_price": null,
+    "bbox": [
+      0.0323148096004788,
+      0.7505451362990294,
+      0.33702750402512816,
+      0.9605451362990292
+    ]
+  },
+  {
+    "product_name": "Tafelläpfel rot",
+    "price": "1.99",
+    "discount": null,
+    "unit": "2 kg",
+    "original_price": null,
+    "bbox": [
+      0.3453978848241718,
+      0.7437978383551244,
+      0.6566387872093332,
+      0.9614945958878143
+    ]
+  },
+  {
+    "product_name": "Innocent Smoothie oder Shot",
+    "price": null,
+    "discount": null,
+    "unit": "250 ml oder 80 ml versch. Sorten",
+    "original_price": null,
+    "bbox": [
+      0.6613517632081366,
+      0.7422348149801422,
+      0.9512036672033507,
+      0.9596967575326882
+    ]
+  }
+]

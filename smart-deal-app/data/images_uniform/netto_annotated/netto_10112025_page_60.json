@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Fanta Apfel Lychee",
+    "price": "19.99",
+    "discount": "33",
+    "unit": "12 x 0,5 Liter",
+    "original_price": "29.99",
+    "bbox": [
+      0.037508554217575756,
+      0.15577911043077258,
+      0.26186407228618097,
+      0.5089760122460827
+    ]
+  },
+  {
+    "product_name": "Fanta Lemon",
+    "price": "17.99",
+    "discount": "24",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "23.76",
+    "bbox": [
+      0.2814914457824235,
+      0.15499999999999964,
+      0.5116102650610911,
+      0.30197601224608284
+    ]
+  },
+  {
+    "product_name": "Seven Up Cherry",
+    "price": "29.99",
+    "discount": "14",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "34.99",
+    "bbox": [
+      0.28149144578242363,
+      0.32389555215386506,
+      0.511610265061091,
+      0.5077551226768561
+    ]
+  },
+  {
+    "product_name": "Effect Enegry Drink Gazoz",
+    "price": "19.99",
+    "discount": "23",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "26.16",
+    "bbox": [
+      0.03740684337406072,
+      0.5160924539691749,
+      0.2607623614426659,
+      0.9046866564615974
+    ]
+  },
+  {
+    "product_name": "Coke Strawberry",
+    "price": "44.99",
+    "discount": "22",
+    "unit": "24 x 0,33 Liter",
+    "original_price": "57.99",
+    "bbox": [
+      0.28249144578242386,
+      0.5228835582769068,
+      0.5126102650610911,
+      0.705755122676856
+    ]
+  },
+  {
+    "product_name": "Vitamindrink Pfirsich-Melone",
+    "price": "29.99",
+    "discount": "16",
+    "unit": "24 x 0,25 Liter",
+    "original_price": "35.76",
+    "bbox": [
+      0.279186313251877,
+      0.7165462269845838,
+      0.5105085542175758,
+      0.9038715643999486
+    ]
+  }
+]

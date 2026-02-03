@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Apulien Contessa Marina Merlot-Primitivo oder Malvasia Nera IGP",
+    "price": "5.99",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.06296494401037685,
+      0.03842382590100396,
+      0.6504385874256069,
+      0.4952319433042772
+    ]
+  },
+  {
+    "product_name": "Bouvet Cremant de Loire Blanc Excellence",
+    "price": "11.99",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.6539999999999994,
+      0.038538218626701495,
+      0.964447416015565,
+      0.2612324696130901
+    ]
+  },
+  {
+    "product_name": "Meßmer Chardonnay Sekt brut",
+    "price": "14.49",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.6640000000000008,
+      0.27227095139419827,
+      0.9660088285899585,
+      0.494771214548605
+    ]
+  },
+  {
+    "product_name": "Winzer von Baden Freischütz Müller-Thurgau Q.b.A., auch halb-trocken",
+    "price": "3.29",
+    "discount": null,
+    "unit": "1 L",
+    "original_price": null,
+    "bbox": [
+      0.03716670972836841,
+      0.5048465991843808,
+      0.3390088285899583,
+      0.7268086437120862
+    ]
+  },
+  {
+    "product_name": "Baden Ortenauer Weinkeller Pinot Noir Merlot, Rosé oder Pinot Blanc & Auxerrois trocken Q.b.A.",
+    "price": "3.99",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.35388600344117177,
+      0.5068081174032726,
+      0.65552635658477,
+      0.7258086437120861
+    ]
+  },
+  {
+    "product_name": "Gengenbacher Glühwein rot oder weiß",
+    "price": "3.99",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.668324590866778,
+      0.5086926720599481,
+      0.9875614125743932,
+      0.7258086437120878
+    ]
+  },
+  {
+    "product_name": "Rheinhessen Wein-Genuss Riesling trocken Q.b.A.",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1 L",
+    "original_price": null,
+    "bbox": [
+      0.03480706287196672,
+      0.7397316801498696,
+      0.34552635658477004,
+      0.9592698987765725
+    ]
+  },
+  {
+    "product_name": "Pfalz Meßmer Spätbur-gunder Rosé tro-cken",
+    "price": "8.49",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.34944741601556456,
+      0.7396547165876535,
+      0.6503684754463599,
+      0.9581929352143558
+    ]
+  },
+  {
+    "product_name": "Pfalz Meßmer Spätburgunder Gutswein",
+    "price": "11.49",
+    "discount": null,
+    "unit": "0,75 L",
+    "original_price": null,
+    "bbox": [
+      0.6608860034411714,
+      0.7338856072743026,
+      0.9801228251487866,
+      0.9581929352143561
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Rinderbäckchen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.029302637713517248,
+      0.07100000000000022,
+      0.3430902360803154,
+      0.26588709216769046
+    ]
+  },
+  {
+    "product_name": "Fleischkäse-Aufschnitt",
+    "price": "0.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03403007869343852,
+      0.27688709216769075,
+      0.3366052754270348,
+      0.49651464048198835
+    ]
+  },
+  {
+    "product_name": "Rehkeule oder Reh-Edelgulasch",
+    "price": "2.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34518047216063086,
+      0.1637866012049707,
+      0.9617575196733597,
+      0.4953933006024851
+    ]
+  },
+  {
+    "product_name": "Tiefsee-Scallops ohne Rogen",
+    "price": "5.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03354511804015773,
+      0.5074560785540356,
+      0.33612031477375376,
+      0.7291799018074562
+    ]
+  },
+  {
+    "product_name": "Alma Vorarlberger Bergkäse Original",
+    "price": "2.79",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34509023608031475,
+      0.5122133987950293,
+      0.6483928737938325,
+      0.7287866012049714
+    ]
+  },
+  {
+    "product_name": "¹Sauerteig-Urbrot",
+    "price": "2.99",
+    "discount": null,
+    "unit": "750 g (1 kg = 3,99)",
+    "original_price": null,
+    "bbox": [
+      0.6635451180401593,
+      0.5076359803614913,
+      0.9660000000000004,
+      0.7299079410844733
+    ]
+  },
+  {
+    "product_name": "Gut & Günstig Brokkoli",
+    "price": "1.11",
+    "discount": null,
+    "unit": "500 g (1 kg = 2,22)",
+    "original_price": null,
+    "bbox": [
+      0.03527255902007883,
+      0.7561213398795029,
+      0.3333928737938325,
+      0.9625146404819869
+    ]
+  },
+  {
+    "product_name": "Berggader Bergscheiben",
+    "price": "1.59",
+    "discount": "44",
+    "unit": "versch. Sorten und Fettstufen, 140-150 g (1 kg = 11,36-10,60)",
+    "original_price": null,
+    "bbox": [
+      0.3473627951003937,
+      0.7377280392770174,
+      0.655847755753675,
+      0.9605146404819884
+    ]
+  },
+  {
+    "product_name": "Landliebe Fruchtjoghurt",
+    "price": "0.99",
+    "discount": "58",
+    "unit": "versch. Sorten, 500 g, zzgl. 0,15 Pfand (1 kg = 1,98)",
+    "original_price": null,
+    "bbox": [
+      0.6633327164069578,
+      0.7539957839764052,
+      0.9746973622864831,
+      0.9613933006024856
+    ]
+  }
+]

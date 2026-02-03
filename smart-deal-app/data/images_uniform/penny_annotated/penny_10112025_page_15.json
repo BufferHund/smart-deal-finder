@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "TODAY DENT Mundspülung Minzfrische",
+    "price": "0.85",
+    "discount": null,
+    "unit": "je 500 ml",
+    "original_price": null,
+    "bbox": [
+      0.11923934064052984,
+      0.13275096757466368,
+      0.4220644933492857,
+      0.9505480797974578
+    ]
+  },
+  {
+    "product_name": "TODAY Softpflegecreme",
+    "price": "1.15",
+    "discount": null,
+    "unit": "je 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.1284131135468431,
+      0.556523072324064,
+      0.6040103907632377,
+      0.9478576957569496
+    ]
+  },
+  {
+    "product_name": "BLIK Allzweckreiniger Ocean",
+    "price": "0.95",
+    "discount": null,
+    "unit": "je 1 l",
+    "original_price": null,
+    "bbox": [
+      0.4700218559114054,
+      0.07838076808101568,
+      0.8627388034480642,
+      0.9518932718177117
+    ]
+  }
+]

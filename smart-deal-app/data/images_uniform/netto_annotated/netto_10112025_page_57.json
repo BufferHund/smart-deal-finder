@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "ProLife Brausetabletten Magnesium Orange/Grapefruit",
+    "price": "0.65",
+    "discount": null,
+    "unit": "102 g",
+    "original_price": null,
+    "bbox": [
+      0.0007704887150498394,
+      0.41,
+      0.9609999999999915,
+      0.6279999999999942
+    ]
+  },
+  {
+    "product_name": "ProLife Brausetabletten",
+    "price": "0.75",
+    "discount": null,
+    "unit": "102 g",
+    "original_price": null,
+    "bbox": [
+      0.002212930359937402,
+      0.05633802816901409,
+      0.9670505672926446,
+      0.39280125195618165
+    ]
+  },
+  {
+    "product_name": "Vitamin B12 Kur",
+    "price": "4.75",
+    "discount": null,
+    "unit": "80 ml",
+    "original_price": null,
+    "bbox": [
+      0.05754297780009494,
+      0.5729199069134199,
+      0.9646020225963284,
+      0.9048921894239996
+    ]
+  }
+]

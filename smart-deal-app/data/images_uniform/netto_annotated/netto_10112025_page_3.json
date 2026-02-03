@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Coca-Cola",
+    "price": "1.11",
+    "discount": "30",
+    "unit": "pro Flasche",
+    "original_price": "1.59",
+    "bbox": [
+      0.047721348469601625,
+      0.22730936884914743,
+      0.5874630064492199,
+      0.4337718653343737
+    ]
+  },
+  {
+    "product_name": "Coca-Cola",
+    "price": "0.99",
+    "discount": "37",
+    "unit": "pro Flasche",
+    "original_price": "1.59",
+    "bbox": [
+      0.04876628920479293,
+      0.2162985077824463,
+      0.9513705377232841,
+      0.4314833527389892
+    ]
+  },
+  {
+    "product_name": "Rotkäppchen Sekt",
+    "price": "0.99",
+    "discount": "41",
+    "unit": "pro Flasche",
+    "original_price": "1.69",
+    "bbox": [
+      0.05037957478102967,
+      0.4506538469778424,
+      0.5874464526794907,
+      0.6791515504345214
+    ]
+  },
+  {
+    "product_name": "Rotkäppchen Sekt",
+    "price": "0.88",
+    "discount": "47",
+    "unit": "pro Flasche",
+    "original_price": "1.69",
+    "bbox": [
+      0.05176628920479294,
+      0.4490614244995691,
+      0.9558741075446542,
+      0.6807439729128021
+    ]
+  },
+  {
+    "product_name": "Coca-Cola",
+    "price": "1.19",
+    "discount": "25",
+    "unit": "1,25 Liter",
+    "original_price": "1.59",
+    "bbox": [
+      0.046003459375169496,
+      0.22565326822699805,
+      0.2907027113707519,
+      0.4326174620916374
+    ]
+  },
+  {
+    "product_name": "Rotkäppchen Sekt",
+    "price": "1.11",
+    "discount": "34",
+    "unit": "0,2 Liter",
+    "original_price": "1.69",
+    "bbox": [
+      0.049539268035035236,
+      0.5151486717214312,
+      0.2893543610228194,
+      0.6775757645053135
+    ]
+  }
+]

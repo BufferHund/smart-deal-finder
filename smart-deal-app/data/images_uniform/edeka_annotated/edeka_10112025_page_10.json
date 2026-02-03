@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Frische Kabeljaufilets",
+    "price": "2.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03175745632799771,
+      0.6143029084930184,
+      0.49155019359857316,
+      0.9619185150157658
+    ]
+  },
+  {
+    "product_name": "Fischpfanne",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.5046764693658656,
+      0.4363333163155584,
+      0.9618912018007717,
+      0.7294598006095991
+    ]
+  },
+  {
+    "product_name": "Frische Regenbogen-Forellen",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.49518412197967376,
+      0.7495982613626256,
+      0.9650553175961694,
+      0.9599332958942282
+    ]
+  }
+]

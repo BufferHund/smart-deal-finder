@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Zewa Wisch & Weg Küchentücher",
+    "price": "2.49",
+    "discount": "21",
+    "unit": "versch. Sorten, z. B. Original, 4 x 45 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.6580876735276563,
+      0.045133947195072424,
+      0.963912326472335,
+      0.2627944752443426
+    ]
+  },
+  {
+    "product_name": "Zewa Ultra Soft Toilettenpapier",
+    "price": "6.49",
+    "discount": "40",
+    "unit": "4-lagig, 20 x 150 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.036070138822131295,
+      0.17140184158521785,
+      0.6516665797025629,
+      0.49619631682956167
+    ]
+  },
+  {
+    "product_name": "Hakle Toilettenpapier Traumweich oder Sanft & Sicher",
+    "price": "2.99",
+    "discount": "30",
+    "unit": "4-lagig, 8 x 130 Blatt",
+    "original_price": null,
+    "bbox": [
+      0.656070138822126,
+      0.30053578878028986,
+      0.9624035591195682,
+      0.4930623696344887
+    ]
+  },
+  {
+    "product_name": "Odol-med3 Zahncreme",
+    "price": "1.39",
+    "discount": "22",
+    "unit": "versch. Sorten, 75-125 ml",
+    "original_price": null,
+    "bbox": [
+      0.3692284729565444,
+      0.5131339471950696,
+      0.6512632814753043,
+      0.7281431551211685
+    ]
+  },
+  {
+    "product_name": "Regina Softis Taschentücher",
+    "price": "2.79",
+    "discount": "22",
+    "unit": "30 x 9er",
+    "original_price": null,
+    "bbox": [
+      0.6602632814752925,
+      0.5179330264024634,
+      0.9639123264723348,
+      0.7266073663408678
+    ]
+  },
+  {
+    "product_name": "Nivea Dusche auch Men",
+    "price": "1.99",
+    "discount": "11",
+    "unit": "versch. Sorten, 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.02699999999999956,
+      0.6238267029856772,
+      0.3504739588340108,
+      0.9629999999999889
+    ]
+  },
+  {
+    "product_name": "Viss Reiniger",
+    "price": "1.99",
+    "discount": "28",
+    "unit": "versch. Sorten, 750 ml",
+    "original_price": null,
+    "bbox": [
+      0.3741054691255066,
+      0.7365357887802898,
+      0.6296317711838075,
+      0.9618660528049269
+    ]
+  },
+  {
+    "product_name": "fit Spülmittel",
+    "price": "3.98",
+    "discount": "33",
+    "unit": "versch. Sorten, XXL, 3 x 750 ml",
+    "original_price": null,
+    "bbox": [
+      0.6597545141225336,
+      0.7396027623778285,
+      0.9679298611778677,
+      0.963066973597531
+    ]
+  }
+]

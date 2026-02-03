@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "MÜHLENHOF Frischer Rinder-Sauerbraten",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je 1.000-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5735515536313889,
+      0.045042076360353886,
+      0.8723326273736687,
+      0.2628356276179841
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Frisches Hackfleisch, gemischt",
+    "price": "5.99",
+    "discount": null,
+    "unit": "je 800-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.1277125703916322,
+      0.2667495083675756,
+      0.5543128530727122,
+      0.4956673221765678
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Frische Schweine-Medaillons",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 400-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5727902541900634,
+      0.2741262290810616,
+      0.8744519776530066,
+      0.48950098326485014
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Frisches Puten-Gulasch",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 800-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.12411581899494509,
+      0.502875737448637,
+      0.49010663854716585,
+      0.7211683054414182
+    ]
+  },
+  {
+    "product_name": "MÜHLENHOF Frische Hähnchen-Minutenschnitzel",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 800-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5073905368711422,
+      0.5026673221765663,
+      0.8706906782116812,
+      0.7195851359855584
+    ]
+  },
+  {
+    "product_name": "BUTCHER'S by Penny Spare Ribs",
+    "price": "5.99",
+    "discount": "25",
+    "unit": "je 600-g-Packung",
+    "original_price": "7.99",
+    "bbox": [
+      0.12523516927428327,
+      0.7302925679927774,
+      0.4924646893851802,
+      0.9499158472792928
+    ]
+  },
+  {
+    "product_name": "Frischer Hähnchenrollbraten",
+    "price": "5.49",
+    "discount": null,
+    "unit": "je 500-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5068679379884932,
+      0.7310841527207077,
+      0.869974576535657,
+      0.9481242625513615
+    ]
+  }
+]

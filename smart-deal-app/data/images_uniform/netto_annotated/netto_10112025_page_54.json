@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "PURE & BASIC men Rasiergel",
+    "price": "1.35",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.029284463857620294,
+      0.3094486732450648,
+      0.4528730852057855,
+      0.6918365269269363
+    ]
+  },
+  {
+    "product_name": "PURE & BASIC men Men Gesichts-creme",
+    "price": "2.35",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.036482727892251224,
+      0.7029999999999993,
+      0.33803320752843374,
+      0.9079747053015647
+    ]
+  },
+  {
+    "product_name": "PURE & BASIC men Ersatzklingen Titan 6-Klingen",
+    "price": "3.99",
+    "discount": null,
+    "unit": "3 Stück",
+    "original_price": null,
+    "bbox": [
+      0.35224136394612565,
+      0.6955379420476494,
+      0.9700345442154938,
+      0.9037563236746063
+    ]
+  },
+  {
+    "product_name": "PURE & BASIC men Rasier-system",
+    "price": "3.99",
+    "discount": null,
+    "unit": "2-Klingen inkl. 20 Ersatzklingen",
+    "original_price": null,
+    "bbox": [
+      0.48362491481542674,
+      0.37069977935177173,
+      0.9619739214692308,
+      0.6890809186520612
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "Pflaumen dunkel",
+    "price": "1.29",
+    "discount": null,
+    "unit": "500 g Schale",
+    "original_price": null,
+    "bbox": [
+      0.06333548814688568,
+      0.5559460352954699,
+      0.9630000000000021,
+      0.9031648190935198
+    ]
+  },
+  {
+    "product_name": "Hokkaido Kürbis",
+    "price": "0.79",
+    "discount": null,
+    "unit": "1 kg lose",
+    "original_price": null,
+    "bbox": [
+      0.013177015995409826,
+      0.25194720777376567,
+      0.9602750406654912,
+      0.5536353529946404
+    ]
+  }
+]

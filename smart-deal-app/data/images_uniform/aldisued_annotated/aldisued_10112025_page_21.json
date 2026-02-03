@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "UP2FASHION Leggings",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.1228511811218584,
+      0.34367898863619284,
+      0.30095643027722463,
+      0.4968512183015483
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Flausch-Socken",
+    "price": "3.99",
+    "discount": null,
+    "unit": "2 Paar",
+    "original_price": null,
+    "bbox": [
+      0.5015084949910423,
+      0.029439092540485885,
+      0.8641419907403247,
+      0.25942123089993047
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Flausch-Pyjama",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.11415608049860365,
+      0.5047628504785939,
+      0.48346097987534853,
+      0.6689260681828342
+    ]
+  },
+  {
+    "product_name": "UP2FASHION Jeans",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5234609798753468,
+      0.5312001836128235,
+      0.8652123358865155,
+      0.760176735645915
+    ]
+  },
+  {
+    "product_name": "CRANE Softshell-Schuhe",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je Paar",
+    "original_price": null,
+    "bbox": [
+      0.49937567800558436,
+      0.7400559078949329,
+      0.8708293962604705,
+      0.9420883678229585
+    ]
+  },
+  {
+    "product_name": "NUR DIE Strumpfhose",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5082700939521548,
+      0.27100358791644125,
+      0.869708305691777,
+      0.5256570548060863
+    ]
+  }
+]

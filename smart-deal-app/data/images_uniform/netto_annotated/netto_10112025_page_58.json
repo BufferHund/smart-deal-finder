@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Birds Garden Streufutter",
+    "price": "1.79",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.63,
+      0.147,
+      0.978,
+      0.494
+    ]
+  },
+  {
+    "product_name": "Birds Garden Sonnenblumenkerne",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.655,
+      0.544,
+      0.978,
+      0.9059999999999999
+    ]
+  },
+  {
+    "product_name": "Birds Garden Meisenknödel",
+    "price": "1.29",
+    "discount": null,
+    "unit": "540 g",
+    "original_price": null,
+    "bbox": [
+      0.038,
+      0.543,
+      0.624,
+      0.941
+    ]
+  }
+]

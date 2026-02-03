@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Frische schottische Lachsfilets",
+    "price": "4.44",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03368387686091332,
+      0.04277745890985303,
+      0.33582274980411436,
+      0.2593092616771474
+    ]
+  },
+  {
+    "product_name": "Lachstremel mit Pfeffer",
+    "price": "5.79",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34737962431440084,
+      0.03904623010482302,
+      0.6501521262732566,
+      0.2622427863312357
+    ]
+  },
+  {
+    "product_name": "Makrelen",
+    "price": "1.19",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6607976258814848,
+      0.0788901643605879,
+      0.9637090007835425,
+      0.26159827811320613
+    ]
+  },
+  {
+    "product_name": "Frische Premium-Nordsee-Muscheln",
+    "price": "4.99",
+    "discount": null,
+    "unit": "in der 1-kg-Meerwasser-Packung",
+    "original_price": null,
+    "bbox": [
+      0.03715212627325648,
+      0.2828439342557648,
+      0.33930425254651303,
+      0.4958439342557648
+    ]
+  },
+  {
+    "product_name": "Fischertopf",
+    "price": "1.89",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.3496838768609136,
+      0.28671098356394115,
+      0.6510635011753139,
+      0.4945549178197063
+    ]
+  },
+  {
+    "product_name": "Gekochte Cocktail-Garnelen",
+    "price": "3.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6607976258814852,
+      0.2918670493081763,
+      0.9755568745102858,
+      0.49584393425576456
+    ]
+  },
+  {
+    "product_name": "Special Sushi",
+    "price": "14.99",
+    "discount": null,
+    "unit": "360 g",
+    "original_price": null,
+    "bbox": [
+      0.034683876860913336,
+      0.5040000000000003,
+      0.3402156274485703,
+      0.7278005739622646
+    ]
+  },
+  {
+    "product_name": "Maki-California-Mix vegetarisch",
+    "price": "7.29",
+    "discount": null,
+    "unit": "290 g",
+    "original_price": null,
+    "bbox": [
+      0.03216864518764867,
+      0.7371668781366294,
+      0.3379498676054509,
+      0.9600474982076406
+    ]
+  },
+  {
+    "product_name": "California-Frischkäse-Lachs",
+    "price": "8.99",
+    "discount": null,
+    "unit": "210 g",
+    "original_price": null,
+    "bbox": [
+      0.3473436672534031,
+      0.7726906272404492,
+      0.6503874227698465,
+      0.9601412258031375
+    ]
+  },
+  {
+    "product_name": "Dragon Box",
+    "price": "11.99",
+    "discount": null,
+    "unit": "210 g",
+    "original_price": null,
+    "bbox": [
+      0.6596062003520434,
+      0.7895737849510092,
+      0.9642904799131928,
+      0.9600474982076415
+    ]
+  }
+]

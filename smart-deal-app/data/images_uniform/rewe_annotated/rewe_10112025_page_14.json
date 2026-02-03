@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "REWE Bio Wiener Würstchen",
+    "price": "2.59",
+    "discount": null,
+    "unit": "je 200-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.11771347871297452,
+      0.539411765286409,
+      0.6245741593501881,
+      0.7534985024672453
+    ]
+  },
+  {
+    "product_name": "REWE Bio Baguette Salami",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 80-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.63347558977987,
+      0.5372560892512215,
+      0.8794387814169007,
+      0.7534985024672495
+    ]
+  },
+  {
+    "product_name": "REWE Bio Schinkenwurst",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 100-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12069765247531623,
+      0.7635583239648088,
+      0.36361941092231903,
+      0.9758795024672507
+    ]
+  },
+  {
+    "product_name": "REWE Bio Hirtenkäse",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 200-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3786634143848505,
+      0.7633248826432092,
+      0.8784857814169079,
+      0.9773166198240448
+    ]
+  }
+]

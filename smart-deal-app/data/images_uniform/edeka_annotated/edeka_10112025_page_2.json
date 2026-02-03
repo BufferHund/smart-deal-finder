@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "EDEKA Herzstücke Weizenmehl Type 550 auch Type 405 oder Roggenmehl Type 1150",
+    "price": "0.99",
+    "discount": "33",
+    "unit": "1 kg",
+    "original_price": null,
+    "bbox": [
+      0.03444210128215003,
+      0.09545781832576578,
+      0.6501391870368944,
+      0.4939144496770723
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Frische Schlagsahne",
+    "price": "2.49",
+    "discount": "13",
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.7050000000000022,
+      0.03896746125255365,
+      0.9679075921654948,
+      0.2613975868161179
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Haselnusskerne gehobelt oder gehackt",
+    "price": "2.22",
+    "discount": "25",
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.3470467792023889,
+      0.5050795173632237,
+      0.651395322079761,
+      0.7260795173632237
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Bourbon Vanillezucker",
+    "price": "0.79",
+    "discount": "20",
+    "unit": "2 x 8 g",
+    "original_price": null,
+    "bbox": [
+      0.35004677920238897,
+      0.7676819305471058,
+      0.651395322079761,
+      0.9580000000000013
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Bourbon Vanilleextrakt, Vanillepaste oder Vanilleschoten",
+    "price": "1.99",
+    "discount": "26",
+    "unit": "50 ml / 50 g / 4 g",
+    "original_price": null,
+    "bbox": [
+      0.6626046779202391,
+      0.7420265057877412,
+      0.9719532207976114,
+      0.9619602413183903
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Kalifornische Mandeln oder Iberische Mandeln",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.661382665806765,
+      0.27135545418558554,
+      0.9613769129554031,
+      0.493373553064701
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Kokos-Raspel",
+    "price": "1.49",
+    "discount": "21",
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.03488305199402769,
+      0.5071880125505127,
+      0.3390632653819491,
+      0.72624587011124
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Haselnusskerne",
+    "price": "3.49",
+    "discount": "22",
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.6655686320460483,
+      0.5071880125505127,
+      0.9669582012744474,
+      0.7252591230051105
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Rum Rosinen",
+    "price": "1.79",
+    "discount": "28",
+    "unit": "125 g",
+    "original_price": null,
+    "bbox": [
+      0.04046434031307212,
+      0.7483794879370026,
+      0.3376679433021881,
+      0.960530115754824
+    ]
+  }
+]

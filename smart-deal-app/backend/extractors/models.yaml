@@ -1,0 +1,128 @@
+# Model Configuration
+# Add new models here - they will be automatically discovered
+
+models:
+  # OCR-based extraction (Traditional OCR Pipeline)
+  ocr_tesseract:
+    name: "Tesseract OCR"
+    type: "ocr"
+    architecture: "ocr_pipeline" # Traditional OCR Pipeline
+    source: "local"             # Local Deployment
+    description: "Standard open-source OCR engine using pattern matching and LSTM"
+    accuracy: 0.90
+    speed: "fast"
+    cost: "free"
+    requires:
+      - tesseract
+
+  ocr_paddle:
+    name: "PaddleOCR"
+    type: "ocr"
+    architecture: "ocr_pipeline" # Traditional OCR Pipeline
+    source: "local"             # Local Deployment
+    description: "Advanced deep learning OCR optimized for complex layouts"
+    accuracy: 0.92
+    speed: "medium"
+    cost: "free"
+    requires:
+      - paddleocr
+
+  # AI-based extraction (End-to-End OCR Free)
+  gemini_flash:
+    name: "Gemini 2.0 Flash"
+    type: "ai"
+    architecture: "ocr_free"     # End-to-End OCR Free
+    source: "web_api"           # Web API
+    description: "State-of-the-art multimodal model with native document understanding"
+    accuracy: 0.98
+    speed: "fast"
+    cost: "€0.005/page"
+    requires:
+      - google-generativeai
+      - api_key
+      
+  gemini_flash_lite:
+    name: "Gemini 2.5 Flash Lite"
+    type: "ai"
+    architecture: "ocr_free"
+    source: "web_api"
+    description: "Ultra-fast, cost-effective model (Benchmark Winner)"
+    accuracy: 0.96
+    speed: "instant"
+    cost: "€0.002/page"
+    model_id: "gemini-2.5-flash-lite"
+    requires:
+      - google-generativeai
+      - api_key
+
+  gemini_pro:
+    name: "Gemini 2.5 Pro"
+    type: "ai"
+    architecture: "ocr_free"
+    source: "web_api"
+    description: "High-intelligence model for complex layouts (Benchmark Runner-up)"
+    accuracy: 0.99
+    speed: "fast"
+    cost: "€0.01/page"
+    model_id: "gemini-2.5-pro"
+    requires:
+      - google-generativeai
+      - api_key
+
+
+  # Ollama VLM models (End-to-End OCR Free + Local)
+  ollama_qwen25vl:
+    name: "Qwen2.5-VL (7B)"
+    type: "vlm"
+    architecture: "ocr_free"     # End-to-End OCR Free
+    source: "local"             # Local Deployment
+    description: "High-performance local vision-language model by Alibaba"
+    accuracy: 0.95
+    speed: "medium"
+    cost: "free"
+    model_id: "qwen2.5vl:7b"
+    size: "6.0 GB"
+    requires:
+      - ollama
+
+  ollama_llava:
+    name: "LLaVA (7B)"
+    type: "vlm"
+    architecture: "ocr_free"     # End-to-End OCR Free
+    source: "local"             # Local Deployment
+    description: "Robust open-source visual instruction tuning model"
+    accuracy: 0.90
+    speed: "medium"
+    cost: "free"
+    model_id: "llava:7b"
+    size: "4.1 GB"
+    requires:
+      - ollama
+
+  ollama_llama32:
+    name: "Llama 3.2 Vision (11B)"
+    type: "vlm"
+    architecture: "ocr_free"     # End-to-End OCR Free
+    source: "local"             # Local Deployment
+    description: "Meta's latest multimodal model optimized for edge devices"
+    accuracy: 0.93
+    speed: "medium"
+    cost: "free"
+    model_id: "llama3.2-vision:11b"
+    size: "7.8 GB"
+    requires:
+      - ollama
+
+  ollama_llava_phi3:
+    name: "LLaVA-Phi3 (3.8B)"
+    type: "vlm"
+    architecture: "ocr_free"     # End-to-End OCR Free
+    source: "local"             # Local Deployment
+    description: "Lightweight and efficient VLM based on Microsoft Phi-3"
+    accuracy: 0.85
+    speed: "fast"
+    cost: "free"
+    model_id: "llava-phi3"
+    size: "2.3 GB"
+    requires:
+      - ollama

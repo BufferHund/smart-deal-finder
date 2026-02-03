@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "PUDA Haselnusskerne Ganz",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 200 g",
+    "original_price": null,
+    "bbox": [
+      0.12473093121022377,
+      0.3610924401679119,
+      0.5042834519611198,
+      0.9569999999999887
+    ]
+  },
+  {
+    "product_name": "NATURGUT Bio Haferflocken Zart",
+    "price": "0.85",
+    "discount": null,
+    "unit": "je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.36299999999999855,
+      0.2033504518829451,
+      0.8527294781094379,
+      0.9569999999999954
+    ]
+  },
+  {
+    "product_name": "NATURGUT Bio Landbrötchen Mehrkorn",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 280 g",
+    "original_price": null,
+    "bbox": [
+      0.45235682091865065,
+      0.4829999999999967,
+      0.8609410142138187,
+      0.9569999999999947
+    ]
+  }
+]

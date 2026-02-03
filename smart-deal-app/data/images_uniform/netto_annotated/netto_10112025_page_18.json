@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Milka Hasselnusscreme",
+    "price": "3.99",
+    "discount": null,
+    "unit": "600 g",
+    "original_price": null,
+    "bbox": [
+      0.035584559514365524,
+      0.48916834621883415,
+      0.3391930060704314,
+      0.9065290881163351
+    ]
+  },
+  {
+    "product_name": "Milka Feine Kugeln versch. Sorten",
+    "price": "2.49",
+    "discount": "24",
+    "unit": "86 - 90 g",
+    "original_price": "3.29",
+    "bbox": [
+      0.684,
+      0.711,
+      0.978,
+      0.911
+    ]
+  },
+  {
+    "product_name": "Milka Großtafel",
+    "price": "3.29",
+    "discount": "34",
+    "unit": "250 - 300 g",
+    "original_price": "4.99",
+    "bbox": [
+      0.3562252050667386,
+      0.49002336900296045,
+      0.9629665096316307,
+      0.6927851620499762
+    ]
+  },
+  {
+    "product_name": "Milka Schokolade",
+    "price": "1.11",
+    "discount": null,
+    "unit": "90 - 95 g",
+    "original_price": null,
+    "bbox": [
+      0.35043292530955567,
+      0.7020016071884768,
+      0.6530795426223542,
+      0.9057874496953255
+    ]
+  }
+]

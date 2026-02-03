@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Scheppach Werkzeugkoffer WZK120, 97-teilig",
+    "price": "39.99",
+    "discount": "59",
+    "unit": null,
+    "original_price": "99.00",
+    "bbox": [
+      0.03799999999999984,
+      0.10971941254947945,
+      0.6497407931367892,
+      0.3118782934192364
+    ]
+  },
+  {
+    "product_name": "Mannesmann Werkzeug-Sets",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.6629152933148448,
+      0.11991087380234591,
+      0.9692147055478526,
+      0.7065159439121548
+    ]
+  },
+  {
+    "product_name": "REV Steckdosenleisten und Verlängerung",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.03551411778085914,
+      0.3201782523953027,
+      0.653158234424416,
+      0.5071529018462715
+    ]
+  },
+  {
+    "product_name": "Verlängerungskabel oder Kabeltrommel",
+    "price": "19.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.040485882219140894,
+      0.5086369579341162,
+      0.6529152933148454,
+      0.7023949298901946
+    ]
+  },
+  {
+    "product_name": "Maximus M-WKL-027-DU: 190 Lumen, 5W LED, Cliplicht",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.048186469986134094,
+      0.7224587055388119,
+      0.9662429411095711,
+      0.9028405608784449
+    ]
+  },
+  {
+    "product_name": "Maximus M-WKL-016: 1.200 Lumen, 10W LED, 4 Lichtfunktionen",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.049429411095704354,
+      0.7215797195607722,
+      0.9662429411095701,
+      0.9028405608784493
+    ]
+  },
+  {
+    "product_name": "Maximus M-WKL-024: 3-Arm LED Multifunktionsleuchte",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.048186469986133934,
+      0.7224587055388121,
+      0.9649999999999997,
+      0.9054775188125658
+    ]
+  },
+  {
+    "product_name": "Maximus M-WKL-021: 1.000 Lumen, 2x 5W LED, 360° drehbar",
+    "price": "17.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.048186469986133955,
+      0.7207007335827345,
+      0.9649999999999997,
+      0.9037195468564878
+    ]
+  },
+  {
+    "product_name": "Maximus M-FL-037: 520 Lumen, 5W LED Alu-Taschenlampe",
+    "price": "17.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.04818646998613403,
+      0.7189427616266575,
+      0.9662429411095705,
+      0.9054775188125654
+    ]
+  }
+]

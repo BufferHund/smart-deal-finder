@@ -1,0 +1,40 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.8.7",
+    "@types/leaflet": "^1.9.21",
+    "@types/lodash": "^4.17.23",
+    "framer-motion": "^12.28.1",
+    "html5-qrcode": "^2.3.8",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.23",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.4",
+    "next-themes": "^0.4.6",
+    "react": "19.2.3",
+    "react-barcode": "^1.6.1",
+    "react-dom": "19.2.3",
+    "react-leaflet": "^5.0.0",
+    "react-markdown": "^10.1.0",
+    "react-qr-code": "^2.0.18",
+    "recharts": "^3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

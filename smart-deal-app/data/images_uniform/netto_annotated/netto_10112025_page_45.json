@@ -1,0 +1,158 @@
+[
+  {
+    "product_name": "Knorr Feinkost-Sauce",
+    "price": null,
+    "discount": null,
+    "unit": "250 ml",
+    "original_price": null,
+    "bbox": [
+      0.031516268965715896,
+      0.12089146582336893,
+      0.25451626896571594,
+      0.3088914658233689
+    ]
+  },
+  {
+    "product_name": "Wagner Air Fryer Snacks",
+    "price": null,
+    "discount": null,
+    "unit": "195 g",
+    "original_price": null,
+    "bbox": [
+      0.2704065075862865,
+      0.12089146582336893,
+      0.48840650758628645,
+      0.3088914658233689
+    ]
+  },
+  {
+    "product_name": "Heinz Tomato Ketchup",
+    "price": null,
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.031516268965715896,
+      0.3204457329116845,
+      0.25451626896571594,
+      0.5104457329116845
+    ]
+  },
+  {
+    "product_name": "Bonduelle Goldmais",
+    "price": null,
+    "discount": null,
+    "unit": "285 g",
+    "original_price": null,
+    "bbox": [
+      0.27150542298857205,
+      0.31811433227921115,
+      0.489505422988572,
+      0.5081143322792112
+    ]
+  },
+  {
+    "product_name": "Piasten Schokolinsen",
+    "price": null,
+    "discount": null,
+    "unit": "225 g",
+    "original_price": null,
+    "bbox": [
+      0.033714099770287116,
+      0.5194457329116846,
+      0.25671409977028714,
+      0.7104457329116846
+    ]
+  },
+  {
+    "product_name": "Dr. Schär Landbrot",
+    "price": null,
+    "discount": null,
+    "unit": "275 g",
+    "original_price": null,
+    "bbox": [
+      0.2704065075862864,
+      0.5210000000000001,
+      0.4884065075862864,
+      0.7120000000000001
+    ]
+  },
+  {
+    "product_name": "Fisherman's Friends",
+    "price": null,
+    "discount": null,
+    "unit": "versch. Sorten, 75 g",
+    "original_price": null,
+    "bbox": [
+      0.031516268965715896,
+      0.7157829316467379,
+      0.25451626896571594,
+      0.908782931646738
+    ]
+  },
+  {
+    "product_name": "Somat Geschirrspültabs",
+    "price": null,
+    "discount": null,
+    "unit": "versch. Sorten, 44 - 63 WL",
+    "original_price": null,
+    "bbox": [
+      0.2704065075862864,
+      0.7173371987350536,
+      0.4884065075862864,
+      0.9103371987350537
+    ]
+  },
+  {
+    "product_name": "Bresso Frischkäse/-zubereitung",
+    "price": null,
+    "discount": null,
+    "unit": "versch. Sorten 150 g",
+    "original_price": null,
+    "bbox": [
+      0.5050000000000052,
+      0.11467439747010733,
+      0.984769631263997,
+      0.5053314006324734
+    ]
+  },
+  {
+    "product_name": "Botato Kartoffelpuffer",
+    "price": null,
+    "discount": null,
+    "unit": "600 g",
+    "original_price": null,
+    "bbox": [
+      0.5047032537931458,
+      0.5174399348091056,
+      0.9627913232182852,
+      0.7073371987350534
+    ]
+  },
+  {
+    "product_name": "Rorax Rohrfrei Power Gel",
+    "price": null,
+    "discount": null,
+    "unit": "1 Liter",
+    "original_price": null,
+    "bbox": [
+      0.5069010845977144,
+      0.7150057981025801,
+      0.7289010845977144,
+      0.9080057981025802
+    ]
+  },
+  {
+    "product_name": "Bref Reiniger",
+    "price": null,
+    "discount": null,
+    "unit": "750 ml",
+    "original_price": null,
+    "bbox": [
+      0.7435934924137138,
+      0.7142286645584224,
+      0.9605934924137137,
+      0.9072286645584224
+    ]
+  }
+]
