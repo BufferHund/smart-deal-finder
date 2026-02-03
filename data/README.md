@@ -42,7 +42,7 @@ project/
 │   │   ├── ...
 ```
 ### Synthetic data
-For some other models that needs a task-specific fine-tuning process, we also provide synthetic data. These data can be generated and mixed with the real data for fine-tuning, but remember to separate the test and training data. 
+For some other models that needs a task-specific fine-tuning process, we also provide synthetic data. 
 
 The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv.org/abs/2107.09313).
 
@@ -69,7 +69,7 @@ The figure below shows the average number of annotated product deals per brochur
 
 ![Avg products per page](README_pics/avg_products_per_page_bar.png)
 
-### Product Count Distribution
+#### Product Count Distribution
 
 The distribution shows that most brochure pages contain between 4 and 10 products, with a clear right-skewed long tail, indicating the presence of a small number of highly dense pages.
 
@@ -90,6 +90,38 @@ and central content concentration.
 </p>
 
 ### Synthetic Data
+
+#### Average Number of Products per Page
+
+![Average Product pro pages](README_pics/avg_products_per_page_bar_syn.png)
+
+#### Product Count Distribution
+
+Ignoring the data on the right-skewed long tail of distribution from human-validated machine-labeled data, this distribution resembles the upper one.
+
+![Product Count Distribution](README_pics/product_count_distribution_syn.png)
+
+#### Spatial Distribution of Product Deals
+
+The distribution follows the pattern of the real-world data, namely column-based layouts
+and central content concentration.
+
+<p align="center">
+  <img src="README_pics/bbox_center_scatter_syn.png" width="45%" />
+  <img src="README_pics/bbox_center_heatmap_syn.png" width="45%" />
+</p>
+
+## Recommended Data Splits
+
+To avoid information leakage caused by highly similar layouts within the same brochure, we recommend splitting the dataset **by brochure or by supermarket chain**, rather than random page-level splits.
+
+A typical setup could be:
+- 70% training
+- 15% validation
+- 15% test
+
+Synthetic data should only be used for training or and must not overlap with evaluation data.
+These data can be generated and mixed with the real data only for fine-tuning, but remember to separate the test and training data. 
 
 ## Annotation Methods
 Annotations were created using **Label Studio** and **Gemini 2.5 pro** with the following labeling interface:
@@ -167,14 +199,6 @@ For downstream processing and benchmarking, each page is converted into a clean 
     "original_price": null,
     "bbox": [0.12, 0.27, 0.36, 0.46]
   },
-  {
-    "product_name": "Nutella",
-    "price": "1.99",
-    "discount": null,
-    "unit": "je 450-g-Glas",
-    "original_price": null,
-    "bbox": [0.63, 0.75, 0.88, 0.97]
-  }
 ]
 ```
 Data without deal information are annotated as:
@@ -182,6 +206,13 @@ Data without deal information are annotated as:
 null
 ```
 
+## Limitations and Future Work
+
+While the dataset covers a diverse set of supermarket brochures, it is limited to a fixed page resolution and a single document type. Layout patterns and product representations may therefore not fully generalize to other promotional formats or regions. In addition, some pages contain no valid product deals, and certain fields (e.g., discounts) are sparsely populated, which may affect model performance and evaluation stability. Meanwhile, the quantity of the pages cannot be regarded as sufficient.
+
+The annotation workflow is also not perfect. The annotation only by one person is exhausted and therefore problematic to some degree.
+
+If we have more time and resource. We will annotate more data and with a more proper way. More supermarkets and pages will be included. An more correct approach to make sure the correctness of the annotations will also be introduced.
 
 ## License and Usage
 The dataset is intended solely for academic research and educational purposes, not for commercial redistribution.
