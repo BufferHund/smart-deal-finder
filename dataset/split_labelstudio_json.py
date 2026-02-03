@@ -1,4 +1,4 @@
-# smart-deal-finder/data/split_labelstudio_json.py
+# smart-deal-finder/dataset/split_labelstudio_json.py
 """
 Split a Label Studio exported JSON file containing multiple images' annotations
 into separate JSON files per image, with normalized bounding boxes.

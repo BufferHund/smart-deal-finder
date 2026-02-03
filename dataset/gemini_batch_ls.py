@@ -1,4 +1,4 @@
-# smart-deal-finder/data/gemini_batch_ls.py
+# smart-deal-finder/dataset/gemini_batch_ls.py
 """
 Process supermarket brochure images in bulk using Google Gemini
 to extract product deals and format them for Label Studio annotations.

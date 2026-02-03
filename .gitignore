@@ -39,12 +39,12 @@ ENV/
 *.ipynb_checkpoints/
 
 # Data
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-data/annotations/*
-!data/annotations/.gitkeep
+dataset/raw/*
+!dataset/raw/.gitkeep
+dataset/processed/*
+!dataset/processed/.gitkeep
+dataset/annotations/*
+!dataset/annotations/.gitkeep
 
 # Models
 models/

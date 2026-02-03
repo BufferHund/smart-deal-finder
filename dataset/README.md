@@ -167,7 +167,7 @@ Here are the same brochure page before and after annotation:
 Label Studio exports each annotated page as a dictionary inside a JSON list.
 ```json
 {
-  "image": "/data/upload/2/0453b2be-rewe_10112025_page_1.png",
+  "image": "/dataset/upload/2/0453b2be-rewe_10112025_page_1.png",
   "id": 36,
   "deal": [
     {

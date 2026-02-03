@@ -32,7 +32,7 @@ We conducted an extensive benchmark of over 17 Vision-Language Models (VLMs) to 
 | **Llava/Bakllava** | ~0% | 0% | - | 7s | ❌ Failed |
 
 ## Methodology
-- **Dataset**: Sequential run on 5-50 pages from the `data/images_uniform` dataset.
+- **Dataset**: Sequential run on 5-50 pages from the `dataset/images_uniform` dataset.
 - **Hardware**: Validated on both Cloud APIs (Google, Mistral) and Local Inference (SiliconFlow, Ollama CPU).
 - **Metric Definitions**:
   - **JSON Success**: Ability to output valid structured JSON.

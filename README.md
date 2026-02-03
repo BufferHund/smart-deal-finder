@@ -19,7 +19,7 @@ We have curated a specialized dataset focusing on German supermarket chains to t
 - **Annotations**: High-quality, human-validated annotations including bounding boxes, product names, prices, and units.
 - **Synthetic Data**: A procedural generation pipeline (inspired by *SynthTIGER*) available to create infinite synthetic brochures for model fine-tuning.
 
-[📄 View Detailed Dataset Guide](data/README.md)
+[📄 View Detailed Dataset Guide](dataset/README.md)
 
 ## Benchmarking
 
@@ -41,7 +41,7 @@ To further improve performance on specific layouts or new domains, the project i
 ## Project Structure
 
 - `smart-deal-app/`: The core application (Frontend + Backend).
-- `data/`: Dataset, synthetic generation scripts, and data documentation.
+- `dataset/`: Dataset, synthetic generation scripts, and data documentation.
 - `docs/`: Technical documentation and reports.
 - `_archive/`: Legacy code and backups.
 
