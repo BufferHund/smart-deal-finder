@@ -48,8 +48,48 @@ The generation method is inspired by *SynthTIGER* from [Yim et al](https://arxiv
 
 We have prepared the materials (products crawled from internet) for you to generate, you only need to run the generation code.
 ```bash
-python3 synthesis_flyer.py --num_flyers (necessary parameter: how many flyers you want to generate)
+python3 synthesis_flyer.py --num_flyers
 ```
+
+The dataset is hosted on Google Drive due to size/license constraints. You can directly download with Google Drive [syn_data_1](https://drive.google.com/file/d/1fNy1uYoXVXL0ilfeDiAri6XiN3fesaDd/view?usp=drive_link) and [syn_data_2](https://drive.google.com/file/d/1IbZyo_CPRlsNBSagi28u4j-cO9koE7Vq/view?usp=drive_link). And unzip them yourself. Access: read-only  
+
+## Data Statistics
+
+### Human-validated Machine-labeled Data
+
+#### Numbers of Brochure pages from Each Supermarket
+
+There are totally 299 brochure pages from 7 supermarket. And their distribution are shown as followed:
+
+![](README_pics/pages_per_supermarket_pie.png)
+
+#### Average Number of Products per Page
+
+The figure below shows the average number of annotated product deals per brochure page.
+
+![Avg products per page](README_pics/avg_products_per_page_bar.png)
+
+### Product Count Distribution
+
+The distribution shows that most brochure pages contain between 4 and 10 products, with a clear right-skewed long tail, indicating the presence of a small number of highly dense pages.
+
+![Product Count Distribution](README_pics/product_count_distribution.png)
+
+#### Spatial Distribution of Product Deals
+
+The figures visualize the spatial distribution of product bounding boxes across all brochure pages.
+Each point corresponds to the center of a product deal region, projected onto a normalized page layout
+(1024 × 1448).
+
+A clear layout bias can be observed, reflecting common brochure design patterns such as column-based layouts
+and central content concentration.
+
+<p align="center">
+  <img src="README_pics/bbox_center_scatter.png" width="45%" />
+  <img src="README_pics/bbox_center_heatmap.png" width="45%" />
+</p>
+
+### Synthetic Data
 
 ## Annotation Methods
 Annotations were created using **Label Studio** and **Gemini 2.5 pro** with the following labeling interface:
