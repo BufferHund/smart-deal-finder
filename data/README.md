@@ -51,7 +51,7 @@ We have prepared the materials (products crawled from internet) for you to gener
 python3 synthesis_flyer.py --num_flyers
 ```
 
-The dataset is hosted on Google Drive due to size/license constraints. You can directly download with Google Drive [syn_data_1](https://drive.google.com/file/d/1fNy1uYoXVXL0ilfeDiAri6XiN3fesaDd/view?usp=drive_link) and [syn_data_2](https://drive.google.com/file/d/1IbZyo_CPRlsNBSagi28u4j-cO9koE7Vq/view?usp=drive_link). And unzip them yourself. Access: read-only  
+The dataset is hosted on Google Drive due to size/license constraints. You can directly download with Google Drive [syn_data_1](https://drive.google.com/file/d/1E4nCnD1LgnlhfHW199trpqQhqA_zyL0V/view?usp=drive_link) and [syn_data_2](https://drive.google.com/file/d/1fx-dQHXKCJxRcTJAcdXDghrVYGBU7yDb/view?usp=drive_link). And unzip them yourself. Access: read-only  
 
 ## Data Statistics
 
