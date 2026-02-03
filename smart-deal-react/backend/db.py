@@ -151,14 +151,15 @@ class DatabaseManager:
                 if not cursor.fetchone():
                     cursor.execute("INSERT INTO users (unique_id) VALUES ('default_user')")
                 
-                # Initialize trial token if not exists
-                trial_token = "AIzaSyBxt3_uitu5fRjJ1u_E0VKKCcMV6Tg4efQ"
-                cursor.execute("SELECT * FROM app_tokens WHERE token = %s", (trial_token,))
-                if not cursor.fetchone():
-                    cursor.execute(
-                        "INSERT INTO app_tokens (token, token_type, max_daily_limit) VALUES (%s, 'trial', 1000)",
-                        (trial_token,)
-                    )
+                # Initialize trial token from environment variable (if set)
+                trial_token = os.environ.get("TRIAL_API_KEY", "")
+                if trial_token:
+                    cursor.execute("SELECT * FROM app_tokens WHERE token = %s", (trial_token,))
+                    if not cursor.fetchone():
+                        cursor.execute(
+                            "INSERT INTO app_tokens (token, token_type, max_daily_limit) VALUES (%s, 'trial', 1000)",
+                            (trial_token,)
+                        )
                     
                 # Schema Migration (Quick Hack for Dev)
                 # Check if card_format exists in loyalty_cards
