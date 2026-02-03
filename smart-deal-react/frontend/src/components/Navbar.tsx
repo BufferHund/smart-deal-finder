@@ -22,14 +22,14 @@ export default function Navbar() {
     return (
         <HeroNavbar
             shouldHideOnScroll
-            className="bg-transparent backdrop-blur-md border-b border-white/10 fixed top-0 w-full z-50"
+            className="bg-white/80 dark:bg-transparent backdrop-blur-md border-b border-gray-200 dark:border-white/10 fixed top-0 w-full z-50"
             maxWidth="xl"
             onMenuOpenChange={setIsMenuOpen}
         >
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="sm:hidden text-white"
+                    className="sm:hidden text-gray-900 dark:text-white"
                 />
                 <NavbarBrand>
                     <Link href="/" className="font-bold text-inherit hover:opacity-80 transition-opacity flex items-center">
@@ -43,7 +43,7 @@ export default function Navbar() {
             <NavbarContent className="hidden sm:flex gap-8" justify="center">
                 <NavbarItem isActive={pathname === '/admin'}>
                     <Link
-                        className={`text-lg transition-colors ${pathname === '/admin' ? 'text-pink-500 font-bold' : 'text-white/70 hover:text-white'}`}
+                        className={`text-lg transition-colors ${pathname === '/admin' ? 'text-pink-500 font-bold' : 'text-gray-700 dark:text-white/70 hover:text-gray-900 dark:hover:text-white'}`}
                         href="/admin"
                     >
                         Admin Hub
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </NavbarItem>
                 <NavbarItem isActive={pathname === '/shopper'}>
                     <Link
-                        className={`text-lg transition-colors ${pathname === '/shopper' ? 'text-violet-500 font-bold' : 'text-white/70 hover:text-white'}`}
+                        className={`text-lg transition-colors ${pathname === '/shopper' ? 'text-violet-500 font-bold' : 'text-gray-700 dark:text-white/70 hover:text-gray-900 dark:hover:text-white'}`}
                         href="/shopper"
                     >
                         Shopper Zone
