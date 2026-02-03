@@ -89,6 +89,8 @@ smart-deal-app/data/syn_data/raw/
 smart-deal-app/backend/smart_deal_db.json
 
 
+# Archive (Legacy Code)
+_archive/
 
 # Agent Config
 .claude/
