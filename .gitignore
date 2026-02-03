@@ -82,11 +82,11 @@ temp/
 
 # App Specific
 smart_deal_db.json
-smart-deal-react/backend/uploads/
-smart-deal-react/frontend/public/crops/
-smart-deal-react/data/syn_data/raw/
+smart-deal-app/backend/uploads/
+smart-deal-app/frontend/public/crops/
+smart-deal-app/data/syn_data/raw/
 *.pdf
-smart-deal-react/backend/smart_deal_db.json
+smart-deal-app/backend/smart_deal_db.json
 
 
 # Archive (Legacy Code)

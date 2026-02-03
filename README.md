@@ -65,7 +65,7 @@ Access from your phone on the same Wi-Fi:
 
 ```
 smart-deal-finder/
-├── smart-deal-react/          # ⭐ Main Application
+├── smart-deal-app/          # ⭐ Main Application
 │   ├── backend/               # FastAPI API Server
 │   │   ├── routers/           # API endpoints
 │   │   ├── services/          # Business logic (AI Client, Model Router)
