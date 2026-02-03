@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "WORKZONE Schraubendreher- und Bit-Set",
+    "price": "19.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.12341038300382841,
+      0.08266256682898296,
+      0.5787449202382626,
+      0.3480685383748854
+    ]
+  },
+  {
+    "product_name": "CASALUX LED-Arbeits-strahler",
+    "price": "29.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5543778776740875,
+      0.060012299513050545,
+      0.901611287215996,
+      0.3471247772367222
+    ]
+  },
+  {
+    "product_name": "WD-40 Multifunktions-produkt",
+    "price": "3.99",
+    "discount": "46",
+    "unit": "180-ml-Dose",
+    "original_price": "7.49",
+    "bbox": [
+      0.13100361170330446,
+      0.3724499108946892,
+      0.4889891648900866,
+      0.534181016098559
+    ]
+  },
+  {
+    "product_name": "WORKZONE Sortimentskästen oder Universal-Organizer",
+    "price": "5.99",
+    "discount": null,
+    "unit": "4er-Set oder Stück",
+    "original_price": null,
+    "bbox": [
+      0.5089999999999993,
+      0.37999999999999906,
+      0.8855968404027799,
+      0.5886063279671458
+    ]
+  },
+  {
+    "product_name": "WORKZONE Zwingen-Set",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.1374212181137422,
+      0.5441810160985588,
+      0.48899638829669423,
+      0.7445184492695748
+    ]
+  },
+  {
+    "product_name": "DECO CRAFT Abdeckfolien",
+    "price": "2.49",
+    "discount": null,
+    "unit": "6er-Set",
+    "original_price": null,
+    "bbox": [
+      0.5173453723443477,
+      0.6739947412965832,
+      0.8999422127471286,
+      0.949493850243473
+    ]
+  },
+  {
+    "product_name": "WORKZONE Steckschlüssel-Satz",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Set",
+    "original_price": null,
+    "bbox": [
+      0.12407584576939397,
+      0.7487996435787561,
+      0.4876618510622595,
+      0.9457188056908179
+    ]
+  }
+]

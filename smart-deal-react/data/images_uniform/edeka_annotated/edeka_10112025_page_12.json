@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "EDEKA Bio Heidelbeeren",
+    "price": "3.99",
+    "discount": null,
+    "unit": "300 g",
+    "original_price": null,
+    "bbox": [
+      0.03477677122846505,
+      0.5698245039980372,
+      0.45982626516318936,
+      0.9397264880058906
+    ]
+  },
+  {
+    "product_name": "Mini Pflaumentomaten",
+    "price": "1.49",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.49054091594061106,
+      0.45669437000245366,
+      0.9634747469673621,
+      0.714601984007855
+    ]
+  },
+  {
+    "product_name": "Kakis Persimon",
+    "price": "0.49",
+    "discount": null,
+    "unit": "Stück",
+    "original_price": null,
+    "bbox": [
+      0.48359999999999986,
+      0.7204,
+      0.9715737348368105,
+      0.9416
+    ]
+  }
+]

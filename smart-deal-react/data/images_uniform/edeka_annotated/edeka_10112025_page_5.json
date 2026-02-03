@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Delikatess-Metzger-hinterschinken",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03399402983054272,
+      0.03344297840633877,
+      0.3401402955981479,
+      0.26279208339422944
+    ]
+  },
+  {
+    "product_name": "Französischer Bayonne-Schinken",
+    "price": "4.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34896417898325616,
+      0.04499999999999999,
+      0.9599641789832558,
+      0.49477191362535533
+    ]
+  },
+  {
+    "product_name": "Hofglück Pfefferbeißer",
+    "price": "1.69",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03903582101674387,
+      0.272751743856481,
+      0.33891044745814036,
+      0.4971947222628198
+    ]
+  },
+  {
+    "product_name": "Leber- oder Blutwurstkugel",
+    "price": "2.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.025946268474884248,
+      0.5057517438564818,
+      0.34801791050837194,
+      0.7296175309002843
+    ]
+  },
+  {
+    "product_name": "Delikatess-Hähnchen-Roulade",
+    "price": "1.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.35000597016945784,
+      0.5083087654501424,
+      0.6459223877970551,
+      0.7289262963504264
+    ]
+  },
+  {
+    "product_name": "Feine Bratwurst mit Kalbfleisch",
+    "price": "1.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6611492542364331,
+      0.508731574087609,
+      0.9609582088137987,
+      0.726349104987891
+    ]
+  },
+  {
+    "product_name": "Golfetta von Golfera, original italienische Schinkensalami",
+    "price": "3.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03501791050837198,
+      0.7425973611314101,
+      0.33583880542465266,
+      0.9625368518247869
+    ]
+  },
+  {
+    "product_name": "Gänserillettes d'Oie",
+    "price": "3.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34789253694976874,
+      0.7475771913625355,
+      0.6500417911862013,
+      0.9605570215936615
+    ]
+  },
+  {
+    "product_name": "Schwartenmagensalat",
+    "price": "0.89",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6610000000000009,
+      0.7457315740876066,
+      0.9647910440689942,
+      0.9619798302311291
+    ]
+  }
+]

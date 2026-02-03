@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Rosenkohl",
+    "price": "0.79",
+    "discount": null,
+    "unit": "1 kg Netz",
+    "original_price": null,
+    "bbox": [
+      0.04096403913146899,
+      0.060007305941599406,
+      0.46816044721678846,
+      0.2472714848283148
+    ]
+  },
+  {
+    "product_name": "Ein Herz für Erzeuger Äpfel",
+    "price": "2.49",
+    "discount": "28",
+    "unit": "2 kg Beutel",
+    "original_price": "3.49",
+    "bbox": [
+      0.036575034938811604,
+      0.25140991972083887,
+      0.46669744581923606,
+      0.4810930562559263
+    ]
+  },
+  {
+    "product_name": "Clementinen",
+    "price": "3.49",
+    "discount": null,
+    "unit": "2 kg Netz",
+    "original_price": null,
+    "bbox": [
+      0.04389004192657392,
+      0.4966121871028916,
+      0.46523444442168366,
+      0.7128454102372757
+    ]
+  },
+  {
+    "product_name": "Heidelbeeren",
+    "price": "3.99",
+    "discount": null,
+    "unit": "500 g Schale ",
+    "original_price": null,
+    "bbox": [
+      0.038038036336364066,
+      0.7237594709240165,
+      0.466697445819236,
+      0.9037813887488146
+    ]
+  },
+  {
+    "product_name": "Paprika rot",
+    "price": "1.99",
+    "discount": null,
+    "unit": "750 g Beutel",
+    "original_price": null,
+    "bbox": [
+      0.4740124528069983,
+      0.047592001264027066,
+      0.9641179209870734,
+      0.2483060935514455
+    ]
+  },
+  {
+    "product_name": "Birnen",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1,5 kg Beutel",
+    "original_price": null,
+    "bbox": [
+      0.48425346258986557,
+      0.256582963336494,
+      0.9670439237821787,
+      0.48005844753279525
+    ]
+  },
+  {
+    "product_name": "Orangen",
+    "price": "4.49",
+    "discount": null,
+    "unit": "3 kg Netz",
+    "original_price": "nuke",
+    "bbox": [
+      0.4827904611923131,
+      0.49247375221036754,
+      0.9597289167944165,
+      0.7118108015141447
+    ]
+  },
+  {
+    "product_name": "Zitronen",
+    "price": "2.22",
+    "discount": "25",
+    "unit": "1 kg Netz",
+    "original_price": "2.99",
+    "bbox": [
+      0.4813274597947606,
+      0.7196210360314923,
+      0.9626549195895212,
+      0.9037813887488145
+    ]
+  }
+]

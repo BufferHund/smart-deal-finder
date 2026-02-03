@@ -1,0 +1,275 @@
+[
+  {
+    "product_name": "Sagrotan Hygiene Seife No-Touch Nachfüller",
+    "price": "5.29",
+    "discount": null,
+    "unit": "2 x 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.11782587690136369,
+      0.036266744318283306,
+      0.2933486841174565,
+      0.1848187070455074
+    ]
+  },
+  {
+    "product_name": "Palmolive Flüssigseife",
+    "price": "1.19",
+    "discount": null,
+    "unit": "300 ml",
+    "original_price": null,
+    "bbox": [
+      0.31168815776443903,
+      0.03789607454555197,
+      0.495,
+      0.18722401863638802
+    ]
+  },
+  {
+    "product_name": "Isana Aromaseife Limitierte Edition: Winter Magic",
+    "price": "1.79",
+    "discount": null,
+    "unit": "350 ml",
+    "original_price": null,
+    "bbox": [
+      0.5056697368234914,
+      0.03841339545462663,
+      0.6988807018040233,
+      0.1850773675000447
+    ]
+  },
+  {
+    "product_name": "Multi-Gyn Actigel oder Floraplus",
+    "price": "10.99",
+    "discount": null,
+    "unit": "50 ml oder 25 ml",
+    "original_price": null,
+    "bbox": [
+      0.7153302631765093,
+      0.03537875363647733,
+      0.9030916667845553,
+      0.18407736750004466
+    ]
+  },
+  {
+    "product_name": "Always Slipeinlagen",
+    "price": "2.55",
+    "discount": null,
+    "unit": "40 - 56 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7135504386275153,
+      0.19304272568189532,
+      0.8967521931375729,
+      0.3403787536364773
+    ]
+  },
+  {
+    "product_name": "Isana Seife Nachfüllbeutel Limitierte Edition: Coconut Whisper",
+    "price": "0.55",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.506559649097989,
+      0.19315473500008948,
+      0.6962109649805319,
+      0.34123210250013397
+    ]
+  },
+  {
+    "product_name": "Isana Intensive Pflege Body Oil",
+    "price": "3.49",
+    "discount": null,
+    "unit": "150 ml",
+    "original_price": null,
+    "bbox": [
+      0.5315872805094114,
+      0.34645612113652213,
+      0.6935412281570408,
+      0.4966374140910149
+    ]
+  },
+  {
+    "product_name": "Tetesept Badezusatz",
+    "price": "0.89",
+    "discount": null,
+    "unit": "40 - 80 g oder 40 ml",
+    "original_price": null,
+    "bbox": [
+      0.11326622780337538,
+      0.23672517181797073,
+      0.4899907895295268,
+      0.4927494234092096
+    ]
+  },
+  {
+    "product_name": "Always Discreet Einlagen",
+    "price": "2.99",
+    "discount": null,
+    "unit": "12 Stück + 4 Stück gratis",
+    "original_price": null,
+    "bbox": [
+      0.7126605263530176,
+      0.34771478159105945,
+      0.9030916667845552,
+      0.49437875363647743
+    ]
+  },
+  {
+    "product_name": "Fenjal Body Lotion",
+    "price": "2.69",
+    "discount": null,
+    "unit": "400 ml",
+    "original_price": null,
+    "bbox": [
+      0.1249451750973406,
+      0.5014907629546707,
+      0.28800921047047395,
+      0.6518187070455074
+    ]
+  },
+  {
+    "product_name": "Mixa Urea Cica Repair+ Body Milk oder Intensiv Straffend Body Lotion",
+    "price": "3.29",
+    "discount": null,
+    "unit": "je 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.3143578945879308,
+      0.4999734420455959,
+      0.4896605263530176,
+      0.6506720559091641
+    ]
+  },
+  {
+    "product_name": "Isana Med Körpermilch 10% Urea",
+    "price": "1.89",
+    "discount": null,
+    "unit": "250 ml",
+    "original_price": null,
+    "bbox": [
+      0.5296973682349126,
+      0.5018614327274026,
+      0.6935412281570407,
+      0.6500427256818953
+    ]
+  },
+  {
+    "product_name": "Facelle Ultra-Binden",
+    "price": "0.89",
+    "discount": null,
+    "unit": "7 - 16 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7117706140785213,
+      0.4999734420455975,
+      0.8933026317650872,
+      0.6503013861364328
+    ]
+  },
+  {
+    "product_name": "Dove Body Milk oder Body Lotion",
+    "price": "3.49",
+    "discount": null,
+    "unit": "je 400 ml",
+    "original_price": null,
+    "bbox": [
+      0.10714692960739859,
+      0.6556374140910144,
+      0.2897890350194681,
+      0.8038187070455075
+    ]
+  },
+  {
+    "product_name": "Isana Softcreme",
+    "price": "1.15",
+    "discount": null,
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.31079824548994245,
+      0.6546374140910138,
+      0.49055043862751463,
+      0.8075946884091193
+    ]
+  },
+  {
+    "product_name": "Isana Handcreme Olive oder Kamille",
+    "price": "0.75",
+    "discount": null,
+    "unit": "je 100 ml + 33% gratis",
+    "original_price": null,
+    "bbox": [
+      0.5154587718429595,
+      0.6556374140910147,
+      0.6962109649805319,
+      0.8049815259093427
+    ]
+  },
+  {
+    "product_name": "Facelle Diskret Hygiene-Einlagen Extra Plus",
+    "price": "1.99",
+    "discount": null,
+    "unit": "10 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7135504386275148,
+      0.6562667443182839,
+      0.900421929961064,
+      0.8044480372727764
+    ]
+  },
+  {
+    "product_name": "SOS Wärme-Sohlen Größe M (36 - 40) oder L (41 - 45)",
+    "price": "2.49",
+    "discount": null,
+    "unit": "je 2 Paar",
+    "original_price": null,
+    "bbox": [
+      0.11593596462686646,
+      0.8119307163637042,
+      0.29423859639195354,
+      0.9604826790909257
+    ]
+  },
+  {
+    "product_name": "Fusswohl Bimsstein Stück oder Pflegebalsam",
+    "price": "0.99",
+    "discount": "23",
+    "unit": "75 ml",
+    "original_price": "1.29",
+    "bbox": [
+      0.3161377191369242,
+      0.8106720559091649,
+      0.4941100877255029,
+      0.9598533488636569
+    ]
+  },
+  {
+    "product_name": "O'Keeffe's Working Hands Handcreme",
+    "price": "7.79",
+    "discount": null,
+    "unit": "96 g oder 80 ml",
+    "original_price": null,
+    "bbox": [
+      0.5127890350194674,
+      0.8118348747730001,
+      0.6971008772550291,
+      0.9585946884091194
+    ]
+  },
+  {
+    "product_name": "Facelle Periodenslip Größe S - XL",
+    "price": "11.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.714440350902012,
+      0.8123013861364324,
+      0.8950824563140813,
+      0.9607413395454627
+    ]
+  }
+]

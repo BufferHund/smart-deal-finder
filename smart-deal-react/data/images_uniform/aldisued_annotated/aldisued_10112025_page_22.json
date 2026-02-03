@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Panasonic Alkaline Batterien AA (Mignon/LR06) oder AAA (Micro/LR03)",
+    "price": "4.49",
+    "discount": "77",
+    "unit": "20er-Packung",
+    "original_price": "19.99",
+    "bbox": [
+      0.13133413167461822,
+      0.04262080886159085,
+      0.48976059711301195,
+      0.2361910181112583
+    ]
+  },
+  {
+    "product_name": "p2 beauty Eau de Parfum",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 100-ml-Flasche",
+    "original_price": null,
+    "bbox": [
+      0.5149999999999997,
+      0.06200000000000036,
+      0.8809935700356355,
+      0.5474947261290548
+    ]
+  },
+  {
+    "product_name": "JES COLLECTION Weihnachtsdeko",
+    "price": "1.00",
+    "discount": null,
+    "unit": "Modelle",
+    "original_price": null,
+    "bbox": [
+      0.10408100363123043,
+      0.5598160670458394,
+      0.4980761811579564,
+      0.9485052738709446
+    ]
+  },
+  {
+    "product_name": "p2 beauty Nagellack oder Augenkosmetik",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5179999999999997,
+      0.5760000000000025,
+      0.8806094492636642,
+      0.9476892068251066
+    ]
+  }
+]

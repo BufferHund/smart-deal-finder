@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "FERRERO Rocher Schoko-Nuss-Spezialität",
+    "price": "2.77",
+    "discount": null,
+    "unit": "je 16 St. = 200-g-Packg.",
+    "original_price": null,
+    "bbox": [
+      0.38781104876160977,
+      0.013452012383900923,
+      0.9147093653250776,
+      0.27671207430340544
+    ]
+  },
+  {
+    "product_name": "JACK DANIEL'S Tennessee-Whiskey Original, mit kraftvollem, würzigem Geschmack, oder Whiskey-Likör Honey, 35 - 40 Vol. %",
+    "price": "14.44",
+    "discount": null,
+    "unit": "je 0,7-l-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.09261329334365319,
+      0.4791640866873054,
+      0.5175116099071206,
+      0.8158080495356015
+    ]
+  },
+  {
+    "product_name": "PRINGLES versch. Sorten",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 160 - 165-g-Dose",
+    "original_price": null,
+    "bbox": [
+      0.5302353908668728,
+      0.44152012383900874,
+      0.9123314628482961,
+      0.8127120743034038
+    ]
+  }
+]

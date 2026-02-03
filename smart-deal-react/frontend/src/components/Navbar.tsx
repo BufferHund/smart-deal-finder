@@ -10,14 +10,27 @@ import {
     NavbarMenuItem,
     Link,
     Button,
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownItem,
+    Avatar,
 } from "@heroui/react";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from "react";
-import { Tags } from "lucide-react";
+import { Tags, LogOut, User } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logout } = useAuth();
+
+    const handleLogout = () => {
+        logout();
+        router.push('/login');
+    };
 
     return (
         <HeroNavbar
@@ -60,14 +73,47 @@ export default function Navbar() {
             </NavbarContent>
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <Button
-                        as={Link}
-                        href="#"
-                        variant="shadow"
-                        className="bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold border border-white/20"
-                    >
-                        Sign In
-                    </Button>
+                    {user ? (
+                        <Dropdown placement="bottom-end">
+                            <DropdownTrigger>
+                                <Button
+                                    variant="flat"
+                                    className="gap-2 px-3"
+                                >
+                                    <Avatar
+                                        name={user.email.charAt(0).toUpperCase()}
+                                        size="sm"
+                                        className="bg-gradient-to-r from-pink-500 to-violet-600 text-white"
+                                    />
+                                    <span className="hidden sm:inline text-sm font-medium text-foreground">
+                                        {user.email.split('@')[0]}
+                                    </span>
+                                </Button>
+                            </DropdownTrigger>
+                            <DropdownMenu aria-label="User menu">
+                                <DropdownItem key="email" className="text-sm text-gray-500" isReadOnly>
+                                    {user.email}
+                                </DropdownItem>
+                                <DropdownItem
+                                    key="logout"
+                                    color="danger"
+                                    startContent={<LogOut size={16} />}
+                                    onPress={handleLogout}
+                                >
+                                    Logout
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                    ) : (
+                        <Button
+                            as={Link}
+                            href="/login"
+                            variant="shadow"
+                            className="bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold border border-white/20"
+                        >
+                            Sign In
+                        </Button>
+                    )}
                 </NavbarItem>
             </NavbarContent>
 

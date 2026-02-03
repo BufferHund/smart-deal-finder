@@ -1,0 +1,275 @@
+[
+  {
+    "product_name": "Domol Voll- oder Colorwaschmittel Pulver",
+    "price": "3.15",
+    "discount": null,
+    "unit": "je 20 WL",
+    "original_price": null,
+    "bbox": [
+      0.1021436552929399,
+      0.036547686693950227,
+      0.2837164141145062,
+      0.1829139569928111
+    ]
+  },
+  {
+    "product_name": "Vanish Vorwaschspray",
+    "price": "4.79",
+    "discount": null,
+    "unit": "750 ml oder Pulver 550 g",
+    "original_price": null,
+    "bbox": [
+      0.4991031245570719,
+      0.03707402312578404,
+      0.6928453131643915,
+      0.18578120701238038
+    ]
+  },
+  {
+    "product_name": "Softlan Weichspüler",
+    "price": "1.29",
+    "discount": null,
+    "unit": "45 WL",
+    "original_price": null,
+    "bbox": [
+      0.7153812526575676,
+      0.03773258634846476,
+      0.886051562278536,
+      0.1871226437896996
+    ]
+  },
+  {
+    "product_name": "Domol Farb- & Schmutz-Fangtücher",
+    "price": "1.29",
+    "discount": null,
+    "unit": "24 Stück",
+    "original_price": null,
+    "bbox": [
+      0.10484317088610978,
+      0.19089105308213405,
+      0.2839347974685098,
+      0.3412646959943426
+    ]
+  },
+  {
+    "product_name": "Pril Spülmittel",
+    "price": "1.39",
+    "discount": null,
+    "unit": "450/675 ml",
+    "original_price": null,
+    "bbox": [
+      0.31538125265756795,
+      0.19139224170105623,
+      0.48172187189950333,
+      0.34539224170105615
+    ]
+  },
+  {
+    "product_name": "Domol Faltenglatt & Textilerfrischer",
+    "price": "1.49",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.10125781139267997,
+      0.3457215233123967,
+      0.28451562278536,
+      0.49770936814641786
+    ]
+  },
+  {
+    "product_name": "Fit Spülmittel",
+    "price": "1.19",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.31643281493610365,
+      0.34738008653507757,
+      0.4778765587351119,
+      0.4963679313690985
+    ]
+  },
+  {
+    "product_name": "Domol Geschirr-Reiniger Tabs XL-Sparpack",
+    "price": "5.79",
+    "discount": null,
+    "unit": "70 Stück",
+    "original_price": null,
+    "bbox": [
+      0.09936093594975189,
+      0.5000386497577581,
+      0.286412498228288,
+      0.650331465871162
+    ]
+  },
+  {
+    "product_name": "Finish Spülmaschinencaps Sparpack",
+    "price": "11.99",
+    "discount": null,
+    "unit": "78 - 88 Stück",
+    "original_price": null,
+    "bbox": [
+      0.3258140675936715,
+      0.5017093681464172,
+      0.481670309620968,
+      0.6513557762031197
+    ]
+  },
+  {
+    "product_name": "Frosch oder Everdrop Spül-maschinentabs",
+    "price": "8.99",
+    "discount": null,
+    "unit": "je 54 - 70 Stück",
+    "original_price": null,
+    "bbox": [
+      0.49910312455707084,
+      0.5001834196195901,
+      0.6920515622785356,
+      0.6526972129804388
+    ]
+  },
+  {
+    "product_name": "Domol Perfume & Style Raumduft",
+    "price": "4.99",
+    "discount": null,
+    "unit": "100 ml",
+    "original_price": null,
+    "bbox": [
+      0.09941249822828793,
+      0.6563557762031177,
+      0.28456718506389606,
+      0.8046364371505444
+    ]
+  },
+  {
+    "product_name": "Dan Klorix Hygiene-Reiniger",
+    "price": "1.99",
+    "discount": null,
+    "unit": "1,5 Liter",
+    "original_price": null,
+    "bbox": [
+      0.32012344126488806,
+      0.6570264945917795,
+      0.4826187473424313,
+      0.8060021842598215
+    ]
+  },
+  {
+    "product_name": "Surig Essigessenz",
+    "price": "1.11",
+    "discount": null,
+    "unit": "400 g",
+    "original_price": null,
+    "bbox": [
+      0.5115359394931757,
+      0.6553436210371405,
+      0.6822578113926799,
+      0.8053314658711621
+    ]
+  },
+  {
+    "product_name": "Frosch Glas- oder Bad-Reiniger",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 500 ml",
+    "original_price": null,
+    "bbox": [
+      0.7068656298722067,
+      0.6556729026484773,
+      0.8888968754429277,
+      0.806672902648477
+    ]
+  },
+  {
+    "product_name": "Domol WC-Duftsteine 5-fach Power",
+    "price": "1.69",
+    "discount": null,
+    "unit": "2 x 55 g",
+    "original_price": null,
+    "bbox": [
+      0.09746406050682374,
+      0.8123557762031194,
+      0.2854640605068235,
+      0.9605734770608285
+    ]
+  },
+  {
+    "product_name": "WC Frisch Power-Gel oder Premium WC-Steine",
+    "price": "1.89",
+    "discount": null,
+    "unit": "750 ml oder 42/50 g",
+    "original_price": null,
+    "bbox": [
+      0.3057937508858548,
+      0.8110143394257997,
+      0.4844640605068222,
+      0.9625856322268065
+    ]
+  },
+  {
+    "product_name": "WC Frisch Kraft Aktiv WC-Gel oder WC-Steine",
+    "price": "1.11",
+    "discount": null,
+    "unit": "750 ml oder 50 g",
+    "original_price": null,
+    "bbox": [
+      0.501,
+      0.8103436210371414,
+      0.68225781139268,
+      0.9619149138381476
+    ]
+  },
+  {
+    "product_name": "Swiffer Staubmagnet oder Bodentücher",
+    "price": "4.99",
+    "discount": null,
+    "unit": "3/7/9 Stück oder 24/36 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7099171921507438,
+      0.8116850578144604,
+      0.8870515622785359,
+      0.959902758672169
+    ]
+  },
+  {
+    "product_name": "Calgon Tabs oder Pulver oder Gel",
+    "price": "7.99",
+    "discount": null,
+    "unit": "47 WL oder 52 WL oder 43 WL",
+    "original_price": null,
+    "bbox": [
+      0.3123826519385997,
+      0.03487735621030047,
+      0.47930769091626224,
+      0.18645971204737527
+    ]
+  },
+  {
+    "product_name": "Persil Waschmittel Gel oder Megaperls oder Discs",
+    "price": "4.99",
+    "discount": null,
+    "unit": "20 WL oder 16 WL oder 10/16 WL",
+    "original_price": null,
+    "bbox": [
+      0.5007751169329923,
+      0.29042106228961745,
+      0.8858408318473763,
+      0.4929780156648239
+    ]
+  },
+  {
+    "product_name": "Ajax Allzweck-reiniger oder Glasreiniger",
+    "price": "1.39",
+    "discount": null,
+    "unit": "1 Liter oder 500 ml",
+    "original_price": null,
+    "bbox": [
+      0.6989986007189684,
+      0.5010266363287396,
+      0.8829955186829843,
+      0.6505968369998358
+    ]
+  }
+]

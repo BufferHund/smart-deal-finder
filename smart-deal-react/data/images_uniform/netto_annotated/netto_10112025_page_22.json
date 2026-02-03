@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Falkenfelser Premium Biere",
+    "price": "8.49",
+    "discount": "15",
+    "unit": "20 x 0,5 Liter Kiste",
+    "original_price": "9.99",
+    "bbox": [
+      0.030077615977415983,
+      0.1493974300834765,
+      0.491077615977416,
+      0.4793974300834764
+    ]
+  },
+  {
+    "product_name": "Benediktiner Hell",
+    "price": "14.99",
+    "discount": "24",
+    "unit": "20 x 0,5 Liter Kiste",
+    "original_price": "19.79",
+    "bbox": [
+      0.5159611920112918,
+      0.06780128495826174,
+      0.9630388079887049,
+      0.26833119173622916
+    ]
+  },
+  {
+    "product_name": "Marius Limonaden Zitrone oder Orange",
+    "price": "3.29",
+    "discount": "13",
+    "unit": "12 x 0,7 Liter Kiste",
+    "original_price": "3.79",
+    "bbox": [
+      0.5156407946741945,
+      0.28019871504173816,
+      0.9686407946741945,
+      0.4785299067779687
+    ]
+  },
+  {
+    "product_name": "Paulaner Spezi oder Limonaden",
+    "price": "0.59",
+    "discount": "30",
+    "unit": "0,33 Liter",
+    "original_price": "0.85",
+    "bbox": [
+      0.7471651653822633,
+      0.4893910052921679,
+      0.9679611920112919,
+      0.6950598135559372
+    ]
+  },
+  {
+    "product_name": "Capri Sun",
+    "price": "3.49",
+    "discount": null,
+    "unit": "10 x 0,2 Liter",
+    "original_price": null,
+    "bbox": [
+      0.04093231745001731,
+      0.4911586293485606,
+      0.49778979608569607,
+      0.6928511463434069
+    ]
+  },
+  {
+    "product_name": "Schloss Biere",
+    "price": "0.45",
+    "discount": "18",
+    "unit": "0,5 Liter",
+    "original_price": "0.55",
+    "bbox": [
+      0.5096733721195721,
+      0.489291106043053,
+      0.7341409194261194,
+      0.692851146343407
+    ]
+  }
+]

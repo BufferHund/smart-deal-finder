@@ -36,6 +36,24 @@ def calculate_file_hash(file_path: str) -> str:
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
 
+def convert_pdf_to_images(file_path: str) -> List[Any]:
+    """Convert first page of PDF to image array."""
+    try:
+        from pdf2image import convert_from_path
+        # Convert first page only for quick preview
+        images = convert_from_path(file_path, first_page=1, last_page=1)
+        if not images:
+            return []
+        
+        # Convert PIL to numpy array
+        return [np.array(img) for img in images]
+    except ImportError:
+        print("pdf2image not installed. Please install poppler-utils and pdf2image.")
+        return []
+    except Exception as e:
+        print(f"PDF Conversion Error: {e}")
+        return []
+
 @router.post("/upload", response_model=ExtractionResponse)
 async def upload_file(
     file: UploadFile = File(...),
@@ -155,8 +173,8 @@ async def upload_file(
             # Update existing upload record timestamp/count if needed
              db.execute_query("UPDATE uploads SET timestamp = CURRENT_TIMESTAMP, deal_count = %s WHERE id = %s", (len(deals), upload_id))
         
-        # 7. Save Deals with Upload ID
-        storage.save_active_deals(deals, store_name=store_name, upload_id=upload_id, visibility=visibility)
+        # 7. Save Deals with Upload ID (auto-enriches with category, valid_until, and image cropping)
+        storage.save_active_deals(deals, store_name=store_name, upload_id=upload_id, visibility=visibility, source_image_path=file_path)
         
         return {
             "deals": deals,

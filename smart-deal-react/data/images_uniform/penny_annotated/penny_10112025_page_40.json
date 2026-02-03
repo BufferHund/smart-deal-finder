@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "CHANTRÉ Weinbrand",
+    "price": "5.77",
+    "discount": "35",
+    "unit": "je 0,7 l",
+    "original_price": "8.99",
+    "bbox": [
+      0.13077677298134266,
+      0.1898692871665883,
+      0.39104656170668256,
+      0.44813071283341194
+    ]
+  },
+  {
+    "product_name": "MARS Twix oder Balisto",
+    "price": "1.77",
+    "discount": "40",
+    "unit": "je 5 x 50 g oder je 8 x 18,5 g",
+    "original_price": "2.99",
+    "bbox": [
+      0.406037249365347,
+      0.218932815120497,
+      0.8707395236159965,
+      0.4468939669630331
+    ]
+  },
+  {
+    "product_name": "BERTOLLI Natives Olivenöl",
+    "price": "5.49",
+    "discount": null,
+    "unit": "je 500 ml",
+    "original_price": "5.99",
+    "bbox": [
+      0.1560046561706682,
+      0.4683427789073464,
+      0.48587441797866604,
+      0.7083957954258301
+    ]
+  },
+  {
+    "product_name": "IGLO 13 Backfisch-Stäbchen oder 15 Fischstäbchen",
+    "price": "2.29",
+    "discount": "48",
+    "unit": "je 364 g oder je 450 g",
+    "original_price": "4.49",
+    "bbox": [
+      0.5023674337226633,
+      0.4757632541296212,
+      0.8576232539359987,
+      0.7077774224906407
+    ]
+  },
+  {
+    "product_name": "BARILLA Pesto Rosso oder alla Genovese",
+    "price": "1.79",
+    "discount": "48",
+    "unit": "je 200 g oder je 190 g",
+    "original_price": "3.49",
+    "bbox": [
+      0.14288838649067157,
+      0.7198162706481048,
+      0.4858744179786665,
+      0.9267490857686042
+    ]
+  },
+  {
+    "product_name": "ZOTT Sahnejoghurt",
+    "price": "0.39",
+    "discount": "56",
+    "unit": "je 140 g",
+    "original_price": "0.89",
+    "bbox": [
+      0.4979953438293318,
+      0.7185795247777258,
+      0.8541255820213336,
+      0.9279858316389811
+    ]
+  }
+]

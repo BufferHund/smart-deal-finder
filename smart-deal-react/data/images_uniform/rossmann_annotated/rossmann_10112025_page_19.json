@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "LaCabine 25% Niacinamide Pro Complex oder 25% Vit-C Complex Advanced Serum",
+    "price": "17.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.5244764033803747,
+      0.13965512921758721,
+      0.89155284788314,
+      0.3261180605406503
+    ]
+  },
+  {
+    "product_name": "LaCabine Eye Contour oder 5x Pure Hyaluronic Serum",
+    "price": "13.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.10195932845423705,
+      0.3029056164153831,
+      0.4248502850672615,
+      0.5018198492461485
+    ]
+  },
+  {
+    "product_name": "LaCabine Pure Retinol oder Btx7 Lift Serum",
+    "price": "15.99",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.4518879323925069,
+      0.3533846379516474,
+      0.7740819419757357,
+      0.5186786769560332
+    ]
+  },
+  {
+    "product_name": "Mixa Panthenol Comfort Sofort-Pflegecreme",
+    "price": "4.49",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.7957582777486177,
+      0.3775226379516477,
+      0.9074254614046389,
+      0.6885362625033171
+    ]
+  },
+  {
+    "product_name": "LaCabine Collagen Boost oder Vit-C Creme",
+    "price": "15.99",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.10092092507386251,
+      0.5188056594879118,
+      0.44776368844763614,
+      0.7647509138549421
+    ]
+  },
+  {
+    "product_name": "LaCabine Btx7 Lift Creme",
+    "price": "17.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.5065074033803747,
+      0.5426567240967058,
+      0.7476266304233719,
+      0.7211061426175644
+    ]
+  },
+  {
+    "product_name": "Weleda Hydrating oder Skin Food Bodylotion",
+    "price": "11.99",
+    "discount": null,
+    "unit": "je 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.09910152169348782,
+      0.7308755302703234,
+      0.34302487210365773,
+      0.99077325436703
+    ]
+  },
+  {
+    "product_name": "Jean & Len Body Lotion Vitamin C oder Hyaluronsäure",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 200 ml",
+    "original_price": null,
+    "bbox": [
+      0.3459218382999112,
+      0.7696678533142919,
+      0.6508270822447817,
+      0.9889206594879081
+    ]
+  },
+  {
+    "product_name": "Barnängen All Over Rescue Body Balm oder Oil Intense Body Lotion",
+    "price": "4.29",
+    "discount": null,
+    "unit": "200 ml oder 400 ml",
+    "original_price": null,
+    "bbox": [
+      0.6542025628158794,
+      0.7112068061736201,
+      0.8984351329504019,
+      0.9893045733428537
+    ]
+  }
+]

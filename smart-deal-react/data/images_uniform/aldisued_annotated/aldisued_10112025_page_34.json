@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Fotobuch A4",
+    "price": "7.99",
+    "discount": "20",
+    "unit": "A4 Digitaldruck",
+    "original_price": "9.99",
+    "bbox": [
+      0.13393525535427242,
+      0.466737941544937,
+      0.5222661882556859,
+      0.6669581054627807
+    ]
+  },
+  {
+    "product_name": "Foto-Leinwand",
+    "price": "4.79",
+    "discount": "59",
+    "unit": "30 x 20 cm",
+    "original_price": "11.90",
+    "bbox": [
+      0.535309354145176,
+      0.4655169072373515,
+      0.8469296956753314,
+      0.6651265540014022
+    ]
+  },
+  {
+    "product_name": "Wandkalender A4",
+    "price": "4.79",
+    "discount": "51",
+    "unit": "Digitaldruck",
+    "original_price": "9.90",
+    "bbox": [
+      0.14540489287586933,
+      0.6716844853862334,
+      0.5214028788429019,
+      0.8703787916144671
+    ]
+  },
+  {
+    "product_name": "Adventskalender",
+    "price": "12.99",
+    "discount": "13",
+    "unit": "Adventskalender",
+    "original_price": "14.99",
+    "bbox": [
+      0.5378992823835286,
+      0.6741265540014011,
+      0.8482483667760309,
+      0.8679367229992976
+    ]
+  }
+]

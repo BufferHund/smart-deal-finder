@@ -1,0 +1,28 @@
+[
+  {
+    "product_name": "Primitivo di Manduria DOC",
+    "price": "6.99",
+    "discount": null,
+    "unit": "0,75 Liter",
+    "original_price": null,
+    "bbox": [
+      0.039161126838897733,
+      0.27029571738715913,
+      0.5101611268388977,
+      0.9042957173871591
+    ]
+  },
+  {
+    "product_name": "Felix Solis Mucho Más Tinto",
+    "price": "4.99",
+    "discount": "16",
+    "unit": "0,75 Liter",
+    "original_price": "5.99",
+    "bbox": [
+      0.5526511551489139,
+      0.17181713045136393,
+      0.9675033238966619,
+      0.9048171304513641
+    ]
+  }
+]

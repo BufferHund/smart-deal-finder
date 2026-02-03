@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "DALLMAYR Crema d'Oro Versch. Sorten, ganze Bohnen",
+    "price": "13.99",
+    "discount": "36",
+    "unit": "je 1.000 g",
+    "original_price": "21.99",
+    "bbox": [
+      0.48772887107436314,
+      0.04514890091465622,
+      0.872881451790612,
+      0.2615769101318978
+    ]
+  },
+  {
+    "product_name": "NESCAFÉ Classic Löslicher Bohnenkaffee",
+    "price": "5.99",
+    "discount": "33",
+    "unit": "je 200 g",
+    "original_price": "8.99",
+    "bbox": [
+      0.12621185482093697,
+      0.21514398156551434,
+      0.3726619371898752,
+      0.4974309608267246
+    ]
+  },
+  {
+    "product_name": "NESCAFÉ Instant Versch. Sorten",
+    "price": "4.44",
+    "discount": "25",
+    "unit": "je 95 g",
+    "original_price": "5.99",
+    "bbox": [
+      0.3802711289256306,
+      0.2778579861741369,
+      0.6186355644628134,
+      0.4921429976956892
+    ]
+  },
+  {
+    "product_name": "JACOBS Kaffee Versch. Sorten, gemahlen",
+    "price": "6.49",
+    "discount": "27",
+    "unit": "je 500 g",
+    "original_price": "8.99",
+    "bbox": [
+      0.6331778223140784,
+      0.27528697926120554,
+      0.8728814517906103,
+      0.49042899308706656
+    ]
+  },
+  {
+    "product_name": "MEßMER Wintertee Himmelszauber, oder Heiße Himbeere",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 55 g oder je 45 g",
+    "original_price": null,
+    "bbox": [
+      0.12621185482093789,
+      0.5021449654353445,
+      0.36218661322310053,
+      0.7198579861741367
+    ]
+  },
+  {
+    "product_name": "BIENENWIRTSCHAFT MEISSEN Imkerhonig Versch. Sorten",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je 1.000 g",
+    "original_price": null,
+    "bbox": [
+      0.3827881451790589,
+      0.5014280092172414,
+      0.619576290358119,
+      0.7207149884784483
+    ]
+  },
+  {
+    "product_name": "SCHWARTAU Samt Fruchtaufstrich Versch. Sorten, oder Extra Konfitüre Versch. Sorten",
+    "price": "1.99",
+    "discount": "26",
+    "unit": "je 270 g oder je 340 g",
+    "original_price": "2.69",
+    "bbox": [
+      0.6353304030303215,
+      0.5041429976956864,
+      0.8716695969696711,
+      0.7224289930870652
+    ]
+  },
+  {
+    "product_name": "BRANDT Marken-zwieback Der Klassiker in der Vorratspackung",
+    "price": "2.29",
+    "discount": "17",
+    "unit": "je 450 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.128635564462816,
+      0.7445690391732728,
+      0.3666783878786928,
+      0.9465690391732721
+    ]
+  },
+  {
+    "product_name": "MAZZETTI Aceto Balsamico di Modena I.G.P oder Rosato Condimento",
+    "price": "2.99",
+    "discount": "25",
+    "unit": "je 500 ml",
+    "original_price": "3.99",
+    "bbox": [
+      0.38000879090901557,
+      0.731714004608614,
+      0.6175938721761582,
+      0.949997048390512
+    ]
+  },
+  {
+    "product_name": "SURIG Essigessenz",
+    "price": "1.11",
+    "discount": null,
+    "unit": "je 450 g",
+    "original_price": null,
+    "bbox": [
+      0.6369835493111736,
+      0.7325710069129299,
+      0.8692458873277957,
+      0.9482830437818961
+    ]
+  }
+]

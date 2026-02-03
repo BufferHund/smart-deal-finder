@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "DOUCEUR Weihnachtsmann Keks mit Karamell-geschmack",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 120 g",
+    "original_price": null,
+    "bbox": [
+      0.1811770023134514,
+      0.28210570787802447,
+      0.4896906201388074,
+      0.6297315054637058
+    ]
+  },
+  {
+    "product_name": "DOUCEUR Schokogeld Milchschokolade",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 150 g",
+    "original_price": null,
+    "bbox": [
+      0.5043093798611927,
+      0.4154714606098772,
+      0.8612208787044671,
+      0.6308372133417303
+    ]
+  },
+  {
+    "product_name": "DOUCEUR Edel-Marzipan-Stollen",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 1.000 g",
+    "original_price": null,
+    "bbox": [
+      0.1308177002313452,
+      0.6443573030493879,
+      0.869220878704467,
+      0.9481057078780248
+    ]
+  }
+]

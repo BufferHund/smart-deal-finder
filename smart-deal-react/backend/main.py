@@ -1,19 +1,22 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import upload, deals, wallet, shopping, chat, agent, user, route, admin_pro
+from routers import upload, deals, wallet, shopping, chat, agent, user, route, admin_pro, auth
 
 app = FastAPI(title="SmartDeal API", description="Backend for SmartDeal React App")
 
 # CORS Configuration (allow frontend to connect)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow LAN devices
-    allow_credentials=True,
+    allow_origins=["*"], # Allow ALL origins
+    allow_credentials=False, # No cookies used, so we can use wildcard origin
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-app.include_router(upload.router, prefix="/api", tags=["Upload"])
+# Auth routes (public)
+app.include_router(auth.router)
+
+# Protected routes
 app.include_router(upload.router, prefix="/api", tags=["Upload"])
 app.include_router(deals.router, prefix="/api", tags=["Deals"])
 app.include_router(shopping.router)

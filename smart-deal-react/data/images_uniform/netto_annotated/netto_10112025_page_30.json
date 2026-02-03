@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "JUSKYS Massage-sessel Naxos",
+    "price": "599.00",
+    "discount": "40",
+    "unit": null,
+    "original_price": "999.99",
+    "bbox": [
+      0.037012981220429675,
+      0.1483062464663457,
+      0.6532985680698822,
+      0.5263062464663455
+    ]
+  },
+  {
+    "product_name": "JUSKYS Schminktisch Zoey",
+    "price": "49.99",
+    "discount": "70",
+    "unit": null,
+    "original_price": "169.99",
+    "bbox": [
+      0.6702920774596673,
+      0.15149545197552491,
+      0.9689805281693573,
+      0.5216755614357536
+    ]
+  },
+  {
+    "product_name": "JUSKYS Polsterbett Paris",
+    "price": "99.99",
+    "discount": "56",
+    "unit": null,
+    "original_price": "229.99",
+    "bbox": [
+      0.04103245305107419,
+      0.535495451975525,
+      0.659366942490596,
+      0.7148107944908217
+    ]
+  },
+  {
+    "product_name": "JUSKYS Kofferset Rom, 3- oder 4-teilig",
+    "price": "69.99",
+    "discount": "58",
+    "unit": null,
+    "original_price": "169.99",
+    "bbox": [
+      0.6657823415443451,
+      0.5329909039510506,
+      0.9669740375591419,
+      0.910315342515297
+    ]
+  },
+  {
+    "product_name": "ART SPORT Laufband Speedrunner 7000",
+    "price": "599.00",
+    "discount": "50",
+    "unit": null,
+    "original_price": "1199.00",
+    "bbox": [
+      0.03903245305107414,
+      0.7260630685030582,
+      0.6553604518803812,
+      0.9060630685030581
+    ]
+  }
+]

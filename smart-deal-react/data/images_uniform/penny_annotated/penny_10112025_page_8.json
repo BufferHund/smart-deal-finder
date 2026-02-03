@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "BÄCKERKRÖNUNG Brunch Mix Brötchen",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 540 g",
+    "original_price": null,
+    "bbox": [
+      0.12691599368793605,
+      0.23562015023235217,
+      0.5333389337541377,
+      0.7263798497676475
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Steinofen Baguette",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 250 g",
+    "original_price": null,
+    "bbox": [
+      0.6019831987375879,
+      0.32607855649627526,
+      0.8733557350165504,
+      0.7228077596282361
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Kürbis Laibert Roggenmischbrot",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.18382907886998998,
+      0.7335240300464706,
+      0.492235217673779,
+      0.9487643305111743
+    ]
+  },
+  {
+    "product_name": "BÄCKERKRÖNUNG Laugen Brioche Rolls",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 402 g",
+    "original_price": null,
+    "bbox": [
+      0.5380336025248258,
+      0.7520785564962748,
+      0.8744229400662014,
+      0.9501136838754896
+    ]
+  }
+]

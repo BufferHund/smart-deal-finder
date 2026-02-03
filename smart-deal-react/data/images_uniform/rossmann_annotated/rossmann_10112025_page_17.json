@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "L'Oréal Paris",
+    "price": null,
+    "discount": "22",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.169660548858202,
+      0.22209460334375442,
+      0.6955386608280812,
+      0.4422971398124104
+    ]
+  },
+  {
+    "product_name": "Maybelline New York",
+    "price": null,
+    "discount": "22",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.22783426857585154,
+      0.4787801857585141,
+      0.86597678018576,
+      0.6897801857585143
+    ]
+  },
+  {
+    "product_name": "essie",
+    "price": null,
+    "discount": "22",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.14999999999999988,
+      0.7749999999999999,
+      0.5846541215170276,
+      0.9217120743034053
+    ]
+  }
+]

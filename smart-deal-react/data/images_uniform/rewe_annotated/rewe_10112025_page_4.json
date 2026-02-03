@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Meggle Baguette",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 160-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.10549194164191875,
+      0.5632331453533223,
+      0.3684331015486243,
+      0.7485405091761475
+    ]
+  },
+  {
+    "product_name": "Tulip Bacon in Scheiben",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 125-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3785648486636035,
+      0.5680271995311766,
+      0.6200890237378477,
+      0.7522331453533231
+    ]
+  },
+  {
+    "product_name": "Panificio Wurzelbrot Walnuss",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 350-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6303924279592645,
+      0.5397600547638843,
+      0.8879516498515118,
+      0.7537297454119258
+    ]
+  },
+  {
+    "product_name": "Meggle Kräuter-Tube Vegan oder Kräuter-Butter",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 80-ml-Tube oder je 5 x 20-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12388436960118204,
+      0.7623209635884219,
+      0.3625809653797673,
+      0.975459490823856
+    ]
+  },
+  {
+    "product_name": "REWE Bio Geflügel Rostbratwurst",
+    "price": "2.79",
+    "discount": null,
+    "unit": "je 160-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.37923688756899243,
+      0.7630946181178877,
+      0.6219250431905425,
+      0.9760946181178876
+    ]
+  },
+  {
+    "product_name": "Saupiquet Thunfisch-Salat",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 160-g-Dosen-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6342284474119585,
+      0.76213852723544,
+      0.8775753386084115,
+      0.9765033999414023
+    ]
+  }
+]

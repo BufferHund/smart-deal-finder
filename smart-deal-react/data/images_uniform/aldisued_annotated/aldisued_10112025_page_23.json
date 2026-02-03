@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "KERRYGOLD Original irischer Käse",
+    "price": "1.49",
+    "discount": "50",
+    "unit": "je 120- bzw. 150-g-Packung",
+    "original_price": "2.99",
+    "bbox": [
+      0.5377735294155481,
+      0.15737859387429076,
+      0.8690416666129792,
+      0.36399999999999477
+    ]
+  },
+  {
+    "product_name": "LANDLIEBE Fruchtjoghurt",
+    "price": "0.99",
+    "discount": "56",
+    "unit": "je 500-g-Becher",
+    "original_price": "2.29",
+    "bbox": [
+      0.11476666670960947,
+      0.34998353374945196,
+      0.48274558821444913,
+      0.5390905643779881
+    ]
+  },
+  {
+    "product_name": "SALAKIS Schafskäse",
+    "price": "1.99",
+    "discount": "47",
+    "unit": "180-g-Packung",
+    "original_price": "3.79",
+    "bbox": [
+      0.541160294123327,
+      0.36999999999999583,
+      0.8701705881822379,
+      0.5300246993758122
+    ]
+  },
+  {
+    "product_name": "KÖLLN Haferflocken",
+    "price": "0.99",
+    "discount": "41",
+    "unit": "je 500-g-Packung",
+    "original_price": "1.69",
+    "bbox": [
+      0.1699549020340413,
+      0.5519999999999854,
+      0.47284313722963733,
+      0.7434773913775478
+    ]
+  },
+  {
+    "product_name": "MEGGLE Feine Butter",
+    "price": "1.99",
+    "discount": "39",
+    "unit": "250-g-Packung",
+    "original_price": "3.29",
+    "bbox": [
+      0.5234843137229596,
+      0.569765420873853,
+      0.8700416666129842,
+      0.7338148196254826
+    ]
+  },
+  {
+    "product_name": "WEIHENSTEPHAN Frische Milch",
+    "price": "1.19",
+    "discount": "33",
+    "unit": "1-l-Packung",
+    "original_price": "1.79",
+    "bbox": [
+      0.20608039225032804,
+      0.7488230527507612,
+      0.47171421566037675,
+      0.9504362257511939
+    ]
+  },
+  {
+    "product_name": "MILKANA Schmelzkäsezubereitung",
+    "price": "1.89",
+    "discount": "34",
+    "unit": "je 190-g-Packung",
+    "original_price": "2.89",
+    "bbox": [
+      0.4975191176300066,
+      0.7434115263753784,
+      0.8756862744592808,
+      0.9434115263753778
+    ]
+  }
+]

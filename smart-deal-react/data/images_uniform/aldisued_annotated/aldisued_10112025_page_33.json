@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "ALDI TALK HOME S 150 GB",
+    "price": "19.99",
+    "discount": null,
+    "unit": "pro 4 Wochen",
+    "original_price": null,
+    "bbox": [
+      0.41381214679831774,
+      0.338,
+      0.6312312039405326,
+      0.5504242931060446
+    ]
+  },
+  {
+    "product_name": "ALDI TALK HOME L 300 GB",
+    "price": "29.99",
+    "discount": null,
+    "unit": "pro 4 Wochen",
+    "original_price": null,
+    "bbox": [
+      0.6471156019702663,
+      0.33800000000000163,
+      0.8635635596050486,
+      0.5504242931060462
+    ]
+  },
+  {
+    "product_name": "CPE 5S: stationärer 5G Router",
+    "price": "99.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.3674046068959318,
+      0.6235761250188255,
+      0.5162427211803615,
+      0.7605761250188255
+    ]
+  },
+  {
+    "product_name": "ZTE U10: mobiler LTE Router",
+    "price": "29.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.583869947783451,
+      0.5717271206818747,
+      0.8615924600976148,
+      0.7715457586362718
+    ]
+  }
+]

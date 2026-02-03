@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "GOURMETMAXX Doppelkammer-Heißluftfritteuse",
+    "price": "89.99",
+    "discount": "40",
+    "unit": null,
+    "original_price": "149.99",
+    "bbox": [
+      0.34406097599455987,
+      0.09319997277732604,
+      0.6484975615912975,
+      0.48080002722267134
+    ]
+  },
+  {
+    "product_name": "GOURMETMAXX Nutri Mixer, 4-teilig",
+    "price": "19.99",
+    "discount": "33",
+    "unit": "4-teilig",
+    "original_price": "29.99",
+    "bbox": [
+      0.6604975615912992,
+      0.09267998911093045,
+      0.9648121951989095,
+      0.4815600871125553
+    ]
+  },
+  {
+    "product_name": "GOURMETMAXX Messerschärfer",
+    "price": "9.99",
+    "discount": "50",
+    "unit": null,
+    "original_price": "19.99",
+    "bbox": [
+      0.34368536639238684,
+      0.49072009255709076,
+      0.6496853663923848,
+      0.6915201197797621
+    ]
+  },
+  {
+    "product_name": "GOURMETMAXX Backpapier Schalen oder Silikon Backformen",
+    "price": "6.99",
+    "discount": "60",
+    "unit": "2er Set",
+    "original_price": "14.99",
+    "bbox": [
+      0.6636853663923863,
+      0.49056008711255605,
+      0.9602487807956467,
+      0.6938401306688327
+    ]
+  },
+  {
+    "product_name": "GOURMETMAXX Sandwich-Maker",
+    "price": "9.99",
+    "discount": "50",
+    "unit": null,
+    "original_price": "19.99",
+    "bbox": [
+      0.34449756159129913,
+      0.7062001088906951,
+      0.648309756790211,
+      0.9044400490008127
+    ]
+  },
+  {
+    "product_name": "GOURMETMAXX Glas-Wasserkocher",
+    "price": "19.99",
+    "discount": "50",
+    "unit": null,
+    "original_price": "39.99",
+    "bbox": [
+      0.6616853663923868,
+      0.701840130668834,
+      0.9634365855967334,
+      0.9061200381117417
+    ]
+  },
+  {
+    "product_name": "STYLE & SHINE by VITALMAXX Slim Hairdryer",
+    "price": "49.99",
+    "discount": "50",
+    "unit": null,
+    "original_price": "99.99",
+    "bbox": [
+      0.03444633923153974,
+      0.16211894920479286,
+      0.3337731491056092,
+      0.48131688028158714
+    ]
+  },
+  {
+    "product_name": "STYLE & SHINE by VITALMAXX Hairstyler Flex",
+    "price": "59.99",
+    "discount": "40",
+    "unit": null,
+    "original_price": "99.99",
+    "bbox": [
+      0.034446339231539475,
+      0.16295894376025802,
+      0.3349609539066942,
+      0.9063541253469978
+    ]
+  }
+]

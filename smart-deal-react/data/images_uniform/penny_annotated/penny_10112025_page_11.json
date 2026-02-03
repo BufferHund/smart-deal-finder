@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "COVO Jaffa Cake Orange",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 300 g",
+    "original_price": null,
+    "bbox": [
+      0.12522255356702544,
+      0.05459472142335455,
+      0.4316290773882888,
+      0.2344536301819206
+    ]
+  },
+  {
+    "product_name": "COVO Mini Doppel-Keks",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 6 x 37,5 g",
+    "original_price": null,
+    "bbox": [
+      0.44680906058420417,
+      0.077396573908226,
+      0.8708090605841993,
+      0.23435374776103868
+    ]
+  },
+  {
+    "product_name": "COVO Schwedisches Hafergebäck Schoko oder Hafergebäck",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 525 g oder je 600 g",
+    "original_price": null,
+    "bbox": [
+      0.12709546970790145,
+      0.2523708782199141,
+      0.4451407726288973,
+      0.49139657390822566
+    ]
+  },
+  {
+    "product_name": "COVO Schoko & Keks Sticks Milchschokolade oder Zartbitterschokolade",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 90 g",
+    "original_price": null,
+    "bbox": [
+      0.4528090605842017,
+      0.24065117819220835,
+      0.8698090605841992,
+      0.4981982869541127
+    ]
+  },
+  {
+    "product_name": "COVO Waffelmischung oder Gebäckmischung",
+    "price": "2.89",
+    "discount": null,
+    "unit": "je 400 g oder je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.12509546970790142,
+      0.5032974304311695,
+      0.4903191703479723,
+      0.7192974304311711
+    ]
+  },
+  {
+    "product_name": "COVO Butterkeks Versch. Sorten",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 2 x 200 g",
+    "original_price": null,
+    "bbox": [
+      0.519000000000001,
+      0.5024957173852811,
+      0.8626181211683981,
+      0.7209008565229439
+    ]
+  },
+  {
+    "product_name": "COVO Butter Spritzgebäck",
+    "price": "2.69",
+    "discount": null,
+    "unit": "je 400 g",
+    "original_price": null,
+    "bbox": [
+      0.11872613257302617,
+      0.7627111347982739,
+      0.3722111589433451,
+      0.9483059956606164
+    ]
+  },
+  {
+    "product_name": "COVO Schoko Butterkeks Versch. Sorten",
+    "price": "1.59",
+    "discount": null,
+    "unit": "je 125 g",
+    "original_price": null,
+    "bbox": [
+      0.3791783977190757,
+      0.7611077087065006,
+      0.6110578446177239,
+      0.949206852183557
+    ]
+  },
+  {
+    "product_name": "COVO Mini-Schweinsöhrchen Zartbitter oder Natur",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 185 g oder je 225 g",
+    "original_price": null,
+    "bbox": [
+      0.6346432045618515,
+      0.7286034260917766,
+      0.8750829280111744,
+      0.945603426091777
+    ]
+  }
+]

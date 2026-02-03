@@ -1,9 +1,10 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 from services import storage
 from services.history import PriceHistoryService
 from services.chef import ChefService
+from middleware.auth import get_current_user
 
 router = APIRouter()
 history_service = PriceHistoryService()
@@ -25,7 +26,7 @@ class ChatRequest(BaseModel):
 # --- Endpoints ---
 
 @router.get("/deals/active")
-def get_active_deals():
+def get_active_deals(user = Depends(get_current_user)):
     return storage.get_active_deals()
 
 @router.get("/deals/history")

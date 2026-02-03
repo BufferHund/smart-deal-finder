@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Celebrations",
+    "price": "1.50",
+    "discount": null,
+    "unit": "186 g",
+    "original_price": null,
+    "bbox": [
+      0.5091802778166115,
+      0.48837355436900287,
+      0.7245901389083058,
+      0.6897509637539985
+    ]
+  },
+  {
+    "product_name": "Coppenrath Eierplätzchen",
+    "price": "null",
+    "discount": null,
+    "unit": "200 g",
+    "original_price": null,
+    "bbox": [
+      0.046869027641859365,
+      0.6989999999999997,
+      0.2698690276418594,
+      0.9029999999999998
+    ]
+  },
+  {
+    "product_name": "Magdalenas mit Kakao oder Zitrone",
+    "price": "null",
+    "discount": null,
+    "unit": "280 - 300 g",
+    "original_price": null,
+    "bbox": [
+      0.28400000000000003,
+      0.699,
+      0.5010000000000001,
+      0.903
+    ]
+  },
+  {
+    "product_name": "Kronenbrot Rustikales Dinkel",
+    "price": "null",
+    "discount": null,
+    "unit": "400 g",
+    "original_price": null,
+    "bbox": [
+      0.507,
+      0.699,
+      0.723,
+      0.903
+    ]
+  },
+  {
+    "product_name": "Kronenbrot Rustikales Saaten",
+    "price": "null",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.7492619447162815,
+      0.7001245181230008,
+      0.9680323614412001,
+      0.904124518123001
+    ]
+  },
+  {
+    "product_name": "Starbucks Kaffeekapseln",
+    "price": "null",
+    "discount": null,
+    "unit": "53 - 57 g",
+    "original_price": null,
+    "bbox": [
+      0.0445238894325626,
+      0.25976368641318304,
+      0.9604439006167076,
+      0.48016923852133875
+    ]
+  },
+  {
+    "product_name": "Dallmayr Crema d'Oro Pads",
+    "price": "null",
+    "discount": null,
+    "unit": "196 g",
+    "original_price": null,
+    "bbox": [
+      0.03975347270764519,
+      0.48946877215764045,
+      0.2591926420538466,
+      0.6896329980517815
+    ]
+  },
+  {
+    "product_name": "Nesquik XXL",
+    "price": "null",
+    "discount": null,
+    "unit": "700 g",
+    "original_price": null,
+    "bbox": [
+      0.2735038922285989,
+      0.4891653835053446,
+      0.496123339391412,
+      0.692703163768488
+    ]
+  },
+  {
+    "product_name": "Schogetten",
+    "price": "null",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.7473652869037296,
+      0.4880408653823438,
+      0.966804456249931,
+      0.692703163768488
+    ]
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "product_name": "Somat All in 1 Extra",
+    "price": "7.99",
+    "discount": null,
+    "unit": "63-Tab-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12785494641454762,
+      0.04332668830720133,
+      0.35270159472340046,
+      0.27200000000000163
+    ]
+  },
+  {
+    "product_name": "Persil Colorwaschmittel Kraft-Gel",
+    "price": "4.99",
+    "discount": null,
+    "unit": "je 20-WL-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.3745907364113547,
+      0.03013290248970462,
+      0.6099293854893483,
+      0.27200000000000146
+    ]
+  },
+  {
+    "product_name": "Perwoll Renew Feinwaschmittel",
+    "price": "5.49",
+    "discount": null,
+    "unit": "je 27-WL-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.6448395203077739,
+      0.019377912003600072,
+      0.8715873027200061,
+      0.27200000000000313
+    ]
+  },
+  {
+    "product_name": "Zewa Bewährt oder Danke Toilettenpapier",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 8 x 150-Blatt-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12085601870022146,
+      0.39789783272321844,
+      0.36400000000000154,
+      0.5246633441536042
+    ]
+  },
+  {
+    "product_name": "Tena Discreet Einlagen Extra, oder Discreet Ultra Einlagen Normal",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 10-St.-Pckg. oder je 16-St.-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3690000000000009,
+      0.31433665584640047,
+      0.6197284410002373,
+      0.5259950162304026
+    ]
+  },
+  {
+    "product_name": "Lenor Unstoppables oder Wäscheparfüm",
+    "price": "3.79",
+    "discount": null,
+    "unit": "je 155-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6334361098654911,
+      0.3156683279232016,
+      0.8812694909041979,
+      0.5269950162304033
+    ]
+  },
+  {
+    "product_name": "Elmex Sensitive oder Meridol Zahnpasta",
+    "price": "7.79",
+    "discount": null,
+    "unit": "je 2 x 75-ml-Tuben-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.12275299807646718,
+      0.5360000000000033,
+      0.36588306754610167,
+      0.7523466233856009
+    ]
+  },
+  {
+    "product_name": "Listerine Mundspülung Cool Mint oder Cool Mint Mild",
+    "price": "2.99",
+    "discount": null,
+    "unit": "je 500-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.377473803957453,
+      0.5309362353557693,
+      0.6177284410002389,
+      0.7523466233855998
+    ]
+  },
+  {
+    "product_name": "Cottonelle Feuchtes Toilettenpapier",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 42-St.-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6362607111846414,
+      0.5370000000000036,
+      0.879247001923534,
+      0.7536782954624015
+    ]
+  },
+  {
+    "product_name": "Fa Duschgel",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 250-ml-Fl.",
+    "original_price": null,
+    "bbox": [
+      0.11817275823034944,
+      0.7634247119797272,
+      0.3640000000000018,
+      0.9760149513088014
+    ]
+  },
+  {
+    "product_name": "Fa Deospray",
+    "price": "1.29",
+    "discount": null,
+    "unit": "je 150-ml-Dose",
+    "original_price": null,
+    "bbox": [
+      0.37464920263830237,
+      0.7636758035776016,
+      0.62258752371548,
+      0.9766807873472014
+    ]
+  },
+  {
+    "product_name": "Toppits Backpapier Bögen",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 20-St.-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.6251482011541243,
+      0.762344131500804,
+      0.8890117062927438,
+      0.9773466233856042
+    ]
+  }
+]

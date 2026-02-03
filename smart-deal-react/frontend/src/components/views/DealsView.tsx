@@ -49,7 +49,7 @@ const getCategoryIcon = (category: string) => {
 
 export default function DealsView() {
     const [deals, setDeals] = useState<any[]>([]);
-    const [activeTab, setActiveTab] = useState("foryou");
+    const [activeTab, setActiveTab] = useState("browse");
     const [selectedStore, setSelectedStore] = useState("All Stores");
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [loading, setLoading] = useState(true);
@@ -165,6 +165,7 @@ export default function DealsView() {
                         tabContent: "text-black/70 dark:text-white/70 group-data-[selected=true]:text-white font-bold"
                     }}
                 >
+                    <Tab key="browse" title={<div className="flex items-center gap-2"><TrendingUp size={14} /> Browse</div>} />
                     <Tab key="foryou" title={
                         <div className="flex items-center gap-2 relative">
                             {isLoadingAgent ? (
@@ -189,7 +190,6 @@ export default function DealsView() {
                             )}
                         </div>
                     } />
-                    <Tab key="browse" title={<div className="flex items-center gap-2"><TrendingUp size={14} /> Browse</div>} />
                 </Tabs>
 
                 {/* Filters */}
@@ -434,8 +434,8 @@ export default function DealsView() {
                                             setScanFile(null);
                                             setScanStore("");
                                             loadData(); // Refresh feed
-                                        } catch (e) {
-                                            alert("Upload failed");
+                                        } catch (e: any) {
+                                            alert(e.message || "Upload failed");
                                         } finally {
                                             setIsUploading(false);
                                         }

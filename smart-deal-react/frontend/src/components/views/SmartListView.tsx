@@ -301,16 +301,16 @@ export default function SmartListView() {
                             <div className="mt-4 space-y-2">
                                 <Button
                                     fullWidth
-                                    className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold shadow-lg"
-                                    startContent={<MapPin size={20} />}
+                                    className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800"
+                                    startContent={<MapPin size={18} />}
                                     onPress={onRouteOpen}
                                 >
-                                    🧭 Plan Smart Route
+                                    Plan Smart Route
                                 </Button>
                                 <Button
                                     fullWidth
-                                    className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold shadow-lg"
-                                    startContent={<TrendingDown size={20} />}
+                                    className="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-800"
+                                    startContent={<TrendingDown size={18} />}
                                     onPress={handleOptimize}
                                     isLoading={isOptimizing}
                                 >

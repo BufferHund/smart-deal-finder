@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "Swirl Staubfilterbeutel-Jahrespackung",
+    "price": "10.99",
+    "discount": "46",
+    "unit": "je Packung",
+    "original_price": "20.69",
+    "bbox": [
+      0.12313166897411093,
+      0.04340619772779292,
+      0.42663815467949684,
+      0.29959380227220905
+    ]
+  },
+  {
+    "product_name": "PHILIPS Bodenstaubsauger FC8241/09",
+    "price": "64.99",
+    "discount": "63",
+    "unit": "je Stück",
+    "original_price": "179.99",
+    "bbox": [
+      0.4369144640384937,
+      0.02255390599244479,
+      0.8709735684618636,
+      0.5648892188015123
+    ]
+  },
+  {
+    "product_name": "Praktische Haushaltshelfer",
+    "price": "1.00",
+    "discount": null,
+    "unit": "je Stück/Packung/Set",
+    "original_price": null,
+    "bbox": [
+      0.12068428769209531,
+      0.30792614586767464,
+      0.4255526187179859,
+      0.5134460940075578
+    ]
+  },
+  {
+    "product_name": "andiamo Sauberlaufmatte",
+    "price": "ab 2.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12549351429461522,
+      0.522335312809072,
+      0.42455261871798955,
+      0.7437385413232648
+    ]
+  },
+  {
+    "product_name": "EMPIRE Sauberlaufmatte",
+    "price": "8.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.12549351429461547,
+      0.751590833058614,
+      0.4231907733974827,
+      0.9506676564045415
+    ]
+  },
+  {
+    "product_name": "medion Akku-Handstaubsauger",
+    "price": "14.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.4321052374359713,
+      0.5691107811984908,
+      0.8985723201924414,
+      0.9539630729338374
+    ]
+  }
+]

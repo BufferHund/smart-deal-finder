@@ -22,6 +22,14 @@ const getBrandColor = (name: string) => {
     return "bg-gray-600";
 };
 
+// Module-level cache to persist across re-mounts
+let globalStoreCache: {
+    lat: number;
+    lng: number;
+    data: any[];
+    timestamp: number;
+} | null = null;
+
 export default function MapView() {
     const [stores, setStores] = useState<any[]>([]);
     const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
@@ -87,6 +95,17 @@ export default function MapView() {
     };
 
     const fetchNearbyStores = async (lat: number, lng: number) => {
+        // Check cache first (within 2km and less than 1 hour old)
+        if (globalStoreCache) {
+            const dist = calculateDistance(lat, lng, globalStoreCache.lat, globalStoreCache.lng);
+            if (dist < 2 && (Date.now() - globalStoreCache.timestamp < 3600000)) {
+                console.log("Using cached store data");
+                setStores(globalStoreCache.data);
+                setLoading(false);
+                return;
+            }
+        }
+
         try {
             const query = `
                 [out:json];
@@ -116,6 +135,14 @@ export default function MapView() {
                     address: el.tags?.["addr:street"] || ""
                 };
             }).sort((a: any, b: any) => a.distance - b.distance);
+
+            // Update cache
+            globalStoreCache = {
+                lat,
+                lng,
+                data: foundStores,
+                timestamp: Date.now()
+            };
 
             setStores(foundStores);
         } catch (e) {

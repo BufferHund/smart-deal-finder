@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Zetti Knusperflocken Klassik",
+    "price": null,
+    "discount": null,
+    "unit": "130 g",
+    "original_price": null,
+    "bbox": [
+      0.6591569744623206,
+      0.040454575654864884,
+      0.9270349704318723,
+      0.2615453136106305
+    ]
+  },
+  {
+    "product_name": "EDEKA Khidri Datteln",
+    "price": null,
+    "discount": null,
+    "unit": "180 g",
+    "original_price": null,
+    "bbox": [
+      0.6601569744623204,
+      0.2723633947610801,
+      0.9271919448941921,
+      0.49627276753981997
+    ]
+  },
+  {
+    "product_name": "Lorenz Crunchips Stackers",
+    "price": "1.99",
+    "discount": "13",
+    "unit": "175 g",
+    "original_price": null,
+    "bbox": [
+      0.09347662096523346,
+      0.5082726568053151,
+      0.3405872298391278,
+      0.7270908486902701
+    ]
+  },
+  {
+    "product_name": "Funnyfrisch Chipsfrisch ungarisch",
+    "price": "1.99",
+    "discount": "28",
+    "unit": "4 x 40 g",
+    "original_price": null,
+    "bbox": [
+      0.34621512768840446,
+      0.510181808115045,
+      0.6516860510753619,
+      0.729181808115045
+    ]
+  },
+  {
+    "product_name": "Ritter Sport Schokolade Bunte Vielfalt",
+    "price": "2.79",
+    "discount": "37",
+    "unit": "Sorten, 218-250 g",
+    "original_price": null,
+    "bbox": [
+      0.6611569744623186,
+      0.5065454243451352,
+      0.9666860510753614,
+      0.728545424345135
+    ]
+  },
+  {
+    "product_name": "Nimm 2 Lachgummi",
+    "price": "1.11",
+    "discount": "13",
+    "unit": "versch. Sorten, 225-325 g",
+    "original_price": null,
+    "bbox": [
+      0.030999999999999986,
+      0.7537273431946846,
+      0.3389011787637659,
+      0.9649999999999994
+    ]
+  },
+  {
+    "product_name": "Simply Raw Gefrier-getrocknete Erdbeeren in Scheiben",
+    "price": "4.99",
+    "discount": "16",
+    "unit": "60 g",
+    "original_price": null,
+    "bbox": [
+      0.3533139489246384,
+      0.7485455350796404,
+      0.6535290766130427,
+      0.9601816973805404
+    ]
+  },
+  {
+    "product_name": "Seeberger gefriergetrocknete Blaubeeren, Erdbeeren oder Himbeeren",
+    "price": "1.99",
+    "discount": null,
+    "unit": "15 g oder 12 g",
+    "original_price": null,
+    "bbox": [
+      0.659849508078175,
+      0.7412818477691957,
+      0.9652907661304264,
+      0.965466424246857
+    ]
+  }
+]

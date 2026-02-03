@@ -1,0 +1,132 @@
+[
+  {
+    "product_name": "Meister Wiener Würstchen",
+    "price": "0.88",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.10432042135079773,
+      2.184136061355226e-18,
+      0.8993160418203254,
+      0.29944235043196105
+    ]
+  },
+  {
+    "product_name": "Bockwurst",
+    "price": "0.99",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.11996070716124545,
+      0.3582153585715403,
+      0.3739411462804872,
+      0.5246654855353037
+    ]
+  },
+  {
+    "product_name": "Lamm-Hüfte",
+    "price": "2.79",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.3729999755603944,
+      0.358269198214421,
+      0.6316274634397987,
+      0.5253000846425114
+    ]
+  },
+  {
+    "product_name": "Aoste Frz. Baguette- oder Ring-Salami",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.6329215853997308,
+      0.3145348530347394,
+      0.8782941952787492,
+      0.5289346837497201
+    ]
+  },
+  {
+    "product_name": "Rinder-Filet",
+    "price": "5.55",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.11847051204122955,
+      0.547473080178558,
+      0.37445095116047195,
+      0.7522038819641386
+    ]
+  },
+  {
+    "product_name": "Schweine-Bauch",
+    "price": "0.77",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.37531750367435357,
+      0.5479999999999999,
+      0.6323725609998065,
+      0.7527846414284642
+    ]
+  },
+  {
+    "product_name": "Neuburger österreichische Spezialität",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 100 g",
+    "original_price": null,
+    "bbox": [
+      0.6349215853997305,
+      0.5378156881169734,
+      0.8787843903987644,
+      0.7527308017855812
+    ]
+  },
+  {
+    "product_name": "Kalbs-Leber",
+    "price": "19.90",
+    "discount": null,
+    "unit": "je 1 kg",
+    "original_price": null,
+    "bbox": [
+      0.11847051204122948,
+      0.761730801785586,
+      0.3649999755603941,
+      0.9747078485707913
+    ]
+  },
+  {
+    "product_name": "Kasseler Lachs",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je 800-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.3792352682404184,
+      0.761730801785589,
+      0.6214510000396833,
+      0.9762886080351191
+    ]
+  },
+  {
+    "product_name": "Nature & Respect Frische Freiland-Enten-Schenkel",
+    "price": "11.10",
+    "discount": null,
+    "unit": "je 1kg",
+    "original_price": null,
+    "bbox": [
+      0.6354117805197457,
+      0.7622577216070302,
+      0.8768040001587317,
+      0.9773424476780008
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Scheck-In Manufaktur Marmorkuchen",
+    "price": "4.49",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.03311427464700131,
+      0.05630898028156421,
+      0.3366567887040488,
+      0.259505329573205
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Schoko-Pecan-Cookies",
+    "price": "5.99",
+    "discount": null,
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.033137129576401796,
+      0.3004718422525183,
+      0.3323428239410046,
+      0.49363470422347283
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Gulaschsuppe",
+    "price": "4.99",
+    "discount": null,
+    "unit": "355 g",
+    "original_price": null,
+    "bbox": [
+      0.03704570985880045,
+      0.5339269408446904,
+      0.33625140422340327,
+      0.7283257239419079
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Sugo di Pomodoro",
+    "price": "3.49",
+    "discount": null,
+    "unit": "345 ml",
+    "original_price": null,
+    "bbox": [
+      0.34847995351740413,
+      0.5346179605631298,
+      0.6526800309883956,
+      0.7276347042234688
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Fleischpflanzerl",
+    "price": "4.49",
+    "discount": null,
+    "unit": "2 x 160 g",
+    "original_price": null,
+    "bbox": [
+      0.6570228549293969,
+      0.5332359211262593,
+      0.9621142746470013,
+      0.7283257239419048
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Tagliatelle 6 mm",
+    "price": "2.29",
+    "discount": null,
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.03411427464700138,
+      0.7629269408446945,
+      0.3411371295764018,
+      0.9611065464759877
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Dinkel-Ravioli mit Ricotta-Spinatfüllung",
+    "price": "4.99",
+    "discount": null,
+    "unit": "250 g",
+    "original_price": null,
+    "bbox": [
+      0.35043424365860365,
+      0.7656910197184349,
+      0.6507257408471964,
+      0.96041552675755
+    ]
+  },
+  {
+    "product_name": "Scheck-In Manufaktur Boeuf Bourguignon mit Bandnudeln",
+    "price": "7.99",
+    "discount": null,
+    "unit": "380 g",
+    "original_price": null,
+    "bbox": [
+      0.662885725352994,
+      0.7413089802815613,
+      0.9630914197176011,
+      0.9624885859128616
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "ARLA Kærgården Butter",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 250 g",
+    "original_price": null,
+    "bbox": [
+      0.12043255582646563,
+      0.052568420933756264,
+      0.35843255582646594,
+      0.2596992024689819
+    ]
+  },
+  {
+    "product_name": "RAMA Cremefine",
+    "price": "0.99",
+    "discount": "33",
+    "unit": "je 250 ml",
+    "original_price": "1.49",
+    "bbox": [
+      0.36273022330586274,
+      0.05760765539432409,
+      0.5265674441735357,
+      0.4900653907676136
+    ]
+  },
+  {
+    "product_name": "DELI REFORM Perfekt zum Backen",
+    "price": "1.19",
+    "discount": null,
+    "unit": "je 500 g",
+    "original_price": null,
+    "bbox": [
+      0.12473022330586274,
+      0.28802615630704637,
+      0.3535116626030189,
+      0.48905231261409243
+    ]
+  },
+  {
+    "product_name": "WEIHENSTEPHAN Haltbare Milch",
+    "price": "1.19",
+    "discount": "29",
+    "unit": "je 1 l",
+    "original_price": "1.69",
+    "bbox": [
+      0.5280000000000032,
+      0.04788229661829732,
+      0.8708093300824189,
+      0.4971569378422739
+    ]
+  },
+  {
+    "product_name": "KINDER Maxi King",
+    "price": "1.39",
+    "discount": "26",
+    "unit": "je 3 x 35 g",
+    "original_price": "1.89",
+    "bbox": [
+      0.11899999999999998,
+      0.505,
+      0.373,
+      0.721
+    ]
+  },
+  {
+    "product_name": "MÜLLER Frucht Butter Milch",
+    "price": "0.89",
+    "discount": "35",
+    "unit": "je 500 g",
+    "original_price": "1.39",
+    "bbox": [
+      0.38400000000000134,
+      0.5050000000000012,
+      0.6167581140911201,
+      0.7210000000000021
+    ]
+  },
+  {
+    "product_name": "MILPRIMA Milchdrink",
+    "price": "0.79",
+    "discount": "11",
+    "unit": "je 500 ml",
+    "original_price": "0.89",
+    "bbox": [
+      0.6370836723557751,
+      0.5040000000000019,
+      0.873539553388279,
+      0.721000000000003
+    ]
+  },
+  {
+    "product_name": "MW SCHWABEN Fruchtjoghurt",
+    "price": "2.22",
+    "discount": "30",
+    "unit": "je 1 kg",
+    "original_price": "3.19",
+    "bbox": [
+      0.12329766747939694,
+      0.7310261563070458,
+      0.49024188590887985,
+      0.9316015950620369
+    ]
+  },
+  {
+    "product_name": "DR. OETKER Grieß Pudding oder High Protein Milchreis",
+    "price": "1.99",
+    "discount": null,
+    "unit": "je 500 g oder je 400 g",
+    "original_price": null,
+    "bbox": [
+      0.5051069975618124,
+      0.7300261563070461,
+      0.873539553388276,
+      0.9295492824479465
+    ]
+  }
+]

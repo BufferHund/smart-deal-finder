@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Toniebox",
+    "price": "69.99",
+    "discount": "30",
+    "unit": "je Stück",
+    "original_price": "99.99",
+    "bbox": [
+      0.5444197400942865,
+      0.10994361727694424,
+      0.86043336079621,
+      0.40348852176922456
+    ]
+  },
+  {
+    "product_name": "Hörfigur für die Toniebox",
+    "price": "12.99",
+    "discount": "23",
+    "unit": "je Stück",
+    "original_price": "16.99",
+    "bbox": [
+      0.14083549921426264,
+      0.22399999999999998,
+      0.6752030596961814,
+      0.40242032467178834
+    ]
+  },
+  {
+    "product_name": "Audioboxregal",
+    "price": "19.99",
+    "discount": "50",
+    "unit": "je Stück",
+    "original_price": "39.99",
+    "bbox": [
+      0.13159953936093377,
+      0.4137613101589717,
+      0.8662824807124012,
+      0.5799999999999994
+    ]
+  },
+  {
+    "product_name": "Funko POP! Kultfigur zum Sammeln",
+    "price": "9.99",
+    "discount": "37",
+    "unit": "je Stück",
+    "original_price": "16.00",
+    "bbox": [
+      0.13233067935046042,
+      0.5931363941948736,
+      0.8652824807124028,
+      0.7459603304076978
+    ]
+  },
+  {
+    "product_name": "Jada Figuren-Set MINECRAFT",
+    "price": "19.99",
+    "discount": "42",
+    "unit": "je Set",
+    "original_price": "34.99",
+    "bbox": [
+      0.13357602649216374,
+      0.7571550742144217,
+      0.8635426379668212,
+      0.9261135692088808
+    ]
+  }
+]

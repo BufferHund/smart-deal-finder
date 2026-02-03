@@ -22,10 +22,17 @@ def set_system_setting(key: str, value: str):
     else:
         db.execute_query("INSERT INTO system_settings (setting_key, setting_value) VALUES (%s, %s)", (key, value))
 
-def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", upload_id: int = None, visibility: str = 'public'):
-    # Depending on how 'active deals' are defined. 
-    # For now, we just insert them into the deals table linked to an upload.
-    # Note: caller should provide upload_id
+def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", upload_id: int = None, visibility: str = 'public', source_image_path: str = None):
+    # Auto-enrichment imports
+    from datetime import datetime, timedelta
+    from services.category_classifier import classify_product
+    
+    # Calculate default valid_until (next Sunday)
+    today = datetime.now()
+    days_until_sunday = (6 - today.weekday()) % 7
+    if days_until_sunday == 0:
+        days_until_sunday = 7
+    default_valid_until = today + timedelta(days=days_until_sunday)
     
     for deal in deals:
         # Clean price for Decimal
@@ -38,24 +45,47 @@ def save_active_deals(deals: List[Dict], store_name: str = "Unknown Store", uplo
                 price = float(price_str)
             except:
                 price = 0.0
+        
+        # Auto-classify category if not provided
+        product_name = deal.get('product_name') or ""
+        category = deal.get('category')
+        if not category or category == 'Uncategorized':
+            try:
+                category = classify_product(product_name, use_ai_fallback=False)  # Fast keyword matching only
+            except:
+                category = 'Other'
+        
+        # Use provided valid_until or default to next Sunday
+        valid_until = deal.get('valid_until') or default_valid_until
+        
+        # Crop image if bbox provided and source image exists
+        image_url = deal.get('image_url')
+        if not image_url and source_image_path and deal.get('bbox'):
+            try:
+                from services.image_cropper import crop_product_image
+                image_url = crop_product_image(source_image_path, deal['bbox'], store_name, product_name)
+            except:
+                pass
 
         db.execute_query(
             """
-            INSERT INTO deals (upload_id, product_name, price, original_price, unit, store, confidence, source, category, image_url, visibility)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO deals (upload_id, product_name, price, original_price, unit, store, confidence, source, category, image_url, visibility, valid_until, discount)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
             (
                 upload_id,
-                (deal.get('product_name') or "")[:500],
+                product_name[:500],
                 price,
                 (str(deal.get('original_price') or ""))[:100],
                 (deal.get('unit') or "")[:255],
                 (store_name or "")[:100],
                 deal.get('confidence', 0.95),
                 deal.get('source', 'gemini'),
-                deal.get('category', 'Uncategorized'),
-                deal.get('image_url'),
-                visibility
+                category,
+                image_url,
+                visibility,
+                valid_until,
+                deal.get('discount')
             )
         )
 

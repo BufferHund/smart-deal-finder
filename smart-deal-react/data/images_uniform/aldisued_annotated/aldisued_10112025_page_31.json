@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "CHOCEUR Nussknacker oder Mandelknacker",
+    "price": "1.39",
+    "discount": null,
+    "unit": "je 100-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.1251584271425423,
+      0.2334735984848308,
+      0.4947129221414417,
+      0.4078927651511226
+    ]
+  },
+  {
+    "product_name": "CHOCEUR Milch-Jumbo-Riegel",
+    "price": "1.69",
+    "discount": null,
+    "unit": "je 7 Riegel, je 150-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.22984214355587657,
+      0.4211311931817414,
+      0.4850000000000003,
+      0.5789999999999993
+    ]
+  },
+  {
+    "product_name": "CHOCEUR Milchriegel",
+    "price": "2.29",
+    "discount": null,
+    "unit": "je 11 Riegel, je 200-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.14026741714034358,
+      0.5939216098485952,
+      0.4785247185723708,
+      0.7713952083334262
+    ]
+  },
+  {
+    "product_name": "CHOCEUR Choco Changer",
+    "price": "3.49",
+    "discount": null,
+    "unit": "je 150-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.5109999999999999,
+      0.511,
+      0.8859999999999999,
+      0.7843679924241576
+    ]
+  },
+  {
+    "product_name": "CHOCEUR Mini-Schokoküsse",
+    "price": "2.49",
+    "discount": null,
+    "unit": "32 Stück, 266-g-Packung",
+    "original_price": null,
+    "bbox": [
+      0.141346630711615,
+      0.7837376136365171,
+      0.4796039321436423,
+      0.9426848106061803
+    ]
+  },
+  {
+    "product_name": "CHOCEUR ALDI Gipfel",
+    "price": "1.49",
+    "discount": null,
+    "unit": "100-g-Riegel",
+    "original_price": null,
+    "bbox": [
+      0.5249505628552575,
+      0.810158409091006,
+      0.870891010002199,
+      0.9442896022727465
+    ]
+  }
+]

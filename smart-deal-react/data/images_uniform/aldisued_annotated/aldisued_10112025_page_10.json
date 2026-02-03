@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "GOURMET FINEST CUISINE Aufstrich mit 75 % Frucht",
+    "price": "0.99",
+    "discount": "33",
+    "unit": "je 250-g-Glas",
+    "original_price": "1.49",
+    "bbox": [
+      0.5089999999999975,
+      0.05399999999999945,
+      0.8724901232173058,
+      0.2538134817753733
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Gourmet-Pflaumen",
+    "price": "1.79",
+    "discount": "28",
+    "unit": "je 580-ml-Glas, Abtropfgewicht 305 g",
+    "original_price": "2.49",
+    "bbox": [
+      0.5289429519714676,
+      0.26627885535244133,
+      0.8746472818792191,
+      0.4772788553524403
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Pasta al Bronzo",
+    "price": "0.89",
+    "discount": "31",
+    "unit": "je 500-g-Packung",
+    "original_price": "1.29",
+    "bbox": [
+      0.12483351772230061,
+      0.2768578063702946,
+      0.4667427307047076,
+      0.5217673132114619
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Winterliche Eisdesserts",
+    "price": "1.89",
+    "discount": "29",
+    "unit": "je 280- bzw. 340-ml-Packung",
+    "original_price": "2.69",
+    "bbox": [
+      0.5099476137793607,
+      0.4919999999999941,
+      0.865071033452211,
+      0.7419999999999928
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Pesto",
+    "price": "1.29",
+    "discount": "35",
+    "unit": "je 190-g-Glas",
+    "original_price": "1.99",
+    "bbox": [
+      0.13220022126676115,
+      0.541953831436086,
+      0.4710046618078906,
+      0.7379999999999923
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Leber-Pâté",
+    "price": "1.19",
+    "discount": "33",
+    "unit": "je 130-g-Glas",
+    "original_price": "1.79",
+    "bbox": [
+      0.12172874528102674,
+      0.7549538314360853,
+      0.4678475031459789,
+      0.943603879268788
+    ]
+  },
+  {
+    "product_name": "GOURMET FINEST CUISINE Mini-Pandoro",
+    "price": "0.89",
+    "discount": "35",
+    "unit": "80-g-Packung",
+    "original_price": "1.39",
+    "bbox": [
+      0.5067904551174477,
+      0.759186518224618,
+      0.866123419672846,
+      0.9398827346212354
+    ]
+  }
+]

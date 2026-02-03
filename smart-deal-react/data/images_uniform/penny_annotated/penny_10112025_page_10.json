@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "COVO American Style Cookies Schokolade",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 225 g",
+    "original_price": null,
+    "bbox": [
+      0.12505284768385133,
+      0.42382840604667515,
+      0.5000795269376166,
+      0.7261559945030225
+    ]
+  },
+  {
+    "product_name": "COVO Cookies Rainbow, Double Choc",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 150 g oder je 225 g",
+    "original_price": null,
+    "bbox": [
+      0.507488968781546,
+      0.46309359670181427,
+      0.8752026679253774,
+      0.7196568120933502
+    ]
+  },
+  {
+    "product_name": "COVO Schoko-Milchtaler",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 6 x 37,5 g",
+    "original_price": null,
+    "bbox": [
+      0.12705284768385144,
+      0.7510311989006055,
+      0.4937973320746234,
+      0.9468908038478845
+    ]
+  },
+  {
+    "product_name": "COVO Doubletti Haselnuss",
+    "price": "1.25",
+    "discount": null,
+    "unit": "je 250 g",
+    "original_price": null,
+    "bbox": [
+      0.5021277578046142,
+      0.7729844005496977,
+      0.8732026679253767,
+      0.943828406046675
+    ]
+  }
+]

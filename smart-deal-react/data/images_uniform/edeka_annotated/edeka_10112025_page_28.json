@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Eichbaum Ureich Premium Pils",
+    "price": "13.99",
+    "discount": "17",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.6612755975802277,
+      0.03979842669136914,
+      0.9639999999999997,
+      0.26192244337347503
+    ]
+  },
+  {
+    "product_name": "Heineken Lager Bier",
+    "price": "12.99",
+    "discount": "35",
+    "unit": "20 x 0,4 L oder 28 x 0,25 L",
+    "original_price": null,
+    "bbox": [
+      0.0329795219358158,
+      0.38699999999999746,
+      0.6484803782220673,
+      0.49701161501389285
+    ]
+  },
+  {
+    "product_name": "Jever Pilsener oder Fun",
+    "price": "11.99",
+    "discount": "31",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.6555102390320892,
+      0.28381004170526314,
+      0.9735307170962728,
+      0.4957868116774732
+    ]
+  },
+  {
+    "product_name": "Mönchshof Kellerbier und weitere Sorten",
+    "price": "12.99",
+    "discount": "23",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.03599999999999982,
+      0.512999999999999,
+      0.33774488048395407,
+      0.7291007866543153
+    ]
+  },
+  {
+    "product_name": "Bayreuther Hell",
+    "price": "13.49",
+    "discount": "20",
+    "unit": "20 x 0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.3477653585481364,
+      0.5206627949953657,
+      0.649744880483954,
+      0.7292131883225258
+    ]
+  },
+  {
+    "product_name": "Flensburger Pilsener",
+    "price": "12.49",
+    "discount": "26",
+    "unit": "20 x 0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.6559999999999934,
+      0.5304263766450497,
+      0.9645102390320874,
+      0.7283255899907318
+    ]
+  },
+  {
+    "product_name": "Veltins Pilsener",
+    "price": "10.99",
+    "discount": "35",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.034999999999999955,
+      0.7534263766450506,
+      0.3362346414518621,
+      0.9614263766450504
+    ]
+  },
+  {
+    "product_name": "Spaten Münchner Hell auch alkoholfrei",
+    "price": "13.99",
+    "discount": "26",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.343,
+      0.7534263766450515,
+      0.651,
+      0.9614263766450515
+    ]
+  },
+  {
+    "product_name": "Paulaner Hefe-Weißbier Naturtrüb, Alkoholfrei und weitere Sorten",
+    "price": "14.99",
+    "discount": "26",
+    "unit": "20 x 0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.6612755975802252,
+      0.7445503933271523,
+      0.9655102390320915,
+      0.962313974976841
+    ]
+  }
+]

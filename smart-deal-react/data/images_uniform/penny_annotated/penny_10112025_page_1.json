@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "RITTER SPORT Nussklasse VOLL-NUSS",
+    "price": "1.49",
+    "discount": "34",
+    "unit": "je 100 g",
+    "original_price": "2.29",
+    "bbox": [
+      0.38996146651078445,
+      0.18331205656440624,
+      0.6197687990647406,
+      0.6681260546660761
+    ]
+  },
+  {
+    "product_name": "RITTER SPORT Alpenmilch",
+    "price": "1.11",
+    "discount": "44",
+    "unit": "je 100 g",
+    "original_price": "1.99",
+    "bbox": [
+      0.3836154133956834,
+      0.28521102587797487,
+      0.624537972273374,
+      0.6689441994305008
+    ]
+  },
+  {
+    "product_name": "MEZZO MIX, COCA-COLA, FANTA oder SPRITE Erfrischungsgetränk",
+    "price": "0.99",
+    "discount": "37",
+    "unit": "je 1,25 l",
+    "original_price": "1.59",
+    "bbox": [
+      0.619768799064733,
+      0.1859781879152561,
+      0.8732693602805524,
+      0.6682004554254078
+    ]
+  },
+  {
+    "product_name": "FOL EPI Käsescheiben",
+    "price": "1.49",
+    "discount": "46",
+    "unit": "je 130 g oder je 150 g",
+    "original_price": "2.79",
+    "bbox": [
+      0.5313078937697825,
+      0.44378415627966006,
+      0.8675001870719388,
+      0.6666071188864392
+    ]
+  },
+  {
+    "product_name": "FERRERO Mon Chéri",
+    "price": "2.79",
+    "discount": "30",
+    "unit": "je 157 g",
+    "original_price": "3.99",
+    "bbox": [
+      0.13111522632373965,
+      0.2615683125593177,
+      0.38427048271222897,
+      0.6727251438152458
+    ]
+  },
+  {
+    "product_name": "FERRERO Mon Chéri",
+    "price": "2.49",
+    "discount": "37",
+    "unit": "je 157 g",
+    "original_price": "3.99",
+    "bbox": [
+      0.118,
+      0.27,
+      0.488,
+      0.682
+    ]
+  },
+  {
+    "product_name": "Deutsche rote Äpfel Kl. II",
+    "price": "1.79",
+    "discount": null,
+    "unit": "je 2-kg-Beutel",
+    "original_price": null,
+    "bbox": [
+      0.1281537598129488,
+      0.6828819750711833,
+      0.37046277601438937,
+      0.9157841562796611
+    ]
+  },
+  {
+    "product_name": "Disney Hörfigur für die Toniebox",
+    "price": "12.99",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": "16.99",
+    "bbox": [
+      0.3842319492230149,
+      0.8504769175576059,
+      0.6103497945539534,
+      0.9128819750711682
+    ]
+  },
+  {
+    "product_name": "Toniebox",
+    "price": "69.99",
+    "discount": "30",
+    "unit": "je Stück",
+    "original_price": "99.99",
+    "bbox": [
+      0.5699999999999903,
+      0.6970202061372867,
+      0.8581170970431669,
+      0.916254650047455
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "ORIGINAL WAGNER Steinofen-Pizza",
+    "price": "1.49",
+    "discount": "56",
+    "unit": "350-g-Packung",
+    "original_price": "3.39",
+    "bbox": [
+      0.5049999999999906,
+      0.26260715991675654,
+      0.7286507741548218,
+      0.41554768316848717
+    ]
+  },
+  {
+    "product_name": "ORIGINAL WAGNER Piccolinis",
+    "price": "1.79",
+    "discount": "48",
+    "unit": "270-g-Packung",
+    "original_price": "3.49",
+    "bbox": [
+      0.5049999999999888,
+      0.18099999999999633,
+      0.7273724269955375,
+      0.30282498878789965
+    ]
+  },
+  {
+    "product_name": "BAUER Der Große Bauer",
+    "price": "0.49",
+    "discount": "50",
+    "unit": "je 250-g-Becher",
+    "original_price": "0.99",
+    "bbox": [
+      0.13023337296687743,
+      0.3573072531824526,
+      0.49476444972891687,
+      0.5655419745403742
+    ]
+  },
+  {
+    "product_name": "LORENZ Erdnuß-Locken",
+    "price": "1.11",
+    "discount": "49",
+    "unit": "je 150- bzw. 175-g-Packung",
+    "original_price": "2.19",
+    "bbox": [
+      0.5431177751355333,
+      0.4143371390854028,
+      0.8689078583659762,
+      0.5932646072608772
+    ]
+  },
+  {
+    "product_name": "PHILADELPHIA Frischkäse",
+    "price": "1.19",
+    "discount": "48",
+    "unit": "je 150-, 175- bzw. 195-g-Packung",
+    "original_price": "2.29",
+    "bbox": [
+      0.12955671026356516,
+      0.5829516454503118,
+      0.4822933491867514,
+      0.703854936350944
+    ]
+  },
+  {
+    "product_name": "STORCK® Toffifee®",
+    "price": "1.11",
+    "discount": "25",
+    "unit": "je 125-g-Packung",
+    "original_price": "1.49",
+    "bbox": [
+      0.5059678345858506,
+      0.6064879113625787,
+      0.8704667459337567,
+      0.7280057086281059
+    ]
+  },
+  {
+    "product_name": "ARIEL Waschmittel",
+    "price": "9.99",
+    "discount": "16",
+    "unit": "je 38, 45 oder 50 Waschladungen",
+    "original_price": "11.95",
+    "bbox": [
+      0.13167448539910664,
+      0.7089758227251518,
+      0.4885545329593615,
+      0.9499758227251495
+    ]
+  },
+  {
+    "product_name": "Coca-Cola®/ Fanta®/mezzo mix®/Sprite®",
+    "price": "0.99",
+    "discount": "37",
+    "unit": "je 1,25-l-Flasche",
+    "original_price": "1.59",
+    "bbox": [
+      0.510584521069293,
+      0.7344096709099343,
+      0.8803789589081448,
+      0.9467709872701858
+    ]
+  },
+  {
+    "product_name": "ORIGINAL WAGNER Steinofen-Pizza oder Piccolinis",
+    "price": "ab 1.49",
+    "discount": "56",
+    "unit": null,
+    "original_price": "ab 3.39",
+    "bbox": [
+      0.734681055761812,
+      0.20220023732874143,
+      0.8825692736570797,
+      0.4066142883823696
+    ]
+  }
+]

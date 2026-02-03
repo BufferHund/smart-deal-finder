@@ -1,0 +1,54 @@
+[
+  {
+    "product_name": "Falsches Filet vom Jungbullen",
+    "price": "1.39",
+    "discount": null,
+    "unit": "pro 100 g",
+    "original_price": null,
+    "bbox": [
+      0.3406364289118333,
+      0.21462571717445372,
+      0.9664457156473302,
+      0.4414085723914801
+    ]
+  },
+  {
+    "product_name": "Mövenpick Feinjoghurt oder Sahnepudding",
+    "price": "0.69",
+    "discount": "42",
+    "unit": "150 g",
+    "original_price": "1.19",
+    "bbox": [
+      0.3592535663224986,
+      0.45612285690212895,
+      0.6539999999999986,
+      0.6712999999999987
+    ]
+  },
+  {
+    "product_name": "Landliebe Butter oder Streichzart",
+    "price": "1.79",
+    "discount": "45",
+    "unit": "250 g",
+    "original_price": "3.29",
+    "bbox": [
+      0.6725635710881661,
+      0.45530000000000004,
+      0.9664457156473318,
+      0.6729457138042572
+    ]
+  },
+  {
+    "product_name": "Red Bull Energy Drink",
+    "price": "3.69",
+    "discount": null,
+    "unit": "4 x 250 ml",
+    "original_price": null,
+    "bbox": [
+      0.3580899952343319,
+      0.6864685707063866,
+      0.9676092867354973,
+      0.9045257087489612
+    ]
+  }
+]

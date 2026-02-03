@@ -1,0 +1,223 @@
+[
+  {
+    "product_name": "Dr. Althea 147 Barrier Cream oder 345 Relief Creme",
+    "price": "21.99",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.302089999999999,
+      0.03711491497681421,
+      0.48043782668945845,
+      0.1865151983874324
+    ]
+  },
+  {
+    "product_name": "Svenja Walberg Gloss Skin Kollagen Gesichtsmaske",
+    "price": "3.49",
+    "discount": null,
+    "unit": "1 Anwendung",
+    "original_price": null,
+    "bbox": [
+      0.7130498771965809,
+      0.0378398866357524,
+      0.8968752201025691,
+      0.18724017004637067
+    ]
+  },
+  {
+    "product_name": "L'ORÉAL Anti-Falten Experte Feuchtigkeitspflege",
+    "price": "3.79",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.302089999999999,
+      0.19095576520867058,
+      0.4855487581082627,
+      0.34052650207628077
+    ]
+  },
+  {
+    "product_name": "Neutrogena Hydro Boost Nachtcreme oder Aqua Gel",
+    "price": "8.49",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.30416999999999833,
+      0.3470317004637134,
+      0.4824584476353283,
+      0.4960954817980522
+    ]
+  },
+  {
+    "product_name": "Nivea Cellular Expert Lift Tagespflege",
+    "price": "15.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.5024317400341877,
+      0.34531536843380306,
+      0.6913977038860435,
+      0.4920706801854855
+    ]
+  },
+  {
+    "product_name": "Nivea Cellular Expert Filler Tagespflege LSF 30",
+    "price": "12.99",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.7017186353048451,
+      0.34676531175168,
+      0.8855985125014302,
+      0.4924057085265474
+    ]
+  },
+  {
+    "product_name": "Spilanthox Mega Glow Cream oder Extreme Night Repair",
+    "price": "23.99",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.3010945342905984,
+      0.501810793549732,
+      0.4855339133447294,
+      0.6501300566821233
+    ]
+  },
+  {
+    "product_name": "Weleda Straffende Tages- oder Nachtpflege Granatapfel",
+    "price": "17.95",
+    "discount": null,
+    "unit": "je 40 ml",
+    "original_price": null,
+    "bbox": [
+      0.5043136028717946,
+      0.5022007368676076,
+      0.6810867724672406,
+      0.6511800566821236
+    ]
+  },
+  {
+    "product_name": "Weleda Iris Tagespflege oder Sensitiv Feuchtigkeitscreme",
+    "price": "9.95",
+    "discount": null,
+    "unit": "je 30 ml",
+    "original_price": null,
+    "bbox": [
+      0.725267516216523,
+      0.49963587857291686,
+      0.894839754393168,
+      0.6500551417053094
+    ]
+  },
+  {
+    "product_name": "Dr. Scheller Anti-Falten Argan Tages- oder Nachtcreme",
+    "price": "6.99",
+    "discount": null,
+    "unit": "je 50 ml",
+    "original_price": null,
+    "bbox": [
+      0.30416999999999905,
+      0.6580102834106175,
+      0.4814332923988613,
+      0.806950510139114
+    ]
+  },
+  {
+    "product_name": "Isana Vitamin C Intensiv Serum 10 %",
+    "price": "3.99",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.5381288809116779,
+      0.6529354817980523,
+      0.6831715523646715,
+      0.8069505101391121
+    ]
+  },
+  {
+    "product_name": "Isana AHA Peeling Konzentrat",
+    "price": "3.49",
+    "discount": null,
+    "unit": "30 ml",
+    "original_price": null,
+    "bbox": [
+      0.7385596246609611,
+      0.6555103400927426,
+      0.8833496246609635,
+      0.8040506235033599
+    ]
+  },
+  {
+    "product_name": "Alterra Aloe Vera Tagescreme",
+    "price": "2.89",
+    "discount": null,
+    "unit": "50 ml",
+    "original_price": null,
+    "bbox": [
+      0.32156794949287437,
+      0.8098308502318523,
+      0.4824732923988615,
+      0.960724971658938
+    ]
+  },
+  {
+    "product_name": "Dekorative Kosmetik von MAYBELLINE und L'ORÉAL und essie",
+    "price": "null",
+    "discount": "22",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.09631385448916406,
+      0.007739938080495363,
+      0.2889415634674923,
+      0.9613003095975236
+    ]
+  },
+  {
+    "product_name": "Geek & Gorgeous C-Glow Vitamin C Serum oder Mighty Melt Cleansing Balm",
+    "price": "11.99",
+    "discount": null,
+    "unit": "30 ml oder 98 ml",
+    "original_price": null,
+    "bbox": [
+      0.5013009106324395,
+      0.03624858294690498,
+      0.695055250324732,
+      0.18559274468815348
+    ]
+  },
+  {
+    "product_name": "Isana Baumwollwatte oder Soft Wattepads",
+    "price": "0.89",
+    "discount": "10",
+    "unit": "100 g oder 60 Stück",
+    "original_price": "0.99",
+    "bbox": [
+      0.5033512211053738,
+      0.810057425358218,
+      0.6950552503247319,
+      0.9601265587584046
+    ]
+  },
+  {
+    "product_name": "For Your Beauty Griffklappspiegel oder Professional Kosmetikpinsel oder Selbstwärmende Augenmaske",
+    "price": "3.99",
+    "discount": null,
+    "unit": "ausgewählte Modelle je Stück oder 5 Stück",
+    "original_price": null,
+    "bbox": [
+      0.7073571131623365,
+      0.8093324536992796,
+      0.8970108319087602,
+      0.9630264453941556
+    ]
+  }
+]

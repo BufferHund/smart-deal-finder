@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Nutella Eisbecher",
+    "price": "3.99",
+    "discount": "27",
+    "unit": "470 ml",
+    "original_price": "5.49",
+    "bbox": [
+      0.031170656535191587,
+      0.11814101068710778,
+      0.3338262614076775,
+      0.5091241319916369
+    ]
+  },
+  {
+    "product_name": "Coppenrath & Wiese Meistertorte",
+    "price": "5.99",
+    "discount": "29",
+    "unit": "500 – 1200 g",
+    "original_price": "8.49",
+    "bbox": [
+      0.3210617831916507,
+      0.11092949465644523,
+      0.9637884174271626,
+      0.5055134066620144
+    ]
+  },
+  {
+    "product_name": "MinusL H-Milch",
+    "price": "1.29",
+    "discount": null,
+    "unit": "500 ml",
+    "original_price": null,
+    "bbox": [
+      0.03438223910801322,
+      0.5173187693268274,
+      0.3323003870327542,
+      0.7071678240111505
+    ]
+  },
+  {
+    "product_name": "Andechser Bio Joghurt",
+    "price": "1.29",
+    "discount": null,
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.3471706565351902,
+      0.5181241319916365,
+      0.6490239392111514,
+      0.7081678240111506
+    ]
+  },
+  {
+    "product_name": "Paula Shake",
+    "price": "0.89",
+    "discount": null,
+    "unit": "180 ml",
+    "original_price": null,
+    "bbox": [
+      0.6609590739623648,
+      0.5173187693268286,
+      0.9639590739623629,
+      0.7054597800139355
+    ]
+  },
+  {
+    "product_name": "Müller Kalinka Kefir oder Ayran",
+    "price": "0.89",
+    "discount": "31",
+    "unit": "500 g / 500 ml",
+    "original_price": "1.29",
+    "bbox": [
+      0.032105791286410744,
+      0.7112651426787461,
+      0.33385328267595726,
+      0.9040168786954667
+    ]
+  },
+  {
+    "product_name": "Alpenhain Backkäse",
+    "price": "2.22",
+    "discount": "36",
+    "unit": "300 - 400 g",
+    "original_price": "3.49",
+    "bbox": [
+      0.34534131307038385,
+      0.7122651426787463,
+      0.6461945957463378,
+      0.9040168786954672
+    ]
+  },
+  {
+    "product_name": "Genuss Welt Rohkostsalat",
+    "price": "1.29",
+    "discount": null,
+    "unit": "300 – 400 g",
+    "original_price": null,
+    "bbox": [
+      0.6589590739623702,
+      0.7140705053435548,
+      0.9537474913895405,
+      0.9048222413602753
+    ]
+  }
+]

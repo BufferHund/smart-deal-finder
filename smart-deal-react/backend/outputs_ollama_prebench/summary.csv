@@ -1,0 +1,2 @@
+avg_gt_deals,avg_pred_chars,avg_pred_deals,bad_image_rate,deal_retrieval_rate,elapsed_sec,empty_gt_rate,empty_pred_rate,end_to_end_recall,f1,json_parse_rate,model_id,name_accuracy,overprediction_rate,precision,price_accuracy,price_reliability,safe_deal_rate,skipped_bad_images,total_samples,unit_accuracy
+5.2,27.6,0.0,0.0,0.0,29.58226728439331,0.0,1.0,0.0,0.0,0.0,bakllava:7b,0.0,0.0,0.0,0.0,0.0,0.0,0,5,0.0

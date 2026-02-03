@@ -101,9 +101,26 @@ async def extract_with_gemini(file_path: str, store_name: str, model_id: str = "
     start_time = time.time()
     client = get_ai_client()
     
-    # Read file
-    with open(file_path, 'rb') as f:
-        file_data = f.read()
+    # Handle PDF input by converting to image first
+    if file_path.lower().endswith('.pdf'):
+        try:
+            from pdf2image import convert_from_path
+            import io
+            # Convert first page only
+            images = await asyncio.to_thread(convert_from_path, file_path, first_page=1, last_page=1)
+            if images:
+                # Convert to bytes
+                img_byte_arr = io.BytesIO()
+                images[0].save(img_byte_arr, format='JPEG')
+                file_data = img_byte_arr.getvalue()
+            else:
+                 raise ValueError("Could not convert PDF to image")
+        except ImportError:
+             raise ImportError("pdf2image not installed. Please install poppler-utils and pdf2image.")
+    else:
+        # Read image file directly
+        with open(file_path, 'rb') as f:
+            file_data = f.read()
     
     prompt = """Analyze this German supermarket brochure page and extract ALL product deals.
 

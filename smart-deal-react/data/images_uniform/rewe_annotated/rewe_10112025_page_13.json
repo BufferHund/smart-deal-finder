@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Ferrero Küsschen oder Mon Chéri",
+    "price": "2.79",
+    "discount": null,
+    "unit": "je 178-g-Pckg. oder 157-g-Pckg.",
+    "original_price": null,
+    "bbox": [
+      0.5219856123941257,
+      0.10491870133523763,
+      0.8705632058643469,
+      0.2674755347323434
+    ]
+  },
+  {
+    "product_name": "Milka Schokolade",
+    "price": "1.11",
+    "discount": null,
+    "unit": "je 90-g-Tafel",
+    "original_price": null,
+    "bbox": [
+      0.12191921860772865,
+      0.39774489944868674,
+      0.3804470697789816,
+      0.5264874771474287
+    ]
+  },
+  {
+    "product_name": "Haribo Fruchtgummi oder Lakritz",
+    "price": "3.99",
+    "discount": null,
+    "unit": "je 750-g-Dose",
+    "original_price": null,
+    "bbox": [
+      0.3842441922578075,
+      0.31541850158133733,
+      0.6192312877210344,
+      0.5269618510048039
+    ]
+  },
+  {
+    "product_name": "Funny-frisch Kessel Chips Sweet Chili & Red Pepper oder Riffels Naturell",
+    "price": "1.49",
+    "discount": null,
+    "unit": "je 120-g-Btl. oder je 150-g-Btl.",
+    "original_price": null,
+    "bbox": [
+      0.6326768744309139,
+      0.3096014181165471,
+      0.8784020588803664,
+      0.5274874771474294
+    ]
+  },
+  {
+    "product_name": "Brotmesser, 20 cm",
+    "price": "1.00",
+    "discount": "97",
+    "unit": "20 cm",
+    "original_price": "39.95",
+    "bbox": [
+      0.6322069109279174,
+      0.541128711150629,
+      0.8570218264554799,
+      0.6920000000000013
+    ]
+  },
+  {
+    "product_name": "Schälmesser, 9 cm",
+    "price": "1.00",
+    "discount": "95",
+    "unit": "9 cm",
+    "original_price": "22.95",
+    "bbox": [
+      0.6334228046911494,
+      0.6960783925199476,
+      0.8569128251244398,
+      0.8290783925199475
+    ]
+  },
+  {
+    "product_name": "Universalmesser, 13 cm",
+    "price": "1.00",
+    "discount": "95",
+    "unit": "13 cm",
+    "original_price": "22.95",
+    "bbox": [
+      0.6361518579244855,
+      0.8344753136340733,
+      0.8567932205454664,
+      0.9673731779925915
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Krombacher Pils",
+    "price": "10.99",
+    "discount": null,
+    "unit": "20 x 0,5 Liter Kiste",
+    "original_price": null,
+    "bbox": [
+      0.43825359212645476,
+      0.29349755510510084,
+      0.9408098059051598,
+      0.677
+    ]
+  },
+  {
+    "product_name": "Pampers",
+    "price": null,
+    "discount": "40",
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.055595097047420154,
+      0.688497555105101,
+      0.9665950970474201,
+      0.894497555105101
+    ]
+  },
+  {
+    "product_name": "Toffifee",
+    "price": "0.99",
+    "discount": "33",
+    "unit": "125 g",
+    "original_price": "1.49",
+    "bbox": [
+      0.04355762119494942,
+      0.4953484291783406,
+      0.4061453868177717,
+      0.6776699518507047
+    ]
+  },
+  {
+    "product_name": "Himbeeren",
+    "price": "1.69",
+    "discount": "32",
+    "unit": "125 g Schale",
+    "original_price": "2.49",
+    "bbox": [
+      0.04355762119494942,
+      0.07076406131119152,
+      0.4073226198230406,
+      0.2838887636131331
+    ]
+  },
+  {
+    "product_name": "Neuseeländische Lammkeule",
+    "price": "1.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.04238038818968052,
+      0.2972090575070044,
+      0.4084998528283095,
+      0.4803630985477354
+    ]
+  }
+]

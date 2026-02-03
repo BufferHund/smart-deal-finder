@@ -1,0 +1,41 @@
+[
+  {
+    "product_name": "Heidelbeeren",
+    "price": "3.69",
+    "discount": null,
+    "unit": "je 500-g-Schale",
+    "original_price": null,
+    "bbox": [
+      0.7278511412610803,
+      0.06935429418015154,
+      0.8618922565841542,
+      0.2523542941801522
+    ]
+  },
+  {
+    "product_name": "Orangen",
+    "price": "2.49",
+    "discount": "16",
+    "unit": "2-kg-Netz",
+    "original_price": "2.99",
+    "bbox": [
+      0.6080666280927685,
+      0.5578113523786153,
+      0.8568736492417697,
+      0.7551656465587615
+    ]
+  },
+  {
+    "product_name": "Zespri Kiwi Sungold",
+    "price": "0.59",
+    "discount": null,
+    "unit": "je Stück",
+    "original_price": null,
+    "bbox": [
+      0.5957728112532762,
+      0.8059769989374082,
+      0.8457286911412086,
+      0.923811352378621
+    ]
+  }
+]

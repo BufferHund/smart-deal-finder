@@ -1,0 +1,80 @@
+[
+  {
+    "product_name": "DEKOR LED Holz-Lichterbogen",
+    "price": "14.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.04695776637566782,
+      0.1758659082728747,
+      0.48508446724866544,
+      0.48194433004331827
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Schneekugelvorhang",
+    "price": "9.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.5965962772927796,
+      0.28113409172712533,
+      0.9649577663756668,
+      0.47821251349756855
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Acrylfigur",
+    "price": "9.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.04299999999999999,
+      0.48999999999999927,
+      0.650891912663105,
+      0.6929999999999991
+    ]
+  },
+  {
+    "product_name": "Weihnachtliche Dekoration",
+    "price": "2.00",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.04299999999999998,
+      0.7020000000000006,
+      0.33689191266310486,
+      0.9058659082728747
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Eisbär „Fredi“",
+    "price": "7.99",
+    "discount": null,
+    "unit": null,
+    "original_price": null,
+    "bbox": [
+      0.35936148908288834,
+      0.70600568795344,
+      0.6522111681216609,
+      0.904
+    ]
+  },
+  {
+    "product_name": "DEKOR LED Acryl-Lichterkette",
+    "price": "7.99",
+    "discount": null,
+    "unit": "je",
+    "original_price": null,
+    "bbox": [
+      0.6696062903970376,
+      0.4898829721331939,
+      0.9689155327513358,
+      0.9058659082728755
+    ]
+  }
+]

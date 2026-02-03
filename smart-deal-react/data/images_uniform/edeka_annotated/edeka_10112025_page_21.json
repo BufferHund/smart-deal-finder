@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Maggi fix oder Würzpaste",
+    "price": "0.49",
+    "discount": "55",
+    "unit": "versch. Sorten, 26–70 g",
+    "original_price": null,
+    "bbox": [
+      0.038000000000000006,
+      0.04300000000000002,
+      0.3411729159121023,
+      0.2642874384397629
+    ]
+  },
+  {
+    "product_name": "EDEKA Herzstücke Tagliatelle oder Lasagne",
+    "price": "1.39",
+    "discount": "26",
+    "unit": "500 g",
+    "original_price": null,
+    "bbox": [
+      0.03094367620871186,
+      0.29164634360991104,
+      0.34480286673049154,
+      0.726646343609911
+    ]
+  },
+  {
+    "product_name": "Pfanni Knödel oder Kartoffel Püree",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "versch. Sorten, 200-283,5 g",
+    "original_price": null,
+    "bbox": [
+      0.34623246199138114,
+      0.5222829251120711,
+      0.6519718381043559,
+      0.7287878061659472
+    ]
+  },
+  {
+    "product_name": "Ben's Original Express Reis",
+    "price": null,
+    "discount": null,
+    "unit": "versch. Sorten, 220 g",
+    "original_price": null,
+    "bbox": [
+      0.6605140809478219,
+      0.5052829251120712,
+      0.9615140809478218,
+      0.7287878061659471
+    ]
+  },
+  {
+    "product_name": "Yum Yum Instantnudeln",
+    "price": "0.59",
+    "discount": "14",
+    "unit": "versch. Sorten, 60 g",
+    "original_price": null,
+    "bbox": [
+      0.038999999999999445,
+      0.7428991429034268,
+      0.33784255902417076,
+      0.9614785725858255
+    ]
+  },
+  {
+    "product_name": "Thomy Delikatess Mayonnaise oder Remoulade",
+    "price": "1.79",
+    "discount": "21",
+    "unit": "200 ml",
+    "original_price": null,
+    "bbox": [
+      0.34494244919096945,
+      0.7651931432274622,
+      0.6550423393577698,
+      0.9615794296823923
+    ]
+  },
+  {
+    "product_name": "Meica Wiener oder Frankfurter Art Würstchen",
+    "price": "3.99",
+    "discount": "11",
+    "unit": "540 g Abtropfgewicht 250 g",
+    "original_price": null,
+    "bbox": [
+      0.6754853377147374,
+      0.7439999999999957,
+      0.9670857770475425,
+      0.9635794296823925
+    ]
+  }
+]

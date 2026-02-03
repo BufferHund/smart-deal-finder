@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '50mb',
     },
   },
+  // Allow larger request bodies for file uploads via proxy
+  serverExternalPackages: [],
   async rewrites() {
     return [
       {

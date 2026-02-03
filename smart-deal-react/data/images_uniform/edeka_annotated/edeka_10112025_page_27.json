@@ -1,0 +1,106 @@
+[
+  {
+    "product_name": "Vita Cola",
+    "price": "5.94",
+    "discount": null,
+    "unit": "6 x 1,5 L",
+    "original_price": null,
+    "bbox": [
+      0.03530575034887741,
+      0.03980491644806259,
+      0.3383571487416425,
+      0.26131642038294217
+    ]
+  },
+  {
+    "product_name": "Coca-Cola oder Fanta Orange",
+    "price": "1.49",
+    "discount": "31",
+    "unit": "2 L",
+    "original_price": null,
+    "bbox": [
+      0.42138849930225064,
+      0.02356066841550251,
+      0.9646567939945223,
+      0.49590088385348263
+    ]
+  },
+  {
+    "product_name": "Pepsi oder Lipton Sparkling Ice Tea Zitrone",
+    "price": "0.69",
+    "discount": "22",
+    "unit": "0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.03658188268129626,
+      0.30387787598372107,
+      0.3626036630576034,
+      0.49675575196744026
+    ]
+  },
+  {
+    "product_name": "Effect Energy",
+    "price": "0.79",
+    "discount": "27",
+    "unit": "0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.4276489563543653,
+      0.5276344151364354,
+      0.6829468690630895,
+      0.7272680430875957
+    ]
+  },
+  {
+    "product_name": "Hohes C Supershots Antiox oder Immun",
+    "price": "1.99",
+    "discount": "26",
+    "unit": "0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.733059236032922,
+      0.5113901671038739,
+      0.9710374556566093,
+      0.7281705013116266
+    ]
+  },
+  {
+    "product_name": "Booster Energy Drink",
+    "price": "0.69",
+    "discount": "22",
+    "unit": "0,33 L",
+    "original_price": null,
+    "bbox": [
+      0.03275348568403925,
+      0.5263410026232521,
+      0.3370810164092234,
+      0.9625122911201553
+    ]
+  },
+  {
+    "product_name": "Fuzetea",
+    "price": "1.29",
+    "discount": "23",
+    "unit": "1,25 L",
+    "original_price": null,
+    "bbox": [
+      0.3634085471344087,
+      0.7399508355193822,
+      0.6557595907800446,
+      0.9598049164480625
+    ]
+  },
+  {
+    "product_name": "Hitchcock Ingwer Shots Grapefruit Limette oder Gelbe Maracuja Acerola",
+    "price": "3.49",
+    "discount": null,
+    "unit": "0,5 L",
+    "original_price": null,
+    "bbox": [
+      0.6669329263269337,
+      0.7643172075682184,
+      0.9684851909917713,
+      0.9625122911201556
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "product_name": "Esn Designer Bar",
+    "price": "1.99",
+    "discount": null,
+    "unit": "45 g",
+    "original_price": null,
+    "bbox": [
+      0.10415690529664472,
+      0.3157291373337821,
+      0.4875292841100649,
+      0.4730017092226334
+    ]
+  },
+  {
+    "product_name": "Fayn Protein Riegel",
+    "price": "2.49",
+    "discount": null,
+    "unit": "55 g",
+    "original_price": null,
+    "bbox": [
+      0.6238618940671048,
+      0.3680907148610665,
+      0.8739978298711171,
+      0.5685459983890198
+    ]
+  },
+  {
+    "product_name": "Juuz Protein Soda",
+    "price": "2.19",
+    "discount": null,
+    "unit": "330 ml",
+    "original_price": null,
+    "bbox": [
+      0.10058785233019836,
+      0.52372785541681,
+      0.4177635569905915,
+      0.7399991453886834
+    ]
+  },
+  {
+    "product_name": "Wellmix Protein Cookie",
+    "price": "0.89",
+    "discount": "10",
+    "unit": "50 g",
+    "original_price": "0.99",
+    "bbox": [
+      0.4607049887704607,
+      0.5006362859444271,
+      0.6585061444885502,
+      0.7598172883608959
+    ]
+  },
+  {
+    "product_name": "My Protein Protein Wafer",
+    "price": "2.29",
+    "discount": null,
+    "unit": "40 g",
+    "original_price": null,
+    "bbox": [
+      0.6649999999999998,
+      0.6079088578332784,
+      0.902077367583881,
+      0.7487287100281238
+    ]
+  },
+  {
+    "product_name": "Seeberger Nusskernmischung",
+    "price": "2.69",
+    "discount": null,
+    "unit": "150 g",
+    "original_price": null,
+    "bbox": [
+      0.12954808347381513,
+      0.7686362859444256,
+      0.46619450402414364,
+      0.9546362859444255
+    ]
+  },
+  {
+    "product_name": "Holy Hydration",
+    "price": "3.59",
+    "discount": null,
+    "unit": "3er-Box / 3 x 7 g",
+    "original_price": null,
+    "bbox": [
+      0.49486189406710474,
+      0.7817270008054902,
+      0.8870375987274992,
+      0.968999145388683
+    ]
+  }
+]

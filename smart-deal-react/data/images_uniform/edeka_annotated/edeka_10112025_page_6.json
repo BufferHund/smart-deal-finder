@@ -1,0 +1,119 @@
+[
+  {
+    "product_name": "Leerdammer Original oder Delacrème",
+    "price": "1.11",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.032999999999999946,
+      0.14342432961633728,
+      0.655033440281492,
+      0.4953343834517768
+    ]
+  },
+  {
+    "product_name": "Stilfser D.O.P.",
+    "price": "2.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6594421728093629,
+      0.07044142088065147,
+      0.9711490946627651,
+      0.26265167563923975
+    ]
+  },
+  {
+    "product_name": "France P'tit Basque",
+    "price": "3.49",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6607789135953182,
+      0.27524825738637715,
+      0.963557827190636,
+      0.4971861930397826
+    ]
+  },
+  {
+    "product_name": "Fromage d'Amour",
+    "price": "2.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.03462981893255295,
+      0.5261241286931886,
+      0.34218764612318886,
+      0.7332102547585917
+    ]
+  },
+  {
+    "product_name": "Tomme de Savoie",
+    "price": "2.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.3452647490440359,
+      0.5316896782670287,
+      0.6562647490440366,
+      0.7302723191051871
+    ]
+  },
+  {
+    "product_name": "Bioland-Hubertus Kräuter",
+    "price": "1.99",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6635601446148398,
+      0.5096760121913995,
+      0.9628797107703221,
+      0.7294056073148397
+    ]
+  },
+  {
+    "product_name": "Nusscreme mit gehackten Nüssen",
+    "price": "1.69",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.6609940997809223,
+      0.7344591902468806,
+      0.962879710770322,
+      0.9628392512038794
+    ]
+  },
+  {
+    "product_name": "Golden Peppers",
+    "price": "3.29",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.34730776571732574,
+      0.7844591902468807,
+      0.6542110773639623,
+      0.9630535829320426
+    ]
+  },
+  {
+    "product_name": "Brie de Meaux AOP",
+    "price": "2.39",
+    "discount": null,
+    "unit": "100 g",
+    "original_price": null,
+    "bbox": [
+      0.02943985538516095,
+      0.7427856682718367,
+      0.3335188430812877,
+      0.9647295951234416
+    ]
+  }
+]

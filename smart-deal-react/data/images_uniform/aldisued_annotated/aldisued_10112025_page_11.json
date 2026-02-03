@@ -1,0 +1,67 @@
+[
+  {
+    "product_name": "Berliner Mehrfrucht-füllung",
+    "price": "0.29",
+    "discount": "35",
+    "unit": "je Stück",
+    "original_price": "0.45",
+    "bbox": [
+      0.5113624220824926,
+      0.07147002652378887,
+      0.8812885129275762,
+      0.3757873740031425
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Lebkuchenherzen",
+    "price": "2.39",
+    "discount": "29",
+    "unit": "je 300-g-Packung",
+    "original_price": "3.39",
+    "bbox": [
+      0.1409866429074334,
+      0.3098353315650806,
+      0.49018121104124707,
+      0.4851766578254034
+    ]
+  },
+  {
+    "product_name": "CHOCEUR Milch-Mäuse-Weihnachtsmaus",
+    "price": "1.49",
+    "discount": "25",
+    "unit": "95-g-Figur",
+    "original_price": "1.99",
+    "bbox": [
+      0.1289659670808558,
+      0.49300000000000166,
+      0.4870000000000023,
+      0.6832460459694808
+    ]
+  },
+  {
+    "product_name": "WINTERTRAUM Marzipan-kartoffeln",
+    "price": "0.89",
+    "discount": "40",
+    "unit": "125-g-Packung",
+    "original_price": "1.49",
+    "bbox": [
+      0.5171812110412454,
+      0.7118145358159744,
+      0.8752885129275789,
+      0.9378712997365309
+    ]
+  },
+  {
+    "product_name": "2024 Grüner Veltliner Freundeskreis",
+    "price": "2.99",
+    "discount": "25",
+    "unit": "0,75-l-Flasche",
+    "original_price": "3.99",
+    "bbox": [
+      0.12971816561870464,
+      0.6993173474793521,
+      0.4911812110412467,
+      0.9534012732127443
+    ]
+  }
+]
