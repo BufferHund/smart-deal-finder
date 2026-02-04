@@ -19,8 +19,8 @@ from typing import Any, Dict, List, Tuple
 
 # Ollama prebench for end-to-end JSON extraction (vision -> JSON).
 
-DATA_ROOT = "data/images_uniform"
-OUTPUT_DIR = "outputs_ollama_prebench"
+DATA_ROOT = "dataset/images_uniform"
+OUTPUT_DIR = "benchmark/outputs"
 USE_PAGE_LEVEL = True
 BBOX_PAD = 0.02
 SEED = 3407

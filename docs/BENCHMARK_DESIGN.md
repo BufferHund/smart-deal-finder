@@ -1,6 +1,6 @@
 # Benchmark Design & Methodology
 
-This document details the architectural design and evaluation methodology used in the Smart Deal Finder benchmarking suite (`prebench.py`).
+This document details the architectural design and evaluation methodology used in the Smart Deal Finder benchmarking suite (`benchmark/run.py`).
 
 ## 1. Objective
 The goal of the benchmark is to evaluate **End-to-End Information Extraction** capabilities of Vision-Language Models (VLMs). Unlike generic VQA benchmarks, this test measures the model's ability to:
@@ -24,7 +24,7 @@ The benchmark utilizes the `dataset/images_uniform` directory.
   ]
   ```
 
-## 3. Evaluation Pipeline (`prebench.py`)
+## 3. Evaluation Pipeline (`benchmark/run.py`)
 
 ### A. Preprocessing
 1.  **Normalization**: Text fields are normalized (lowercase, whitespace trimmed).
@@ -62,14 +62,14 @@ The benchmark script supports multiple backends:
 
 ## 5. Output & Logs
 - **Console**: Live progress bar with per-sample elapsed time.
-- **JSONL Logs**: Detailed line-by-line logs saved to `outputs_ollama_prebench/`.
+- **JSONL Logs**: Detailed line-by-line logs saved to `benchmark/outputs/`.
   - Useful for debugging why a specific model failed (e.g., visual cropping vs hallucination).
 
 ## 6. Running the Benchmark
 ```bash
 # Run on default set
-python3 backend/services/prebench.py --models gemini-2.5-flash-lite
+python3 benchmark/run.py --models gemini-2.5-flash-lite
 
 # Run specific number of samples
-python3 backend/services/prebench.py --max_samples 50
+python3 benchmark/run.py --max_samples 50
 ```
