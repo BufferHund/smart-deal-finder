@@ -95,4 +95,4 @@ To ensure stability and maximum hardware focus, we have shifted to a **"One Mode
 
 1. **Sequential Execution**: Never run multiple benchmarks in parallel to prevent GPU VRAM contention.
 2. **Incremental Auto-Save**: Always use the version of `prebench.py` that saves results after *each* model.
-3. **Log Inspection**: Regularly review `.jsonl` logs for problematic models to understand failure modes (e.g., "hallucinated names" vs "ocr errors").
+4. **Detailed Design**: See [BENCHMARK_DESIGN.md](BENCHMARK_DESIGN.md) for the full technical specification of metrics and matching logic.
