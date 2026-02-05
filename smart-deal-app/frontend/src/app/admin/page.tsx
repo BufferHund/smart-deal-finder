@@ -1,9 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Tabs, Tab, Card, CardBody, Button, Progress, Chip, Input, Switch, Select, SelectItem, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/react";
+import {
+    Tabs, Tab, Card, CardBody, Button, Progress, Chip, Input, Switch, Select, SelectItem, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Spinner
+} from "@heroui/react";
 import { motion } from 'framer-motion';
-import { Upload, BarChart3, GitCompare, Settings, FileText, Zap, Clock, Database, CheckCircle, XCircle, Loader2, DollarSign, Users, TrendingUp, BrainCircuit, Bot, Receipt, UserSquare2, Camera, Tags, SlidersHorizontal, Monitor, Trophy, ChartBar, Lightbulb, AlertTriangle, ShoppingCart, Activity, Copy, Trash2, Eye } from 'lucide-react';
+import {
+    Upload, BarChart3, GitCompare, Settings, FileText, Zap, Clock, Database, CheckCircle, XCircle, Loader2, DollarSign, Users, TrendingUp, BrainCircuit, Bot, Receipt, UserSquare2, Camera, Tags, SlidersHorizontal, Monitor, Trophy, ChartBar, Lightbulb, AlertTriangle, ShoppingCart, Activity, Copy, Trash2, Eye,
+    Check,
+    X,
+    Pencil,
+    PenSquare,
+    ShoppingBag
+} from 'lucide-react';
 
 // API helpers
 const API = '/api/admin';
@@ -42,12 +51,20 @@ const updateFeatureConfig = async (feature: string, model_id: string) => {
     formData.append('model_id', model_id);
     return (await fetch(`${API}/features/config`, { method: 'POST', body: formData })).json();
 };
-const testFeature = async (feature: string, file: File) => {
+const testFeature = async (feature: string, file: File, method?: string) => {
     const formData = new FormData();
     formData.append('feature', feature);
     formData.append('file', file);
+    if (method) formData.append('method', method);
     return (await fetch(`${API}/features/test`, { method: 'POST', body: formData })).json();
 };
+
+// Deals CRUD
+const searchDeals = async (query: string, page = 1) => (await fetch(`${API}/deals?q=${query}&page=${page}`)).json();
+const createDeal = async (deal: any) => (await fetch(`${API}/deals`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(deal) })).json();
+const deleteDeal = async (id: number) => (await fetch(`${API}/deals/${id}`, { method: 'DELETE' })).json();
+const deleteDealsBatch = async (ids: number[]) => (await fetch(`${API}/deals/batch-delete`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(ids) })).json();
+
 const runBenchmark = async (feature: string) => {
     const formData = new FormData();
     formData.append('feature', feature);
@@ -164,7 +181,7 @@ export default function AdminPage() {
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <div>
                         <h1 className="text-2xl font-black flex items-center gap-2">
-                            <SlidersHorizontal className="w-8 h-8 text-purple-500" /> Admin Pro
+                            <SlidersHorizontal className="w-8 h-8 text-purple-500" /> Admin Manage Panel
                         </h1>
                         <p className="text-gray-500 dark:text-white/50 text-sm">Professional Dashboard for Coursework</p>
                     </div>
@@ -187,7 +204,7 @@ export default function AdminPage() {
                         tabContent: "text-gray-600 dark:text-gray-300 group-data-[selected=true]:text-white font-bold"
                     }}
                 >
-                    <Tab key="intelligence" title={<TabTitle icon={<BrainCircuit size={16} />} text="Intelligence Center" />} />
+                    <Tab key="intelligence" title={<TabTitle icon={<BrainCircuit size={16} />} text="Model Center" />} />
                     <Tab key="data" title={<TabTitle icon={<Database size={16} />} text="Data Management" />} />
                     <Tab key="logs" title={<TabTitle icon={<FileText size={16} />} text="Audit Logs" />} />
                     <Tab key="upload" title={<TabTitle icon={<Upload size={16} />} text="Batch Upload" />} />
@@ -207,7 +224,7 @@ export default function AdminPage() {
 
             <LogModal isOpen={isOpen} onOpenChange={onOpenChange} logData={logData} />
             <LogDetailModal isOpen={isLogOpen} onOpenChange={onLogOpenChange} log={logDetail} />
-            <DealsListModal isOpen={isDealsOpen} onOpenChange={onDealsOpenChange} upload={selectedUpload} deals={uploadDeals} />
+            <ViewDealsModal isOpen={isDealsOpen} onClose={() => onDealsOpenChange(false)} upload={selectedUpload} />
         </div>
     );
 }
@@ -523,16 +540,24 @@ function BatchUploadTab({ onRefresh, showLog }: { onRefresh: () => void; showLog
 
 function IntelligenceTab({ showLog }: { showLog: (input: string, output: string) => void }) {
     const [features, setFeatures] = useState<any>(null);
+    const [geminiModels, setGeminiModels] = useState<string[]>([]);
+    const [localModels, setLocalModels] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        loadFeatures();
+        loadData();
     }, []);
 
-    const loadFeatures = async () => {
+    const loadData = async () => {
         try {
-            const data = await fetchFeatures();
-            setFeatures(data.features);
+            const [featData, geminiData, configData] = await Promise.all([
+                fetchFeatures(),
+                fetchGeminiModels(),
+                fetchConfig()
+            ]);
+            setFeatures(featData.features);
+            setGeminiModels(geminiData.models || []);
+            setLocalModels(configData.local_vlm_models || []);
         } catch (e) { console.error(e); }
         setLoading(false);
     };
@@ -543,7 +568,7 @@ function IntelligenceTab({ showLog }: { showLog: (input: string, output: string)
         <div className="space-y-6">
             <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 text-white shadow-lg">
                 <h2 className="text-3xl font-black mb-2 flex items-center gap-3">
-                    <BrainCircuit size={32} /> Feature Intelligence
+                    <BrainCircuit size={32} /> Model Center
                 </h2>
                 <p className="opacity-90 max-w-2xl">
                     Configure specialized AI models for each application feature. Run benchmarks directly to verify performance.
@@ -556,7 +581,9 @@ function IntelligenceTab({ showLog }: { showLog: (input: string, output: string)
                         key={key}
                         featureKey={key}
                         config={config}
-                        onUpdate={loadFeatures}
+                        geminiModels={geminiModels}
+                        localModels={localModels}
+                        onUpdate={loadData}
                         showLog={showLog}
                     />
                 ))}
@@ -565,11 +592,43 @@ function IntelligenceTab({ showLog }: { showLog: (input: string, output: string)
     );
 }
 
-function FeatureCard({ featureKey, config, onUpdate, showLog }: { featureKey: string, config: any, onUpdate: () => void, showLog: (i: string, o: string) => void }) {
+function FeatureCard({
+    featureKey,
+    config,
+    geminiModels = [],
+    localModels = [],
+    onUpdate,
+    showLog
+}: {
+    featureKey: string,
+    config: any,
+    geminiModels?: string[],
+    localModels?: any[],
+    onUpdate: () => void,
+    showLog: (i: string, o: string) => void
+}) {
     const [isBenchmarkRunning, setIsBenchmarkRunning] = useState(false);
     const [isTesting, setIsTesting] = useState(false);
     const [testFile, setTestFile] = useState<File | null>(null);
     const [testResult, setTestResult] = useState<any>(null);
+
+    // Safety: Ensure config exists
+    const safeConfig = config || { default_model: 'gemini-2.5-flash', name: 'Unknown', description: '', allowed_models: [] };
+    const defaultModel = safeConfig.default_model || 'gemini-2.5-flash';
+
+    // Initial method state based on default model
+    const [method, setMethod] = useState<string>(() => {
+        if (defaultModel.includes('gemini')) return 'gemini';
+        if (defaultModel.includes('ocr')) return 'ocr_pipeline';
+        return 'local_vlm';
+    });
+
+    // Sync method if config changes externally (e.g. after update)
+    useEffect(() => {
+        if (defaultModel.includes('gemini') && method !== 'gemini') setMethod('gemini');
+        else if (defaultModel.includes('ocr') && method !== 'ocr_pipeline') setMethod('ocr_pipeline');
+        // For Local VLM we don't auto-switch as strictly to avoid jumping around
+    }, [defaultModel]);
 
     const icons: Record<string, any> = {
         discount_brochure: Tags,
@@ -595,7 +654,7 @@ function FeatureCard({ featureKey, config, onUpdate, showLog }: { featureKey: st
         if (!testFile) return;
         setIsTesting(true);
         try {
-            const res = await testFeature(featureKey, testFile);
+            const res = await testFeature(featureKey, testFile, method);
             setTestResult(res);
             if (res.raw_response) showLog(res.raw_input || "N/A", res.raw_response);
         } catch (e) {
@@ -604,6 +663,36 @@ function FeatureCard({ featureKey, config, onUpdate, showLog }: { featureKey: st
         setIsTesting(false);
     };
 
+    // Determine available models based on method
+    const getAvailableModels = () => {
+        // Fix: geminiModels provides objects, we need to extract model_id
+        if (method === 'gemini') return Array.isArray(geminiModels) ? geminiModels.map((m: any) => typeof m === 'string' ? m : m.model_id) : [];
+        if (method === 'local_vlm') return Array.isArray(localModels) ? localModels.map((m: any) => m.model_id) : [];
+        if (method === 'ocr_pipeline') return ['ocr-default'];
+        return [];
+    };
+
+    // Auto-select first model if current config is invalid for method
+    useEffect(() => {
+        const available = getAvailableModels();
+        if (method === 'ocr_pipeline') return; // No model selection for pipeline
+
+        // Check if current default model is in the available list for this method
+        const isCurrentValid = available.includes(defaultModel);
+
+        // Logic: Should we auto-switch? 
+        // Only if the user explicitly changed method and the current model is definitely wrong type.
+        // Simple heuristic: If method is gemini but model is not gemini...
+        if (method === 'gemini' && !defaultModel.includes('gemini') && available.length > 0) {
+            // handleModelChange(available[0]); // Be careful with auto-save
+        }
+    }, [method, geminiModels, localModels]);
+
+    const modelOptions = getAvailableModels();
+
+    // Safety check for current default model
+    const isCloud = defaultModel.includes('gemini');
+
     return (
         <Card className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 overflow-visible">
             <CardBody className="p-6">
@@ -611,29 +700,51 @@ function FeatureCard({ featureKey, config, onUpdate, showLog }: { featureKey: st
                     <div className="p-3 bg-indigo-50 dark:bg-indigo-500/20 rounded-xl text-indigo-600 dark:text-indigo-300">
                         <Icon size={24} />
                     </div>
-                    {config.default_model.includes('gemini') ? (
-                        <Chip size="sm" color="secondary" variant="flat" startContent={<Zap size={12} />}>Cloud AI</Chip>
-                    ) : (
-                        <Chip size="sm" color="success" variant="flat" startContent={<Database size={12} />}>Local</Chip>
+                    {/* Dynamic Status Chip based on selected Method */}
+                    {method === 'gemini' && (
+                        <Chip size="sm" color="secondary" variant="flat" startContent={<Zap size={12} />}>Online VLM</Chip>
+                    )}
+                    {method === 'local_vlm' && (
+                        <Chip size="sm" color="success" variant="flat" startContent={<Database size={12} />}>Local VLM</Chip>
+                    )}
+                    {method === 'ocr_pipeline' && (
+                        <Chip size="sm" color="warning" variant="flat" startContent={<FileText size={12} />}>Pipeline</Chip>
                     )}
                 </div>
 
-                <h3 className="text-xl font-bold mb-1">{config.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 min-h-[40px]">{config.description}</p>
+                <h3 className="text-xl font-bold mb-1">{safeConfig.name}</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 min-h-[40px]">{safeConfig.description}</p>
 
                 <div className="space-y-4">
-                    <div>
-                        <label className="text-xs font-bold text-gray-500 uppercase mb-2 block">Production Model</label>
-                        <Select
-                            size="sm"
-                            selectedKeys={[config.default_model]}
-                            onSelectionChange={(s) => handleModelChange([...s][0] as string)}
-                            className="w-full"
-                        >
-                            {config.allowed_models.map((m: string) => (
-                                <SelectItem key={m} textValue={m}>{m}</SelectItem>
-                            ))}
-                        </Select>
+                    <div className="grid grid-cols-2 gap-2">
+                        <div>
+                            <label className="text-xs font-bold text-gray-500 uppercase mb-1 block">Method</label>
+                            <Select
+                                size="sm"
+                                selectedKeys={[method]}
+                                onSelectionChange={(s) => setMethod([...s][0] as string)}
+                                className="w-full"
+                            >
+                                <SelectItem key="gemini">Online VLM</SelectItem>
+                                <SelectItem key="local_vlm">Local VLM</SelectItem>
+                                <SelectItem key="ocr_pipeline">Pipeline</SelectItem>
+                            </Select>
+                        </div>
+                        <div>
+                            <label className="text-xs font-bold text-gray-500 uppercase mb-1 block">Model</label>
+                            <Select
+                                size="sm"
+                                selectedKeys={method === 'ocr_pipeline' ? [] : [defaultModel]}
+                                onSelectionChange={(s) => handleModelChange([...s][0] as string)}
+                                className="w-full"
+                                isDisabled={method === 'ocr_pipeline'}
+                                placeholder={method === 'ocr_pipeline' ? 'N/A' : 'Select Model'}
+                            >
+                                {modelOptions.map((m: string) => (
+                                    <SelectItem key={m} textValue={m}>{m}</SelectItem>
+                                ))}
+                            </Select>
+                        </div>
                     </div>
 
                     <div className="flex gap-2">
@@ -649,15 +760,17 @@ function FeatureCard({ featureKey, config, onUpdate, showLog }: { featureKey: st
                     </div>
 
                     <div className="pt-4 border-t border-gray-100 dark:border-white/10 flex justify-between items-center">
-                        <Button
-                            font-size="xs"
-                            variant="light"
-                            color={isBenchmarkRunning ? "success" : "default"}
-                            startContent={isBenchmarkRunning ? <Loader2 size={14} className="animate-spin" /> : <BarChart3 size={14} />}
-                            onPress={handleBenchmark}
-                        >
-                            {isBenchmarkRunning ? "Running..." : "Run Benchmark"}
-                        </Button>
+                        {false && (
+                            <Button
+                                font-size="xs"
+                                variant="light"
+                                color={isBenchmarkRunning ? "success" : "default"}
+                                startContent={isBenchmarkRunning ? <Loader2 size={14} className="animate-spin" /> : <BarChart3 size={14} />}
+                                onPress={handleBenchmark}
+                            >
+                                {isBenchmarkRunning ? "Running..." : "Run Benchmark"}
+                            </Button>
+                        )}
                         <span className="text-[10px] text-gray-400 font-mono">v1.2</span>
                     </div>
                 </div>
@@ -1012,33 +1125,67 @@ function CompareTab({ showLog }: { showLog: (input: string, output: string) => v
 // === Settings Tab ===
 
 function SettingsTab({ config, onRefresh }: { config: any; onRefresh: () => void }) {
+    const [models, setModels] = useState<any[]>([]);
+
+    useEffect(() => {
+        fetchGeminiModels().then(data => setModels(data.models || []));
+    }, []);
+
     return (
         <div className="max-w-2xl mx-auto space-y-4">
             <Card className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
                 <CardBody className="p-6">
-                    <h3 className="font-bold mb-4 text-lg text-gray-900 dark:text-white">🔧 Extraction Methods</h3>
+                    <h3 className="font-bold mb-4 text-lg text-gray-900 dark:text-white">🔧 Extraction Methods & Real Costs</h3>
                     <div className="space-y-4">
-                        <div className="flex justify-between items-center p-4 bg-gray-50 dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/10">
-                            <div>
-                                <p className="font-bold text-gray-900 dark:text-white">🤖 Gemini API</p>
-                                <p className="text-xs text-gray-500 dark:text-white/50">Cloud-based multimodal LLM, highest accuracy</p>
-                                <p className="text-xs text-purple-600 dark:text-purple-400 mt-1">Cost: ~$0.01 per page</p>
+                        <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/10">
+                            <div className="flex justify-between items-start mb-2">
+                                <div>
+                                    <p className="font-bold text-gray-900 dark:text-white">⚡ Online VLM (Gemini)</p>
+                                    <p className="text-xs text-gray-500 dark:text-white/50">Cloud-based multimodal LLM. Pricing based on input tokens (images + text).</p>
+                                </div>
+                                <StatusBadge label={config?.gemini_configured ? 'Active' : 'Not Set'} active={config?.gemini_configured} />
                             </div>
-                            <StatusBadge label={config?.gemini_configured ? 'Active' : 'Not Set'} active={config?.gemini_configured} />
+
+                            {/* Dynamic Pricing Table */}
+                            <div className="mt-3 bg-white dark:bg-black/20 rounded border border-gray-100 dark:border-white/10 overflow-hidden">
+                                <table className="w-full text-xs">
+                                    <thead className="bg-gray-50 dark:bg-white/5">
+                                        <tr>
+                                            <th className="p-2 text-left">Model Name</th>
+                                            <th className="p-2 text-right">Cost / 1K Tokens</th>
+                                            <th className="p-2 text-right">~Cost / Page</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-100 dark:divide-white/5">
+                                        {models.length > 0 ? models.map(m => (
+                                            <tr key={m.model_id}>
+                                                <td className="p-2 font-medium">{m.display_name} <span className="text-[10px] text-gray-400">({m.model_id})</span></td>
+                                                <td className="p-2 text-right font-mono">${(m.cost_per_1k_tokens * 1000).toFixed(4)}</td>
+                                                <td className="p-2 text-right font-mono text-purple-600 dark:text-purple-400">
+                                                    ${(m.cost_per_1k_tokens * 1000 * 2).toFixed(4)} <span className="text-[10px] opacity-50">(est)</span>
+                                                </td>
+                                            </tr>
+                                        )) : (
+                                            <tr><td colSpan={3} className="p-2 text-center opacity-50">Loading pricing...</td></tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
                         <div className="flex justify-between items-center p-4 bg-gray-50 dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/10">
                             <div>
-                                <p className="font-bold flex items-center gap-2 text-gray-900 dark:text-white"><Monitor size={16} /> Local VLM</p>
+                                <p className="font-bold flex items-center gap-2 text-gray-900 dark:text-white"><Monitor size={16} /> 🖥️ Local VLM (Ollama)</p>
                                 <p className="text-xs text-gray-500 dark:text-white/50">Ollama + LLaVA, runs locally, privacy-first</p>
-                                <p className="text-xs text-green-600 dark:text-green-400 mt-1">Cost: Free (requires GPU)</p>
+                                <p className="text-xs text-green-600 dark:text-green-400 mt-1 font-bold">Cost: $0.00 (Free)</p>
                             </div>
                             <StatusBadge label="Setup Required" active={false} />
                         </div>
                         <div className="flex justify-between items-center p-4 bg-gray-50 dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/10">
                             <div>
-                                <p className="font-bold text-gray-900 dark:text-white">📝 OCR Pipeline</p>
+                                <p className="font-bold text-gray-900 dark:text-white">📝 Pipeline (OCR)</p>
                                 <p className="text-xs text-gray-500 dark:text-white/50">Tesseract OCR + regex parsing, fastest method</p>
-                                <p className="text-xs text-green-600 dark:text-green-400 mt-1">Cost: Free</p>
+                                <p className="text-xs text-green-600 dark:text-green-400 mt-1 font-bold">Cost: $0.00 (Free)</p>
                             </div>
                             <StatusBadge label={config?.ocr_available ? 'Ready' : 'Not Found'} active={config?.ocr_available} />
                         </div>
@@ -1504,7 +1651,193 @@ function LogDetailModal({ isOpen, onOpenChange, log }: { isOpen: boolean, onOpen
     );
 }
 
+// Deals Manager Component
+function DealsManager() {
+    const [deals, setDeals] = useState<any[]>([]);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(false);
+    // Selection state
+    const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
+
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const [newDeal, setNewDeal] = useState({ product_name: "", price: "", store: "", category: "General" });
+
+    useEffect(() => {
+        loadDeals();
+    }, [page, search]);
+
+    const loadDeals = async () => {
+        setLoading(true);
+        try {
+            const data = await searchDeals(search, page);
+            setDeals(data.deals || []);
+            setTotalPages(data.pages || 1);
+            setSelectedIds(new Set()); // Reset selection on page change
+        } catch (e) {
+            console.error("Failed to load deals", e);
+        }
+        setLoading(false);
+    };
+
+    const handleSelectAll = (checked: boolean) => {
+        if (checked) {
+            setSelectedIds(new Set(deals.map(d => d.id)));
+        } else {
+            setSelectedIds(new Set());
+        }
+    };
+
+    const handleSelectRow = (id: number, checked: boolean) => {
+        const next = new Set(selectedIds);
+        if (checked) next.add(id);
+        else next.delete(id);
+        setSelectedIds(next);
+    };
+
+    const handleBulkDelete = async () => {
+        const ids = Array.from(selectedIds);
+        if (confirm(`Permanently delete ${ids.length} selected deals?`)) {
+            try {
+                await deleteDealsBatch(ids);
+                loadDeals(); // Reload and clear selection
+            } catch (e) {
+                alert("Failed to delete selection");
+            }
+        }
+    };
+
+    const handleCreate = async () => {
+        await createDeal(newDeal);
+        onOpenChange(); // Close modal
+        setNewDeal({ product_name: "", price: "", store: "", category: "General" });
+        loadDeals();
+    };
+
+    const handleUpdate = async (id: number, updates: any) => {
+        try {
+            const res = await fetch(`${API}/deals/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updates)
+            });
+            if (res.ok) {
+                setDeals(deals.map(d => d.id === id ? { ...d, ...updates } : d));
+            }
+        } catch (e) {
+            alert("Failed to save changes");
+        }
+    };
+
+    const handleDelete = async (id: number) => {
+        if (confirm("Permanently delete this deal?")) {
+            try {
+                await deleteDeal(id);
+                loadDeals();
+            } catch (e) {
+                alert("Failed to delete deal");
+            }
+        }
+    };
+
+    return (
+        <div className="space-y-4">
+            <div className="flex justify-between items-center bg-white dark:bg-white/5 p-4 rounded-lg border border-gray-200 dark:border-white/10">
+                <div className="flex gap-4 items-center flex-1">
+                    <Input
+                        placeholder="Search deals..."
+                        value={search}
+                        onChange={(e) => { setSearch(e.target.value); setPage(1); }}
+                        startContent={<Eye size={16} className="text-gray-400" />}
+                        className="max-w-md"
+                    />
+                    {selectedIds.size > 0 ? (
+                        <Button color="danger" variant="flat" onPress={handleBulkDelete} startContent={<Trash2 size={16} />}>
+                            Delete Selected ({selectedIds.size})
+                        </Button>
+                    ) : (
+                        <Button color="primary" onPress={onOpen} startContent={<CheckCircle size={16} />}>
+                            Add Manual Deal
+                        </Button>
+                    )}
+                </div>
+            </div>
+
+            <Card className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
+                <CardBody className="p-0">
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                            <thead className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
+                                <tr>
+                                    <th className="p-3 text-left font-semibold w-10">
+                                        <input
+                                            type="checkbox"
+                                            checked={deals.length > 0 && selectedIds.size === deals.length}
+                                            onChange={(e) => handleSelectAll(e.target.checked)}
+                                            className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                        />
+                                    </th>
+                                    <th className="p-3 text-left font-semibold">Product</th>
+                                    <th className="p-3 text-left font-semibold">Price</th>
+                                    <th className="p-3 text-left font-semibold">Store</th>
+                                    <th className="p-3 text-left font-semibold">Category / Edit</th>
+                                    <th className="p-3 text-right font-semibold">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100 dark:divide-white/5">
+                                {loading && <tr><td colSpan={6} className="p-8 text-center text-gray-500">Loading...</td></tr>}
+                                {!loading && deals.map((deal) => (
+                                    <EditableRow
+                                        key={deal.id}
+                                        deal={deal}
+                                        onSave={handleUpdate}
+                                        onDelete={handleDelete}
+                                        selected={selectedIds.has(deal.id)}
+                                        onSelect={handleSelectRow}
+                                    />
+                                ))}
+                                {!loading && deals.length === 0 && (
+                                    <tr><td colSpan={6} className="p-8 text-center text-gray-500">No deals found</td></tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </CardBody>
+            </Card>
+
+            <div className="flex justify-center gap-2 mt-4">
+                <Button size="sm" isDisabled={page === 1} onPress={() => setPage(page - 1)}>Prev</Button>
+                <div className="flex items-center text-sm text-gray-500">Page {page} of {totalPages}</div>
+                <Button size="sm" isDisabled={page === totalPages} onPress={() => setPage(page + 1)}>Next</Button>
+            </div>
+
+            {/* Create Deal Modal */}
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader>Add New Deal</ModalHeader>
+                            <ModalBody>
+                                <Input label="Product Name" value={newDeal.product_name} onChange={(e) => setNewDeal({ ...newDeal, product_name: e.target.value })} />
+                                <Input label="Price (e.g. 1.99)" value={newDeal.price} onChange={(e) => setNewDeal({ ...newDeal, price: e.target.value })} />
+                                <Input label="Store" value={newDeal.store} onChange={(e) => setNewDeal({ ...newDeal, store: e.target.value })} />
+                                <Input label="Category" value={newDeal.category} onChange={(e) => setNewDeal({ ...newDeal, category: e.target.value })} />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button variant="light" onPress={onClose}>Cancel</Button>
+                                <Button color="primary" onPress={handleCreate}>Create</Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
+        </div>
+    );
+}
+
 function DataManagementTab({ uploads, onViewDeals, onDelete, onRefresh }: { uploads: any[], onViewDeals: (u: any) => void, onDelete: (id: number) => void, onRefresh: () => void }) {
+    const [view, setView] = useState<'uploads' | 'deals'>('uploads');
     const [syntheticCount, setSyntheticCount] = useState<number>(0);
     const [showSynthetic, setShowSynthetic] = useState<boolean>(true);
 
@@ -1543,160 +1876,269 @@ function DataManagementTab({ uploads, onViewDeals, onDelete, onRefresh }: { uplo
 
     return (
         <div className="space-y-6">
-
-            {/* Synthetic Data Control */}
-            <Card className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-200 dark:border-indigo-500/20">
-                <CardBody className="flex flex-row justify-between items-center p-4">
-                    <div className="flex items-center gap-4">
-                        <div className="p-2 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg text-indigo-600 dark:text-indigo-400">
-                            <Bot size={24} />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900 dark:text-white">Synthetic Data (Mock)</h3>
-                            <p className="text-xs text-gray-500 dark:text-gray-400">
-                                {syntheticCount > 0
-                                    ? `${syntheticCount} generated items currently in database.`
-                                    : "No synthetic data found."}
-                            </p>
-                        </div>
-                    </div>
-                    <Button
-                        color="danger"
-                        variant="flat"
-                        onPress={handleClearSynthetic}
-                        isDisabled={syntheticCount === 0}
-                        startContent={<Trash2 size={16} />}
-                    >
-                        Clear Mock Data
-                    </Button>
-                    <div className="flex items-center gap-2 border-l border-gray-200 dark:border-white/10 pl-4 ml-4">
-                        <Switch
-                            isSelected={showSynthetic}
-                            onValueChange={toggleVisibility}
-                            size="sm"
-                            color="success"
-                        />
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Show in App
-                        </span>
-                    </div>
-                </CardBody>
-            </Card>
-
             <div className="flex justify-between items-center">
-                <h2 className="text-xl font-bold flex items-center gap-2">
-                    <Database className="w-6 h-6 text-purple-500" /> Upload History
-                </h2>
-                <Button size="sm" variant="flat" onPress={onRefresh} startContent={<Clock size={14} />}>
-                    Refresh
-                </Button>
+                <div className="flex gap-4">
+                    <button
+                        onClick={() => setView('uploads')}
+                        className={`text-lg font-bold flex items-center gap-2 ${view === 'uploads' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400'}`}
+                    >
+                        <Database className="w-5 h-5" /> Upload History
+                    </button>
+                    <button
+                        onClick={() => setView('deals')}
+                        className={`text-lg font-bold flex items-center gap-2 ${view === 'deals' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400'}`}
+                    >
+                        <ShoppingBag className="w-5 h-5" /> All Deals (Manager)
+                    </button>
+                </div>
+                <div className="flex gap-2">
+                    {/* Visibility Toggle */}
+                    <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-lg">
+                        <span className="text-xs font-medium text-gray-500">Show Mock Data</span>
+                        <Switch size="sm" isSelected={showSynthetic} onValueChange={toggleVisibility} />
+                    </div>
+                    {(syntheticCount > 0) && (
+                        <Button size="sm" color="danger" variant="flat" onPress={handleClearSynthetic} startContent={<Trash2 size={14} />}>
+                            Clear Mock ({syntheticCount})
+                        </Button>
+                    )}
+                    <Button size="sm" variant="flat" onPress={onRefresh} startContent={<Clock size={14} />}>
+                        Refresh
+                    </Button>
+                </div>
             </div>
 
-            <Card className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
-                <CardBody className="p-0">
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                            <thead className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
-                                <tr>
-                                    <th className="p-3 text-left font-semibold">ID</th>
-                                    <th className="p-3 text-left font-semibold">Filename</th>
-                                    <th className="p-3 text-left font-semibold">Date</th>
-                                    <th className="p-3 text-left font-semibold">Deals</th>
-                                    <th className="p-3 text-right font-semibold">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-100 dark:divide-white/5">
-                                {uploads.map((upload) => (
-                                    <tr key={upload.id} className="hover:bg-gray-50 dark:hover:bg-white/5">
-                                        <td className="p-3 text-gray-500">#{upload.id}</td>
-                                        <td className="p-3 font-medium flex items-center gap-2">
-                                            <FileText size={16} className="text-gray-400" />
-                                            {upload.filename}
-                                        </td>
-                                        <td className="p-3 text-gray-500">{new Date(upload.timestamp).toLocaleString()}</td>
-                                        <td className="p-3">
-                                            <Chip size="sm" variant="flat" color="secondary">{upload.deal_count} Items</Chip>
-                                        </td>
-                                        <td className="p-3 text-right flex justify-end gap-2">
-                                            <Button size="sm" variant="light" isIconOnly onPress={() => onViewDeals(upload)} title="View Deals">
-                                                <Eye size={18} className="text-blue-500" />
-                                            </Button>
-                                            <Button size="sm" variant="light" color="danger" isIconOnly onPress={() => onDelete(upload.id)} title="Delete Upload">
-                                                <Trash2 size={18} />
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                ))}
-                                {uploads.length === 0 && (
+            {view === 'uploads' ? (
+                <Card className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
+                    <CardBody className="p-0">
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm">
+                                <thead className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
                                     <tr>
-                                        <td colSpan={5} className="p-8 text-center text-gray-500">No uploads found</td>
+                                        <th className="p-3 text-left font-semibold">ID</th>
+                                        <th className="p-3 text-left font-semibold">Filename</th>
+                                        <th className="p-3 text-left font-semibold">Date</th>
+                                        <th className="p-3 text-left font-semibold">Deals</th>
+                                        <th className="p-3 text-right font-semibold">Actions</th>
                                     </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
-                </CardBody>
-            </Card>
+                                </thead>
+                                <tbody className="divide-y divide-gray-100 dark:divide-white/5">
+                                    {uploads.map((upload) => (
+                                        <tr key={upload.id} className="hover:bg-gray-50 dark:hover:bg-white/5">
+                                            <td className="p-3 text-gray-500">#{upload.id}</td>
+                                            <td className="p-3 font-medium flex items-center gap-2">
+                                                <FileText size={16} className="text-gray-400" />
+                                                {upload.filename}
+                                            </td>
+                                            <td className="p-3 text-gray-500">{new Date(upload.timestamp).toLocaleString()}</td>
+                                            <td className="p-3">
+                                                <Chip size="sm" variant="flat" color="secondary">{upload.deal_count} Items</Chip>
+                                            </td>
+                                            <td className="p-3 text-right flex justify-end gap-2">
+                                                <Button size="sm" variant="light" isIconOnly onPress={() => onViewDeals(upload)} title="View Deals">
+                                                    <Eye size={18} className="text-blue-500" />
+                                                </Button>
+                                                <Button size="sm" variant="light" color="danger" isIconOnly onPress={() => onDelete(upload.id)} title="Delete Upload">
+                                                    <Trash2 size={18} />
+                                                </Button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {uploads.length === 0 && (
+                                        <tr>
+                                            <td colSpan={5} className="p-8 text-center text-gray-500">No uploads found</td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </CardBody>
+                </Card>
+            ) : (
+                <DealsManager />
+            )}
         </div>
     );
 }
 
-function DealsListModal({ isOpen, onOpenChange, upload, deals }: { isOpen: boolean, onOpenChange: () => void, upload: any, deals: any[] }) {
-    if (!upload) return null;
+// Editable Row Component
+const EditableRow = ({
+    deal,
+    onSave,
+    onDelete,
+    selected,
+    onSelect
+}: {
+    deal: any,
+    onSave: (id: number, updates: any) => Promise<void>,
+    onDelete?: (id: number) => void,
+    selected?: boolean,
+    onSelect?: (id: number, val: boolean) => void
+}) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [data, setData] = useState({ ...deal });
+    const [saving, setSaving] = useState(false);
+
+    const handleSave = async () => {
+        setSaving(true);
+        await onSave(deal.id, data);
+        setSaving(false);
+        setIsEditing(false);
+    };
+
+    if (!isEditing) {
+        return (
+            <tr className={`hover:bg-gray-50 dark:hover:bg-white/5 group ${selected ? 'bg-blue-50/50 dark:bg-blue-900/20' : ''}`}>
+                {onSelect && (
+                    <td className="p-3 w-10">
+                        <input
+                            type="checkbox"
+                            checked={selected}
+                            onChange={(e) => onSelect(deal.id, e.target.checked)}
+                            className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                        />
+                    </td>
+                )}
+                <td className="p-3">
+                    <div className="flex items-center gap-3">
+                        <div>
+                            <div className="font-medium">{deal.product_name}</div>
+                            <div className="text-[10px] text-gray-400">{new Date(deal.created_at || Date.now()).toLocaleDateString()}</div>
+                        </div>
+                    </div>
+                </td>
+                <td className="p-3 font-bold text-green-600 dark:text-green-400">
+                    {deal.price} €
+                    {deal.original_price && <span className="text-gray-400 font-normal text-xs ml-1 line-through">{deal.original_price}</span>}
+                </td>
+                <td className="p-3 text-gray-500">{deal.store}</td>
+                <td className="p-3">
+                    <div className="flex justify-between items-center">
+                        <Chip size="sm" variant="dot" color="default">{deal.category}</Chip>
+                        <Button isIconOnly size="sm" variant="light" className="opacity-0 group-hover:opacity-100" onPress={() => setIsEditing(true)}>
+                            <Pencil size={14} />
+                        </Button>
+                    </div>
+                </td>
+                {onSelect && (
+                    <td className="p-3 text-right">
+                        {onDelete && (
+                            <Button isIconOnly size="sm" variant="light" color="danger" onPress={() => onDelete(deal.id)}>
+                                <Trash2 size={16} className="text-gray-400 hover:text-red-500" />
+                            </Button>
+                        )}
+                    </td>
+                )}
+            </tr>
+        );
+    }
 
     return (
-        <Modal
-            isOpen={isOpen}
-            onOpenChange={onOpenChange}
-            size="4xl"
-            scrollBehavior="inside"
-            classNames={{
-                base: "bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10",
-                header: "border-b border-gray-200 dark:border-white/10",
-                footer: "border-t border-gray-200 dark:border-white/10"
-            }}
-        >
+        <tr className="bg-blue-50 dark:bg-blue-900/10">
+            {onSelect && <td className="p-3"></td>}
+            <td className="p-3">
+                <Input
+                    size="sm"
+                    value={data.product_name}
+                    onChange={(e) => setData({ ...data, product_name: e.target.value })}
+                    label="Product"
+                />
+            </td>
+            <td className="p-3 w-32">
+                <Input
+                    size="sm"
+                    value={data.price}
+                    onChange={(e) => setData({ ...data, price: e.target.value })}
+                    label="Price"
+                />
+            </td>
+            <td className="p-3 w-40">
+                <Input
+                    size="sm"
+                    value={data.store}
+                    onChange={(e) => setData({ ...data, store: e.target.value })}
+                    label="Store"
+                />
+            </td>
+            <td className="p-3 text-right" colSpan={onSelect ? 2 : 1}>
+                <div className="flex gap-1 justify-end">
+                    <Button size="sm" color="primary" isIconOnly onPress={handleSave} isLoading={saving}>
+                        <Check size={14} />
+                    </Button>
+                    <Button size="sm" variant="flat" isIconOnly onPress={() => setIsEditing(false)}>
+                        <X size={14} />
+                    </Button>
+                </div>
+            </td>
+        </tr>
+    );
+};
+
+function ViewDealsModal({ isOpen, onClose, upload }: { isOpen: boolean, onClose: () => void, upload: any }) {
+    const [deals, setDeals] = useState<any[]>([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (isOpen && upload) {
+            setLoading(true);
+            fetch(`${API}/uploads/${upload.id}/deals`)
+                .then(res => res.json())
+                .then(data => {
+                    setDeals(data.deals || []);
+                    setLoading(false);
+                })
+                .catch(() => setLoading(false));
+        }
+    }, [isOpen, upload]);
+
+    const handleUpdate = async (id: number, updates: any) => {
+        try {
+            const res = await fetch(`${API}/deals/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updates)
+            });
+            if (res.ok) {
+                setDeals(deals.map(d => d.id === id ? { ...d, ...updates } : d));
+            }
+        } catch (e) {
+            alert("Failed to save changes");
+        }
+    };
+
+    return (
+        <Modal isOpen={isOpen} onClose={onClose} size="3xl" scrollBehavior="inside">
             <ModalContent>
                 {(onClose) => (
                     <>
                         <ModalHeader className="flex flex-col gap-1">
-                            <div className="flex items-center gap-2">
-                                <Database size={20} className="text-purple-500" />
-                                <span>Deals in "{upload.filename}"</span>
-                                <Chip size="sm" variant="flat">{deals.length} items</Chip>
-                            </div>
-                            <div className="text-xs font-normal text-gray-500">
-                                Uploaded: {new Date(upload.timestamp).toLocaleString()}
-                            </div>
+                            Deals from {upload?.filename}
+                            <span className="text-xs font-normal text-gray-500">
+                                {deals.length} items found
+                            </span>
                         </ModalHeader>
-                        <ModalBody className="p-0">
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-sm">
-                                    <thead className="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 sticky top-0">
-                                        <tr>
-                                            <th className="p-3 text-left font-semibold">Product</th>
-                                            <th className="p-3 text-left font-semibold">Price</th>
-                                            <th className="p-3 text-left font-semibold">Store</th>
-                                            <th className="p-3 text-left font-semibold">Category</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-100 dark:divide-white/5">
-                                        {deals.map((deal) => (
-                                            <tr key={deal.id} className="hover:bg-gray-50 dark:hover:bg-white/5">
-                                                <td className="p-3 font-medium">{deal.product_name}</td>
-                                                <td className="p-3 font-bold text-green-600 dark:text-green-400">
-                                                    {deal.price} €
-                                                    {deal.original_price && <span className="text-gray-400 font-normal text-xs ml-1 line-through">{deal.original_price}</span>}
-                                                </td>
-                                                <td className="p-3 text-gray-500">{deal.store}</td>
-                                                <td className="p-3 text-xs">
-                                                    <Chip size="sm" variant="dot" color="default">{deal.category}</Chip>
-                                                </td>
+                        <ModalBody>
+                            {loading ? (
+                                <div className="flex justify-center p-8"><Spinner /></div>
+                            ) : (
+                                <div className="border border-gray-200 dark:border-white/10 rounded-lg overflow-hidden">
+                                    <table className="w-full text-sm">
+                                        <thead className="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-white/10 sticky top-0 z-10">
+                                            <tr>
+                                                <th className="p-3 text-left font-semibold">Product</th>
+                                                <th className="p-3 text-left font-semibold">Price</th>
+                                                <th className="p-3 text-left font-semibold">Store</th>
+                                                <th className="p-3 text-left font-semibold">Category / Edit</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                                        </thead>
+                                        <tbody className="divide-y divide-gray-100 dark:divide-white/5">
+                                            {deals.map((deal) => (
+                                                <EditableRow key={deal.id} deal={deal} onSave={handleUpdate} />
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
                         </ModalBody>
                         <ModalFooter>
                             <Button color="primary" onPress={onClose}>

@@ -58,7 +58,9 @@ class FeatureRouter:
         feature_key: str, 
         file_path: str,
         store_name: str = "Unknown",
-        model_override: Optional[str] = None
+        model_override: Optional[str] = None,
+        method_override: Optional[str] = None,
+        region: Optional[List[float]] = None
     ) -> Dict[str, Any]:
         features = cls.get_features()
         feature_config = features.get(feature_key)
@@ -68,24 +70,35 @@ class FeatureRouter:
 
         model_id = model_override or feature_config.get("default_model")
         
-        # Determine Method based on model_id
-        method = ExtractionMethod.GEMINI
-        if "llava" in model_id or "qwen" in model_id or "llama" in model_id:
-             method = ExtractionMethod.LOCAL_VLM
-        elif "ocr" in model_id:
-             method = ExtractionMethod.OCR_PIPELINE
+        # Determine Method
+        if method_override:
+            # If method is explicitly provided (e.g. from Admin UI), use it
+            try:
+                # Handle string input "gemini" -> ExtractionMethod.GEMINI
+                if isinstance(method_override, str):
+                    method = ExtractionMethod(method_override)
+                else:
+                    method = method_override
+            except ValueError:
+                # Fallback if invalid enum
+                print(f"[FeatureRouter] Invalid method override '{method_override}', falling back to inference.")
+                method = ExtractionMethod.GEMINI
+        else:
+            # Infer from model_id (Legacy behavior)
+            method = ExtractionMethod.GEMINI
+            if "llava" in model_id or "qwen" in model_id or "llama" in model_id:
+                 method = ExtractionMethod.LOCAL_VLM
+            elif "ocr" in model_id:
+                 method = ExtractionMethod.OCR_PIPELINE
         
-        # Select Prompt (In a real implementation, this would load from a prompt registry)
-        # For now, we rely on model_router's default prompts unless we pass a custom one.
-        # Ideally, we pass the "task instruction" to extract_deals if refactored further.
-        
-        print(f"DEBUG: Processing Feature '{feature_config['name']}' using Model '{model_id}'")
+        print(f"DEBUG: Processing Feature '{feature_config['name']}' using Model '{model_id}' (Region: {region})")
 
         return await extract_deals(
             file_path=file_path,
             store_name=store_name,
             method=method,
-            model_id=model_id
+            model_id=model_id,
+            region=region
         )
 
 feature_router = FeatureRouter()

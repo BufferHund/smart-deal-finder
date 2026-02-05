@@ -96,3 +96,35 @@ To ensure stability and maximum hardware focus, we have shifted to a **"One Mode
 1. **Sequential Execution**: Never run multiple benchmarks in parallel to prevent GPU VRAM contention.
 2. **Incremental Auto-Save**: Always use the version of `prebench.py` that saves results after *each* model.
 4. **Detailed Design**: See [BENCHMARK_DESIGN.md](BENCHMARK_DESIGN.md) for the full technical specification of metrics and matching logic.
+
+---
+
+## 5. Fine-Tuning Benchmark Evaluation (Phase 2)
+
+As part of the fine-tuning phase (using `Llama-3.2-11B-Vision`), we have introduced a **new, stricter evaluation standard** that assesses the model's ability to understand layout, not just extract text.
+
+### Key Logic Comparison
+
+| Feature | Legacy Benchmark (`benchmark/run.py`) | New Fine-Tuning Benchmark (`dataset/benchmark_ollama.py`) |
+| :--- | :--- | :--- |
+| **Primary Goal** | **Text Extraction**: Can the model find the text? | **Object Detection + Extraction**: Can the model find *where* the deal is? |
+| **Matching Logic** | High confidence text match (`difflib` ratio > 0.8) | Relaxed text match (`ratio` > 0.5) to tolerate OCR errors, verified by geometry. |
+| **Bounding Box** | Ignored / Not required. | **Mandatory**. Requires normalized `[x1, y1, x2, y2]` coordinates. |
+| **Metric: BBox Accuracy** | N/A | Calculated as **IoU > 0.5** (Intersection over Union). |
+| **Metric: Price Accuracy** | Numeric tolerance (±0.01) | Strict string normalization match (e.g., "1.99" == "1.99"). |
+
+### Evaluation Pipeline (New)
+
+The new benchmark follows this strict verification flow for each predicted item:
+
+1.  **Name Matching** (Candidate Selection):
+    *   Find the ground truth item with the highest name similarity.
+    *   Threshold: **> 0.5** (allows for minor OCR typos or partial brand names).
+2.  **Attribute Verification** (If Name Matches):
+    *   **Price**: Must match exactly after normalization (removing currency symbols).
+    *   **Geometry**: Calculate IoU (Intersection over Union) between Predicted BBox and Ground Truth BBox.
+3.  **Success Criteria**:
+    *   An item is only considered "Perfect" if Name matches AND Price matches AND IoU > 0.5.
+
+### Why the Change?
+The legacy benchmark allowed "hallucinations of location" (e.g., finding the price but not knowing where it is). The new fine-tuning goal is to produce a model that can **precisely locate** deals on a crowded flyer page to enable downstream UI features like "Click to Select Deal".

@@ -129,6 +129,98 @@ def get_active_deals() -> Dict:
         })
     return {"deals": formatted, "count": len(formatted)}
 
+def update_deal(deal_id: int, updates: Dict) -> bool:
+    """Update specific fields of a deal"""
+    # Allowed fields to update
+    allowed = {'product_name', 'price', 'original_price', 'unit', 'store', 'category', 'valid_until'}
+    clean_updates = {k: v for k, v in updates.items() if k in allowed}
+    
+    if not clean_updates:
+        return False
+        
+    set_clause = ", ".join([f"{k} = %s" for k in clean_updates.keys()])
+    values = list(clean_updates.values())
+    values.append(deal_id)
+    
+    try:
+        db.execute_query(f"UPDATE deals SET {set_clause} WHERE id = %s", tuple(values))
+        return True
+    except Exception as e:
+        print(f"Error updating deal {deal_id}: {e}")
+        return False
+
+def delete_deal(deal_id: int) -> bool:
+    """Delete a specific deal"""
+    try:
+        db.execute_query("DELETE FROM deals WHERE id = %s", (deal_id,))
+        return True
+    except Exception as e:
+        print(f"Error deleting deal {deal_id}: {e}")
+        return False
+
+def delete_deals(deal_ids: List[int]) -> bool:
+    """Delete multiple deals"""
+    if not deal_ids:
+        return False
+    try:
+        placeholders = ', '.join(['%s'] * len(deal_ids))
+        db.execute_query(f"DELETE FROM deals WHERE id IN ({placeholders})", tuple(deal_ids))
+        return True
+    except Exception as e:
+        print(f"Error deleting deals {deal_ids}: {e}")
+        return False
+
+def search_deals(query: str = "", page: int = 1, limit: int = 50) -> Dict:
+    """Search deals with pagination"""
+    offset = (page - 1) * limit
+    
+    # Base query
+    sql = """
+        SELECT * FROM deals 
+        WHERE 1=1
+    """
+    params = []
+    
+    # Filter by query (product name or store)
+    if query:
+        sql += " AND (product_name ILIKE %s OR store ILIKE %s)"
+        search_term = f"%{query}%"
+        params.extend([search_term, search_term])
+        
+    # Count total for pagination
+    count_sql = f"SELECT COUNT(*) as total FROM ({sql}) as sub"
+    total_res = db.execute_query(count_sql, tuple(params))
+    total = total_res[0]['total'] if total_res else 0
+    
+    # Add sorting and pagination
+    sql += " ORDER BY created_at DESC LIMIT %s OFFSET %s"
+    params.extend([limit, offset])
+    
+    results = db.execute_query(sql, tuple(params))
+    
+    # Format dates/decimals
+    formatted = []
+    for r in results:
+        formatted.append({
+            "id": r['id'],
+            "product_name": r['product_name'],
+            "price": str(r['price']),
+            "original_price": r['original_price'],
+            "unit": r['unit'],
+            "store": r['store'],
+            "category": r['category'],
+            "image_url": r['image_url'],
+            "created_at": str(r['created_at'])
+        })
+        
+    return {
+        "deals": formatted,
+        "total": total,
+        "page": page,
+        "limit": limit,
+        "pages": (total + limit - 1) // limit
+    }
+
 def get_shopping_list() -> List[str]:
     results = db.execute_query("SELECT item FROM shopping_list ORDER BY created_at DESC")
     return [r['item'] for r in results]

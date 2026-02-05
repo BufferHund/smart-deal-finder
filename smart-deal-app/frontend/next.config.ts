@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: '50mb',
     },
+    // Fix for 10MB limit on proxy/middleware
+    // @ts-ignore
+    proxyClientMaxBodySize: '50mb',
   },
   // Allow larger request bodies for file uploads via proxy
   serverExternalPackages: [],

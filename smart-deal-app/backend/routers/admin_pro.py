@@ -155,9 +155,26 @@ async def process_batch(batch_id: str):
                 "raw_response": result.get("raw_response")
             }
             
-            # Add deals to storage
+            # 1. Create Upload Record FIRST to get ID
+            upload_id = None
+            try:
+                import hashlib
+                with open(job["file_path"], "rb") as f:
+                    file_hash = hashlib.md5(f.read()).hexdigest()
+                
+                upload_id = storage.log_upload(
+                    filename=job["file_name"],
+                    deal_count=len(result["deals"]),
+                    file_path=job["file_path"],  # Note: this is temp path
+                    file_hash=file_hash,
+                    visibility="public"
+                )
+            except Exception as ex:
+                print(f"Failed to log upload: {ex}")
+
+            # 2. Add deals to storage LINKED to upload_id
             for deal in result["deals"]:
-                storage.add_deal(deal)
+                storage.add_deal(deal, upload_id=upload_id)
                 
         except Exception as e:
             job["status"] = BatchJobStatus.FAILED
@@ -165,9 +182,53 @@ async def process_batch(batch_id: str):
         
         # Cleanup temp file
         try:
-            os.remove(job["file_path"])
+            # Only remove if we didn't move it to permanent storage (TODO: Better file management)
+            if os.path.exists(job["file_path"]):
+                os.remove(job["file_path"])
         except:
             pass
+
+@router.put("/deals/{deal_id}")
+async def update_deal(deal_id: int, updates: dict):
+    """Update a specific deal"""
+    success = storage.update_deal(deal_id, updates)
+    if not success:
+        raise HTTPException(400, "Failed to update deal")
+    return {"status": "updated", "id": deal_id}
+
+@router.delete("/deals/{deal_id}")
+async def delete_deal(deal_id: int):
+    """Delete a specific deal"""
+    success = storage.delete_deal(deal_id)
+    if not success:
+        raise HTTPException(400, "Failed to delete deal")
+    return {"status": "deleted", "id": deal_id}
+
+@router.post("/deals/batch-delete")
+async def delete_deals_batch(ids: List[int]):
+    """Delete multiple deals"""
+    success = storage.delete_deals(ids)
+    if not success:
+        raise HTTPException(400, "Failed to delete deals")
+    return {"status": "deleted", "count": len(ids)}
+
+@router.get("/deals")
+async def search_deals(q: str = "", page: int = 1, limit: int = 50):
+    """Search deals with pagination"""
+    return storage.search_deals(q, page, limit)
+
+@router.post("/deals")
+async def create_deal(deal: dict):
+    """Manually create a new deal"""
+    try:
+        # Validate minimal fields
+        if not deal.get('product_name') or not deal.get('price'):
+            raise HTTPException(400, "Product name and price are required")
+            
+        storage.add_deal(deal, visibility="public")
+        return {"status": "created"}
+    except Exception as e:
+        raise HTTPException(500, f"Failed to create deal: {str(e)}")
 
 @router.get("/batch/{batch_id}")
 async def get_batch_status(batch_id: str):
@@ -357,7 +418,8 @@ async def update_feature_config(
 async def test_feature(
     feature: str = Form(...),
     file: UploadFile = File(...),
-    model_id: Optional[str] = Form(None)
+    model_id: Optional[str] = Form(None),
+    method: Optional[str] = Form(None)
 ):
     """Test a feature with a specific file"""
     # Save temp
@@ -371,7 +433,8 @@ async def test_feature(
             feature, 
             temp_path, 
             store_name="Test",
-            model_override=model_id
+            model_override=model_id,
+            method_override=method
         )
         return result
     finally:

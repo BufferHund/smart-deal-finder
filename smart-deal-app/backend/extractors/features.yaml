@@ -2,11 +2,13 @@ features:
   discount_brochure:
     name: Discount Brochure Extractor
     description: Extracts product deals from supermarket flyers
-    default_model: gemini-2.5-flash
+    default_model: gemini-2.5-pro
     allowed_models:
     - gemini-2.5-flash-lite
     - gemini-2.5-pro
     - gemini-2.5-flash
+    - gemma3:12b-cloud
+    - gemma3:4b-cloud
     fallback_model: gemini-2.5-flash
     prompt_template: supermarket_v1
   shopping_agent:
@@ -21,30 +23,34 @@ features:
   invoice_parser:
     name: Invoice & Receipt Parser
     description: High-precision extraction from receipts
-    default_model: gemini-2.5-pro
+    default_model: qwen3-vl:235b-cloud
     allowed_models:
     - gemini-2.5-pro
     - gemini-1.5-pro
     - gemini-2.5-flash
+    - bakllava:7b
+    - qwen3-vl:235b-cloud
     fallback_model: gemini-2.5-flash
     prompt_template: invoice_v1
   member_card:
     name: Member Card Scanner
     description: Extracts membership numbers/barcodes
-    default_model: qwen2.5vl:7b
+    default_model: qwen3-vl:235b-cloud
     allowed_models:
     - llava:7b
     - qwen2.5vl:7b
     - gemini-2.5-flash-lite
+    - qwen3-vl:235b-cloud
     fallback_model: gemini-2.5-flash-lite
     prompt_template: card_v1
   chef_photo:
     name: Chef Photo Analysis
     description: Identifies ingredients from fridge photos
-    default_model: gemini-2.5-flash
+    default_model: qwen3-vl:235b-cloud
     allowed_models:
     - gemini-2.5-flash
     - gemini-2.5-pro
     - llama3.2-vision:11b
+    - qwen3-vl:235b-cloud
     fallback_model: gemini-2.5-flash
     prompt_template: chef_v1
