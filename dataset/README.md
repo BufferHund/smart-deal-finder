@@ -111,7 +111,7 @@ and central content concentration.
   <img src="README_pics/bbox_center_heatmap_syn.png" width="45%" />
 </p>
 
-## Recommended Data Usage
+## Recommended Data Usage and Model
 
 Through a series of controlled fine-tuning experiments, we observe that most modern vision-language models **already possess sufficient visual understanding for this task**, and that performance is primarily limited by output consistency and schema adherence, rather than recognition capability.
 
@@ -190,9 +190,9 @@ After Fine-tuning
 After fine-tuning, the output becomes more appropriate: the formatted results follow the correct JSON structure and no longer contain unwanted tokens. In addition, the predicted bounding boxes are placed more accurately.
 
 ### Recommendations on Model Choice
-**Mid-sized vision-language models (1B–8B) are generally sufficient**, with larger models (11B) offering limited additional benefit for this dataset. These models have already good ability on recognizing difficult brochure layout - only a few steps of fine-tuning can help them normalize their outputs. Smaller models like Paddle-OCR (1B) and Deepseek-OCR (3B) in contrast show lower ability on this task.
+**Mid-sized vision-language models (around 7B) are generally sufficient**, with larger models (11B) offering limited additional benefit for this dataset. These models have already good ability on recognizing difficult brochure layout - only a few steps of fine-tuning can help them normalize their outputs. Smaller models like Paddle-OCR (1B) and Deepseek-OCR (3B) in contrast show lower ability on this task.
 
-### Use Less Real Data or Smart Data Mixing Strategy
+### Recommended Data Usage
 
 To find out the best data mixing strategy for fine-tuning, following data strategies are tested on two models:
 
