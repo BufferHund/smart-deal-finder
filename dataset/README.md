@@ -59,7 +59,7 @@ The dataset is hosted on Google Drive due to size/license constraints. You can d
 
 #### Numbers of Brochure pages from Each Supermarket
 
-There are totally 299 brochure pages from 7 supermarket. And their distribution are shown as followed:
+There are totally 231 brochure pages from 7 supermarket. And their distribution are shown as followed:
 
 ![](README_pics/pages_per_supermarket_pie.png)
 
@@ -210,7 +210,7 @@ To find out the best data mixing strategy for fine-tuning, following data strate
 
 **Qwen2.5-VL (7B)**
 
-| Training Data        | Real : Synthetic | F1    | Precision | Recall | Price Acc. | BBox Acc. | Mean IoU |
+| Training Data (Quantity)      | Real : Synthetic | F1    | Precision | Recall | Price Acc. | BBox Acc. | Mean IoU |
 |----------------------|------------------|-------|-----------|--------|------------|-----------|----------|
 | Real only (174)      | 100% : 0%        | 90.07 | 88.03     | 92.20  | 56.99      | 5.51      | 0.13     |
 | Synthetic only (5000)| 0% : 100%        | 89.43 | 81.56     | **98.98**  | 41.10      | 1.37      | 0.07     |
@@ -310,11 +310,11 @@ null
 
 ## Limitations and Future Work
 
-While the dataset covers a diverse set of supermarket brochures, it is limited to a fixed page resolution and a single document type. Layout patterns and product representations may therefore not fully generalize to other promotional formats or regions. In addition, some pages contain no valid product deals, and certain fields (e.g., discounts) are sparsely populated, which may affect model performance and evaluation stability. Meanwhile, the quantity of the pages cannot be regarded as sufficient.
+While the dataset covers a diverse set of supermarket brochures, it is limited to a fixed page resolution and a single document type. Layout patterns and product representations may therefore not fully generalize to other promotional formats or regions. In addition, some pages contain no valid product deals, and certain fields (e.g., discounts) are sparsely populated, which may affect model performance and evaluation stability. 
 
 The annotation workflow is also not perfect. The annotation only by one person is exhausted and therefore problematic to some degree.
 
-If we have more time and resource. We will annotate more data and with a more proper way. More supermarkets and pages will be included. An more correct approach to make sure the correctness of the annotations will also be introduced.
+If we have more (unlimited) time and resource. We will annotate more data and with a more proper way. More supermarkets and pages will be included. An more correct approach to make sure the correctness of the annotations will also be introduced.
 
 ## License and Usage
 The dataset is intended solely for academic research and educational purposes, not for commercial redistribution.
