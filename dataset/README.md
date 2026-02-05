@@ -120,7 +120,7 @@ Through a series of controlled fine-tuning experiments, we observe that most mod
 Take the output of Llama3.2 (11B) of the same input picture and prompt as example. 
 
 Wanted json format:
-```json
+```text
 [
   {
     "product_name": "REWE Bio Wiener Würstchen",
@@ -141,7 +141,7 @@ Wanted json format:
 
 Before Fine-tuning
 
-```json
+```text
 The image shows a German supermarket brochure page with various products and their prices. The products are arranged in a grid, with each product having its own section with a picture, name, price, and other details.
 
 Here is the extracted information in the requested format:
@@ -184,7 +184,7 @@ Here is the extracted information in the requested format:
 
 After Fine-tuning
 
-```json
+```text
 [{"product_name": "REWE Bio Wiener Würstchen", "price": "2.59", "discount": null, "unit": "je 200-g-Pckg.", "original_price": null, "bbox": [0.12199999999999998, 0.5279999999999999, 0.4819999999999999, 0.8049999999999999]}, {"product_name": "REWE Bio Baguette Salami", "price": "1.59", "discount": null, "unit": "je 80-g-Pckg.", "original_price": null, "bbox": [0.5049999999999999, 0.5279999999999999, 0.8819999999999999, 0.8049999999999999]}, {"product_name": "REWE Bio Schinkenwurst", "price": "1.29", "discount": null, "unit": "je 100-g-Pckg.", "original_price": null, "bbox": [0.12199999999999998, 0.8089999999999999, 0.4819999999999999, 0.9609999999999999]}, {"product_name": "REWE Bio Hirtenkäse", "price": "1.79", "discount": null, "unit": "je 200-g-Pckg.", "original_price": null, "bbox": [0.5049999999999999, 0.8089999999999999, 0.8819999999999999, 0.9609999999999999]}]
 ```
 After fine-tuning, the output becomes more appropriate: the formatted results follow the correct JSON structure and no longer contain unwanted tokens. In addition, the predicted bounding boxes are placed more accurately.
