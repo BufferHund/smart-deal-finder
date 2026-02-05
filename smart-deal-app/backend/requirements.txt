@@ -15,4 +15,6 @@ Pillow>=10.0.0
 pdf2image
 numpy>=1.24.0
 PyYAML>=6.0
+bcrypt>=4.0.0
+pyjwt>=2.8.0
 

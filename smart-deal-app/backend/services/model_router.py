@@ -16,7 +16,7 @@ class ExtractionMethod(Enum):
     OCR_PIPELINE = "ocr_pipeline"
 
 # In-memory usage tracking (will persist to file)
-USAGE_LOG_FILE = "data/usage_logs.json"
+USAGE_LOG_FILE = "dataset/usage_logs.json"
 usage_logs: List[Dict] = []
 
 def load_usage_logs():
